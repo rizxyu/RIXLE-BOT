@@ -59,12 +59,12 @@ Room ID: ${room.id}
 `.trim()
         if ((room.game._currentTurn ^ isSurrender ? room.x : room.o) !== m.chat)
             room[room.game._currentTurn ^ isSurrender ? 'x' : 'o'] = m.chat
-        if (room.x !== room.o) await m.reply(str, room.x, {
+        if (room.x !== room.o) m.reply(str, room.x, {
             contextInfo: {
                 mentionedJid: this.parseMention(str)
             }
         })
-        await m.reply(str, room.o, {
+         m.reply(str, room.o, {
             contextInfo: {
                 mentionedJid: this.parseMention(str)
             }
