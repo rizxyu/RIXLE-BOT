@@ -14,7 +14,7 @@ async execute(m) {
 let { conn, args } = data
 
 let res = await fetch(`https://neoxr-api.herokuapp.com/api/download/fb?url=${args[0]}&apikey=yntkts`)
-if (!res.ok) return m.reply('Ada kesalahan')
+//if (!res.ok) return m.reply('Ada kesalahan')
 let json = await res.json()
   if (!json.status) return m.reply('waduh kena tembak ges')
   m.reply('⭕ sedang di proses')
