@@ -59,12 +59,12 @@ Room ID: ${room.id}
 `.trim()
         if ((room.game._currentTurn ^ isSurrender ? room.x : room.o) !== m.chat)
             room[room.game._currentTurn ^ isSurrender ? 'x' : 'o'] = m.chat
-        if (room.x !== room.o) m.reply(str, room.x, {
+        if (room.x !== room.o) await this.sendButton(room.x, str, '@nurutomo tictactoe', 'Nyerah', 'nyerah', m, {
             contextInfo: {
                 mentionedJid: this.parseMention(str)
             }
         })
-         m.reply(str, room.o, {
+        await this.sendButton(room.o, str, 'nurutomo tictactoe', 'Nyerah', 'nyerah', m, {
             contextInfo: {
                 mentionedJid: this.parseMention(str)
             }
