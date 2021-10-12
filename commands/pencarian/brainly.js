@@ -1,7 +1,7 @@
 let brainly = require("brainly-scraper")
 module.exports = {
 name: ["brainly"],
-type: ['information'],
+type: ['searching'],
 description: "menjawab pertanyaan kamu",
 utilisation: global.userbot.prefix+ "brainly question",
 
@@ -9,9 +9,8 @@ async execute(m) {
 let {conn, text} = data
 if (!text) return m.reply("question?")
 
-brainly(text).then(res => {
-txt = `${res}`
-   m.reply(Ft.util.format(txt))
-});
+let res = await brainly(text)
+let answer = res.data.map((v, i) => `_*PERTANYAAN KE ${i + 1}*_\n${v.pertanyaan}\n${v.jawaban.map((v,i) => `*JAWABAN KE ${i + 1}*\n${v.text}`).join('\n')}`).join('\n\n•------------•\n\n')
+m.reply(answer)
 }
 }
