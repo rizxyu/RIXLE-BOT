@@ -9,7 +9,7 @@ module.exports = {
 name: ["covid"],
 description: "melihat informasi covid di beberapa wilayah di dunia",
 utilisation: `${userbot.prefix}covid <country_name>\n${userbot.prefix}covid negara\n${userbot.prefix}covid rank`,
-type: ["information"],
+type: ["searching"],
 
 async execute(m) {
 	let usedPrefix = userbot.prefix
