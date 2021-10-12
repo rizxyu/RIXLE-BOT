@@ -50,7 +50,8 @@ before: `┌────⌈ *${me}* ⌋
 *├ Hostname:* ${os.hostname()}
 *├ clock:* ${time}
 *├ calender islam:* ${dateIslamic}
-*├ calender Java:* ${week} ${weton} ${date}`.trimStart(),
+*├ calender Java:* ${week} ${weton} ${date}
+*├ Total Fitur:* *${Object.keys(Events).length}* fitur`.trimStart(),
 type: "┌────⌈ *#type* ⌋",
 after: "*BOT DALAM PENGEMBANGAN*"
 }
