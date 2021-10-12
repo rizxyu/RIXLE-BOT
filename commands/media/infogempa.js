@@ -16,6 +16,6 @@ await m.reply('*[❗] WAIT, Tunggu Sebentar*')
          let hasil = ` *Info Gempa* \n\ *Lokasi* : _${res.data.lokasi}_ \n *Kedalaman* : _${res.data.kedalaman}_ \n *Koordinat* : _${res.data.koordinat}_ \n *Magnitude* : _${res.data.magnitude}_ \n *Waktu* : _${res.data.waktu}_ `
   
     conn.reply(m.chat, hasil, m)
-   }
+   })
 }
 }
