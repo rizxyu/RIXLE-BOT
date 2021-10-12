@@ -17,14 +17,20 @@ await uncache(require.resolve(module))
 call(module)
 })
 }
+global.Functions = {}
 global.Events = {}
 
 readdirSync('./commands/').forEach(dirs => {
 let commands = readdirSync(`./commands/${dirs}`).filter(files => files.endsWith('.js'));
 for (let file of commands) {
-let command = require(`../commands/${dirs}/${file}`);
+const command = require(`../commands/${dirs}/${file}`);
+if ("functions" in command) {
+global.Functions[command.name] = command
+console.log(Ft.color(`-> Loaded Functions`, 'cyan') + Ft.color(` ${command.name}`, 'yellow'));
+} else {
+ global.Events[command.name] = command
 console.log(Ft.color(`-> Loaded command`, 'orange') + Ft.color(` ${command.name}`, 'yellow'));
-global.Events[command.name] = command
+}
 require(`../commands/${dirs}/${file}`)
 nocache(`../commands/${dirs}/${file}`, module => { 
 try {
