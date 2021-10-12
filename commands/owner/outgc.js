@@ -5,7 +5,7 @@ description: "out from grup",
 utilisation: userbot.prefix + "out",
 
 async execute(m) {
-let { conn } = data
+let { conn, args } = data
 let chat = conn.chats.all().filter(v => v.jid.endsWith('g.us') && !v.read_only)
     if (command.endsWith('all') || command.endsWith('semua')) {
         for (let i = 0; i < chat.length; i++) { // For loops
