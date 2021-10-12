@@ -1,5 +1,5 @@
 module.exports = {
-async Command(conn, m, chatsUpdate) {
+async Command(conn, m) {
 
 try {
 let usedPrefix
@@ -48,6 +48,13 @@ delete global.Events[i]
 }
 }
 
+for (i in global.Functions) {
+type = global.Functions[i]
+if (typeof type.functions !== "function") continue
+await type.functions.call(conn, m, {
+this: conn
+})
+}
 
 cmd = global.Events ? global.Events[global.command] : ''
 if (cmd) {
