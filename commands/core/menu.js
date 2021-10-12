@@ -1,10 +1,4 @@
 const tags = {}
-/*const rawwr = Object.keys(global.Events)
-const menu = {
-before: `list command yang tersedia`.trimStart(),
-type: "💡 [#type]      ",
-after: "silahkan untuk memakai"
-}*/
 const fetch = require("node-fetch")
 const speed = global.Ft['speed']
 
@@ -20,14 +14,44 @@ const me = conn.user.name
 uptime = process.uptime();
 timestamp = speed();
 const name = conn.getName(m.sender)
+
+let d = new Date(new Date + 3600000)
+    let locale = 'id'
+    // d.getTimeZoneOffset()
+    // Offset -420 is 18.00
+    // Offset    0 is  0.00
+    // Offset  420 is  7.00
+    let weton = ['Pahing', 'Pon', 'Wage', 'Kliwon', 'Legi'][Math.floor(d / 84600000) % 5]
+    let week = d.toLocaleDateString(locale, { weekday: 'long' })
+    let date = d.toLocaleDateString(locale, {
+      day: 'numeric',
+      month: 'long',
+      year: 'numeric'
+    })
+    let dateIslamic = Intl.DateTimeFormat(locale + '-TN-u-ca-islamic', {
+      day: 'numeric',
+      month: 'long',
+      year: 'numeric'
+    }).format(d)
+    let time = d.toLocaleTimeString(locale, {
+      hour: 'numeric',
+      minute: 'numeric',
+      second: 'numeric'
+    })
+
 const rawwr = Object.keys(global.Events)
 
 const menu = {
 
-before: `┌────⌈${me}⌋
+before: `┌────⌈ *${me}* ⌋
 *├ Nama:* ${name}
-*├ Runtime:* ${count(uptime)}`.trimStart(),
-type: "┌────⌈ #type ⌋",
+*├ Runtime:* ${count(uptime)}
+*├ Uptime:* ${count(os.uptime())}
+*├ Hostname:* ${os.hostname()}
+*├ Jam:* ${time}
+*├ Tanggal islam:* ${dateIslamic}
+*├ Tanggal Jawa:* ${week} ${weton} ${date}`.trimStart(),
+type: "┌────⌈ *#type* ⌋",
 after: "*BOT DALAM PENGEMBANGAN*"
 }
 
@@ -50,7 +74,7 @@ before,
 ...Object.keys(tags).map(v => {
 return type.replace(/#type/g, tags[v]) + ("\n") + [
 ...raw.filter(menu => menu.type && menu.type.includes(v) && menu.help).map(menu => {
-return "├" + userbot.prefix + menu.help
+return "├ " + userbot.prefix + menu.help
 })].join("\n")
 }),
 after
