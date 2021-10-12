@@ -18,3 +18,4 @@ await m.reply('*[❗] WAIT, Tunggu Sebentar*')
     conn.reply(m.chat, hasil, m)
 }
 }
+}
