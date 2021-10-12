@@ -10,7 +10,7 @@ let {conn, text} = data
 if (!text) return m.reply("question?")
 
 brainly(text).then(res => {
-text = `${res}`
+txt = `${res}`
    m.reply(Ft.util.format(txt))
 });
 }
