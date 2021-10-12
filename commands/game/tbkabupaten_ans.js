@@ -2,7 +2,7 @@ const similarity = require('similarity')
 const threshold = 0.72
 
 module.exports = {
-
+name: "tebakkabupaten",
 async execute(m) {
 let id = m.chat
     if (!m.quoted || !m.quoted.fromMe || !m.quoted.isBaileys || !/Ketik.*tekb/i.test(m.quoted.contentText)) return !0
