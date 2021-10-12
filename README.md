@@ -1,7 +1,13 @@
-MAU TAMBAHIN COMMAND ?
-SESUAIIN FOLDER NYA
-JIKA TERMASUK DOWNLOAD MEDIA BUAT COMMAND DI FOLDER DOWNLOAD
-JIKA TERMASUK SETTING GROUP TARUH DI FOLDER GROUP :)
+# RIXLE BOT
 
-biar apa? biar ga susah..krna kalo ngawur tempatnya susah dimana letaknya
-Cukup Sekian Assalamualaikum
+> script sedang dalam pengembangan
+
+# HOW TO INSTALL?
+* For VPS/RDP/NODEJS
+
+
+# TEAM
+* FAUZAN (PENULIS ULANG)
+* NURUTOMO
+* RIZXYU (PENGEMBANG)
+* SANZ (PENGEMBANG)
