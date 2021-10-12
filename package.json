@@ -2,6 +2,7 @@
   "name": "selp",
   "version": "1.0.0",
   "description": "ya ndak tau",
+  "depecrated": false,
   "main": "index.js",
   "dependencies": {
     "@adiwajshing/baileys": "github:adiwajshing/baileys",
