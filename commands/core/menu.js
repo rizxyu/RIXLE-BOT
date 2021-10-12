@@ -44,13 +44,13 @@ const rawwr = Object.keys(global.Events)
 const menu = {
 
 before: `┌────⌈ *${me}* ⌋
-*├ Nama:* ${name}
+*├ Name:* ${name}
 *├ Runtime:* ${count(uptime)}
 *├ Uptime:* ${count(os.uptime())}
 *├ Hostname:* ${os.hostname()}
-*├ Jam:* ${time}
-*├ Tanggal islam:* ${dateIslamic}
-*├ Tanggal Jawa:* ${week} ${weton} ${date}`.trimStart(),
+*├ clock:* ${time}
+*├ calender islam:* ${dateIslamic}
+*├ calender Java:* ${week} ${weton} ${date}`.trimStart(),
 type: "┌────⌈ *#type* ⌋",
 after: "*BOT DALAM PENGEMBANGAN*"
 }
@@ -87,7 +87,9 @@ conn.sendButtonLoc(m.chat, await (await fetch('https://www6.flamingtext.com/net-
 -FearTeam
 -Adhiraj Singh(adiwajshing)
 -All Creator Bot
--Nurutomo`, `creator`, `y`, m)
+-Nurutomo
+github:
+https://github.com/Rizxyu/Tes-bot1`, `creator`, `y`, m)
 }
 }
 
