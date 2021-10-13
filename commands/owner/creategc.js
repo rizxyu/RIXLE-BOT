@@ -24,3 +24,4 @@ if (!text) return m.reply('_Masukkan Nama Grup!_')
     console.log (e)
   }
 }
+}
