@@ -1,0 +1,7 @@
+{
+  "name": "tesbot",
+  "description": "bot beta",
+  "repository": "https://github.com/Rizxyu/Tes-bot1",
+  "logo": "https://node-js-sample.herokuapp.com/node.png",
+  "keywords": ["bot", "whatsapp", "whatsapp-bot"]
+}
