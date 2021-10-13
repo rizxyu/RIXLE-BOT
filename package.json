@@ -1,10 +1,30 @@
 {
-  "name": "selp",
-  "version": "1.0.0",
-  "description": "ya ndak tau",
-  "depecrated": false,
+  "name": "stikerinbot",
+  "version": "1.1.2",
+  "description": "WhatsApp Bot Ringan",
   "main": "index.js",
-  "dependencies": {
+  "directories": {
+    "lib": "lib",
+    "src": "src",
+    "plugins": "plugins"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rizxyu/Tes-bot1.git"
+  },
+  "keywords": [
+    "whatsapp-bot"
+  ],
+  "author": "Ariffb",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Rizxyu/Tes-bot1/issues"
+  },
+   "dependencies": {
     "@adiwajshing/baileys": "^3.5.2",
     "awesome-phonenumber": "^2.48.0",
     "axios": "^0.21.1",
@@ -53,14 +73,5 @@
     "yt-search": "^2.10.1",
     "zrapi": "^0.0.6"
   },
-  "scripts": {
-    "test": "/menu"
-  },
-  "keywords": [
-    "oh",
-    "ndak",
-    "tau"
-  ],
-  "author": "Rizky",
   "license": "ISC"
 }
