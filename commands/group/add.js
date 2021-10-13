@@ -9,7 +9,7 @@ botAdmin:true,
 utilisation: global.userbot.prefix+ "add",
 
 async execute(m) {
-let { conn, text } = data
+let { conn, text, participants } = data
 
 if (!text) throw `uhm.. nomornya mana?\ncontoh:\n\n${usedPrefix + command + ' ' + global.owner[0]}`
   let _participants = participants.map(user => user.jid)
@@ -31,7 +31,7 @@ if (!text) throw `uhm.. nomornya mana?\ncontoh:\n\n${usedPrefix + command + ' ' 
       invite_code,
       invite_code_exp
     }]] = Object.entries(user)
-    let teks = `Mengundang @${jid.split`@`[0]} menggunakan invite...`
+    let teks = `Mengundang @${jid.split`@`[0]} menggunakan invite...\n\n@FtBot`
     m.reply(teks, null, {
       contextInfo: {
         mentionedJid: conn.parseMention(teks)
