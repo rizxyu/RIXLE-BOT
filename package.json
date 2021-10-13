@@ -5,7 +5,7 @@
   "depecrated": false,
   "main": "index.js",
   "dependencies": {
-    "@adiwajshing/baileys": "github:adiwajshing/baileys",
+    "@adiwajshing/baileys": "^3.5.2",
     "awesome-phonenumber": "^2.48.0",
     "axios": "^0.21.1",
     "brainly-scraper": "^1.0.3",
