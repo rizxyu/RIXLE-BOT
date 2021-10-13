@@ -13,8 +13,5 @@ let [_, code] = text.match(linkRegex) || []
     if (!code) return m.reply('Link invalid')
     let res = await conn.acceptInvite(code)
     m.reply(`Berhasil join grup ${res.gid}`)
-    for ( res.gid ) {
-     m.reply('BOT BERHASIL BERGABUNG')
-   }
  }
 }
