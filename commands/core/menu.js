@@ -83,7 +83,7 @@ after
 
 text += `\n\njika tidak tahu menggunakan command, format ${userbot.prefix}help command. contoh ${userbot.prefix}help ${random(rawwr)}`
 text += ``
-conn.sendButtonLoc(m.chat, await (await fetch('https://www6.flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=star-wars-logo&doScale=true&scaleWidth=850&scaleHeight=400&fontsize=90&fillTextType=1&text=List%20Menu')).buffer(), text, `@_Rizxyu`, `PEMBUAT`, `#creator`, m)
+conn.sendButtonLoc(m.chat, await (await fetch('https://www6.flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=star-wars-logo&doScale=true&scaleWidth=850&scaleHeight=400&fontsize=90&fillTextType=1&text=List%20Menu')).buffer(), text, `@_Rizxyu`, `CREATOR`, `#creator`, m)
 }
 }
 
