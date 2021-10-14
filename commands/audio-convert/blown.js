@@ -1,6 +1,6 @@
 const fs = require('fs')
 const { exec } = require('child_process')
-
+const fetch = require('node-fetch')
 module.exports = {
 name: ["blown"],
 type: ["audio"],
@@ -28,7 +28,7 @@ try {
 
                     mediaType: 2,
 
-                    thumbnailUrl: await conn.getProfilePicture(conn.user.jid),
+                    thumbnailUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQujVwLu5lSluM6GgFb1xIyMEskmXm8zfdMG39wKbfAoY0KR7wcg_kmvlb8&s=10',
 
                     mediaUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQujVwLu5lSluM6GgFb1xIyMEskmXm8zfdMG39wKbfAoY0KR7wcg_kmvlb8&s=10'
 
