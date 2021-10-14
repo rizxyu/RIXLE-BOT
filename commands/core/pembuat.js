@@ -23,7 +23,7 @@ conn.sendMessage(m.chat, {
 "displayName": `${conarray.length} kontak`,
 "contacts": conarray 
 }, 'contactsArrayMessage', { quoted: m })
-conn.sendMessage(m.chat, 'ini kontak pembuat bot ini\ng usah chat aneh aneh kangjut',MessageType.text, { quoted: m} )
+conn.sendMessage(m.chat, 'Ini nomer pembuat bot gak usah chat aneh aneh',MessageType.text, { quoted: m} )
 
   }
 }
