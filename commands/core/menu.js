@@ -83,14 +83,7 @@ after
 
 text += `\n\njika tidak tahu menggunakan command, format ${userbot.prefix}help command. contoh ${userbot.prefix}help ${random(rawwr)}`
 text += ``
-conn.sendButtonLoc(m.chat, await (await fetch('https://www6.flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=star-wars-logo&doScale=true&scaleWidth=850&scaleHeight=400&fontsize=90&fillTextType=1&text=List%20Menu')).buffer(), text, `Special Thanks To:
--Allah SWT
--FearTeam
--Adhiraj Singh(adiwajshing)
--All Creator Bot
--Nurutomo
-github:
-https://github.com/Rizxyu/Tes-bot1`, `creator`, `y`, m)
+conn.sendButtonLoc(m.chat, await (await fetch('https://www6.flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=star-wars-logo&doScale=true&scaleWidth=850&scaleHeight=400&fontsize=90&fillTextType=1&text=List%20Menu')).buffer(), text, `@_Rizxyu`, `PEMBUAT`, `#creator`, m)
 }
 }
 
