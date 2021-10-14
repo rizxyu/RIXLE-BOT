@@ -20,7 +20,19 @@ try {
                 fs.unlinkSync(media)
                 if (err) throw `_*Error!*_`
                 let buff = fs.readFileSync(ran)
-                conn.sendFile(m.chat, buff, ran, null, m, true, { quoted: m, mimetype: 'audio/mp4' })
+                conn.sendFile(m.chat, buff, ran, null, m, true, { quoted: m, mimetype: 'audio/mp4', externalAdReply: {
+
+                    title: `BLOWN AUDIO`,
+
+                    body: `HMMM`,
+
+                    mediaType: 2,
+
+                    thumbnailUrl: await conn.getProfilePicture(conn.user.jid),
+
+                    mediaUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQujVwLu5lSluM6GgFb1xIyMEskmXm8zfdMG39wKbfAoY0KR7wcg_kmvlb8&s=10'
+
+                } })
                 fs.unlinkSync(ran)
             })
         } else m.reply(`Balas vn/audio yang ingin diubah dengan caption *${usedPrefix + command}*`)
