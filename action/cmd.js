@@ -22,7 +22,6 @@ owner: global.userbot['setting'].owner,
 if (msgnye) return m.reply(msgnye)
 }
 
-
 let noPrefix = m.text.replace(global.prefix, '')
 let [command, ...args] = noPrefix.trim().split` `.filter(v => v)
 args = args || []
@@ -53,6 +52,16 @@ type = global.Functions[i]
 if (typeof type.functions !== "function") continue
 await type.functions.call(conn, m, {
 this: conn
+})
+}
+
+
+const button = (Object.keys(m.message)[0] == 'buttonsResponseMessage') ? m.message.buttonsResponseMessage.selectedButtonId : ''
+if (m.quoted && m.quoted.sender == conn.user.jid && button) {
+console.log("> button response => " + button)
+await require("./button.js").execute.call(conn, m, {
+this: conn,
+button
 })
 }
 
