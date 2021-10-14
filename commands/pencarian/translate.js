@@ -13,8 +13,8 @@ let { conn, args } = data
 
 let err = `
 Contoh:
-${usedPrefix + command} <lang> [text]
-${usedPrefix + command} id your messages
+${userbot.prefix}tr <lang> [text]
+${userbot.prefix}tr id your messages
 
 Daftar bahasa yang didukung: https://cloud.google.com/translate/docs/languages
 `.trim()
