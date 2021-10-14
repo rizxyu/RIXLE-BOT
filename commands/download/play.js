@@ -42,6 +42,18 @@ await conn.sendButtonLoc(m.chat, await (await fetch(thumb)).buffer(), `
 *Ukuran File Video:* ${yt2.filesizeF}
 *Server y2mate:* ${usedServer}
 `.trim(), `ALOK`, 'Y', 'y')
-conn.sendFile(m.chat, dl_link, "", null, m)
+conn.sendFile(m.chat, dl_link, "", null, { quoted: m, externalAdReply: {
+
+                    title: `${title}`,
+
+                    body: `ukuran file ${filesizeF}`,
+
+                    mediaType: 2,
+
+                    thumbnailUrl: `${thumb}`,
+                    mediaUrl: `${vid.url}`
+
+}
+})
   }
 }
