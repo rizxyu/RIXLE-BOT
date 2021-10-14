@@ -3,11 +3,6 @@
   "version": "1.1.2",
   "description": "WhatsApp Bot Ringan",
   "main": "index.js",
-  "directories": {
-    "lib": "lib",
-    "src": "src",
-    "plugins": "plugins"
-  },
   "scripts": {
     "start": "node index.js",
     "test": "node test.js"
