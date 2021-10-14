@@ -5,7 +5,7 @@ type: ["group"],
 description: "tag",
 utilisation: "#tagall",
 async execute(m) {
-let { conn, text } = data
+let { conn, text, participants } = data
 
 if (!text) return m.reply('Where text')
 let users = participants.map(u => u.jid)
