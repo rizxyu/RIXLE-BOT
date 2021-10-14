@@ -16,7 +16,7 @@ try {
         if (/audio/.test(mime)) {
             let media = await conn.downloadAndSaveMediaMessage(q)
             let ran = getRandom('.mp3')
-            exec(`ffmpeg -i ${media} -filter:a "atempo=0.7,asetrate=38000" ${ran}`, (err, stderr, stdout) => {
+            exec(`ffmpeg -i ${media} -filter:a "atempo=0.7,asetrate=80000" ${ran}`, (err, stderr, stdout) => {
                 fs.unlinkSync(media)
                 if (err) m.reply(`_*Error!*_`)
                 let buff = fs.readFileSync(ran)
