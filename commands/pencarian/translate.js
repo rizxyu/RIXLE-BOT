@@ -9,7 +9,7 @@ description: "mentranslate teks",
 utilisation: userbot.prefix + "tr reply",
 
 async execute(m) {
-let { conn, text, args } = data
+let { conn, args } = data
 
 let err = `
 Contoh:
