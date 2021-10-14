@@ -2,10 +2,11 @@
 
 > script sedang dalam pengembangan(bots in development)
 
-#NOTE
+# NOTE
 > DELETE SESION.JS IN FOLDER TO SCAN QR
 
-#deploy
+# deploy
+
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Rizxyu/Tes-bot1)
 * BUILDPACK
 * [FFMPEG](https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest)
