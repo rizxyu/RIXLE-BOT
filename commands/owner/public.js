@@ -1,0 +1,1 @@
+module.exports = {name: ["public"],description: "self mode",utilisation: userbot.prefix + "self",type: ["owner"],owner: true,execute(m){if (Public == false) return m.reply("udah mode public bang")Public = falsem.reply("public mode")}}

@@ -1,17 +1,1 @@
-module.exports = {
-name: ["evr"],
-description: "ini eval tapi beda ama command eva harus owner yg bisa make",
-utilisation: userbot.prefix + "evr code",
-type: ["owner"],
-owner: true,
-execute(m) {
-let message = m.text
-let { conn } = data
-console.log('[', Ft.color('EVAL', 'silver'),']', Ft.color(Ft.moment(m.messageTimestamp * 1000).format('DD/MM HH:mm:ss'), 'yellow'), Ft.color(message))
-try {
-return m.reply(JSON.stringify(eval(message.slice(5)),null,'\t'))
-} catch(e) {
-m.reply(`${e}`)
-}
-}
-}
+let syntaxerror = require('syntax-error')let util = require('util')module.exports = {name: ["=>"],custom:true,description: "ini eval tapi beda ama command eva harus owner yg bisa make",utilisation: userbot.prefix + "evr code",type: ["owner"],owner: true,async execute(m){var _q = "return "+m.text.slice(3)var _returnvar _syntax = ""var { conn, args } = datatry {let exec = new (async () => {}).constructor('print', 'm', 'require', 'conn', 'Array', 'process', 'args', 'module', 'exports', 'argument', _q)_return = await exec.call(conn, (...args) => {  if (--i < 1) return  console.log(...args)  return conn.reply(m.chat, util.format(...args), m)}, m, require, conn, process, args, [conn, data])} catch (e) {  let err = await syntaxerror(_q, 'Execution Function', {  allowReturnOutsideFunction: true,  allowAwaitOutsideFunction: true})if (err) _syntax = '```' + err + '```\n\n'_return = e} finally {m.reply(_syntax+util.format(_return))}}}
