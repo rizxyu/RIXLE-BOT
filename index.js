@@ -18,6 +18,7 @@ global.antidelete = false
             global.Events = {}
              global.baileys = Baileys //Hehe
                global.db = new JsonDB(new Config("database", true, false, '/'));
+                global.Public = false
  
  
 console.log(Ft.banner.string)
@@ -28,13 +29,16 @@ if (fs.existsSync('./session.json')) conn.loadAuthInfo('./session.json')
    conn.on('qr', qr => {
    console.log(`scan qr nya ngab`)
 })
-conn.on('credentials-updated', () => {
-	const authInfo = conn.base64EncodedAuthInfo()
-   console.log(`credentials updated!`)
-   fs.writeFileSync('./session.json', JSON.stringify(authInfo, null, '\t'))
+conn.on('connecting', () => {
+   console.log(`connecting....!`)
+ 
 })
 
-conn.on("open", () => console.log("Succes connet to baileys"))
+conn.on("open", () => {
+const authInfo = conn.base64EncodedAuthInfo()
+console.log("Succes connet to baileys")
+fs.writeFileSync('./session.json', JSON.stringify(authInfo, null, '\t'))
+})
 
 
  require('./src/loader')
