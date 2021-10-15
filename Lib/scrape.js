@@ -1359,9 +1359,9 @@ console.log(hasil)
 }
 
 //ServerMc
-function servermc() {
+function servermc(country="indonesia") {
 return new Promise((resolve, reject) => {
-axios.get(`https://minecraftpocket-servers.com/country/indonesia/`).then( tod => {
+axios.get(`https://minecraftpocket-servers.com/country/${country}/`).then( tod => {
 const $ = cheerio.load(tod.data)
 hasil = []
 $("tr").each(function(c, d) {
@@ -1369,11 +1369,15 @@ ip = $(d).find("button.btn.btn-secondary.btn-sm").eq(1).text().trim().replace(':
 port = '19132'
 versi = $(d).find("a.btn.btn-info.btn-sm").text()
 player = $(d).find("td.d-none.d-md-table-cell > strong").eq(1).text().trim()
+img = $(d).find("img.img-fluid").attr("src")
+server = "https://minecraftpocket-servers.com"+$(d).find("a").attr("href")
 const Data = {
-ip: ip,
-port: port,
-versi: versi,
-player: player
+ip,
+port,
+versi,
+player,
+server,
+img,
 }
 hasil.push(Data)
 })
