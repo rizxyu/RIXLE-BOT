@@ -57,6 +57,7 @@
     "simsimi": "^3.0.0",
     "spinnies": "^0.5.1",
     "similarity": "1.2.1",
+    "sox-audio": "^0.3.0",
     "sql": "^0.78.0",
     "ssl-express-www": "^3.0.8",
     "syntax-error": "^1.4.0",
