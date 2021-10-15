@@ -47,15 +47,9 @@ delete global.Events[i]
 }
 }
 
-for (i in global.Functions) {
-type = global.Functions[i]
-if (typeof type.functions !== "function") continue
-await type.functions.call(conn, m, {
-this: conn
-})
-}
 
 
+if (Public & !m.key.fromMe) return
 const button = (Object.keys(m.message)[0] == 'buttonsResponseMessage') ? m.message.buttonsResponseMessage.selectedButtonId : ''
 if (m.quoted && m.quoted.sender == conn.user.jid && button) {
 console.log("> button response => " + button)
@@ -65,7 +59,29 @@ button
 })
 }
 
-cmd = global.Events ? global.Events[global.command] : ''
+for (i in global.Functions) {
+type = global.Functions[i]
+if (typeof type.functions !== "function") continue
+await type.functions.call(conn, m, {
+this: conn
+})
+}
+
+for (i in Events) {
+cmd = Events[i]
+let custom = cmd.custom
+if (!custom) continue
+if (m.text.startsWith(cmd.name)) {
+if (cmd.admin && !isAdmin) return dfail("admin", m, conn)
+if (cmd.owner && !isOwner) return
+if (cmd.botAdmin && !isBotAdmin) return dfail("botAdmin", m, conn)
+console.log(cmd.name)
+await cmd.execute.call(conn, m, data)
+}
+}
+
+
+cmd =  Events[global.command]
 if (cmd) {
 if (cmd.admin && !isAdmin) return dfail("admin", m, conn)
 if (cmd.owner && !isOwner) return dfail("owner", m, conn)
