@@ -34,8 +34,9 @@ download = await ytv([args[0]])
 conn.sendFile(m.chat, download[0].video, "", null, m)
 }
 break
+}
 } catch (e) {
 console.log(e)
-}
+
 }
 }
