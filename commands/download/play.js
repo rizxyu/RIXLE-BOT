@@ -36,12 +36,12 @@ let results = await yts(text)
   if (yt2 === false) throw 'semua server gagal'
   let { dl_link, thumb, title, filesize, filesizeF } = yt
 m.reply('SEDANG DI PROSES')
-await conn.send2ButtonLoc(m.chat, await (await fetch(thumb)).buffer(), `
+await conn.sendButtonLoc(m.chat, await (await fetch(thumb)).buffer(), `
 *Judul:* ${title}
 *Ukuran File Audio:* ${filesizeF}
 *Ukuran File Video:* ${yt2.filesizeF}
 *Server y2mate:* ${usedServer}
-`.trim(), `@_RizkyAdiNur.S`, 'AUDIO', `audio ${vid.url}`, 'VIDEO', `video ${vid.url}`)
-//conn.sendFile(m.chat, dl_link, `audio.mp3`, "hmm", m)
+`.trim(), `@_RizkyAdiNur.S`, 'AUDIO', 'VIDEO', `video ${vid.url}`)
+conn.sendFile(m.chat, dl_link, `audio.mp3`, "hmm", m)
   }
 }
