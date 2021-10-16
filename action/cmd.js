@@ -51,12 +51,13 @@ delete global.Events[i]
 
 if (Public & !m.key.fromMe) return
 const button = (Object.keys(m.message)[0] == 'buttonsResponseMessage') ? m.message.buttonsResponseMessage.selectedButtonId : ''
-if (m.quoted && m.quoted.sender == conn.user.jid && button && args) {
-console.log("[ by Rizky ] BUTTON RESPON => " + button + args)
+if (m.quoted && m.quoted.sender == conn.user.jid && button) {
+console.log("[ by Rizky ] BUTTON RESPON => " + button )
 await require("./button.js").execute.call(conn, m, {
 this: conn,
 button,
-args
+args,
+text
 })
 }
 
