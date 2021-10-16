@@ -8,8 +8,8 @@ const ytv = require("../Lib/scrape.js").ytv
 const yta = require("../Lib/scrape.js").yta
 
 module.exports = {
-async execute(m, { button, args, text }) {
-let { conn } = data
+async execute(m, { button }) {
+let { conn, args, text } = data
 
 try {
 switch (button.toUpperCase()) {
