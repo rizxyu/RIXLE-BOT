@@ -8,7 +8,7 @@ const ytv = require("../Lib/scrape.js").ytv
 const yta = require("../Lib/scrape.js").yta
 
 module.exports = {
-async execute(m, {button}) {
+async execute(m, {button, args, text }) {
 let { conn, args } = data
 
 try {
