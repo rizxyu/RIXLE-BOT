@@ -1,5 +1,5 @@
 module.exports = {
-name: ["d", "delete"],
+name: ["d"],
     type: ['default'],
     description: "delete message from bot",
     utilisation: global.userbot.prefix+ "delete",
