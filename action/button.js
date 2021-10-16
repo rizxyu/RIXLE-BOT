@@ -2,8 +2,7 @@
 * MADE BY RIZKY
 */
 const fs = Ft.fs
-const ytv = require("../Lib/scrape.js").ytv
-const yta = require("../Lib/scrape.js").yta
+const { servers, yta, ytv } = require('../lib/y2mate')
 let { MessageType }= require('@adiwajshing/baileys')
 let { contactsArray } = MessageType
 
@@ -39,9 +38,10 @@ await conn.sendFile(m.chat, download[0].video, "", null, m)
 break
 case "audio": {
 if (!args[0]) return m.reply('linknya mana')
-//m.reply(`SEDANG DIPROSES\n\n_@RizkyAdiNur.s_`)
-download = await yta([args[0]])
-await conn.sendFile(m.chat, download[0].audio, "", null, m)
+let server = (args[1] || servers[0]).toLowerCase()
+let { dl_link, thumb, title, filesize, filesizeF } = await yta(args[0], servers.includes(server) ? server : servers[0])
+
+conn.sendFile(m.chat, dl_link, title + '.mp3', null m)
 }
 break
 case "rules": {
