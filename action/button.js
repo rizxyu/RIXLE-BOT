@@ -9,7 +9,7 @@ const yta = require("../Lib/scrape.js").yta
 
 module.exports = {
 async execute(m, {button, args, text }) {
-let { conn, args } = data
+let { conn } = data
 
 try {
 switch (button) {
