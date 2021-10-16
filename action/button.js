@@ -42,10 +42,15 @@ conn.sendFile(m.chat, dl_link, title + '.mp3', null, m)
 }
 break
 case "rules": {
-teks = `ATURAN MEMAKAI BOT:
+teks = `👑ATURAN MEMAKAI BOT:
 DILARANG SPAM COMMAND
 JANGAN BANDINGIN BOT LAIN
-KANJUT`
+
+EN: RULES FOR USING BOTS:
+NO SPAM COMMAND
+DON'T COMPARE OTHER BOTS
+
+BY FEAR TEAM`
 m.reply(teks)
 }
 break
