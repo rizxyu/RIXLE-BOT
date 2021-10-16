@@ -4,7 +4,7 @@
 let { MessageType }= require('@adiwajshing/baileys')
 let { contactsArray } = MessageType
 const fs = Ft.fs
-const ytv = require("../../Lib/scrape.js").ytv
+const ytv = require("../Lib/scrape.js").ytv
 
 module.exports = {
 async execute(m, {button}) {
