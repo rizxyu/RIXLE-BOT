@@ -30,10 +30,7 @@ conn.sendMessage(m.chat, 'Ini nomer pembuat bot gak usah chat aneh aneh',Message
 }
 break
 case "video": {
-if (!args[0]) return m.reply('linknya mana')
-//m.reply(`SEDANG DIPROSES\n\n_@RizkyAdiNur.s_`)
-download = await ytv([args[0]])
-await conn.sendFile(m.chat, download[0].video, "", null, m)
+m.reply('nothing')
 }
 break
 case "audio": {
