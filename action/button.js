@@ -12,8 +12,8 @@ async execute(m, { button, args, text }) {
 let { conn } = data
 
 try {
-switch (button.toLowerCase()) {
-case "creator": {
+switch (button.toUpperCase()) {
+case "creator": 
 conarray = []
 ownerContact = ['6282328303332', '62822980698995','6285783417029','62823283033323','6285640020165','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0']
   for (let i of ownerContact.map(v => v + '@s.whatsapp.net')) {
@@ -28,7 +28,7 @@ conn.sendMessage(m.chat, {
 "contacts": conarray 
 }, 'contactsArrayMessage', { quoted: m })
 conn.sendMessage(m.chat, 'Ini nomer pembuat bot gak usah chat aneh aneh',MessageType.text, { quoted: m} )
-}
+
 break
 case "video": 
 if (!args[0]) return m.reply('linknya mama')
@@ -44,13 +44,13 @@ download = await yta([args[0]])
 conn.sendFile(m.chat, download[0].audio, "", null, m)
 
 break
-case "rules": {
+case "rules": 
 teks = `ATURAN MEMAKAI BOT:
 DILARANG SPAM COMMAND
 JANGAN BANDINGIN BOT LAIN
 KANJUT`
 m.reply(teks)
-}
+
 break
 }
 } catch (e) {
