@@ -5,7 +5,7 @@ let { MessageType }= require('@adiwajshing/baileys')
 let { contactsArray } = MessageType
 const fs = Ft.fs
 const ytv = require("../Lib/scrape.js").ytv
-const yta = require("../../Lib/scrape.js").yta
+const yta = require("../Lib/scrape.js").yta
 
 module.exports = {
 async execute(m, {button}) {
