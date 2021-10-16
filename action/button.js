@@ -5,6 +5,7 @@ let { MessageType }= require('@adiwajshing/baileys')
 let { contactsArray } = MessageType
 const fs = Ft.fs
 const ytv = require("../Lib/scrape.js").ytv
+const yta = require("../../Lib/scrape.js").yta
 
 module.exports = {
 async execute(m, {button}) {
@@ -32,6 +33,20 @@ break
 case "video": {
 download = await ytv([args[0]])
 conn.sendFile(m.chat, download[0].video, "", null, m)
+}
+break
+case "audio": {
+download = await yta([args[0]])
+m.reply(`SEDANG DIPROSES`)
+conn.sendFile(m.chat, download[0].audio, "", null, m)
+}
+break
+case "rules": {
+teks = `ATURAN MEMAKAI BOT:
+DILARANG SPAM COMMAND
+JANGAN BANDINGIN BOT LAIN
+KANJUT`
+m.reply(teks)
 }
 break
 }
