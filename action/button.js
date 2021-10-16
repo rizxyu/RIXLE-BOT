@@ -2,7 +2,7 @@
 * MADE BY RIZKY
 */
 const fs = Ft.fs
-const { servers, yta, ytv } = require('../lib/y2mate')
+const { servers, yta, ytv } = require('../Lib/y2mate')
 let { MessageType }= require('@adiwajshing/baileys')
 let { contactsArray } = MessageType
 
