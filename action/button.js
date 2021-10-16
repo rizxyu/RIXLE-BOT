@@ -29,12 +29,11 @@ conn.sendMessage(m.chat, {
 conn.sendMessage(m.chat, 'Ini nomer pembuat bot gak usah chat aneh aneh',MessageType.text, { quoted: m} )
 }
 break
-
 case "video": {
 download = await ytv([args[0]])
 conn.sendFile(m.chat, download[0].video, "", null, m)
-
 }
+break
 } catch (e) {
 console.log(e)
 }
