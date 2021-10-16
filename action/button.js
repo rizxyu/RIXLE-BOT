@@ -26,7 +26,7 @@ conn.sendMessage(m.chat, {
 "displayName": `${conarray.length} kontak`,
 "contacts": conarray 
 }, 'contactsArrayMessage', { quoted: m })
-conn.sendMessage(m.chat, 'Ini nomer pembuat bot gak usah chat aneh aneh',MessageType.text, { quoted: m} )
+conn.sendMessage(m.chat, 'Ini nomer pembuat bot gak usah chat aneh aneh ya!',MessageType.text, { quoted: m} )
 }
 break
 case "video": {
