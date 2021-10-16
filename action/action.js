@@ -19,6 +19,11 @@ let groupM = await conn.groupMetadata(member.jid)
 let mem = member.participants[0]
 let action = member.action
 switch (action) {
+case 'add': {
+conn.sendMessage(member.jid,`member @${mem.split("@")[0]} bergabung ke group ${groupM.subject}`,MessageType.text, {
+contextInfo: { mentionedJid: mem}})
+}
+break
 case 'remove': {
 conn.sendMessage(member.jid,`member yang keluar @${mem.split("@")[0]} dari group ${groupM.subject}`,MessageType.text, {
 contextInfo: { mentionedJid: mem}})
