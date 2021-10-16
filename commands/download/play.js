@@ -41,7 +41,7 @@ await conn.send2ButtonLoc(m.chat, await (await fetch(thumb)).buffer(), `
 *Ukuran File Audio:* ${filesizeF}
 *Ukuran File Video:* ${yt2.filesizeF}
 *Server y2mate:* ${usedServer}
-`.trim(), `@_RizkyAdiNur.S`, 'AUDIO', `audio ${vid.url}`, 'VIDEO', `video ${vid.url}`)
+`.trim(), `@_RizkyAdiNur.S`, 'AUDIO', `audio`, 'VIDEO', `video`)
 //conn.sendFile(m.chat, dl_link, `audio.mp3`, "hmm", m)
   }
 }
