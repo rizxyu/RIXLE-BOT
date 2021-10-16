@@ -1,11 +1,11 @@
 /*
 * MADE BY RIZKY
 */
-let { MessageType }= require('@adiwajshing/baileys')
-let { contactsArray } = MessageType
 const fs = Ft.fs
 const ytv = require("../Lib/scrape.js").ytv
 const yta = require("../Lib/scrape.js").yta
+let { MessageType }= require('@adiwajshing/baileys')
+let { contactsArray } = MessageType
 
 module.exports = {
 async execute(m, { button }) {
@@ -31,17 +31,17 @@ conn.sendMessage(m.chat, 'Ini nomer pembuat bot gak usah chat aneh aneh',Message
 }
 break
 case "video": {
-if (!args[0]) return m.reply('linknya mama')
-m.reply(`SEDANG DIPROSES\n\n_@RizkyAdiNur.s_`)
+if (!args[0]) return m.reply('linknya mana')
+//m.reply(`SEDANG DIPROSES\n\n_@RizkyAdiNur.s_`)
 download = await ytv([args[0]])
-conn.sendFile(m.chat, download[0].video, "", null, m)
+await conn.sendFile(m.chat, download[0].video, "", null, m)
 }
 break
 case "audio": {
-if (!args[0]) return m.reply('linknya mama')
-m.reply(`SEDANG DIPROSES\n\n_@RizkyAdiNur.s_`)
+if (!args[0]) return m.reply('linknya mana')
+//m.reply(`SEDANG DIPROSES\n\n_@RizkyAdiNur.s_`)
 download = await yta([args[0]])
-conn.sendFile(m.chat, download[0].audio, "", null, m)
+await conn.sendFile(m.chat, download[0].audio, "", null, m)
 }
 break
 case "rules": {
