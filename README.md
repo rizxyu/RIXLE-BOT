@@ -28,7 +28,7 @@ git clone https://github.com/Rizxyu/RIXLE-BOT
 cd RIXLE-BOT
 npm i
 npm update
-node .
+node index
 ```
 
 ---------
