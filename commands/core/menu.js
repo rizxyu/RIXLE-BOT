@@ -53,7 +53,7 @@ before: `┌────⌈ *${me}* ⌋
 *├ calender Java:* ${week} ${weton} ${date}
 *├ Total Fitur:* *${Object.keys(Events).length}* fitur`.trimStart(),
 type: "┌────⌈ *#type* ⌋",
-after: "*BOT DALAM PENGEMBANGAN*"
+after: "\n"
 }
 
 let raw = Object.values(global.Events).map(v => {
@@ -81,7 +81,7 @@ return "├ " + userbot.prefix + menu.help
 after
 ].join("\n└────────────\n\n")
 
-text += `\n\njika tidak tahu menggunakan command, format ${userbot.prefix}help command. contoh ${userbot.prefix}help ${random(rawwr)}`
+text += `\n\n`
 text += ``
 conn.sendButtonLoc(m.chat, await (await fetch('https://www6.flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=star-wars-logo&doScale=true&scaleWidth=850&scaleHeight=400&fontsize=90&fillTextType=1&text=List%20Menu')).buffer(), text, `@_Rizxyu`, `👑CREATOR`, `creator`, m)
 }
