@@ -12,7 +12,7 @@ async execute(m, { button, args, text }) {
 let { conn } = data
 
 try {
-switch (button) {
+switch (button.toLowerCase()) {
 case "creator": {
 conarray = []
 ownerContact = ['6282328303332', '62822980698995','6285783417029','62823283033323','6285640020165','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0']
@@ -30,19 +30,19 @@ conn.sendMessage(m.chat, {
 conn.sendMessage(m.chat, 'Ini nomer pembuat bot gak usah chat aneh aneh',MessageType.text, { quoted: m} )
 }
 break
-case "video": {
+case "video": 
 if (!args[0]) return m.reply('linknya mama')
 m.reply(`SEDANG DIPROSES\n\n_@RizkyAdiNur.s_`)
 download = await ytv([args[0]])
 conn.sendFile(m.chat, download[0].video, "", null, m)
-}
+
 break
-case "audio": {
+case "audio": 
 if (!args[0]) return m.reply('linknya mama')
 m.reply(`SEDANG DIPROSES\n\n_@RizkyAdiNur.s_`)
 download = await yta([args[0]])
 conn.sendFile(m.chat, download[0].audio, "", null, m)
-}
+
 break
 case "rules": {
 teks = `ATURAN MEMAKAI BOT:
