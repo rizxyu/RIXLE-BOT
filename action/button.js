@@ -38,7 +38,7 @@ if (!args[0]) return m.reply('linknya mana')
 let server = (args[1] || servers[0]).toLowerCase()
 let { dl_link, thumb, title, filesize, filesizeF } = await yta(args[0], servers.includes(server) ? server : servers[0])
 
-conn.sendFile(m.chat, dl_link, title + '.mp3', null m)
+conn.sendFile(m.chat, dl_link, title + '.mp3', null, m)
 }
 break
 case "rules": {
