@@ -18,14 +18,42 @@
 * [`imagemagick`](https://github.com/rocketmobile/heroku-buildpack-imagemagick)
 * [`puppeteer`](https://github.com/jontewks/puppeteer-heroku-buildpack)
 
+## ✍️ Editing the file
 
-## FEATURE LIST 💡
+Edit the required value in [`config.js`](https://github.com/Rizxyu/RIXLE-BOT/blob/main/config.js)
 
-| FEATURE |✅|
-| ------------- | ------------- |
-| JADIBOT|✅|
+```js
+userbot = {
+ owner: [
+  "62822980698995", 
+  "436504463151666",
+  "6282328303332",
+  "62823283033323"
+  ],
+  MONGO_URI: "mongodb+srv://zanDb:veth0581@cluster0.eyx0e.mongodb.net/<mydb>?retryWrites=true&w=majority",
+   mess: {
+   wait: "tunggu sedang di proses...",
+   error: "errorr!!"
+   },
+   prefix: ["#"],
+   gexp: 50,
+   packname: 'RixleBot',
+   author: '@_RizkyAdiNur',
+    setting: {
+    admin: "only admin",
+    group: "only group",
+    owner: "owner only pack",
+    jadibot: "jadibot only",
+    botadmin: "bot harus menjadi admin"
+    }
+}
+```
 
-## My Team [`Fear Team`](https://chat.whatsapp.com/GVwpKf83s42D1CnIfDW19G)
+# FEATURE LIST 💡
+
+| JADIBOT |✅|
+
+# My Team [`Fear Team`](https://chat.whatsapp.com/GVwpKf83s42D1CnIfDW19G)
 * Fauzan (dev)
 * Ivanzz (contributor)
 * Sanz (contributor)
