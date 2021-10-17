@@ -2,7 +2,7 @@
 	<img src="https://user-images.githubusercontent.com/88314302/137311655-458f7977-f677-4b4e-9247-9fb539f4b579.jpeg" width="35%" style="margin-left: auto;margin-right: auto;display: block;">
 </p>
 <p align="center">
-<a href="#"><img title="RIXLE - BOT" src="https://img.shields.io/badge/ SELFBOT-green?colorA=%23ff0000&colorB=%23017e40&style=for-the-badge"></a>
+<a href="#"><img title="RIXLE - BOT" src="https://img.shields.io/badge/Rixle-Bot-green?colorA=%23ff0000&colorB=%23017e40&style=for-the-badge"></a>
 </p>
 <p align="center">
 <a href="https://github.com/Rizxyu"><img title="Fauzan" src="https://img.shields.io/badge/Author-Fauzan-red.svg?style=for-the-badge&logo=github"></a>
