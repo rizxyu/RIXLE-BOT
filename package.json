@@ -50,7 +50,7 @@
     "node-json-db": "1.4.1",
     "node-gtts": "^2.0.2",
     "node-webpmux": "^3.1.0",
-    "node-tesseract-ocr": "^
+    "node-tesseract-ocr": "^2.2.1",
     "path": "^0.12.7",
     "perf_hooks": "^0.0.1",
     "qrcode": "^1.4.4",
