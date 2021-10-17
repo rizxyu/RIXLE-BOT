@@ -18,10 +18,4 @@ let dot = await cuk.json()
 
 m.reply(json)
 }
-}')
-let dot = await cuk.json()
-    let json = dot[Math.floor(Math.random() * dot.length)]
-
-m.reply(json)
-}
 }
