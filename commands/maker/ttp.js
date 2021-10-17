@@ -1,8 +1,8 @@
 module.exports = {
- name: ['ttp'],
+ name: ['attp'],
  type: ['sticker'],
  description: "untuk membuat sticker teks bergerak",
- utilsation: null,
+ utilsation: userbot.prefix + "attp",
  
 async execute(m) {
  let { text, conn } = data
