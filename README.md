@@ -7,8 +7,7 @@
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Rizxyu/Tes-bot1)
 
-[`repl.it`](https://replit.com/@RizkyAdi2/RIXLE-BOT?v=1) [ EROR ]
-* BUILDPACK
+# BUILDPACK
 * [FFMPEG](https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest)
 * [IMAGEMAGICK](https://github.com/rocketmobile/heroku-buildpack-imagemagick)
 * [PUPPETEER](https://github.com/jontewks/puppeteer-heroku-buildpack)
