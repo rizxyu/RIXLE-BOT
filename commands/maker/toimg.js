@@ -1,4 +1,4 @@
-let { webp2png } = require('../lib/webp2mp4')
+let { webp2png } = require('../../Lib/webp2mp4')
 
 module.exports = {
 
