@@ -19,12 +19,13 @@
 * [`puppeteer`](https://github.com/jontewks/puppeteer-heroku-buildpack)
 
 
-# FEATURE LIST 💡
-| Fitur List |👑|
-|----------------|
+## FEATURE LIST 💡
+
+| FEATURE |✅|
+| ------------- | ------------- |
 | JADIBOT|✅|
 
-# My Team [`Fear Team`](https://chat.whatsapp.com/GVwpKf83s42D1CnIfDW19G)
+## My Team [`Fear Team`](https://chat.whatsapp.com/GVwpKf83s42D1CnIfDW19G)
 * Fauzan (dev)
 * Ivanzz (contributor)
 * Sanz (contributor)
