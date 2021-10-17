@@ -65,11 +65,16 @@ userbot = {
 | Close gc|✅|
 | absen|✅|
 
-| MUSIC |🎵|
+| download |🎵|
 | ------------- | ------------- |
 | play|✅|
 | yta|✅|
 | ytv|✅|
+| tiktok |✅|
+
+| MUSIC |🎵|
+| ------------- | ------------- |
+| Surah <ayat> | ✅|
 
 # 👥My Team [`Fear Team`](https://chat.whatsapp.com/GVwpKf83s42D1CnIfDW19G)
 * Fauzan (dev)
