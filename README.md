@@ -13,7 +13,7 @@
 
 # Deploy To Heroku
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Rizxyu/Tes-bot1)
-# BuildPack
+# 📦 BuildPack
 * [`ffmpeg`](https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest)
 * [`imagemagick`](https://github.com/rocketmobile/heroku-buildpack-imagemagick)
 * [`puppeteer`](https://github.com/jontewks/puppeteer-heroku-buildpack)
@@ -49,31 +49,9 @@ userbot = {
 }
 ```
 
-## FEATURE LIST 💡
-
-| FEATURE |🌱|
-| ------------- | ------------- |
-| JADIBOT|✅|
-| Wikipedia|✅|
-| Google search|✅|
-| Sticker|✅|
-| GRUP |👥|
-| ------------- | ------------- |
-| Join|✅|
-| add|✅|
-| open gc|✅|
-| Close gc|✅|
-| absen|✅|
-| MUSIC |🎵|
-| ------------- | ------------- |
-| play|✅|
-| yta|✅|
-| ytv|✅|
-
-## My Team [`Fear Team`](https://chat.whatsapp.com/GVwpKf83s42D1CnIfDW19G)
+# 👥My Team [`Fear Team`](https://chat.whatsapp.com/GVwpKf83s42D1CnIfDW19G)
 * Fauzan (dev)
 * Ivanzz (contributor)
 * Sanz (contributor)
 * Rizky (contributor)
-
 
