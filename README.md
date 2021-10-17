@@ -5,7 +5,7 @@
 <a href="#"><img title="RIXLE - BOT" src="https://img.shields.io/badge/ SELFBOT-green?colorA=%23ff0000&colorB=%23017e40&style=for-the-badge"></a>
 </p>
 <p align="center">
-<a href="https://github.com/Rizxyu"><img title="Fauzan" src="https://img.shields.io/badge/Author-Ivan MLN-red.svg?style=for-the-badge&logo=github"></a>
+<a href="https://github.com/Rizxyu"><img title="Fauzan" src="https://img.shields.io/badge/Author-Fauzan-red.svg?style=for-the-badge&logo=github"></a>
 </p>
 <p align="center">
 </p>
@@ -13,7 +13,6 @@
 
 # Deploy To Heroku
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Rizxyu/Tes-bot1)
-
 # BuildPack
 * [`ffmpeg`](https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest)
 * [`imagemagick`](https://github.com/rocketmobile/heroku-buildpack-imagemagick)
@@ -22,19 +21,6 @@
 # Group
 [![Grup WhatsApp](https://img.shields.io/badge/WhatsApp%20Group-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://chat.whatsapp.com/GVwpKf83s42D1CnIfDW19G)
 
-
-# For Windows Or RDP
-* Instal Git [`Click Here`](https://git-scm.com/downloads)
-* Instal NodeJS [`Click Here`](https://nodejs.org/en/download)
-* Instal FFmpeg [`Click Here`](https://ffmpeg.org/download.html)
-* Instal ImageMagick [`Click Here`](https://imagemagick.org/script/download.php)
-
-```bash
-git clone https://github.com/Rizxyu/RIXLE-BOT
-cd RIXLE-BOT
-npm i
-node index or npm start
-```
 # My Team [`Fear Team`](https://chat.whatsapp.com/GVwpKf83s42D1CnIfDW19G)
 * Fauzan (dev)
 * Ivanzz (dev)
