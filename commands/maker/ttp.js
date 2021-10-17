@@ -1,6 +1,6 @@
 module.exports = {
  name: ['ttp'],
- type: ['Sticker'],
+ type: ['sticker'],
  description: "untuk membuat sticker teks bergerak",
  utilsation: null,
  
