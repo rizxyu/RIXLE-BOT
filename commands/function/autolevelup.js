@@ -1,4 +1,5 @@
 let levelling = require('../../Lib/leveling')
+let canvacord = require("canvacord")
 
 module.exports = { 
 name: "autolevelup",  
