@@ -21,25 +21,25 @@ let stiker = false
     if (/webp/.test(mime)) {
       let img = await q.download()
       let out = await webp2png(img)
-      if (!img) throw `balas stiker dengan perintah ${userbot.prefix}wm  <packname>|<author>`
+      if (!img) return m.reply(`balas stiker dengan perintah ${userbot.prefix}wm  <packname>|<author>`)
       stiker = await sticker(0, out, packname || '', author || '')
     } else if (/image/.test(mime)) {
       let img = await q.download()
       let link = await uploadImage(img)
-      if (!img) throw `balas gambar dengan perintah ${userbot.prefix}wm  <packname>|<author>`
+      if (!img) return m.reply(`balas gambar dengan perintah ${userbot.prefix}wm  <packname>|<author>`)
       stiker = await sticker(0, link, packname || '', author || '')
     } else if (/video/.test(mime)) {
-      if ((q.msg || q).seconds > 11) throw 'Maksimal 10 detik!'
+      if ((q.msg || q).seconds > 11) return m.reply('Maksimal 10 detik!')
       let img = await q.download()
       let link = await uploadFile(img)
-      if (!img) throw `balas video dengan perintah ${userbot.prefix}wm <packname>|<author>`
+      if (!img) return m.reply(`balas video dengan perintah ${userbot.prefix}wm <packname>|<author>`)
       stiker = await sticker(0, link, packname || '', author || '')
     }
   } finally {
     if (stiker) await conn.sendMessage(m.chat, stiker, MessageType.sticker, {
       quoted: m
     })
-    else throw 'Balas stikernya!'
+    else return m.reply('Balas stikernya!')
   }
 }
 }
