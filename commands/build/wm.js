@@ -39,7 +39,7 @@ let stiker = false
     if (stiker) await conn.sendMessage(m.chat, stiker, MessageType.sticker, {
       quoted: m
     })
-    else return m.reply('Balas stikernya!')
+    //else return m.reply('Balas stikernya!')
   }
 }
 }
