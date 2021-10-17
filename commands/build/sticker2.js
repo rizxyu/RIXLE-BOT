@@ -1,5 +1,6 @@
 const { MessageType } = require('@adiwajshing/baileys')
 const { sticker } = require('../../Lib/sticker')
+const WSF = require('wa-sticker-formatter')
 
 module.exports = {
 name: ["s"],
