@@ -9,6 +9,21 @@ let { conn } = data
 
 try {
 switch (button.split(" ")[0].toLowerCase()) {
+case "rules":
+capt = `
+Terima kasih telah menggunakan bot kami😄
+Kami harap anda senang karena telah menggunakan bot ini😗
+
+Rules menggunakan bot:
+❌ Jangan telpon atau vc bot
+❌ Jangan bandingkan bot lain
+❌ No spam command
+
+Mau source bot?
+wa.me/6282328303332
+`
+m.reply(capt)
+break;
 case "audio":
   try {
 let yt = false
