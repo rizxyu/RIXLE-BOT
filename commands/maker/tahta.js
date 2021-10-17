@@ -13,7 +13,8 @@ utilisation: userbot.prefix + "tahta",
 async execute(m) {
 let { conn, text } = data
 
-if (!text) {
+if (!text) return m.reply(`contoh:\n${userbot.prefix}tahta\n\n@_RizkyAdi`)
+
     try {
       const splitText = text.replace(/(\S+\s*){1,10}/g, '$&\n')
       const fixHeight = 'HARTA\nTAHTA\n' + splitText.toUpperCase()
@@ -45,6 +46,5 @@ if (!text) {
       console.log(e)
       return m.reply('_*Error!*_')
     }
-  } else return m.reply(`contoh:\n${userbot.prefix}tahta\n\n@_RizkyAdi`)
-}
+ }
 }
