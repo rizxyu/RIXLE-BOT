@@ -49,13 +49,31 @@ userbot = {
 }
 ```
 
-# FEATURE LIST 💡
+## FEATURE LIST 💡
 
-| JADIBOT |✅|
+| FEATURE |🌱|
+| ------------- | ------------- |
+| JADIBOT|✅|
+| Wikipedia|✅|
+| Google search|✅|
+| Sticker|✅|
+| GRUP |👥|
+| ------------- | ------------- |
+| Join|✅|
+| add|✅|
+| open gc|✅|
+| Close gc|✅|
+| absen|✅|
+| MUSIC |🎵|
+| ------------- | ------------- |
+| play|✅|
+| yta|✅|
+| ytv|✅|
 
-# My Team [`Fear Team`](https://chat.whatsapp.com/GVwpKf83s42D1CnIfDW19G)
+## My Team [`Fear Team`](https://chat.whatsapp.com/GVwpKf83s42D1CnIfDW19G)
 * Fauzan (dev)
 * Ivanzz (contributor)
 * Sanz (contributor)
 * Rizky (contributor)
+
 
