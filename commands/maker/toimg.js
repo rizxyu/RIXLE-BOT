@@ -20,6 +20,6 @@ if (!m.quoted) throw `balas stiker dengan perintah *${userbot.prefix + command}*
   if (/webp/.test(mime)) {
     out = await webp2png(media)
   }
-  await conn.sendFile(m.chat, out, 'out.png', '© stikerin', m, false, { thumbnail: out })
+  await conn.sendFile(m.chat, out, 'out.png', 'Donee bro', m, false, { thumbnail: out })
 }
 }
