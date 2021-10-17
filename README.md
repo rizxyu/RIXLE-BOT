@@ -18,10 +18,7 @@
 * [`imagemagick`](https://github.com/rocketmobile/heroku-buildpack-imagemagick)
 * [`puppeteer`](https://github.com/jontewks/puppeteer-heroku-buildpack)
 
-# Group
-[![Grup WhatsApp](https://img.shields.io/badge/WhatsApp%20Group-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://chat.whatsapp.com/GVwpKf83s42D1CnIfDW19G)
-
-# My Team [`Fear Team`](https://chat.whatsapp.com/GVwpKf83s42D1CnIfDW19G)
+# My Team [`FearTeam`](https://chat.whatsapp.com/GVwpKf83s42D1CnIfDW19G)
 * Fauzan (dev)
 * Ivanzz (dev)
 * Sanz (contributor)
