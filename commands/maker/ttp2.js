@@ -1,7 +1,7 @@
 let fs = require("fs")
 module.exports = {
  name: ['ttp'],
- type: ['Sticker'],
+ type: ['sticker'],
  description: "untuk membuat sticker teks bergerak",
  utilsation: null,
  
@@ -15,13 +15,15 @@ Ft.fs.writeFileSync(`${int}`, p)
 let ipt = await Ft.fs.readFileSync(`${int}`)
 Ft.exec(`convert ${int} ${ran}`)
 .on("error", () => reply("error"))
-await sleep()
+await sleep(2)
 conn.sendMessage(m.chat, Ft.fs.readFileSync(`${ran}`), "stickerMessage")
+await sleep(2)
+Ft.fs.unlinkSync(ran)
+}
+}
 
 function getRandom(ext) {
 	return `${Math.floor(Math.random() * 10000)}${ext}`
-}
-}
 }
 async function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms*1000));
