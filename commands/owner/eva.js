@@ -1,6 +1,7 @@
 let util = Ft.util
 module.exports = {
-name: ["eva"],
+name: [">"],
+custom:true,
 owner:true,
 description: "nih eval buat owner doang",
 utilisation: userbot.prefix + "eva code",
