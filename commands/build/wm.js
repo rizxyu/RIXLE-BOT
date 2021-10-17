@@ -41,3 +41,5 @@ let stiker = false
     })
     else throw 'Balas stikernya!'
   }
+}
+}
