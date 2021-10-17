@@ -3,8 +3,8 @@ let scrap = require("../../Lib/scrape")
 module.exports = {
 name: ["kodepos"],
 type: ["searching"],
-description: "search username from github.com",
-utilisation: userbot.prefix+"ghstalk",
+description: "search kodepos",
+utilisation: userbot.prefix+"kodepos",
 
 async execute(m){
 let { conn, text } = data
