@@ -1,6 +1,7 @@
-const fs = Ft.fs
+let fs = require('fs')
 const fetch = require("node-fetch")
-var { Canvas } = require("canvacord")
+let { spawn } = require('child_process')
+const { unlinkSync } = require('fs')
 
 module.exports = {
 name: ["tahta"],
