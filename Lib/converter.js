@@ -105,9 +105,19 @@ function toVideo(buffer, ext) {
   })
 }
 
+async function sUrl(url) {
+    let res = await fetch(url)
+    if (res.status !== 200) throw await res.text()
+    let img = await res.buffer()
+  return await ffmpeg(img, [
+    '-vf', 'scale=512:512:flags=lanczos:force_original_aspect_ratio=decrease,format=rgba,pad=512:512:(ow-iw)/2:(oh-ih)/2:color=#00000000,setsar=1'
+  ], 'jpeg', 'webp')
+}
+
 module.exports = {
   toAudio,
   toPTT,
   toVideo,
-  ffmpeg
+  ffmpeg,
+  sUrl
 }
