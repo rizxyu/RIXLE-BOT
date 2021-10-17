@@ -1,8 +1,8 @@
 const { MessageType } = require('@adiwajshing/baileys')
-const { sticker } = require('../lib/sticker')
-const uploadFile = require('../lib/uploadFile')
-const uploadImage = require('../lib/uploadImage')
-let { webp2png } = require('../lib/webp2mp4')
+const { sticker } = require('../../Lib/sticker')
+const uploadFile = require('../../Lib/uploadFile')
+const uploadImage = require('../../Lib/uploadImage')
+let { webp2png } = require('../../Lib/webp2mp4')
 
 module.exports = {
 name: ["wm"],
