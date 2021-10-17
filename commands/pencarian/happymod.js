@@ -8,7 +8,7 @@ utilisation: userbot.prefix+"happymod",
 
 async execute(m){
 let { conn, text } = data
-if (!text) return m.reply('lokasi')
+if (!text) return m.reply('apk?')
 
 const h = await scrap.happymod(text)
 let capt = "*HAPPYMOD*\n\n"
