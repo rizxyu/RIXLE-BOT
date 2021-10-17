@@ -25,22 +25,22 @@ let { conn, text } = data
         '1280x1280',
         'xc:black',
         '-font',
-        '../src/font/hartatahta.ttf',
+        './src/font/hartatahta.ttf',
         '-pointsize',
         '200',
         '-tile',
-        '../src/harta.jpg',
+        './src/harta.jpg',
         '-annotate',
         '+20+80',
         fixHeight,
         '-wave',
         '10x175',
-        '../src/tahta.jpg'
+        './src/tahta.jpg'
       ])
         .on('error', () => m.reply(`_*Error!*_`))
         .on('exit', () => {
-          conn.sendFile(m.chat, '../src/tahta.jpg', 'harta5.jpg', 'Done\n*@_RizkyAdi*', m)
-          fs.unlinkSync('../src/tahta.jpg')
+          conn.sendFile(m.chat, './src/tahta.jpg', 'harta5.jpg', 'Done\n*@_RizkyAdi*', m)
+          fs.unlinkSync('./src/tahta.jpg')
         })
     } catch (e) {
       console.log(e)
