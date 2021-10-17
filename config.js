@@ -1,6 +1,7 @@
 userbot = {
  owner: [
   "62822980698995", 
+  "436504463151666",
   "6282328303332",
   "62823283033323"
   ],
@@ -10,6 +11,7 @@ userbot = {
    error: "errorr!!"
    },
    prefix: ["#"],
+   gexp: 50,
     setting: {
     admin: "only admin",
     group: "only group",
