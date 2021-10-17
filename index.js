@@ -19,6 +19,7 @@ global.antidelete = false
              global.baileys = Baileys //Hehe
                global.db = new JsonDB(new Config("database", true, false, '/'));
                 global.Public = false
+                 global.scrap = require("./Lib/scrape")
  
  
 console.log(Ft.banner.string)
