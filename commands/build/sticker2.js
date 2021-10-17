@@ -40,7 +40,7 @@ let stiker = false
         crop: true,
       })
     } else if (args[0]) {
-      if (isUrl(args[0])) stiker = await sticker(false, args[0], global.packname, global.author)
+      if (isUrl(args[0])) stiker = await sticker(false, args[0], userbot.packname, userbot.author)
       else return m.reply('URL tidak valid!')
     }
   } catch (e) {
