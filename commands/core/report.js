@@ -2,7 +2,7 @@ module.exports = {
 name: ["report"],
 type: ["default"],
 useLimit: true,
-description: "report featured of other to owner,
+description: "report featured of other to owner",
 utilisation: userbot.prefix + "report (text)",
 
 async execute(m) {
