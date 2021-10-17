@@ -5,8 +5,8 @@ module.exports = {
 name: "autolevelup",  
 async functions(m) { 
 
-let user = db.user[m.sender]
-        let users = Object.entries(db.user).map(([key, value]) => {
+let user = global.db.user[m.sender]
+        let users = Object.entries(global.db.user).map(([key, value]) => {
                 return { ...value, jid: key }
         })
         let pp = './src/avatar_contact.png'
