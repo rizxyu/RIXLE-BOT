@@ -1,6 +1,6 @@
-const { MessageType } = require("@adiwajshing/baileys");
-const { createSticker, StickerTypes } = require("wa-sticker-formatter");
-let axios = require("axios");
+const { MessageType } = require("@adiwajshing/baileys")
+const { createSticker, StickerTypes } = require("wa-sticker-formatter")
+let axios = require("axios")
 
 module.exports = {
 
@@ -15,7 +15,7 @@ async execute(m) {
  let { conn } = data
 
 	let res = await axios.get("https://no-api-key.com/api/v2/coin-flip")
-	)
+	
 	//if (res.status !== 200) throw await `${res.status} ${res.statusText}`;
 	const sticker = await createSticker(res.data.gif, {
 		type: StickerTypes.FULL,
