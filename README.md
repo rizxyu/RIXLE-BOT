@@ -24,17 +24,16 @@
 
 
 # For Windows Or RDP
-* Unduh & Instal Git [`Klik Disini`](https://git-scm.com/downloads)
-* Unduh & Instal NodeJS [`Klik Disini`](https://nodejs.org/en/download)
-* Unduh & Instal FFmpeg [`Klik Disini`](https://ffmpeg.org/download.html) (**Jangan Lupa Tambahkan FFmpeg ke variabel lingkungan PATH**)
-* Unduh & Instal ImageMagick [`Klik Disini`](https://imagemagick.org/script/download.php)
+* Instal Git [`Click Here`](https://git-scm.com/downloads)
+* Instal NodeJS [`Click Here`](https://nodejs.org/en/download)
+* Instal FFmpeg [`Click Here`](https://ffmpeg.org/download.html) (**Jangan Lupa Tambahkan FFmpeg ke variabel lingkungan PATH**)
+* Instal ImageMagick [`Click Here`](https://imagemagick.org/script/download.php)
 
 ```bash
 git clone https://github.com/Rizxyu/RIXLE-BOT
 cd RIXLE-BOT
 npm i
-npm update
-node index
+node index or npm start
 ```
 
 # DONATE
