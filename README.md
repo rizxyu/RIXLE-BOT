@@ -1,5 +1,5 @@
 <p align="center">
-	<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSa1pVfdb1zUoSve4Unc08jl5BpCHwfys8qxA&usqp=CAU" width="60%" style="margin-left: auto;margin-right: auto;display: block;">
+	<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSa1pVfdb1zUoSve4Unc08jl5BpCHwfys8qxA&usqp=CAU" width="75%" style="margin-left: auto;margin-right: auto;display: block;">
 </p>
 <p align="center">
 <a href="#"><img title="RIXLE - BOT" src="https://img.shields.io/badge/RixleBot-green?colorA=%23ff0000&colorB=%23017e40&style=for-the-badge"></a>
