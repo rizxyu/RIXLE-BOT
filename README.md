@@ -2,10 +2,10 @@
 	<img src="https://user-images.githubusercontent.com/88314302/137311655-458f7977-f677-4b4e-9247-9fb539f4b579.jpeg" width="35%" style="margin-left: auto;margin-right: auto;display: block;">
 </p>
 <p align="center">
-<a href="#"><img title="RIXLE - BOT" src="https://img.shields.io/badge/ RIXLE BOT-green?colorA=%23ff0000&colorB=%23017e40&style=for-the-badge"></a>
+<a href="#"><img title="RIXLE - BOT" src="https://img.shields.io/badge/ SELFBOT-green?colorA=%23ff0000&colorB=%23017e40&style=for-the-badge"></a>
 </p>
 <p align="center">
-<a href="https://github.com/Rizxyu"><img title="Fauzan" src="https://img.shields.io/badge/Author-FEAR TEAM-red.svg?style=for-the-badge&logo=github"></a>
+<a href="https://github.com/Rizxyu"><img title="Fauzan" src="https://img.shields.io/badge/Author-Ivan MLN-red.svg?style=for-the-badge&logo=github"></a>
 </p>
 <p align="center">
 </p>
@@ -26,7 +26,7 @@
 # For Windows Or RDP
 * Instal Git [`Click Here`](https://git-scm.com/downloads)
 * Instal NodeJS [`Click Here`](https://nodejs.org/en/download)
-* Instal FFmpeg [`Click Here`](https://ffmpeg.org/download.html) (**Jangan Lupa Tambahkan FFmpeg ke variabel lingkungan PATH**)
+* Instal FFmpeg [`Click Here`](https://ffmpeg.org/download.html)
 * Instal ImageMagick [`Click Here`](https://imagemagick.org/script/download.php)
 
 ```bash
@@ -35,10 +35,9 @@ cd RIXLE-BOT
 npm i
 node index or npm start
 ```
+# My Team [`Fear Team`](https://chat.whatsapp.com/GVwpKf83s42D1CnIfDW19G)
+* Fauzan (dev)
+* Ivanzz (dev)
+* Sanz (contributor)
+* Rizky (contributor)
 
-# DONATE
-# TEAM
-* FAUZAN (PENULIS ULANG)
-* NURUTOMO
-* RIZXYU (PENGEMBANG)
-* SANZ (PENGEMBANG)
