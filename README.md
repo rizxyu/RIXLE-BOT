@@ -72,7 +72,7 @@ userbot = {
 | ytv|✅|
 | tiktok |✅|
 
-| MUSIC |🎵|
+| islami |🕌|
 | ------------- | ------------- |
 | Surah <ayat> | ✅|
 
