@@ -8,7 +8,7 @@ utilisation: userbot.prefix+"ghstalk",
 async execute(m){
 let { conn, text } = data
 if (!text) return m.reply("Username?")
-try {
+
 const { login, id, avatar_url, url, html_url, followers_url, following_url, subscriptions_url, repos_url, type, site_admin, location, email, bio, public_repos, public_gists, following, followers, created_at, updated_at } = await ghstalk.ghstalk(text)
 conn.sendFile(m.chat, avatar_url, null,`*GITHUB STALK*\n
 username: ${login}
@@ -25,10 +25,6 @@ followers: ${followers}
 following: ${following}
 create: ${created_at}
 update: ${updated_at}
-`,m) //add sendiri cape gw ajg
-} catch (e) {
-console.log(e)
-m.reply("Username tidak ditemukan")
-}
+`,m)
 }
 }
