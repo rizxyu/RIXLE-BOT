@@ -27,7 +27,8 @@ create: ${created_at}
 update: ${updated_at}
 `,m) //add sendiri cape gw ajg
 } catch (e) {
- m.reply(e)
+console.log(e)
+m.reply("Username tidak ditemukan")
 }
 }
 }
