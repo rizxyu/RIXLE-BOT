@@ -81,9 +81,9 @@ return "├ " + userbot.prefix + menu.help
 after
 ].join("\n└────────────\n\n")
 
-text += `\n\n`
-text += ``
-conn.sendButtonLoc(m.chat, await (await fetch('https://www6.flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=star-wars-logo&doScale=true&scaleWidth=850&scaleHeight=400&fontsize=90&fillTextType=1&text=List%20Menu')).buffer(), text, `@_Rizxyu`, `👑CREATOR`, `creator`, m)
+text += `\nGithub:\nhttps://github.com/Rizxyu/RIXLE-BOT`
+
+conn.send2ButtonLoc(m.chat, await (await fetch('https://www6.flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=star-wars-logo&doScale=true&scaleWidth=850&scaleHeight=400&fontsize=90&fillTextType=1&text=List%20Menu')).buffer(), text, `@_Rizxyu`, `👑CREATOR`, `creator`, `🗒️Faq`, `rules`, m)
 }
 }
 
