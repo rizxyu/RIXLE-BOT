@@ -1911,3 +1911,4 @@ module.exports.moddroid = moddroid
 module.exports.pinterest = pinterest
 module.exports.palingmurah = palingmurah
 module.exports.joox = joox
+module.exports.uguu = uguu
