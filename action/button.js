@@ -10,15 +10,15 @@ let { conn } = data
 try {
 switch (button.split(" ")[0].toLowerCase()) {
    case 'estetik':
-res = await fetch('https://raw.githubusercontent.com/Rizxyu/FEATURE-BOT/main/random/Estetik.json')
-dot = await res.json()
+let res = await fetch('https://raw.githubusercontent.com/Rizxyu/FEATURE-BOT/main/random/Estetik.json')
+let dot = await res.json()
 json = dot[Math.floor(Math.random() * dot.length)]
 conn.sendButImg(m.chat, await (await fetch(json)).buffer(), `${json.teks}`, 'Rixle Bot', 'LAIN', 'estetik', m)
 break;
 
    case 'cecan':
-dot = await res.json()
-json = dot[Math.floor(Math.random() * dot.length)]
+let dot = await res.json()
+let json = dot[Math.floor(Math.random() * dot.length)]
 conn.sendButImg(m.chat, await ( await fetch(json)).buffer(), 'NIH FOTO CECAN', userbot.packname, 'Next', 'cecan', m)
 break;
 
