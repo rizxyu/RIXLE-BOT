@@ -19,6 +19,6 @@ let res = await fetch('https://github.com/Rizxyu/FEATURE-BOT/raw/main/random/cec
 let dot = await res.json()
     let json = dot[Math.floor(Math.random() * dot.length)]
  //let cp = `${json.url}`
-conn.sendFile(m.chat, json.url, 'p.jpg', 'done', m)
+conn.sendFile(m.chat, json, 'p.jpg', 'NIH FOTO CECAN', m)
    }
 }
