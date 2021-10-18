@@ -16,7 +16,7 @@ if (!text) return m.reply('Cari apa?')
   let results = await gis(text) || []
   let { url, width, height } = pickRandom(results) || {}
   if (!url) throw '404 Not Found'
-  conn.sendFile(m.chat, url, 'gimage', `
+  conn.sendFile(m.chat, url, 'gimage.jpg', `
 *── 「 GOOGLE IMAGE 」 ──*
 
 ${text}
