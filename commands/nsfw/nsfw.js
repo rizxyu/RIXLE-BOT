@@ -3,12 +3,12 @@ const fetch = require('node-fetch')
 
 module.exports = {
 
-name: ["waifu"],
+name: ["waifusfw"],
 
 type: ["nsfw"],
 useLimit: true,
 description: "download video facebook",
-utilisation: userbot.prefix + "waifu",
+utilisation: userbot.prefix + "waifusfw",
 
 async execute(m) {
 let { conn, args } = data
