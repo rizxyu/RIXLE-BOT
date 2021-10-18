@@ -2,14 +2,27 @@ const { MessageType }= require('@adiwajshing/baileys'),
       { contactsArray } = MessageType,
       fs = Ft.fs,
       { servers, yta, ytv } = require("../Lib/y2mate.js")
-
+      fetch = require('node-fetch')
 module.exports = {
 async execute(m, {button, args, text }) {
 let { conn } = data
 
 try {
 switch (button.split(" ")[0].toLowerCase()) {
-case "rules":
+   case 'estetik':
+res = await fetch('https://raw.githubusercontent.com/Rizxyu/FEATURE-BOT/main/random/Estetik.json')
+dot = await res.json()
+json = dot[Math.floor(Math.random() * dot.length)]
+conn.sendButImg(m.chat, await (await fetch(json)).buffer(), `${json.teks}`, 'Rixle Bot', 'LAIN', 'estetik', m)
+break;
+
+   case 'cecan':
+dot = await res.json()
+json = dot[Math.floor(Math.random() * dot.length)]
+conn.sendButImg(m.chat, await ( await fetch(json)).buffer(), 'NIH FOTO CECAN', userbot.packname, 'Next', 'cecan', m)
+break;
+
+   case "rules":
 capt = `
 Terima kasih telah menggunakan bot kami😄
 Kami harap anda senang karena telah menggunakan bot ini😗
@@ -24,7 +37,8 @@ wa.me/6282328303332
 `
 m.reply(capt)
 break;
-case "audio":
+
+   case "audio":
   try {
 let yt = false
 let usedServer = servers[0]
@@ -44,7 +58,8 @@ conn.sendFile(m.chat,yt.dl_link,"m.mp3",null,m)
 throw e
 }
 break;
-case "video":
+
+   case "video":
   try {
 let yt = false
 let usedServer = servers[0]
@@ -64,7 +79,8 @@ conn.sendFile(m.chat,yt.dl_link,"m.mp3",null,m)
 throw e
 }
 break;
-case "creator":
+
+   case "creator":
 conarray = []
 ownerContact = ['6282328303332', '62822980698995','6285783417029','62823283033323','6285640020165','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0']
   for (let i of ownerContact.map(v => v + '@s.whatsapp.net')) {
