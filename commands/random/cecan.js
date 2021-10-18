@@ -1,24 +1,13 @@
-const fs = Ft.fs
-const fetch = require("node-fetch")
+let scrap = require("../../Lib/scrape")
 
 module.exports = {
-
 name: ["cecan"],
-
 type: ["random"],
-useLimit: true,
-description: "cecan foto",
+description: "random image cecan",
 utilisation: userbot.prefix + "cecan",
 
-async execute(m) {
- let { conn, text } = data
-
-let res = await fetch('https://github.com/Rizxyu/FEATURE-BOT/raw/main/random/cecan.json')
-
-
-let dot = await res.json()
-    let json = dot[Math.floor(Math.random() * dot.length)]
- //let cp = `${json.url}`
-conn.sendButImg(m.chat, await ( await fetch(json)).buffer(), 'NIH FOTO CECAN', userbot.packname, 'Next', 'cecan', m)
+async execute(m){
+let { conn } = data
+ scrap.pinterest("cecan").then(a => a[Math.floor(Math.random() * a.length)]).then(b => conn.sendFile(m.chat,b,b,"Done",m))
    }
 }
