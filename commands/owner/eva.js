@@ -1,28 +1,33 @@
-let util = Ft.util
+let syntaxerror = require('syntax-error')
+let util = require('util')
 module.exports = {
 name: [">"],
-custom:true,
+custom: true,
 owner:true,
 description: "nih eval buat owner doang",
 utilisation: userbot.prefix + "eva code",
 type: ["owner"],
-execute(m) {
-let message = m.text
-let { conn } = data
-var konsol = message.slice(5)
-Return = (sul) => {
-var sat = JSON.stringify(sul, null, 2)
-bang = format(sat)
-if (sat == undefined){
-bang = util.format(sul)
-}
-return m.reply(bang)
-}
+async execute(m){
+var _q = m.text.slice(2)
+var _return
+var _syntax = ""
+var { conn, args } = data
 try {
-m.reply(util.format(eval(`;(async () => { ${konsol} })()`)))
-console.log('[', Ft.color('EVAL', 'silver'),']', Ft.color(Ft.moment(m.messageTimestamp * 1000).format('DD/MM HH:mm:ss'), 'yellow'), Ft.color(message))
-} catch(e) {
-  m.reply(String(e))
+let exec = new (async () => {}).constructor('print', 'm', 'require', 'conn', 'Array', 'process', 'args', 'module', 'exports', 'argument', _q)
+_return = await exec.call(conn, (...args) => {
+  if (--i < 1) return
+  console.log(...args)
+  return conn.reply(m.chat, util.format(...args), m)
+}, m, require, conn, process, args, [conn, data])
+} catch (e) {
+  let err = await syntaxerror(_q, 'Execution Function', {
+  allowReturnOutsideFunction: true,
+  allowAwaitOutsideFunction: true
+})
+if (err) _syntax = '```' + err + '```\n\n'
+_return = e
+} finally {
+m.reply(_syntax+util.format(_return))
 }
 }
 }
