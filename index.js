@@ -20,23 +20,6 @@ global.antidelete = false
                global.db = new JsonDB(new Config("database", true, false, '/'));
                 global.Public = false
                  global.scrap = require("./Lib/scrape")
-//*biar g eror
-  let [ffmpeg, ffprobe, ffmpegWebp, convert, magick, gm] = test
-  let s = global.support = {
-    ffmpeg,
-    ffprobe,
-    ffmpegWebp,
-    convert,
-    magick,
-    gm
-  }
-  require('./Lib/sticker').support = s
-  Object.freeze(global.support)
-
-  if (!s.ffmpeg) conn.logger.warn('Silakan instal ffmpeg untuk mengirim video (pkg install ffmpeg)')
-  if (s.ffmpeg && !s.ffmpegWebp) conn.logger.warn('Stiker tidak bisa dianimasikan tanpa libwebp di ffmpeg (--enable-ibwebp while compiling ffmpeg)')
-  if (!s.convert && !s.magick && !s.gm) conn.logger.warn('Stiker mungkin tidak berfungsi tanpa imagemagick jika libwebp di ffmpeg tidak diinstal (pkg install imagemagick)')
-}
  
 console.log(Ft.banner.string)
 conn.version = [2, 2119, 6]
