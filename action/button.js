@@ -12,14 +12,15 @@ switch (button.split(" ")[0].toLowerCase()) {
    case 'estetik':
 let res = await fetch('https://raw.githubusercontent.com/Rizxyu/FEATURE-BOT/main/random/Estetik.json')
 let dot = await res.json()
-json = dot[Math.floor(Math.random() * dot.length)]
+let json = dot[Math.floor(Math.random() * dot.length)]
 conn.sendButImg(m.chat, await (await fetch(json)).buffer(), `${json.teks}`, 'Rixle Bot', 'LAIN', 'estetik', m)
 break;
 
    case 'cecan':
-let dot = await res.json()
-let json = dot[Math.floor(Math.random() * dot.length)]
-conn.sendButImg(m.chat, await ( await fetch(json)).buffer(), 'NIH FOTO CECAN', userbot.packname, 'Next', 'cecan', m)
+let knjt = await fetch('https://raw.githubusercontent.com/Rizxyu/FEATURE-BOT/main/random/cecan.json')
+let dit = await knjt.json()
+let jsn = dit[Math.floor(Math.random() * dit.length)]
+conn.sendButImg(m.chat, await ( await fetch(jsn)).buffer(), 'NIH FOTO CECAN', userbot.packname, 'Next', 'cecan', m)
 break;
 
    case "rules":
