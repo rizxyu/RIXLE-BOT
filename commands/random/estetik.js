@@ -18,6 +18,6 @@ let res = await fetch('https://raw.githubusercontent.com/Rizxyu/FEATURE-BOT/main
 let dot = await res.json()
     let json = dot[Math.floor(Math.random() * dot.length)]
 conn.sendButImg(m.chat, await (await fetch(json)).buffer(), `${json.teks}`, 'Rixle Bot', 'LAIN', 'estetik', m)
-
+//&6
 }
 }
