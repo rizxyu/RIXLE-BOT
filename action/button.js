@@ -28,15 +28,24 @@ capt = `
 Terima kasih telah menggunakan bot kami😄
 Kami harap anda senang karena telah menggunakan bot ini😗
 
-Rules menggunakan bot:
+*Rules menggunakan bot:*
 ❌ Jangan telpon atau vc bot
 ❌ Jangan bandingkan bot lain
 ❌ No spam command
 
-Mau source bot?
-wa.me/6282328303332
+*Ada masalah dengan bot?*
+Hubungi owner atau ${userbot.prefix}report alasan
+@6282328303332
+
+*Thx To :*
+- Allah SWT
+- Orang Tua
+-adiwajshing
+- @0
+- Fear Team
+- allcreator bot
 `
-m.reply(capt)
+conn.sendButton(m.chat, capt, userbot.packname, 'OK', 'OK', { quoted: m, contextInfo: {"mentionedJid": conn.parseMention(capt)}} )
 break;
 
    case "audio":
