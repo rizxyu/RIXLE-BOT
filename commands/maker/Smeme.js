@@ -19,7 +19,7 @@ let [atas, bawah] = text.split`|`
     let url = await uploadImage(img)
     meme = `https://api.memegen.link/images/custom/${encodeURIComponent(atas ? atas : '_')}/${encodeURIComponent(bawah ? bawah : '_')}.png?background=${url}`
     //stiker = await sticker(false, meme )
-    if (stiker) await conn.sendMessage(m.chat, meme, MessageType.sticker, {
+    conn.sendMessage(m.chat, meme, MessageType.sticker, {
         quoted: m
     })
 }
