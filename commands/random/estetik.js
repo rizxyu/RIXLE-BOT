@@ -1,23 +1,13 @@
-const fs = Ft.fs
-const fetch = require("node-fetch")
+let scrap = require("../../Lib/scrape")
 
 module.exports = {
-
-name: ["estetik"],
-
+name: ["aesthetic"],
 type: ["random"],
-useLimit: true,
-description: "aesthetic foto",
-utilisation: userbot.prefix + "estetik",
+description: "random image aesthetic",
+utilisation: userbot.prefix + "aesthetic",
 
-async execute(m) {
- let { conn, text } = data
-
-let res = await fetch('https://raw.githubusercontent.com/Rizxyu/FEATURE-BOT/main/random/Estetik.json')
-
-let dot = await res.json()
-    let json = dot[Math.floor(Math.random() * dot.length)]
-conn.sendButImg(m.chat, await (await fetch(json)).buffer(), `${json.teks}`, 'Rixle Bot', 'LAIN', 'estetik', m)
-//&6
-}
+async execute(m){
+let { conn } = data
+ scrap.pinterest("aesthetic").then(a => a[Math.floor(Math.random() * a.length)]).then(b => conn.sendFile(m.chat,b,b,"apakah foto ini aesthetic?",m))
+   }
 }
