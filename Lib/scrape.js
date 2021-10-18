@@ -1847,6 +1847,32 @@ function joox(query) {
     })
 }
 
+var uguu = async(path) => {
+return new Promise(async(resolve,reject)=>{
+var BodyForm = new formData()
+BodyForm.append('files[]', fs.createReadStream(path));
+axios({
+url: "https://uguu.se/upload.php",
+method: "POST",
+data: BodyForm,
+headers: {
+  accept: '*/*',
+  "accept-language": 'en-US,en;q=0.9,id;q=0.8',
+  ...BodyForm.getHeaders()
+}
+}).then(({data}) => {
+  var result = {
+    status: data.success ? 200 : 404,
+    name: data.files[0].name,
+    hash: data.files[0].hash,
+    size: data.files[0].size,
+    url: data.files[0].url
+  }
+  resolve(result)
+}).catch(reject)
+})
+}
+
 module.exports.Searchnabi = Searchnabi
 module.exports.tiktok = tiktok
 module.exports.tiktokmusic = tiktokmusic
