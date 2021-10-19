@@ -1,5 +1,5 @@
 const fs = Ft.fs
-const dl = require("../../Lib/scrape.js").tiktokmusic
+const dl = require("../../Lib/scrape.js")
 
 module.exports = {
 name: ["ttmusic"],
@@ -11,7 +11,7 @@ async execute(m) {
 let { conn, args } = data
 if (!args[0]) return m.reply('where url?')
 
-let p = await dl.tiktokmusic(args[0])
-conn.sendFile(m.chat, p.meta.music.playUrl, "u.mp3", null, m)
+let { meta } = await dl.tiktokmusic(args[0])
+conn.sendFile(m.chat, meta.music.playUrl, "u.mp3", null, m)
 }
 }
