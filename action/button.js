@@ -48,17 +48,22 @@ const rawwr = Object.keys(global.Events)
 
 const menu = {
 
-before: `┌────⌈ *${me}* ⌋
-*├ Name:* ${name}
-*├ Runtime:* ${count(uptime)}
-*├ Uptime:* ${count(os.uptime())}
-*├ Hostname:* ${os.hostname()}
-*├ clock:* ${time}
-*├ calender islam:* ${dateIslamic}
-*├ calender Java:* ${week} ${weton} ${date}
-*├ Total Fitur:* *${Object.keys(Events).length}* fitur
-*├ Github:*\nhttps://github.com/Rizxyu/RIXLE-BOT`.trimStart(),
-type: "┌────⌈ *#type* ⌋",
+before: `*${me}*
+*Name:* ${name}
+
+*Ｓｔａｔｕｓ Ｂｏｔ:*
+*Runtime:* ${count(uptime)}
+*Uptime:* ${count(os.uptime())}
+*Hostname:* ${os.hostname()}
+*Total Fitur:* *${Object.keys(Events).length}* fitur
+
+*ｓｔａｔｕｓ ｎｏｗ:*
+*clock:* ${time}
+*calender islam:* ${dateIslamic}
+*calender Java:* ${week} ${weton} ${date}
+
+*Github:*\nhttps://github.com/Rizxyu/RIXLE-BOT`.trimStart(),
+type: "*#type*",
 after: "\n"
 }
 
@@ -81,13 +86,13 @@ before,
 ...Object.keys(tags).map(v => {
 return type.replace(/#type/g, tags[v]) + ("\n") + [
 ...raw.filter(menu => menu.type && menu.type.includes(v) && menu.help).map(menu => {
-return "├ " + userbot.prefix + menu.help
+return "*°* " + userbot.prefix + menu.help
 })].join("\n")
 }),
 after
-].join("\n└────────────\n")
+].join("")
 
-conn.send2ButtonLoc(m.chat, await (await fetch('https://www6.flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=star-wars-logo&doScale=true&scaleWidth=850&scaleHeight=400&fontsize=90&fillTextType=1&text=List%20Menu')).buffer(), text, `@_Rizxyu`, `👑CREATOR`, `creator`, `🗒️Faq`, `rules`, m)
+conn.send2ButtonLoc(m.chat, await (await fetch('https://www6.flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=star-wars-logo&doScale=true&scaleWidth=850&scaleHeight=400&fontsize=90&fillTextType=1&text=Menu')).buffer(), text, `@_Rizxyu`, `Creator`, `creator`, `Faq`, `rules`, m)
 break;
 
    case "rules":
