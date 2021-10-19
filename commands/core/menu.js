@@ -38,23 +38,37 @@ let d = new Date(new Date + 3600000)
       second: 'numeric'
     })
     let name = conn.getName(m.sender)
+    let groups = conn.chats.array.filter(v => v.jid.endsWith('g.us'))
+    let privat = conn.chats.array.filter(v => v.jid.endsWith('s.whatsapp.net'))
+    let ram2 = `${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${Math.round(require('os').totalmem / 1024 / 1024)}MB`
     uptime = process.uptime();
     timestamp = speed();
-    let me = conn.user.me
+    totalChat = await conn.chats.all()
+    latensi = speed() - timestamp
+    let total = Math.floor(`${groups.length}*${privat.length}`)
+
+    let me = conn.user.name
 let capt = `
 *${me}*
 
 HELLO ${name} ${ucapan()}
 
-* Ｂｏｔ ｓｔａｔｕｓ:*
+*Ｂｏｔ ｓｔａｔｕｓ:*
 *Runtime:* ${count(uptime)}
-*Speed:* ${count(timestamp)}
+*Speed:* ${latensi.toFixed(4)} ms
 *Host:* ${os.hostname()}
 *Total Feature:* ${Object.keys(Events).length}
+*Group Chats:* ${groups.length}
+*Private Chats :* ${privat.length}
+*Ram:* ${ram2}
+*Device:* ${os.platform()}\n
 
-* Ｓｔａｔｕｓ ｏｔｈｅｒ:*
+*Ｓｔａｔｕｓ ｏｔｈｅｒ:*
 *Islam Calender:* ${dateIslamic}
 *calender:* ${week} ${weton} ${date}
+
+*Found Bug?*
+${userbot.prefix}report text
 `
 
 m.reply('Getting data to view Menu')
