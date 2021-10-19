@@ -78,7 +78,7 @@ userbot = {
 
 # 👥My Team [`Fear Team`](https://chat.whatsapp.com/GVwpKf83s42D1CnIfDW19G)
 * Fauzan (dev)
-* Ivanzz (contributor)
+* Ivanzz (dev)
 * Sanz (contributor)
 * Rizky (contributor)
 
