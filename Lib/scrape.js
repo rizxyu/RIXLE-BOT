@@ -1873,6 +1873,20 @@ headers: {
 })
 }
 
+function artiNama(nama){
+  return new Promise(async(resolve,reject)=>{
+axios({
+  url: 'http://www.primbon.com/arti_nama.php?nama1='+nama+'&proses=+Submit%21+',
+  headers: {'content-type' : 'application/x-www-form-urlencoded'}
+}).then(({ data }) => {
+  var a = data.split('arti:')[1]
+  resolve({
+  arti: a.replace(a.split('method="get">')[1]," ").replace(/<br\s*[\/]?>/gi, "\n").replace(/<[^>]*>?/gm, '')
+})
+}).catch(reject)
+})
+}
+
 module.exports.Searchnabi = Searchnabi
 module.exports.tiktok = tiktok
 module.exports.tiktokmusic = tiktokmusic
@@ -1912,3 +1926,4 @@ module.exports.pinterest = pinterest
 module.exports.palingmurah = palingmurah
 module.exports.joox = joox
 module.exports.uguu = uguu
+module.exports.artinama = artiNama
