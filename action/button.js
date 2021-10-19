@@ -90,7 +90,7 @@ return "*°* " + userbot.prefix + menu.help
 })].join("\n")
 }),
 after
-].join("\n")
+].join("\n\n")
 
 conn.send2ButtonLoc(m.chat, await (await fetch('https://www6.flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=star-wars-logo&doScale=true&scaleWidth=850&scaleHeight=400&fontsize=90&fillTextType=1&text=Menu')).buffer(), text, `@_Rizxyu`, `Creator`, `creator`, `Faq`, `rules`, m)
 break;
