@@ -1,5 +1,7 @@
 const fs = Ft.fs
-const ytv = require("../../Lib/scrape.js").ytv
+let fetch = require('node-fetch')
+const { servers, ytv } = require('../../Lib/y2mate')
+let limit = 30
 
 module.exports = {
 name: ["ytmp4"],
@@ -11,7 +13,17 @@ async execute(m) {
 let { conn, args } = data
 if (!args[0]) return m.reply("url nya om?")
 if (!args[0].includes("youtu")) return m.reply("url nya salah om")
-download = await ytv([args[0]])
-conn.sendFile(m.chat, download[0].video, "", null, m)
+
+let server = (args[1] || servers[0]).toLowerCase()
+
+try {
+    let { dl_link, thumb, title, filesize, filesizeF } = await ytv(args[0], servers.includes(server) ? server : servers[0])
+let isLimit = (limit) * 1024 < filesize
+    m.reply(isLimit ? `Ukuran File: ${filesizeF}\nUkuran file diatas ${limit} MB, download sendiri: ${dl_link}` : userbot.prefix.mess.wait )
+
+await conn.sendFile(m.chat, dl_link, title + ".mp4", null, m)
+  } catch (e) {
+    return await m.reply('Server Eror')
+  }
 }
 }
