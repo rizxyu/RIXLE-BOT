@@ -48,10 +48,9 @@ let d = new Date(new Date + 3600000)
     let total = Math.floor(`${groups.length}*${privat.length}`)
 
     let me = conn.user.name
-let capt = `
-*${me}*
+let capt = `*${me}*
 
-HELLO ${name} ${ucapan()}
+Hello ${name} ${ucapan()}
 
 *Ｂｏｔ ｓｔａｔｕｓ:*
 *Runtime:* ${count(uptime)}
@@ -61,7 +60,8 @@ HELLO ${name} ${ucapan()}
 *Group Chats:* ${groups.length}
 *Private Chats :* ${privat.length}
 *Ram:* ${ram2}
-*Device:* ${os.platform()}\n
+*Device:* ${os.platform()}
+*Battery:* ${conn.battery != undefined ? `${conn.battery.value}% ${conn.battery.live ? '🔌 Ｃｈａｒｇｉｎｇ' : ''}` : 'Not Charged'}
 
 *Ｓｔａｔｕｓ ｏｔｈｅｒ:*
 *Islam Calender:* ${dateIslamic}
@@ -69,10 +69,11 @@ HELLO ${name} ${ucapan()}
 
 *Found Bug?*
 ${userbot.prefix}report text
-`
+
+*Click the menu button below*`
 
 m.reply('Getting data to view Menu')
-conn.send2ButtonLoc( m.chat, await ( await fetch('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTE7EnNkFf8-jer8k6eT_gd9butzTdl-s91uPaEhL-ggw3-h8T90x-h8Z66&s=10')).buffer(), capt, userbot.packname, `LIST MENU`, `menu`, `Rules`, `rules`, m)
+conn.send2ButtonLoc( m.chat, await ( await fetch('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTE7EnNkFf8-jer8k6eT_gd9butzTdl-s91uPaEhL-ggw3-h8T90x-h8Z66&s=10')).buffer(), capt, userbot.packname, `Menu`, `menu`, `Rules`, `rules`, m)
 
 }
 }
@@ -107,13 +108,13 @@ function ucapan() {
     res = "Good Morning🌄"
   }
   if (time > 10) {
-    res = "Selamat siang"
+    res = "good afternoon"
   }
   if (time >= 15) {
-    res = "Selamat sore"
+    res = "good afternoon"
   }
   if (time >= 18) {
-    res = "Selamat malam"
+    res = "good evening"
   }
   return res
 }
