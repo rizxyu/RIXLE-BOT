@@ -20,8 +20,13 @@ try {
     let { dl_link, thumb, title, filesize, filesizeF } = await ytv(args[0], servers.includes(server) ? server : servers[0])
 let isLimit = (limit) * 1024 < filesize
     m.reply(isLimit ? `Ukuran File: ${filesizeF}\nUkuran file diatas ${limit} MB, download sendiri: ${dl_link}` : userbot.prefix.mess.wait )
+await conn.sendButtonLoc(m.chat, await (await fetch(thumb)).buffer(), `
+*ＹＴＭＰ4 Ｄｏｗｎｌｏａｄ*
+*title:* ${title}
+*Size:* ${filesizeF}
+`, userbot.packname, 'Menu', 'menu', m)
+if (!isLimit) conn.sendFile(m.chat, dl_link, title + ".mp4", null, m)
 
-await conn.sendFile(m.chat, dl_link, title + ".mp4", null, m)
   } catch (e) {
     return await m.reply('Server Eror')
   }
