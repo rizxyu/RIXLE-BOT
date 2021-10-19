@@ -61,7 +61,7 @@ Hello ${name} ${ucapan()}
 *Private Chats :* ${privat.length}
 *Ram:* ${ram2}
 *Device:* ${os.platform()}
-*Battery:* ${conn.battery != undefined ? `${conn.battery.value}% ${conn.battery.live ? '🔌 Ｃｈａｒｇｉｎｇ' : ''}` : 'Not Charged'}
+*Battery:* ${conn.battery != undefined ? `${conn.battery.value}% ${conn.battery.live ? '🔌 Ｃｈａｒｇｉｎｇ' : '⚡ Discharging' }` : 'Not detected'}
 
 *Ｓｔａｔｕｓ ｏｔｈｅｒ:*
 *Islam Calender:* ${dateIslamic}
