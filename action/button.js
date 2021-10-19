@@ -3,24 +3,91 @@ const { MessageType }= require('@adiwajshing/baileys'),
       fs = Ft.fs,
       { servers, yta, ytv } = require("../Lib/y2mate.js")
       fetch = require('node-fetch')
+      tags = {}
+      speed = global.Ft['speed']
+      os = global.Ft['os']
+
 module.exports = {
 async execute(m, {button, args, text }) {
 let { conn } = data
 
 try {
 switch (button.split(" ")[0].toLowerCase()) {
-   case 'estetik':
-let res = await fetch('https://raw.githubusercontent.com/Rizxyu/FEATURE-BOT/main/random/Estetik.json')
-let dot = await res.json()
-let json = dot[Math.floor(Math.random() * dot.length)]
-conn.sendButImg(m.chat, await (await fetch(json)).buffer(), `${json.teks}`, 'Rixle Bot', 'LAIN', 'estetik', m)
-break;
 
-   case 'cecan':
-let knjt = await fetch('https://raw.githubusercontent.com/Rizxyu/FEATURE-BOT/main/random/cecan.json')
-let dit = await knjt.json()
-let jsn = dit[Math.floor(Math.random() * dit.length)]
-conn.sendButImg(m.chat, await ( await fetch(jsn)).buffer(), 'NIH FOTO CECAN', userbot.packname, 'Next', 'cecan', m)
+   case "menu":
+const me = conn.user.name
+uptime = process.uptime();
+timestamp = speed();
+const name = conn.getName(m.sender)
+
+let d = new Date(new Date + 3600000)
+    let locale = 'id'
+    // d.getTimeZoneOffset()
+    // Offset -420 is 18.00
+    // Offset    0 is  0.00
+    // Offset  420 is  7.00
+    let weton = ['Pahing', 'Pon', 'Wage', 'Kliwon', 'Legi'][Math.floor(d / 84600000) % 5]
+    let week = d.toLocaleDateString(locale, { weekday: 'long' })
+    let date = d.toLocaleDateString(locale, {
+      day: 'numeric',
+      month: 'long',
+      year: 'numeric'
+    })
+    let dateIslamic = Intl.DateTimeFormat(locale + '-TN-u-ca-islamic', {
+      day: 'numeric',
+      month: 'long',
+      year: 'numeric'
+    }).format(d)
+    let time = d.toLocaleTimeString(locale, {
+      hour: 'numeric',
+      minute: 'numeric',
+      second: 'numeric'
+    })
+
+const rawwr = Object.keys(global.Events)
+
+const menu = {
+
+before: `┌────⌈ *${me}* ⌋
+*├ Name:* ${name}
+*├ Runtime:* ${count(uptime)}
+*├ Uptime:* ${count(os.uptime())}
+*├ Hostname:* ${os.hostname()}
+*├ clock:* ${time}
+*├ calender islam:* ${dateIslamic}
+*├ calender Java:* ${week} ${weton} ${date}
+*├ Total Fitur:* *${Object.keys(Events).length}* fitur
+*├ Github:*\nhttps://github.com/Rizxyu/RIXLE-BOT`.trimStart(),
+type: "┌────⌈ *#type* ⌋",
+after: "\n"
+}
+
+let raw = Object.values(global.Events).map(v => {
+return {
+help: Array.isArray(v.type) ? v.name : [v.name],
+type: Array.isArray(v.type) ? v.type : [v.type],
+}
+})
+for (let p of raw)
+if (p && 'type' in p)
+for (let i of p.type)
+if (!(i in tags) && i) tags[i] = i
+let before = menu.before
+let type = menu.type
+let after = menu.after
+
+text = [
+before,
+...Object.keys(tags).map(v => {
+return type.replace(/#type/g, tags[v]) + ("\n") + [
+...raw.filter(menu => menu.type && menu.type.includes(v) && menu.help).map(menu => {
+return "├ " + userbot.prefix + menu.help
+})].join("\n")
+}),
+after
+].join("\n└────────────\n")
+
+conn.send2ButtonLoc(m.chat, await (await fetch('https://www6.flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=star-wars-logo&doScale=true&scaleWidth=850&scaleHeight=400&fontsize=90&fillTextType=1&text=List%20Menu')).buffer(), text, `@_Rizxyu`, `👑CREATOR`, `creator`, `🗒️Faq`, `rules`, m)
 break;
 
    case "rules":
@@ -114,4 +181,21 @@ throw new Error(`command ${button} tidak ada :v`) //biar tau soalny kesusahan di
 console.log(e)
 }
 }
+}
+
+function random(ext) {
+return ext[Math.floor(Math.random () * ext.length)]
+}
+
+function count(seconds){
+
+if (typeof seconds !== "number") throw "connError: Unexpected Param " + typeof seconds
+
+let hours = Math.floor(seconds / (60*60));
+let minutes = Math.floor(seconds % (60*60) / 60);
+let second = Math.floor(seconds % 60);
+return `${pad(hours)} Jam ${pad(minutes)} Menit ${pad(second)} Detik`
+}
+function pad(s) {
+return (s < 10 ? '0' : '') + s;
 }
