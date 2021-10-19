@@ -36,15 +36,6 @@ let d = new Date(new Date + 3600000)
       minute: 'numeric',
       second: 'numeric'
     })
-    let _uptime = process.uptime() * 1000
-    let _muptime
-    if (process.send) {
-      process.send('uptime')
-      _muptime = await new Promise(resolve => {
-        process.once('message', resolve)
-        setTimeout(resolve, 1000)
-      }) * 1000
-    }
     let name = conn.getName(m.sender)
     uptime = process.uptime();
     timestamp = speed();
