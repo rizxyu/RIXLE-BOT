@@ -19,7 +19,7 @@ let server = (args[1] || servers[0]).toLowerCase()
 
     let { dl_link, thumb, title, filesize, filesizeF } = await ytv(args[0], servers.includes(server) ? server : servers[0])
     let isLimit = (limit) * 1024 < filesize
-    m.reply(isLimit ? `Ukuran File: ${filesizeF}\nUkuran file diatas ${limit} MB, download sendiri: ${dl_link}` : userbot.prefix.mess.wait )
+    m.reply(isLimit ? `Ukuran File: ${filesizeF}\nUkuran file diatas ${limit} MB, download sendiri: ${dl_link}` : 'Compressing Data' )
 
 conn.sendButtonLoc(m.chat, await (await fetch(thumb)).buffer(), `
 *ＹＴＭＰ4 Ｄｏｗｎｌｏａｄ*
