@@ -2,6 +2,7 @@ const fetch = require('node-fetch')
       speed = global.Ft['speed']
       os = global.Ft['os']
       fs = Ft.fs,
+      moment = require('moment-timezone')
 
 module.exports = {
 name: ["menu"],
