@@ -23,7 +23,7 @@ async execute(m) {
       .catch((_) => "https://telegra.ph/file/24fa902ead26340f3df2c.png")
   )
   const sticker = await createSticker(animatedGif, {
-    type: StickerTypes.FULL,
+    //type: StickerTypes.FULL,
     pack: userbot.packname,
     author: userbot.author,
   })
