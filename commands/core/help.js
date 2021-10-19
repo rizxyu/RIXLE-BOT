@@ -8,9 +8,9 @@ module.exports = {
 execute(m) {
 	let { args } = data
 try {
-if (!args[0]) return m.reply("command?")
+if (!args[0]) return m.reply("where command to search function")
 let { description, utilisation } = global.Events[args[0]]
-m.reply(`Description: ${description}\nUse: ${utilisation}`)
+m.reply(`🗒️Description: ${description}\n✅Use: ${utilisation}`)
 } catch {
 m.reply(`not such ("${args[0]}") command!`)   
 }
