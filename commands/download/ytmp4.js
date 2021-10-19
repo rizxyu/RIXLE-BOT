@@ -27,8 +27,8 @@ await conn.sendButtonLoc(m.chat, await (await fetch(thumb)).buffer(), `
 `, userbot.packname, 'Menu', 'menu', m)
 if (!isLimit) conn.sendFile(m.chat, dl_link, title + ".mp4", null, m)
 
-  } catch (e) {
-    return await m.reply('Server Eror')
+  } catch (err) {
+    return await m.reply(err)
   }
 }
 }
