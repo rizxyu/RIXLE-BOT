@@ -9,7 +9,7 @@ let name = conn.getName(m.sender)
 //let isBadword = badwordRegex.exec(m.text)
 
 //if (!isBadword) {
-//m.reply( name + 'Terdeteksi Menggunakan bahasa kotor, Kami hanya memberi mu warn\n@0')
+//m.reply( name + ' Terdeteksi Menggunakan bahasa kotor, Kami hanya memberi mu warn\n@0')
 //}
 //return !0
 }
