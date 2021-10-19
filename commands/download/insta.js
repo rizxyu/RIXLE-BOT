@@ -1,7 +1,7 @@
 module.exports = {
  name: ['ig'],
  type: ['download'],
- description: "untuk download ig",
+ description: "download image from ig or video",
  utilsation: '#ig link type',
  
 async execute(m) {
