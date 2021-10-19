@@ -1,5 +1,6 @@
 const fs = Ft.fs
-const ytv = require("../../Lib/scrape.js").yta
+let limit = 30
+const { servers, yta } = require('../lib/y2mate')
 
 module.exports = {
 name: ["ytmp3"],
@@ -12,7 +13,14 @@ async execute(m) {
 let { conn, args } = data
 if (!args[0]) return m.reply("url nya om?")
 if (!args[0].includes("youtu")) return m.reply("url nya salah om")
-download = await ytv([args[0]])
-conn.sendFile(m.chat, download[0].audio, "", null, m)
+let server = (args[1] || servers[0]).toLowerCase()
+  let { dl_link, thumb, title, filesize, filesizeF } = await yta(args[0], servers.includes(server) ? server : servers[0])
+  let isLimit = (limit) * 1024 < filesize  
+  m.reply(isLimit ? `Ukuran File: ${filesizeF}\nUkuran file diatas ${limit} MB, download sendiri: ${dl_link}` : 'compressing...')
+  conn.sendButtonLoc(m.chat, await (await fetch (thumb)).buffer(), `
+  *ＹＴＭＰ3 ＹＯＵＴＵＢＥ*
+  *Title:* ${title}
+  *Size:* ${filesizeF}`, userbot.packname, 'Menu', 'menu', m)
+  if (!isLimit) conn.sendFile(m.chat, dl_link, title + ".mp3", null, m)
 }
 }
