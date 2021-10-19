@@ -318,7 +318,7 @@ let hasil = []
 let link = cher('a#downloadButton').attr('href')
 let size = cher('a#downloadButton').text().replace('Download', '').replace('(', '').replace(')', '').replace('\n', '').replace('\n', '').replace(' ', '')
 let seplit = link.split('/')
-let aurhor = 'Ivanzz'
+let aurhor = 'Rizky.A'
 let nama = seplit[5]
 let mime = nama.split('.')
 mime = mime[1]
@@ -1323,7 +1323,6 @@ console.log(results)
 });
 });
 };
-
 //Gempa
 function gempa() {
 return new Promise((resolve, reject) => {
@@ -1796,7 +1795,7 @@ const Searchnabi = nabi =>
                 kisah: results.description,
             };
 
-            data.creator = 'Zhirrr';
+            data.creator = 'Rizky.A';
             return data;
         })
         .catch(() => ({
@@ -1807,9 +1806,9 @@ const Searchnabi = nabi =>
 
 function joox(query) {
     return new Promise((resolve, reject) => {
-        const time = Math.floor(new Date() / 1000)
+      const time = Math.floor(new Date() / 1000)
         axios.get('http://api.joox.com/web-fcgi-bin//web_search?lang=id&country=id&type=0&search_input=' + query + '&pn=1&sin=0&ein=29&_=' + time)
-            .then(({ data }) => {
+          .then(({ data }) => {
                 let result = []
                 let hasil = []
                 let promoses = []
@@ -1836,7 +1835,7 @@ function joox(query) {
                                     mp3: res.mp3Url
                                 })
                                 Promise.all(promoses).then(() => resolve({
-                                    creator: "rizkyAdi",
+                                    creator: "Rizky.A",
                                     status: true,
                                     data: hasil,
                                 }))
@@ -1873,7 +1872,7 @@ headers: {
 })
 }
 
-function artiNama(nama){
+function artinama(nama){
   return new Promise(async(resolve,reject)=>{
 axios({
   url: 'http://www.primbon.com/arti_nama.php?nama1='+nama+'&proses=+Submit%21+',
@@ -1918,12 +1917,13 @@ module.exports.igvideo = igvideo
 module.exports.hoax = hoax
 module.exports.sfilesearch = sfilesearch
 module.exports.mcpedl = mcpedl
-module.exports.halal =halal
-module.exports.wallpapper =wallpapper
+module.exports.halal = halal
+module.exports.useragent = UserAgent
+module.exports.wallpapper = wallpapper
 module.exports.apkmody = apkmody
 module.exports.moddroid = moddroid
 module.exports.pinterest = pinterest
 module.exports.palingmurah = palingmurah
 module.exports.joox = joox
 module.exports.uguu = uguu
-module.exports.artinama = artiNama
+module.exports.artinama = artinama
