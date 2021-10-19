@@ -57,7 +57,7 @@ HELLO ${name} ${ucapan()}
 `
 
 m.reply('Getting data to view Menu')
-conn.send2ButtonLoc( m.chat, await ( await fetch(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTE7EnNkFf8-jer8k6eT_gd9butzTdl-s91uPaEhL-ggw3-h8T90x-h8Z66&s=10)).buffer(), capt, userbot.packname, `LIST MENU`, `menu`, `Rules`, `rules`, m)
+conn.send2ButtonLoc( m.chat, await ( await fetch('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTE7EnNkFf8-jer8k6eT_gd9butzTdl-s91uPaEhL-ggw3-h8T90x-h8Z66&s=10')).buffer(), capt, userbot.packname, `LIST MENU`, `menu`, `Rules`, `rules`, m)
 
 }
 }
