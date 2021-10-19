@@ -1,6 +1,6 @@
 const fs = Ft.fs
 let limit = 30
-const { servers, yta } = require('../lib/y2mate')
+const { servers, yta } = require('../../Lib/y2mate')
 
 module.exports = {
 name: ["ytmp3"],
