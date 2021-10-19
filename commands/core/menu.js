@@ -4,11 +4,11 @@ const fetch = require('node-fetch')
       fs = Ft.fs,
 
 module.exports = {
-name: ["report"],
+name: ["menu"],
 type: ["default"],
 useLimit: true,
-description: "report featured of other to owner",
-utilisation: userbot.prefix + "report (text)",
+description: "list menu button",
+utilisation: userbot.prefix + "menu",
 
 async execute(m) {
 let { conn, text } = data
