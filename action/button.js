@@ -6,6 +6,8 @@ const { MessageType }= require('@adiwajshing/baileys'),
       tags = {}
       speed = global.Ft['speed']
       os = global.Ft['os']
+      { tiktok, tiktokmusic } = require("../../Lib/scrape.js").tiktok
+      //scrape = require("../../Lib/scrape.js")
 
 module.exports = {
 async execute(m, {button, args, text }) {
@@ -13,7 +15,18 @@ let { conn } = data
 
 try {
 switch (button.split(" ")[0].toLowerCase()) {
-
+   case "twm":
+   download = await tiktok(button.split(" ")[1])
+   conn.sendMessage(m.chat, await (await Ft.fetch(download.result.wm)).buffer(),"videoMessage",{quoted:m})
+   break;
+   case "tnowm":
+   download = await tiktok(button.split(" ")[1])
+   conn.sendMessage(m.chat, await (await Ft.fetch(download.result.nowm)).buffer(),"videoMessage",{quoted:m})
+   break;
+   case "tmusic":
+   let p = await tiktokmusic(button.split(" ")[1])
+   conn.sendFile(m.chat, p.meta.music.playUrl, null, null, m)
+   break;
    case "menu":
 const me = conn.user.name
 uptime = process.uptime();
