@@ -16,9 +16,9 @@ const name = conn.getName(m.sender)
 if (m.quoted.sender) {
 Canvas.rip(await conn.getProfilePicture(m.quoted.sender)).then((p) => 
 conn.sendFile(m.chat, p, 'p.jpg', `Rip ${conn.getName(m.quoted.sender)}`, null, m))
-} else if (m.sender) {
-Canvas.rip(await conn.getProfilePicture(m.sender)).then((p) => 
-conn.sendFile(m.chat, p, 'p.jpg', `Rip ${conn.getName(m.sender)}`, null, m))
+} else if (conn.user.jid) {
+Canvas.rip(await conn.getProfilePicture(conn.user.jid)).then((p) => 
+conn.sendFile(m.chat, p, 'p.jpg', `Rip ${conn.getName(conn.user.jid)}`, null, m))
 }
 }
 }
