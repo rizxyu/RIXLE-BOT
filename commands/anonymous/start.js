@@ -35,3 +35,4 @@ if (Object.values(this.anonymous).find(room => room.check(m.sender))) {
                 await this.sendButton(m.chat, '_Menunggu partner..._', userbot.author, 'Keluar', `leave`, m)
             }
 }
+}
