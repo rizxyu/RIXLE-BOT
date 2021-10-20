@@ -16,10 +16,18 @@ let stiker = false
   try {
     let q = m.quoted ? m.quoted : m
     let mime = (q.msg || q).mimetype || ''
-    if (/(webp|image|video)/.test(mime)) {
+    if (/image/.test(mime)) {
       let img = await q.download()
       if (!img) return m.reply(`Reply medianya ${userbot.prefix}s`)
        const wsf = await createSticker(img, {
+        type: StickerTypes.FULL,
+        pack: userbot.packname,
+        author: userbot.author,
+      })
+     if (/video/.test(mime)) {
+      let img = await q.download()
+      if (!img) return m.reply(`Reply medianya ${userbot.prefix}s`)
+        wsf = await createSticker(img, {
         type: StickerTypes.FULL,
         pack: userbot.packname,
         author: userbot.author,
