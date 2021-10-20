@@ -24,7 +24,7 @@ let stiker = false
         pack: userbot.packname,
         author: userbot.author,
       })
-     if (/video/.test(mime)) {
+     } else if (/video/.test(mime)) {
       let img = await q.download()
       if (!img) return m.reply(`Reply medianya ${userbot.prefix}s`)
         wsf = await createSticker(img, {
