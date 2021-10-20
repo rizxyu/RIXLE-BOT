@@ -1,6 +1,7 @@
 const { MessageType } = require('@adiwajshing/baileys')
 const { sticker } = require('../../Lib/sticker')
-const WSF = require('wa-sticker-formatter')
+const { createSticker, StickerTypes } = require("wa-sticker-formatter")
+
 
 module.exports = {
 name: ["s"],
@@ -15,30 +16,13 @@ let stiker = false
   try {
     let q = m.quoted ? m.quoted : m
     let mime = (q.msg || q).mimetype || ''
-    if (/webp/.test(mime)) {
+    if (/(webp|image|video)/.test(mime)) {
       let img = await q.download()
-      if (!img) return m.reply(`balas stiker dengan perintah ${userbot.prefix}s`)
-      wsf = new WSF.Sticker(img, {
+      if (!img) return m.reply(`Reply medianya ${userbot.prefix}s`)
+       const wsf = new createSticker(img, {
+        type: StickerTypes.FULL,
         pack: userbot.packname,
         author: userbot.author,
-        crop: false,
-      })
-    } else if (/image/.test(mime)) {
-      let img = await q.download()
-      if (!img) return m.reply(`balas image dengan perintah ${userbot.prefix}s`)
-      wsf = new WSF.Sticker(img, {
-        pack: userbot.packname,
-        author: userbot.author,
-        crop: false,
-      })
-    } else if (/video/.test(mime)) {
-      if ((q.msg || q).seconds > 11) return m.reply('Maksimal 10 detik!')
-      let img = await q.download()
-      if (!img) return m.reply(`balas video dengan perintah ${userbot.prefix}s`)
-       wsf = new WSF.Sticker(img, {
-        pack: userbot.packname,
-        author: userbot.author,
-        crop: true,
       })
     } else if (args[0]) {
       if (isUrl(args[0])) stiker = await sticker(false, args[0], userbot.packname, userbot.author)
