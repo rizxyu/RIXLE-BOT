@@ -13,7 +13,7 @@ if (!args[1]) return m.reply('where repo')
 if (!args[2]) return m.reply('type repo main or master?')
 let url = `https://github.com/${args[0]}/${args[1]}/archive/refs/heads/${args[2]}.zip`
 
-m.reply(`compressing data to file zip\n*@RizkyAdi*`)
+m.reply(`compressing data to file zip`)
 conn.sendFile( m.chat, url, null, null, m)
 } catch (e) {
 m.reply('sepertinya username atau repo salah')
