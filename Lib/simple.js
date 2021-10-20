@@ -266,7 +266,7 @@ END:VCARD
       async send3Button(jid, content, footer, button1, row1, button2, row2, button3, row3, options = {}) {
        var buttons = [
         { buttonId: row1, buttonText: { displayText: button1 }, type: 1 },
-        { buttonId: row2, buttonText: { displayText: button2 }, type: 1 }
+        { buttonId: row2, buttonText: { displayText: button2 }, type: 1 },
         { buttonId: row3, buttonText: { displayText: button3 }, type: 1 }
       ]
 
