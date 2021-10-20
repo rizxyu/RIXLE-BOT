@@ -1,4 +1,5 @@
-let { spawn } = require("child_process")
+let { spawn } = require("child_process"),
+    path = require("path")
 module.exports = {
   name: ["run"],
   type: ["maker"],
