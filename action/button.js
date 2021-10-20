@@ -6,8 +6,8 @@ const { MessageType }= require('@adiwajshing/baileys'),
       tags = {}
       speed = global.Ft['speed']
       os = global.Ft['os']
-      { tiktok, tiktokmusic } = require("../../Lib/scrape.js").tiktok
-      //scrape = require("../../Lib/scrape.js")
+      tiktok = require("../../Lib/scrape.js").tiktok
+      { tiktokmusic } = require("../../Lib/scrape")
 
 module.exports = {
 async execute(m, {button, args, text }) {
