@@ -5,7 +5,7 @@ userbot = {
    wait: "tunggu sedang di proses...",
    error: "errorr!!"
    },
-   prefix: ["#"],
+   prefix: ["/"],
    gexp: 50,
    packname: 'RixleBot',
    author: '@_RizkyAdiNur',
