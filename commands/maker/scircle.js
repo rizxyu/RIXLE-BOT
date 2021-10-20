@@ -9,6 +9,9 @@ useLimit: true,
 description: "make sticker circle",
 utilisation: userbot.prefix + "scircle",
 
+async execute(m) {
+ let { text, conn } = data
+
 let qe = m.quoted ? m.quoted : m
   let mime = (qe.msg || qe).mimetype || ""
   if (/image/.test(mime)) {
