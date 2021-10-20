@@ -6,7 +6,7 @@ module.exports = {
 name: ["rip"],
 type: ["maker"],
 useLimit: true,
-description: "make Rip picture",
+description: "make Rip picture with reply or no",
 utilisation: userbot.prefix + "rip",
 
 async execute(m) {
@@ -16,9 +16,9 @@ const name = conn.getName(m.sender)
 if (m.quoted.sender) {
 Canvas.rip(await conn.getProfilePicture(m.quoted.sender)).then((p) => 
 conn.sendFile(m.chat, p, 'p.jpg', `Telah meninggal ${conn.getName(m.quoted.sender)}`, null, m))
-}
-
+} else (conn.user.jid) {
 Canvas.rip(await conn.getProfilePicture(m.sender)).then((p) => 
 conn.sendFile(m.chat, p, 'p.jpg', `Telah meninggal ${conn.getName(m.sender)}`, null, m))
+}
 }
 }
