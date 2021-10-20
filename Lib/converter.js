@@ -1,7 +1,8 @@
 const fs = require('fs')
 const path = require('path')
 const fetch = require("node-fetch")
-const { spawn } = require('child_process')
+const request = require("request")
+const { spawn, exec } = require('child_process')
 
 function ffmpeg(buffer, args = [], ext = '', ext2 = '') {
   return new Promise(async (resolve, reject) => {
@@ -106,13 +107,23 @@ function toVideo(buffer, ext) {
   })
 }
 
-async function sUrl(url) {
-    let res = await fetch(url)
-    if (res.status !== 200) throw await res.text()
-    let img = await res.buffer()
-  return await ffmpeg(img, [
-    '-vf', 'scale=512:512:flags=lanczos:force_original_aspect_ratio=decrease,format=rgba,pad=512:512:(ow-iw)/2:(oh-ih)/2:color=#00000000,setsar=1'
-  ], 'jpeg', 'webp')
+function stickUrl(url){
+  return new Promise(async(resolve,reject)=>{
+    if(!url) throw new TypeError("no url detected")
+      var name = Date.now() / 10000;
+      var download = function (link, filename, callback) {
+          request(url).pipe(fs.createWriteStream(filename)).on('close', callback);
+      };
+      download(url, './' + name + '.png', async function () {
+        let a = './' + name + '.png'
+        let b = './' + name + '.webp'
+        exec(`ffmpeg -i ${a} -vcodec libwebp -filter:v fps=fps=20 -lossless 1 -loop 0 -preset default -an -vsync 0 -s 512:512 ${b}`, async(err) => {
+          resolve({
+            path: b
+          })
+        })
+      })
+})
 }
 
 module.exports = {
@@ -120,5 +131,5 @@ module.exports = {
   toPTT,
   toVideo,
   ffmpeg,
-  sUrl
+  stickUrl
 }
