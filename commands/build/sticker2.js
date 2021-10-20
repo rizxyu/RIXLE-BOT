@@ -30,13 +30,13 @@ let { conn } = data
      if ((q.msg || q).seconds > 11) return m.reply('Maksimal 10 detik!')
       let img = await q.download()
       if (!img) return m.reply(`Reply medianya ${userbot.prefix}s`)
-       const head = await stickerMetadata(img, {
+       const head = await createSticker(img, {
         type: StickerTypes.CROPPED,
         pack: userbot.packname,
         author: userbot.author,
       })
-      const sticker = await createSticker(img, stickerMetadata)
-      await conn.sendMessage(m.chat, sticker, MessageType.sticker, {
+      //const sticker = await createSticker(img, stickerMetadata)
+      await conn.sendMessage(m.chat, head, MessageType.sticker, {
 		quoted: m,
 		mimetype: "image/webp",
       })
