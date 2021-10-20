@@ -47,7 +47,7 @@ async execute(m) {
  let { conn, text } = data
 if (!text) return m.reply('put query')
 wikipedia(`${text}`).then(res => {
-    conn.sendFile(m.chat, res.result.thumb, 'niga.jpg',`${res.result.judul}\n\n${res.result.thumb}\n\n${res.result.isi}\n\n@_RizkyAdi`, m)
+    m.reply(`${res.result.judul}\n\n${res.result.thumb}\n\n${res.result.isi}\n\n@_RizkyAdi`)
   }).catch(() => { m.reply('Tidak Ditemukan') })
 }
 }
