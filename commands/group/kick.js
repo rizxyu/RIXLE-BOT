@@ -1,6 +1,6 @@
 module.exports = {
 name: ["kick"],
-type: ['setting'],
+type: ['group'],
 description: "menendang member grup(hanya boleh dilakukan ketika anda menjadi admin)",
 admin: true,
 botAdmin:true,
