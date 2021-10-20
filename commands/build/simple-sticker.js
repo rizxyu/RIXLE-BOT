@@ -1,7 +1,7 @@
 const { MessageType } = require('@adiwajshing/baileys')
 const { sticker } = require('../../Lib/sticker-formatter')
 module.exports = {
-    name: ["stc", "stickersmall", " stcm"],
+    name: ["stc", "stickersmall", "stcm"],
 type: ["create"],
 description: "create sticker with waf",
 utilisation: "#sticker (reply)",
