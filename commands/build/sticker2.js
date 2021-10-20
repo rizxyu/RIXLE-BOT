@@ -19,7 +19,7 @@ let stiker = false
     if (/(webp|image|video)/.test(mime)) {
       let img = await q.download()
       if (!img) return m.reply(`Reply medianya ${userbot.prefix}s`)
-       const wsf = new createSticker(img, {
+       const wsf = await createSticker(img, {
         type: StickerTypes.FULL,
         pack: userbot.packname,
         author: userbot.author,
