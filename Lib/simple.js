@@ -247,7 +247,39 @@ END:VCARD
         ...options
       })
     }
+     async send2Button(jid, content, footer, button1, row1, button2, row2, options = {}) {
+       var buttons = [
+        { buttonId: row1, buttonText: { displayText: button1 }, type: 1 },
+        { buttonId: row2, buttonText: { displayText: button2 }, type: 1 }
+      ]
 
+      var buttonMessage = {
+        contentText: content,
+        footerText: footer,
+        buttons: buttons,
+        headerType: 1
+      }
+      await this.sendMessage(jid, buttonMessage, MessageType.buttonsMessage, {
+        ...options
+      })
+    }
+      async send3Button(jid, content, footer, button1, row1, button2, row2, button3, row3, options = {}) {
+       var buttons = [
+        { buttonId: row1, buttonText: { displayText: button1 }, type: 1 },
+        { buttonId: row2, buttonText: { displayText: button2 }, type: 1 }
+        { buttonId: row3, buttonText: { displayText: button3 }, type: 1 }
+      ]
+
+      var buttonMessage = {
+        contentText: content,
+        footerText: footer,
+        buttons: buttons,
+        headerType: 1
+      }
+      await this.sendMessage(jid, buttonMessage, MessageType.buttonsMessage, {
+        ...options
+      })
+    }
     /**
      * Send Button with Image
      * @param {String} jid
@@ -276,7 +308,7 @@ END:VCARD
         ...options
       })
     }
-
+    
     /**
  * Send Button with Image
  * @param {String} jid
@@ -356,7 +388,7 @@ async sendButImg(jid, buffer, content, footer, button1, row1, quoted, options = 
       })
     }
     /**
- * Send 2 Buttons
+ * Send 2 Buttons Location
  * @param {String} jid
  * @param {String} content
  * @param {String} footer
@@ -366,22 +398,6 @@ async sendButImg(jid, buffer, content, footer, button1, row1, quoted, options = 
  * @param {String} row2
  * @param {Object} options
  */
-    async send2Button(jid, content, footer, button1, row1, button2, row2, options = {}) {
-       var buttons = [
-        { buttonId: row1, buttonText: { displayText: button1 }, type: 1 },
-        { buttonId: row2, buttonText: { displayText: button2 }, type: 1 }
-      ]
-
-      var buttonMessage = {
-        contentText: content,
-        footerText: footer,
-        buttons: buttons,
-        headerType: 1
-      }
-      await this.sendMessage(jid, buttonMessage, MessageType.buttonsMessage, {
-        ...options
-      })
-    }
 
      async sendButtonLoc(jid, buffer, content, footer, button1, row1, quoted, options = {}) {
       return await this.sendMessage(jid, {
