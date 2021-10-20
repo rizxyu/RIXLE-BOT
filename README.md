@@ -79,7 +79,11 @@ userbot = {
 | ------------- | ------------- |
 | Surah <ayat> | ✅|
 
-# 👥My Team [`Fear Team`](https://chat.whatsapp.com/GVwpKf83s42D1CnIfDW19G)
+| OTHER |🤗|
+| ------------- | ------------- |
+
+
+# 👥My Team [`Fear Team`](https://chat.whatsapp.com/HCF35wzLasQ2xdUff29oqt)
 * Fauzan (dev)
 * Ivanzz (Contributor pemalas)
 * Sanz (dev)
