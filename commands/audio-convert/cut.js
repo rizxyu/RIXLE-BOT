@@ -9,14 +9,16 @@ description: "cut audio music",
 utilisation: userbot.prefix + "cut",
 
 async execute(m) {
-let { conn } = data
+let { conn, args } = data
 try {
+if (!args[0]) return m.reply('dari detik?')
+if (!args[1]) return m.reply('ke detik?')
         let q = m.quoted ? { message: { [m.quoted.mtype]: m.quoted } } : m
         let mime = ((m.quoted ? m.quoted : m.msg).mimetype || '')
         if (/audio/.test(mime)) {
             let media = await conn.downloadAndSaveMediaMessage(q)
             let ran = getRandom('.mp3')
-            exec(`ffmpeg -ss 60 -i ${media} -t 15 -c copy ${ran}`, (err, stderr, stdout) => {
+            exec(`ffmpeg -ss ${args[0]} -i ${media} -t ${args[1]} -c copy ${ran}`, (err, stderr, stdout) => {
                 fs.unlinkSync(media)
                 if (err) m.reply(`_*Error!*_`)
                 let buff = fs.readFileSync(ran)
@@ -29,7 +31,7 @@ try {
     }
 }
 }
-
+//Punya mamang rizky
 const getRandom = (ext) => {
     return `${Math.floor(Math.random() * 10000)}${ext}`
 }
