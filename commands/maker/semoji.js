@@ -7,23 +7,23 @@ module.exports = {
     let { conn, args } = data;
     if(!args[0]) return m.reply("masukan parameter emoji")
     if(!args[1]) return m.reply(`*List yang tersedia:*
-    - apple
-    - google
-    - microsoft
-    - whatsapp
-    - twitter
-    - facebook
-    - jooxpixle
-    - openemoji
-    - emojindex
-    - messanger
-    - lg
-    - htc
-    - mozilla
-    - softbank
-    - docomo
-    - kddi
-    `)
+- apple
+- google
+- microsoft
+- whatsapp
+- twitter
+- facebook
+- jooxpixle
+- openemoji
+- emojindex
+- messanger
+- lg
+- htc
+- mozilla
+- softbank
+- docomo
+- kddi
+`)
     await scrap.emoji(args[0])
      .then(res => res[args[1]].toLowerCase())
        .then(url => require("../../Lib/converter").stickUrl(url))
