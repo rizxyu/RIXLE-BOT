@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Rizxyu/Tes-bot1.git"
+    "url": "git+https://github.com/Rizxyu/RIXLE-BOT.git"
   },
   "keywords": [
     "whatsapp-bot"
   ],
   "author": "rizky",
   "bugs": {
-    "url": "https://github.com/Rizxyu/Tes-bot1/issues"
+    "url": "https://github.com/Rizxyu/RIXLE-BOT/issues"
   },
   "dependencies": {
     "@adiwajshing/baileys": "^3.5.2",
@@ -76,12 +76,6 @@
     "wa-sticker-formatter": "^4.0.14",
     "yt-search": "^2.10.2",
     "zrapi": "^0.0.6"
-  },
-  "devDependencies": {
-    "@types/axios": "^0.14.0",
-    "@types/sharp": "^0.28.5",
-    "prettier": "^2.3.2",
-    "typescript": "^4.3.5"
   },
   "license": "ISC"
 }
