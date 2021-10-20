@@ -100,7 +100,19 @@ capt = `
 Terima kasih telah menggunakan bot kami😄
 Kami harap anda senang karena telah menggunakan bot ini😗
 
-*Rules menggunakan bot:*
+
+===============================
+🗣️: Bang Cara Gunain bot gimana sih
+👤: Menggunakan prefix terus tambah kata menu
+===============================
+🗣️: Bot online berapa jam?
+👤: Bot online 24 jam itupun kalau gak ada masalah
+===============================
+🗣️: Cara bikin sticker gimana sih?
+👤: Reply image terus kasih /menu atau / nya ganti prefixnya yg bisa dipakai bot
+===============================
+🗣️: Rules gunain bot apa aja?
+👤: *Rules menggunakan bot:*
 ❌ Jangan telpon atau vc bot
 ❌ Jangan bandingkan bot lain
 ❌ No spam command
