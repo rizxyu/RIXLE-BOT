@@ -82,3 +82,4 @@ userbot = {
 * Sanz (dev)
 * Rizky (dev)
 * Oreki (Kanjut)
+* Ｒｉｘｌｅ Ｂｏｔ [`bot whatsapp`](https://wa.me/62823283033323)
