@@ -40,7 +40,8 @@ let stiker = false
 		quoted: m,
 		mimetype: "image/webp",
       })
-  } else catch (e) {
+    }
+  } catch (e) {
     m.reply(e)
   }
   
