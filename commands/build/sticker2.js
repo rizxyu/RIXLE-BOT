@@ -24,37 +24,26 @@ let stiker = false
         pack: userbot.packname,
         author: userbot.author,
       })
+       await conn.sendMessage(m.chat, wsf, MessageType.sticker, {
+		quoted: m,
+		mimetype: "image/webp",
+      })
      } else if (/video/.test(mime)) {
       let img = await q.download()
       if (!img) return m.reply(`Reply medianya ${userbot.prefix}s`)
-        wsf = await createSticker(img, {
+       const head = await createSticker(img, {
         type: StickerTypes.FULL,
         pack: userbot.packname,
         author: userbot.author,
       })
-    } else if (args[0]) {
-      if (isUrl(args[0])) stiker = await sticker(false, args[0], userbot.packname, userbot.author)
-      else return m.reply('URL tidak valid!')
-    }
+      await conn.sendMessage(m.chat, head, MessageType.sticker, {
+		quoted: m,
+		mimetype: "image/webp",
+      })
   } catch (e) {
     throw e
   }
-  finally {
-    if (wsf) {
-      await wsf.build()
-      const sticBuffer = await wsf.get()
-      if (sticBuffer) await conn.sendMessage(m.chat, sticBuffer, MessageType.sticker, {
-        quoted: m,
-        mimetype: 'image/webp'
-      })
-    }
-    if (stiker) await conn.sendMessage(m.chat, stiker, MessageType.sticker, {
-      quoted: m
-    })
-  }
+  
 }
 }
 
-const isUrl = (text) => {
-  return text.match(new RegExp(/https?:\/\/(www\.)?[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_+.~#?&/=]*)(jpe?g|gif|png)/, 'gi'))
-}
