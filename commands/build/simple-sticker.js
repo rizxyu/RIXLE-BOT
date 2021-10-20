@@ -4,7 +4,7 @@ module.exports = {
     name: ["stc", "stickersmall", "stcm"],
 type: ["create"],
 description: "create sticker with waf",
-utilisation: "#sticker (reply)",
+utilisation: "#stickersmall (reply)",
 async execute(m) {
         let { conn } = data
         let stiker = false
