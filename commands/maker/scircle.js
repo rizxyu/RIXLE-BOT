@@ -14,7 +14,7 @@ let qe = m.quoted ? m.quoted : m
   if (/image/.test(mime)) {
   let img = await qe.download();
   Canvas.circle(img).then((p) =>
-  let stiker = await sticker(false, p, userbot.packname, userbot.author))
+  stiker = await sticker(false, p, userbot.packname, userbot.author))
      conn.sendMessage(m.chat, stiker, 'stickerMessage', {quoted: m})
   } else return m.reply('reply image')
 }
