@@ -59,15 +59,11 @@ Room ID: ${room.id}
 `.trim()
         if ((room.game._currentTurn ^ isSurrender ? room.x : room.o) !== m.chat)
             room[room.game._currentTurn ^ isSurrender ? 'x' : 'o'] = m.chat
-        if (room.x !== room.o) await this.sendButton(room.x, str, '@nurutomo tictactoe', 'Nyerah', 'nyerah', m, {
-            contextInfo: {
-                mentionedJid: this.parseMention(str)
-            }
+        if (room.x !== room.o) await this.sendButton(room.x, str, userbot.packname, 'Nyerah', 'nyerah', m, {
+            contextInfo: {"mentionedJid": this.parseMention(str)}
         })
-        await this.sendButton(room.o, str, 'nurutomo tictactoe', 'Nyerah', 'nyerah', m, {
-            contextInfo: {
-                mentionedJid: this.parseMention(str)
-            }
+        await this.sendButton(room.o, str, userbot.packname, 'Nyerah', 'nyerah', m, {
+            contextInfo: {"mentionedJid": this.parseMention(str)}
         })
         if (isTie || isWin) {
             delete this.game[room.id]
