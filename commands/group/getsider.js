@@ -6,7 +6,7 @@ type: ['group'],
 description: "get sider member group",
 admin: true,
 botAdmin:true,
-utilisation: userbot.prefix+ "getsider,
+utilisation: userbot.prefix+ "getsider",
 
 async execute(m) {
 let { conn, text } = data
