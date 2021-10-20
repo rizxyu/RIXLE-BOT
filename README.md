@@ -18,6 +18,9 @@
 * [`imagemagick`](https://github.com/rocketmobile/heroku-buildpack-imagemagick)
 * [`puppeteer`](https://github.com/jontewks/puppeteer-heroku-buildpack)
 
+## REST API
+**['Riz Api'](https://rizapi.herokuapp.com/)**
+
 ## ✍️ Editing the file
 
 Edit the required value in [`config.js`](https://github.com/Rizxyu/RIXLE-BOT/blob/main/config.js)
