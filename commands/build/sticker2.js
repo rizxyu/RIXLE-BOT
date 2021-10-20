@@ -11,8 +11,6 @@ utilisation: "#s (reply)",
 async execute(m) {
 let { conn } = data
 
-let stiker = false
-  let wsf = false
   try {
     let q = m.quoted ? m.quoted : m
     let mime = (q.msg || q).mimetype || ''
@@ -29,14 +27,16 @@ let stiker = false
 		mimetype: "image/webp",
       })
      } else if (/video/.test(mime)) {
+     if ((q.msg || q).seconds > 11) return m.reply('Maksimal 10 detik!')
       let img = await q.download()
       if (!img) return m.reply(`Reply medianya ${userbot.prefix}s`)
-       const head = await createSticker(img, {
-        type: StickerTypes.FULL,
+       const head = await stickerMetadata(img, {
+        type: StickerTypes.CROPPED,
         pack: userbot.packname,
         author: userbot.author,
       })
-      await conn.sendMessage(m.chat, head, MessageType.sticker, {
+      const sticker = await createSticker(img, stickerMetadata)
+      await conn.sendMessage(m.chat, sticker, MessageType.sticker, {
 		quoted: m,
 		mimetype: "image/webp",
       })
@@ -44,7 +44,7 @@ let stiker = false
   } catch (e) {
     m.reply(e)
   }
-  
+  //By mamang Rizky
 }
 }
 
