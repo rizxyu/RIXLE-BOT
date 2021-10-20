@@ -7,6 +7,7 @@ userbot = {
    },
    prefix: ["/"],
    gexp: 50,
+   limit: 100,
    packname: 'RixleBot',
    author: '@_RizkyAdiNur',
     setting: {
