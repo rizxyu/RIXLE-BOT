@@ -9,11 +9,11 @@ let { args } = data
 //Madeby Rizky adi
 if (!args[0]) return m.reply('where username')
 if (!args[1]) return m.reply('where repo')
-
-let url = `https://github.com/${args[0]}/${args[1]}/archive/refs/heads/main.zip`
+if (!args[2]) return m.reply('type repo main or master?')
+let url = `https://github.com/${args[0]}/${args[1]}/archive/refs/heads/${args[2]}.zip`
 
 m.reply(`compressing data to file zip\n*@RizkyAdi*`)
-conn.sendFile( m.chat, url, 'repo.zip', null, m)
+conn.sendFile( m.chat, url, null, null, m)
 
 }
 }
