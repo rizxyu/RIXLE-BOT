@@ -12,6 +12,7 @@ const { Config } = require('node-json-db/dist/lib/JsonDBConfig')
 global.antidelete = false
   global.API = (name, path = '/', query = {}, apikeyqueryname) => (name in global.APIs ? global.APIs[name] : name) + path + (query || apikeyqueryname ? '?' + new URLSearchParams(Object.entries({ ...query, ...(apikeyqueryname ? { [apikeyqueryname]: global.APIKeys[name in global.APIs ? global.APIs[name] : name] } : {}) })) : '')
     global.Ft = new Functions();// Menghubungkan dari Function.js
+  global.ft = new Functions();
       global.mediaType = require(Baileys).MessageType //Biar keren hehe
         global.conn = new WAConnection(); //Wa Connect dari baileys
           global.botuser = require('./config')//Menghubungkan Ke Conection string
@@ -21,7 +22,6 @@ global.antidelete = false
                 global.Public = false
                  global.scrap = require("./Lib/scrape")
 
-console.log(Ft.banner.string)
 conn.version = [2, 2119, 6]
 conn.logger.level = "warn"
 
@@ -30,13 +30,24 @@ if (fs.existsSync('./session.json')) conn.loadAuthInfo('./session.json')
    console.log(`PLEASE SCAN QR`)
 })
 conn.on('connecting', () => {
-   console.log(`connecting....`)
+   console.log(`Connecting...`)
  
 })
 
 conn.on("open", () => {
 const authInfo = conn.base64EncodedAuthInfo()
-console.log("Succes connet to baileys")
+let stats = {
+status: 200,
+message: "success",
+info: "berhasil masuk ke dalam baileys"
+}
+conn.on("close", async() => {
+await conn.connect()
+})
+conn.on("ws-close", async() => {
+await conn.connect()
+})
+console.log(stats)
 fs.writeFileSync('./session.json', JSON.stringify(authInfo, null, '\t'))
 })
 
