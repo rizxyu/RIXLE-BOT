@@ -11,8 +11,6 @@ utilisation: userbot.prefix + "gg",
 async execute(m) {
 let { conn, args } = data
 try {
-if (!args[0]) return m.reply('dari detik?')
-if (!args[1]) return m.reply('ke detik?')
         let q = m.quoted ? { message: { [m.quoted.mtype]: m.quoted } } : m
         let mime = ((m.quoted ? m.quoted : m.msg).mimetype || '')
         if (/audio/.test(mime)) {
