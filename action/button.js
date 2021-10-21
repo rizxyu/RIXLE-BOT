@@ -27,6 +27,21 @@ switch (button.split(" ")[0].toLowerCase()) {
    let p = await tiktokmusic(button.split(" ")[1])
    conn.sendFile(m.chat, p.meta.music.playUrl, null, null, m)
    break;
+   case "thd":
+   res = await fetch (`https://rizapi.herokuapp.com/api/twitter?url=${button.split(" ")[1]}`)
+   json = await res.json()
+   conn.sendFile(m.chat, json.result.HD, null, json.result.desc, m)
+   break;
+   case "tsd":
+   res = await fetch (`https://rizapi.herokuapp.com/api/twitter?url=${button.split(" ")[1]}`)
+   json = await res.json()
+   conn.sendFile(m.chat, json.result.SD, null, json.result.desc, m)
+   break;
+   case "taudio":
+   res = await fetch (`https://rizapi.herokuapp.com/api/twitter?url=${button.split(" ")[1]}`)
+   json = await res.json()
+   conn.sendFile(m.chat, json.result.audio, null, null, m)
+   break;
    case "menu":
 const me = conn.user.name
 uptime = process.uptime();
