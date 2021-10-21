@@ -12,7 +12,6 @@ const { Config } = require('node-json-db/dist/lib/JsonDBConfig')
 global.antidelete = false
   global.API = (name, path = '/', query = {}, apikeyqueryname) => (name in global.APIs ? global.APIs[name] : name) + path + (query || apikeyqueryname ? '?' + new URLSearchParams(Object.entries({ ...query, ...(apikeyqueryname ? { [apikeyqueryname]: global.APIKeys[name in global.APIs ? global.APIs[name] : name] } : {}) })) : '')
     global.Ft = new Functions();// Menghubungkan dari Function.js
-  global.ft = new Functions();
       global.mediaType = require(Baileys).MessageType //Biar keren hehe
         global.conn = new WAConnection(); //Wa Connect dari baileys
           global.botuser = require('./config')//Menghubungkan Ke Conection string
@@ -56,7 +55,7 @@ fs.writeFileSync('./session.json', JSON.stringify(authInfo, null, '\t'))
  async function run() {// Function biar bisa run bot
  let message = require('./action/chats');
  let action = require('./action/action');
-await conn.connect();
+ await conn.connect();
  conn.message = message.msg
  conn.on('chat-update', conn.message);
  conn.on('group-participants-update', action.groupUpdate);
