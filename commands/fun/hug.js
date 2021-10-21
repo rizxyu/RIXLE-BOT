@@ -13,6 +13,6 @@ let res = await fetch(`https://some-random-api.ml/animu/hug`)
 	let json = await res.json();
 conn.sendFile(m.chat, json.link, "wibu.gif", `@${m.sender.split("@")[0]} ${command} ${m.mentionedJid.map((user) => user === m.sender ? "themselves " : `@${user.split("@")[0]}`).join(", ")}`, m, { contextInfo: { mentionedJid: [...m.mentionedJid, m.sender],
 				}})
-	else return m.reply(json);
+	//else return m.reply(json);
 }
 }
