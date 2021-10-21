@@ -1,3 +1,12 @@
+heroku.yml:
+
+build:
+  docker:
+    worker: Dockerfile
+
+
+Dockerfile : 
+
 FROM node:16.6.1-buster
 
 RUN apt-get update && \
