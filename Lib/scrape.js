@@ -1886,6 +1886,28 @@ axios({
 })
 }
 
+const fb = async (url) => {
+    browser = await require("puppeteer").launch({ args: ['--no-sandbox', "--disable-gpu"] });
+    await page.goto('https://www.getfvid.com/');
+    await page.setUserAgent('Mozilla/5.0 (Linux; Android 6.0.1; SAMSUNG SM-J500G) AppleWebKit/537.36 (KHTML, like Gecko) SamsungBrowser/13.0 Chrome/83.0.4103.106 Mobile Safari/537.36');
+    await page.type('#form_download > div > input', url);
+    await page.click('#btn_submit');
+    await page.waitForTimeout(3000);
+    const link_hd = await (await (await page.$('body > div.page-content > div > div > div.col-lg-10.col-md-10.col-centered > div > div:nth-child(3) > div > div.col-md-4.btns-download > p:nth-child(1) > a')).getProperty('href')).jsonValue();
+    const link = await (await (await page.$('body > div.page-content > div > div > div.col-lg-10.col-md-10.col-centered > div > div:nth-child(3) > div > div.col-md-4.btns-download > p:nth-child(2) > a')).getProperty('href')).jsonValue();
+    const link_aud = await (await (await page.$('body > div.page-content > div > div > div.col-lg-10.col-md-10.col-centered > div > div:nth-child(3) > div > div.col-md-4.btns-download > p:nth-child(3) > a')).getProperty('href')).jsonValue();
+
+    const result = {
+        status: 200,
+        result: {
+            link: link,
+            link_hd: link_hd,
+            audio: link_aud
+        }
+    }
+    return result
+}
+
 module.exports.Searchnabi = Searchnabi
 module.exports.tiktok = tiktok
 module.exports.tiktokmusic = tiktokmusic
@@ -1927,3 +1949,4 @@ module.exports.palingmurah = palingmurah
 module.exports.joox = joox
 module.exports.uguu = uguu
 module.exports.artinama = artinama
+module.exports.fb = fb
