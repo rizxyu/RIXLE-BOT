@@ -1905,8 +1905,8 @@ axios({
             audio: link_aud
         }
     }
-    return result*/
-}
+    return result
+}*/
 
 module.exports.Searchnabi = Searchnabi
 module.exports.tiktok = tiktok
