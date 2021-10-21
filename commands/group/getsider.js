@@ -32,3 +32,16 @@ ${members > 1 ? `${members - reads.length - deliveries.length} remaining` : ''}
   })
 }
 }
+
+function formatDate(n, locale = 'id') {
+  let d = new Date(n)
+  return d.toLocaleDateString(locale, {
+    weekday: 'long',
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+    hour: 'numeric',
+    minute: 'numeric',
+    second: 'numeric'
+  })
+}
