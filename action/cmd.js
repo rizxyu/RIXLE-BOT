@@ -75,7 +75,7 @@ let custom = cmd.custom
 if (!custom) continue
 if (m.text.startsWith(cmd.name)) {
 if (cmd.admin && !isAdmin) return dfail("admin", m, conn)
-if (cmd.owner && !isOwner) return
+if (cmd.owner && !isOwner) return dfail("owner", m, conn)
 if (cmd.botAdmin && !isBotAdmin) return dfail("botAdmin", m, conn)
 console.log(cmd.name)
 await cmd.execute.call(conn, m, data)
