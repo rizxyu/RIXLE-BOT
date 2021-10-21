@@ -1886,7 +1886,7 @@ axios({
 })
 }
 
-const fb = async (url) => {
+const fbdl = async (url) => {
     browser = await require("puppeteer").launch({ args: ['--no-sandbox', "--disable-gpu"] });
     await page.goto('https://www.getfvid.com/');
     await page.setUserAgent('Mozilla/5.0 (Linux; Android 6.0.1; SAMSUNG SM-J500G) AppleWebKit/537.36 (KHTML, like Gecko) SamsungBrowser/13.0 Chrome/83.0.4103.106 Mobile Safari/537.36');
@@ -1949,4 +1949,4 @@ module.exports.palingmurah = palingmurah
 module.exports.joox = joox
 module.exports.uguu = uguu
 module.exports.artinama = artinama
-module.exports.fb = fb
+module.exports.fbdl = fbdl
