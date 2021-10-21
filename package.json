@@ -66,13 +66,11 @@
     "sharp": "^0.29.0",
     "similarity": "1.2.1",
     "simsimi": "^3.0.0",
-    "sox-audio": "^0.3.0",
     "spinnies": "^0.5.1",
     "sql": "^0.78.0",
     "ssl-express-www": "^3.0.8",
     "syntax-error": "^1.4.0",
     "translate-google-api": "^1.0.4",
-    "ts-node": "^10.3.0",
     "wa-sticker-formatter": "^4.0.14",
     "yt-search": "^2.10.2",
     "zrapi": "^0.0.6"
