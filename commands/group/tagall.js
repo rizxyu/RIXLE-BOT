@@ -10,7 +10,7 @@ let { conn, text } = data
 
 if (!text) return m.reply('Where text')
 conn.fetchGroupMetadataFromWA(m.chat).then(({ participants }) => {
-let a = "anu\n\n"
+let a = "\n\n"
 for (i of participants){
 a += `@${i.jid.split("@")[0]}\n`
 }
