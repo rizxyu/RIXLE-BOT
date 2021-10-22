@@ -12,6 +12,7 @@ conn.absen = conn.absen ? conn.absen : {}
         throw false
     }
     conn.absen[id] = [
+        let caption = `Absen dimulai !!!`
         await conn.sendButton(m.chat, caption, userbot.prefix, 'Cekabsen', 'absenc', { quoted: m, contextInfo: {"mentionedJid": conn.parseMention(caption)}} )
  
         [],
