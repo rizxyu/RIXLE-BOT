@@ -12,9 +12,7 @@ conn.absen = conn.absen ? conn.absen : {}
         throw false
     }
     conn.absen[id] = [
-        
-        await conn.sendButton(m.chat, `Absen dimulai !!!`, userbot.prefix, 'Cekabsen', 'absenc', { quoted: m} )
- 
+        await conn.sendButton(m.chat, `Absen dimulai !!!`, userbot.prefix, 'Cekabsen', 'absenc', { quoted: m} ),
         [],
         text
     ]
