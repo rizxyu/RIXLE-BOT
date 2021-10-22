@@ -30,7 +30,7 @@ ${conn.absen[id][2]}
 ${list}
 │ 
 └────`.trim()
-    await conn.sendButton(m.chat, caption, userbot.prefix, 'Cekabsen', 'absenc', { quoted: m, contextInfo: {"mentionedJid": conn.parseMention(caption)}} )
+    await conn.sendButton(m.chat, caption, userbot.prefix, 'Hapus absen', 'absend', { quoted: m, contextInfo: {"mentionedJid": conn.parseMention(caption)}} )
  
 }
 }
