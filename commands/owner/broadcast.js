@@ -4,13 +4,13 @@ let util = Ft.util
 module.exports = {
 name: ["bc"],
 type: ["owner"],
+owner: true,
 description: "broadcast ke user atau pengguna dan ini bersifat hanya digunakan oleh owner",
 utilisation: userbot.prefix + "bc <args>",
   async execute(m) {
  let { conn, text } = data
 
-  let chats = conn.chats.array.filter(v => v.jid.endsWith('s.whatsapp.net'))
-
+  let chats = conn.chats.all().filter(v => !v.read_only && v.message && !v.archive).map(v => v.jid)
   let cc = conn.serializeM(text ? m : m.quoted ? await m.getQuotedObj() : false || m)
   
   let teks = text ? text : cc.text
