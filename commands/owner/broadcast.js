@@ -19,7 +19,7 @@ utilisation: userbot.prefix + "bc <args>",
   
  for ( let id of chats) {
    await delay(1500)
-   await conn.sendButtonLoc( m.chat, await ( await fetch('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSa1pVfdb1zUoSve4Unc08jl5BpCHwfys8qxA&usqp=CAU')).buffer(), `${teks}\n\n[ BROADCAST ]`, `Rixle Bot By Rizky Adi`, `CREATOR`, `creator`, m)
+   await conn.sendButtonLoc(id.jid, await ( await fetch('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSa1pVfdb1zUoSve4Unc08jl5BpCHwfys8qxA&usqp=CAU')).buffer(), `${teks}\n\n[ BROADCAST ]`, `Rixle Bot By Rizky Adi`, `CREATOR`, `creator`, m)
     }
     m.reply('BROADCAST SELESAI')
   }
