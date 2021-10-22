@@ -59,28 +59,13 @@ function toAudio(buffer, ext) {
 }
 
 function toPTT(buffer, ext) {
-  return new Promise((resolve, reject) => {
-    let tmp = path.join(__dirname, './', + new Date + '.' + ext)
-    let out = tmp + '.opus'
-    fs.writeFileSync(tmp, buffer)
-    spawn('ffmpeg', [
-      '-y',
-      '-i',tmp,
-      '-vn',
-      '-c:a','libopus',
-      '-b:a','128k',
-      '-vbr','on',
-      '-compression_level','10',
-      out,
-    ])
-    .on('error', reject)
-    .on('error', () => fs.unlinkSync(tmp))
-    .on('close', () => {
-      fs.unlinkSync(tmp)
-      resolve(fs.readFileSync(out))
-      if (fs.existsSync(out)) fs.unlinkSync(out)
-    })
-  })
+  return ffmpeg(buffer, [
+    '-vn',
+    '-c:a', 'libopus',
+    '-b:a', '128k',
+    '-vbr', 'on',
+    '-compression_level', '10'
+  ], ext, 'opus')
 }
 
 function toVideo(buffer, ext) {
