@@ -61,4 +61,4 @@ fs.writeFileSync('./session.json', JSON.stringify(authInfo, null, '\t'))
  conn.on('group-participants-update', action.groupUpdate);
  }
  Ft.action()
- run();// Menjalangkan Bot
+ run();// Menjalankan Botol kecap
