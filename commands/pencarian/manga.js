@@ -20,6 +20,6 @@ let capt = `
 *📑Status:* ${json.result.status}
 `
 
-conn.sendFile(m.chat, await( await fetch(json.result.thumb)).buffer(), "manga.png", capt, m)
+conn.sendFile(m.chat, await( await fetch(json.result.thumb)).buffer(), "manga.jpeg", capt, m)
 }
 }
