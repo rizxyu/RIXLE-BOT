@@ -19,7 +19,7 @@ utilisation: userbot.prefix + "bc <args>",
   
  for ( let id of chats) {
    await delay(1500)
-   await conn.send2ButtonLoc(id.jid, await ( await fetch('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQehmvfp6ihYGHY7tFh1JK_i0VaOjmvoaCkBA&usqp=CAU')).buffer(), `${teks}\n\n[ BROADCAST ]`, userbot.packname, `MENU`, `menu`, `CREATOR`, `creator`, m)
+   await conn.send2ButtonLoc(id, await ( await fetch('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQehmvfp6ihYGHY7tFh1JK_i0VaOjmvoaCkBA&usqp=CAU')).buffer(), `${teks}\n\n[ BROADCAST ]`, userbot.packname, `MENU`, `menu`, `CREATOR`, `creator`, m)
     }
     m.reply('BROADCAST SELESAI')
   }
