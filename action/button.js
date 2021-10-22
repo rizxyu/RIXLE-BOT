@@ -16,31 +16,37 @@ let { conn } = data
 try {
 switch (button.split(" ")[0].toLowerCase()) {
    case "twm":
+   m.reply('sedang memproses')
    download = await tiktok(button.split(" ")[1])
    conn.sendMessage(m.chat, await (await Ft.fetch(download.result.wm)).buffer(),"videoMessage",{quoted:m})
    break;
    case "tnowm":
+   m.reply('sedang memproses')
    download = await tiktok(button.split(" ")[1])
    conn.sendMessage(m.chat, await (await Ft.fetch(download.result.nowm)).buffer(),"videoMessage",{quoted:m})
    break;
    case "tmusic":
+   m.reply('sedang memproses')
    let p = await tiktokmusic(button.split(" ")[1])
    conn.sendFile(m.chat, p.meta.music.playUrl, null, null, m)
    break;
    case "thd":
+   m.reply('sedang memproses')
    res = await fetch (`https://rizapi.herokuapp.com/api/twitter?url=${button.split(" ")[1]}`)
    json = await res.json()
    conn.sendFile(m.chat, json.result.HD, null, json.result.desc, m)
    break;
    case "tsd":
+   m.reply('sedang memproses')
    res = await fetch (`https://rizapi.herokuapp.com/api/twitter?url=${button.split(" ")[1]}`)
    json = await res.json()
    conn.sendFile(m.chat, json.result.SD, null, json.result.desc, m)
    break;
    case "taudio":
+   m.reply('sedang memproses')
    res = await fetch (`https://rizapi.herokuapp.com/api/twitter?url=${button.split(" ")[1]}`)
    json = await res.json()
-   conn.sendFile(m.chat, json.result.audio, null, null, m)
+   conn.sendFile(m.chat, json.result.audio, 'o.mp3', null, m)
    break;
    case "menu":
 const me = conn.user.name
