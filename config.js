@@ -9,8 +9,8 @@ userbot = {
    gexp: 50,
    limit: 100,
    butmag: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTHDLrd0_DwHnJfuZ_pRMOAbLi3-ot-NxyPA&usqp=CAU', // buat Image Button
-   packname: 'RixleBot',
-   author: '@_RizkyAdiNur',
+   packname: '༻𝙍𝙞𝙭𝙡𝙚𝘽𝙤𝙩༺',
+   author: '@_RizkyAdi',
     setting: {
     admin: "only admin",
     group: "only group",
