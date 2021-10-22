@@ -1,11 +1,13 @@
- const speed = global.Ft['speed']
+const speed = global.Ft['speed']
 const os = global.Ft['os']
+const fetch = require('node-fetch')
 
 module.exports = {
 name: ["stats"],
-    type: ['default'],
-    description: "melihat kecepatan respon bot",
-    utilisation: global.userbot.prefix+ "speed",
+type: ['default'],
+description: "melihat kecepatan respon bot",
+utilisation: global.userbot.prefix+ "speed",
+
 async execute(m) {
 let { conn } = data
 let groups = conn.chats.array.filter(v => v.jid.endsWith('g.us'))
@@ -18,21 +20,22 @@ latensi = speed() - timestamp
 let total = Math.floor(`${groups.length}*${privat.length}`)
 stats = `
 *_Bot Stats_*
-*+* Group Chats : ${groups.length}
-*+* Private Chats : ${privat.length}
-*+* Total Chats : ${totalChat.length}
-*+* Speed : ${latensi.toFixed(4)} ms
-*+* Runtime : ${count(uptime)}
+*› Group Chats :* ${groups.length}
+*› Private Chats :* ${privat.length}
+*› Total Chats :* ${totalChat.length}
+*› Speed :* ${latensi.toFixed(4)} ms
+*› Runtime :* ${count(uptime)}
 
 *_Phone Stats_*
-*+* Penggunaan Ram : ${ram2}
-*+* Platform : ${os.platform()}
-*+* Hostname : ${os.hostname()}
-*+* Uptime : ${count(os.uptime())}
-*+* Wa Version: ${conn.user.phone.wa_version}
-*+* Os Version: ${conn.user.phone.os_version}
-*+* Device Model: ${conn.user.phone.device_model}`
-conn.reply(m.chat, stats, m)
+*› Batterai:* ${conn.battery != undefined ? `${conn.battery.value}% ${conn.battery.live ? '🔌 Ｃｈａｒｇｉｎｇ' : '⚡ Discharging' }` : '_Mengambil data_'}
+*› Penggunaan Ram : ${ram2}
+*› Platform : ${os.platform()}
+*› Hostname : ${os.hostname()}
+*› Uptime : ${count(os.uptime())}
+*› Wa Version: ${conn.user.phone.wa_version}
+*› Os Version: ${conn.user.phone.os_version}
+*› Device Model: ${conn.user.phone.device_model}`
+conn.sendButtonLoc(m.chat, await ( await fetch('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWisuGQ2p4DQFvXa1eWhUhfu9lcyRxHXa1OQ&usqp=CAU')).buffer(),  stats, userbot.packname, 'Menu', 'menu', m)
 
 
 }
