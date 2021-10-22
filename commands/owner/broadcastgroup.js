@@ -15,11 +15,11 @@ utilisation: userbot.prefix + "bcgc <args>",
   
   let teks = text ? text : cc.text
   
-  m.reply(`Sedang mengirim pesan ${groups.length}\nestimasi selesai *${chats.length * 1.5} detik*`)
+  m.reply(`Sedang mengirim pesan ${groups.length}\nestimasi selesai *${groups.length * 1.5} detik*`)
   
  for ( let id of groups) {
    await delay(1500)
-   await conn.send2ButtonLoc(id.jid, await ( await fetch('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSa1pVfdb1zUoSve4Unc08jl5BpCHwfys8qxA&usqp=CAU')).buffer(), `${teks}\n\n[ BROADCAST ]`, userbot.packname,`MENU`, `menu`, `CREATOR`, `creator`, m)
+   await conn.send2ButtonLoc(id.jid, await ( await fetch('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzX1y1MoIShEpyxr3Yh8WxGE8rHeccoeoBNw&usqp=CAU')).buffer(), `${teks}\n\n[ BROADCAST ]`, userbot.packname,`MENU`, `menu`, `CREATOR`, `creator`, m)
     }
     m.reply('BROADCAST SELESAI')
   }
