@@ -83,13 +83,16 @@ await cmd.execute.call(conn, m, data)
 }
 
 
-cmd =  Events[global.command]
-if (cmd) {
-if (cmd.admin && !isAdmin) return dfail("admin", m, conn)
-if (cmd.owner && !isOwner) return dfail("owner", m, conn)
-if (cmd.botAdmin && !isBotAdmin) return dfail("botAdmin", m, conn)
+for (let Commands in Events) {
+Command = Events[Commands]
+cmd = Array.isArray(Command.name) ? Command.name.some(cmd => cmd === global.command) : global.command.startsWith(Command.name)
+if (!global.command) continue
+if (!cmd) continue
+if (Command.admin && !isAdmin) return dfail("admin", m, conn)
+if (Command.owner && !isOwner) return
+if (Command.botAdmin && !isBotAdmin) return dfail("botAdmin", m, conn)
 global.db.data[global.command] += 1
-await cmd.execute.call(conn, m, data)
+await Command.execute.call(conn, m, data)
  }
 db.save()
 } catch (e) {
