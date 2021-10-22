@@ -8,6 +8,8 @@ userbot = {
    prefix: ["/"],
    gexp: 50,
    limit: 100,
+   eror: "Sepertinya Eror",
+   waits: "Sedang di proses",
    butmag: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTHDLrd0_DwHnJfuZ_pRMOAbLi3-ot-NxyPA&usqp=CAU', // buat Image Button
    packname: '༻𝙍𝙞𝙭𝙡𝙚𝘽𝙤𝙩༺',
    author: '@_RizkyAdi',
