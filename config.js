@@ -8,6 +8,7 @@ userbot = {
    prefix: ["/"],
    gexp: 50,
    limit: 100,
+   butmag: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTHDLrd0_DwHnJfuZ_pRMOAbLi3-ot-NxyPA&usqp=CAU', // buat Image Button
    packname: 'RixleBot',
    author: '@_RizkyAdiNur',
     setting: {
@@ -15,7 +16,8 @@ userbot = {
     group: "only group",
     owner: "owner only pack",
     jadibot: "jadibot only",
-    botadmin: "bot harus menjadi admin"
+    botadmin: "bot harus menjadi admin",
+    nsfw: "FITUR BELUM DIAKTIFKAN!"
     }
 }
 module.exports = userbot
