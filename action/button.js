@@ -120,7 +120,7 @@ return "*°* " + userbot.prefix + menu.help
 after
 ].join("\n\n")
 
-conn.send2ButtonLoc(m.chat, await (await fetch('https://www6.flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=star-wars-logo&doScale=true&scaleWidth=850&scaleHeight=400&fontsize=90&fillTextType=1&text=Menu')).buffer(), text, `@_Rizxyu`, `Creator`, `creator`, `Faq`, `rules`, m)
+conn.send2ButtonLoc(m.chat, await (await fetch('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTHDLrd0_DwHnJfuZ_pRMOAbLi3-ot-NxyPA&usqp=CAU')).buffer(), text, `@_Rizxyu`, `Creator`, `creator`, `Rules`, `rules`, m)
 break;
 
    case "rules":
@@ -129,8 +129,8 @@ Bot ini boleh digunakan oleh siapa saja asalkan tidak melanggar aturan norma huk
 Dan juga jangan sekali kali spam bot apalagi spam command!
 Gak boleh banding bandingin bot lain sama bot kami
 
-Ada bug atau eror command lapor pada owner dibawah
-@6282328303332
+Ada bug atau eror 
+${userbot.prefix}report <apa yg di laporkan>
 `
 conn.sendButton(m.chat, capt, userbot.packname, 'OK', 'OK', { quoted: m, contextInfo: {"mentionedJid": conn.parseMention(capt)}} )
 break;
