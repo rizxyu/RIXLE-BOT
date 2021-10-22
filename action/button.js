@@ -15,6 +15,91 @@ let { conn } = data
 
 try {
 switch (button.split(" ")[0].toLowerCase()) {
+   case "absenm":
+   conn.absen = conn.absen ? conn.absen : {}
+    id = m.chat
+    if (id in conn.absen) {
+        await conn.sendButton(m.chat, `Masih ada absen di chat ini!\n\nketik *${usedPrefix}hapusabsen* untuk menghapus absen`.trim(), userbot.packname, 'Hapus absen', `absend`, conn.absen[id][0])
+        throw false
+    }
+    conn.absen[id] = [
+        await conn.sendButton(m.chat, 'Absen Dimulai', userbot.prefix, 'Cekabsen', 'absenc', { quoted: m } ),
+        [],
+        text
+    ]
+   break;
+
+   case "absen":
+    id = m.chat
+    conn.absen = conn.absen ? conn.absen : {}
+    if (!(id in conn.absen)) {
+        await conn.sendButton(m.chat, `Tidak ada absen berlangsung digrup ini!`, userbot.packname, 'Mulai', 'absenm', {quoted: m})
+        throw false
+    }
+
+    absen = conn.absen[id][1]
+    const wasVote = absen.includes(m.sender)
+    if (wasVote) return m.reply('*Kamu sudah absen!*')
+    absen.push(m.sender)
+     d = new Date
+     date = d.toLocaleDateString('id', {
+        day: 'numeric',
+        month: 'long',
+        year: 'numeric'
+    })
+    list = absen.map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')
+     caption = `
+Tanggal: ${date}
+${conn.absen[id][2]}
+┌〔 daftar absen 〕
+│ 
+├ Total: ${absen.length}
+${list}
+│ 
+└────`.trim()
+    await conn.sendButton(m.chat, caption, userbot.prefix, 'Cekabsen', 'absenc', { quoted: m, contextInfo: {"mentionedJid": conn.parseMention(caption)}} )
+   break;
+
+   case "absend":
+   id = m.chat
+    conn.absen = conn.absen ? conn.absen : {}
+    if (!(id in conn.absen)) {
+        await conn.sendButton(m.chat, `Tidak ada absen berlangsung digrup ini!`, userbot.packname, 'Mulai absen', 'absenm', {quoted: m})
+        throw false
+    }
+    delete conn.absen[id]
+    m.reply(`Absen dihapus`)
+   break;
+
+   case "absenc":
+    id = m.chat
+    conn.absen = conn.absen ? conn.absen : {}
+    if (!(id in conn.absen)) {
+        await conn.sendButton(m.chat, `Tidak ada absen berlangsung digrup ini!`, userbot.packname, 'Mulai absen', 'absenm', {quoted: m})
+        throw false
+    }
+
+       d = new Date
+       date = d.toLocaleDateString('id', {
+        day: 'numeric',
+        month: 'long',
+        year: 'numeric'
+    })
+    absen = conn.absen[id][1]
+    list = absen.map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')
+    caption = `
+Tanggal: ${date}
+${conn.absen[id][2]}
+    
+┌〔 daftar absen 〕
+│ 
+├ Total: ${absen.length}
+${list}
+│ 
+└────`.trim()
+    await conn.send2Button(m.chat, caption, userbot.packname, 'Delete', 'absend', 'Absen', 'absen', { quoted: m, contextInfo: {"mentionedJid": conn.parseMention(caption)}} )
+   break;
+
    case "twm":
    m.reply('sedang memproses')
    download = await tiktok(button.split(" ")[1])
