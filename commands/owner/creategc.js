@@ -4,6 +4,7 @@ let chalk = require("chalk");
 module.exports = {
 name: ["buatgc"],
 type: ["owner"],
+owner: true,
 description: "create grup",
 utilisation: userbot.prefix + "buatgc",
 
