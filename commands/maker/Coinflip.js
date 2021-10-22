@@ -39,4 +39,4 @@ async execute(m) {
 }
 }
 
-//Made by Rizky adi
+//Punya patur
