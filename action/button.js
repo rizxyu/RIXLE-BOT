@@ -125,37 +125,12 @@ break;
 
    case "rules":
 capt = `
-Terima kasih telah menggunakan bot kami😄
-Kami harap anda senang karena telah menggunakan bot ini😗
+Bot ini boleh digunakan oleh siapa saja asalkan tidak melanggar aturan norma hukum dan norma agama!
+Dan juga jangan sekali kali spam bot apalagi spam command!
+Gak boleh banding bandingin bot lain sama bot kami
 
-
-===============================
-🗣️: Bang Cara Gunain bot gimana sih
-👤: Menggunakan prefix terus tambah kata menu
-===============================
-🗣️: Bot online berapa jam?
-👤: Bot online 24 jam itupun kalau gak ada masalah
-===============================
-🗣️: Cara bikin sticker gimana sih?
-👤: Reply image terus kasih /menu atau / nya ganti prefixnya yg bisa dipakai bot
-===============================
-🗣️: Rules gunain bot apa aja?
-👤: *Rules menggunakan bot:*
-❌ Jangan telpon atau vc bot
-❌ Jangan bandingkan bot lain
-❌ No spam command
-
-*Ada masalah dengan bot?*
-Hubungi owner atau ${userbot.prefix}report alasan
+Ada bug atau eror command lapor pada owner dibawah
 @6282328303332
-
-*Thx To :*
-- Allah SWT
-- Orang Tua
--adiwajshing
-- @0
-- Fear Team
-- allcreator bot
 `
 conn.sendButton(m.chat, capt, userbot.packname, 'OK', 'OK', { quoted: m, contextInfo: {"mentionedJid": conn.parseMention(capt)}} )
 break;
