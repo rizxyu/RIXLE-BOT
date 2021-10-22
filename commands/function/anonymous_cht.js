@@ -1,7 +1,7 @@
 module.exports = { 
 name: "anonymous_cht",  
 
-async before(m, { match }) {
+async function(m) {
         // if (match) return !1
         if (!m.chat.endsWith('@s.whatsapp.net')) return !0
         this.anonymous = this.anonymous ? this.anonymous : {}
