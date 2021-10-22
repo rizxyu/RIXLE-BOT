@@ -8,7 +8,7 @@ let { conn } = data
 let id = m.chat
     conn.absen = conn.absen ? conn.absen : {}
     if (!(id in conn.absen)) {
-        await m.reply(`Tidak ada absen berlangsung digrup ini!\n\nketik *${userbot.prefix}mulaiabsen* untuk memulai absen`)
+        await conn.sendButton(m.chat, `Tidak ada absen berlangsung digrup ini!`, userbot.packname, 'Mulai', 'absenm', {quoted: m})
         throw false
     }
 
@@ -30,6 +30,7 @@ ${conn.absen[id][2]}
 ${list}
 │ 
 └────`.trim()
-    await m.reply(caption)
+    await conn.sendButton(m.chat, caption, userbot.prefix, 'Cekabsen', 'absenc', { quoted: m, contextInfo: {"mentionedJid": conn.parseMention(caption)}} )
+ 
 }
 }
