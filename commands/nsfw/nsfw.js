@@ -3,17 +3,17 @@ const fetch = require('node-fetch')
 
 module.exports = {
 
-name: ["waifunsfw"],
+name: ["waifusfw"],
 
 type: ["nsfw"],
 useLimit: true,
-description: "nsfw waifu pics",
-utilisation: userbot.prefix + "waifunsfw",
+description: "download video facebook",
+utilisation: userbot.prefix + "waifusfw",
 
 async execute(m) {
 let { conn, args } = data
 
-let res = await fetch(`https://api.waifu.pics/nsfw/` + ["waifu", "neko", "trap", "blowjob"][Math.floor(Math.random() * ["waifu", "neko", "trap", "blowjob"].length)])
+let res = await fetch(`https://api.waifu.pics/nsfw/waifu`)
 if (!res.ok) return m.reply('Ada kesalahan')
 let json = await res.json()
 
