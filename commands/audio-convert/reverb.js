@@ -20,7 +20,7 @@ try {
                 fs.unlinkSync(media)
                 if (err) m.reply(`_*Error!*_`)
                 let buff = fs.readFileSync(ran)
-                conn.sendFile(m.chat, buff, ran, null, m, true, { quoted: m, mimetype: 'audio/mp4' })
+                conn.sendFile(m.chat, buff, ran, null, m, true, { quoted: m, mimetype: 'audio' })
                 fs.unlinkSync(ran)
             })
         } else m.reply(`Balas vn/audio yang ingin diubah dengan caption *${userbot.prefix}reverb*`)
