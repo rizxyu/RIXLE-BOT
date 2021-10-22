@@ -23,7 +23,7 @@ try {
                 if (err) m.reply(`_*TERJADI KESALAHAN!*_`)
                 let buff = fs.readFileSync(filename)
                 conn.sendFile(m.chat, buff, ran, null, m, true, { quoted: m, mimetype: 'audio/mp4' })
-                await fs.unlinkSync(filename)
+                fs.unlinkSync(filename)
             })
         } else m.reply(`Balas vn/audio yang ingin diubah dengan caption *${userbot.prefix}reverb*`)
     } catch (e) {
