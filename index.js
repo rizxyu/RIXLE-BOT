@@ -21,41 +21,44 @@ global.antidelete = false
                 global.Public = false
                  global.scrap = require("./Lib/scrape")
 
-console.log(Ft.banner.string)
 conn.version = [2, 2119, 6]
 conn.logger.level = "warn"
-conn.browserDescription = ['R I X L E  ™', 'EDGE', '94.0.992.47'] 
 
 if (fs.existsSync('./session.json')) conn.loadAuthInfo('./session.json')
    conn.on('qr', qr => {
    console.log(`PLEASE SCAN QR`)
 })
 conn.on('connecting', () => {
-   console.log(`connecting....`)
+   console.log(`Connecting...`)
+ 
 })
 
 conn.on("open", () => {
 const authInfo = conn.base64EncodedAuthInfo()
-console.log("Succes connet to baileys")
+let stats = {
+status: 200,
+message: "success",
+info: "berhasil masuk ke dalam baileys"
+}
+conn.on("close", async() => {
+await conn.connect()
+})
+conn.on("ws-close", async() => {
+await conn.connect()
+})
+console.log(stats)
 fs.writeFileSync('./session.json', JSON.stringify(authInfo, null, '\t'))
 })
 
-conn.on('ws-close', async () => {
-     conn.logger.warn('Connected Timeout')
-})
-
-conn.on('close', async () => {
-     conn.logger.warn('Closed Connection')
-})
 
  require('./src/loader')
  async function run() {// Function biar bisa run bot
  let message = require('./action/chats');
  let action = require('./action/action');
-await conn.connect();
+ await conn.connect();
  conn.message = message.msg
  conn.on('chat-update', conn.message);
  conn.on('group-participants-update', action.groupUpdate);
  }
  Ft.action()
- run();// Menjalankan Bot
+ run();// Menjalangkan Bot
