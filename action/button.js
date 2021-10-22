@@ -80,17 +80,17 @@ before: `*${me}*
 *Name:* ${name}
 
 *Ｓｔａｔｕｓ Ｂｏｔ:*
-*Runtime:* ${count(uptime)}
-*Uptime:* ${count(os.uptime())}
-*Hostname:* ${os.hostname()}
-*Total Fitur:* *${Object.keys(Events).length}* fitur
+*› Runtime:* ${count(uptime)}
+*› Uptime:* ${count(os.uptime())}
+*› Hostname:* ${os.hostname()}
+*› Total Fitur:* *${Object.keys(Events).length}* fitur
 
 *ｓｔａｔｕｓ ｎｏｗ:*
-*clock:* ${time}
-*calender islam:* ${dateIslamic}
-*calender Java:* ${week} ${weton} ${date}
+*› Jam:* ${time}
+*› Kalender islam:* ${dateIslamic}
+*› Kalender Java:* ${week} ${weton} ${date}
 
-*Github:*\nhttps://github.com/Rizxyu/RIXLE-BOT`.trimStart(),
+*› Github:*\nhttps://github.com/Rizxyu/RIXLE-BOT`.trimStart(),
 type: "*#type*\n",
 after: "\n"
 }
@@ -120,19 +120,21 @@ return "*°* " + userbot.prefix + menu.help
 after
 ].join("\n\n")
 
-conn.send2ButtonLoc(m.chat, await (await fetch('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTHDLrd0_DwHnJfuZ_pRMOAbLi3-ot-NxyPA&usqp=CAU')).buffer(), text, `@_Rizxyu`, `Creator`, `creator`, `Rules`, `rules`, m)
+conn.send2ButtonLoc(m.chat, await (await fetch('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrF6fyFoGCHmsmOXWjFxIXh-467D1nRhA4mQ&usqp=CAU')).buffer(), text, userbot.packname, `Creator`, `creator`, `Rules`, `rules`, m)
 break;
 
    case "rules":
 capt = `
-Bot ini boleh digunakan oleh siapa saja asalkan tidak melanggar aturan norma hukum dan norma agama!
+Bot ini boleh digunakan oleh siapa saja asalkan tidak melanggar aturan norma hukum dan norma agama,
 Dan juga jangan sekali kali spam bot apalagi spam command!
-Gak boleh banding bandingin bot lain sama bot kami
+Gak boleh banding bandingin bot lain sama bot kami!
 
-Ada bug atau eror 
+Bot ini menggunakan prefix ${userbot.prefix}
+
+Note : jika Ada bug atau eror silahkan ketik
 ${userbot.prefix}report <apa yg di laporkan>
 `
-conn.sendButton(m.chat, capt, userbot.packname, 'OK', 'OK', { quoted: m, contextInfo: {"mentionedJid": conn.parseMention(capt)}} )
+conn.sendButton(m.chat, capt, userbot.packname, 'Menu', 'menu', { quoted: m, contextInfo: {"mentionedJid": conn.parseMention(capt)}} )
 break;
 
    case "audio":
@@ -171,7 +173,7 @@ let usedServer = servers[0]
     }
   }
 if (yt === false) throw 'semua server gagal'
-conn.sendFile(m.chat,yt.dl_link,"m.mp3",null,m)
+conn.sendFile(m.chat,yt.dl_link,"m.mp4",null,m)
 } catch (e) {
 throw e
 }
