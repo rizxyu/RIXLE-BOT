@@ -1921,21 +1921,27 @@ function cnn(g="internasional"){
       resolve(hasil)
     }).catch(reject)
   })
-function cnn(g="internasional"){
+}
+function ramalanJodoh(nama1,nama2){
   return new Promise((resolve,reject)=>{
-    axios.get(`https://www.cnnindonesia.com/${g}`).then(({ data }) => {
-      const hasil = []
+    Axios.get('https://www.primbon.com/kecocokan_nama_pasangan.php?nama1='+nama1+'&nama2='+nama2+'&proses=+Submit%21+').then(({ data }) => {
       const $ = cheerio.load(data)
-      $('article').each(function(a, b) {
-        const link = $(b).find('a').attr('href')
-        const thumb = $(b).find('img').attr('src') 
-        const judul = $(b).find('img').attr('alt')
-        hasil.push({ judul, link, thumb })
+      const img = 'https://www.primbon.com/'+$('#body > img').attr('src')
+      const isi = $('#body').text().split(nama2)[1].replace('< Hitung Kembali','').split('\n')[0]
+      const positif = isi.split('Sisi Negatif Anda: ')[0].replace('Sisi Positif Anda: ','')
+      const negatif = isi.split('Sisi Negatif Anda: ')[1]
+      resolve({
+        nama1,
+        nama2,
+        img,
+        positif,
+        negatif
       })
-      resolve(hasil)
     }).catch(reject)
   })
 }
+
+  
 
 module.exports.Searchnabi = Searchnabi
 module.exports.tiktok = tiktok
@@ -1980,3 +1986,4 @@ module.exports.uguu = uguu
 module.exports.artinama = artinama
 /*module.exports.fbdl = fbdl*/
 module.exports.cnn = cnn
+module.exports.ramalanJodoh = ramalanJodoh
