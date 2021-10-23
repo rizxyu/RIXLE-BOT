@@ -17,7 +17,7 @@ let teks = `Nickname : ${ttdata.meta.author.nickname}`
 teks += `Desc : ${ttdata.meta.desc}`
 teks += `Duration : ${ttdata.meta.video.duration}\n`
 teks += `Pilih Type Dibawah Ini ${m.mention}`
-conn.send2ButImg(m.chat, teks, ttdata.meta.video.cover,userbot.packname,`MP4`, `tnowm ${[args[0]]}`, `MP3` , `tmusic ${[args[0]]}`, {quoted: m, contextInfo: {"mentionedJid": conn.parseMention(teks) }})
+conn.send2ButImg(m.chat, ttdata.meta.video.cover, teks,userbot.packname,`MP4`, `tnowm ${[args[0]]}`, `MP3` , `tmusic ${[args[0]]}`, {quoted: m, contextInfo: {"mentionedJid": conn.parseMention(teks) }})
 } catch (e) {
 m.reply(Ft.util.format(e))
 }
