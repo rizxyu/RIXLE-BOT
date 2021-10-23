@@ -17,4 +17,5 @@ conn.send2ButtonImg(m.chat, teks, await Ft.getBuffer(ttdata.meta.video.cover), u
 m.reply(Ft.util.format(e))
 }
 }
+//Uh
 }
