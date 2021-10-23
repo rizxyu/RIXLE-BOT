@@ -10,7 +10,8 @@
 <p align="center">
 </p>
 </div>
-
+# NOTE
+* HAPUS SESION.JSON GANTI JADI SESI LU
 # Deploy To Heroku
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Rizxyu/Tes-bot1)
 # 📦 BuildPack
