@@ -1,4 +1,4 @@
-const tiktokmusic = require("../../Lib/scrape.js").tiktokmusic
+const { tiktokmusic } = require("../../Lib/scrape.js")
 module.exports = {
 name: ["tiktok", "tt"],
 type: ["download"],
