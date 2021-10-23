@@ -3,7 +3,7 @@ const os = global.Ft['os']
 const fetch = require('node-fetch')
 
 module.exports = {
-name: ["stats"],
+name: ["stats", "runtime", "speed", "runtime"],
 type: ['default'],
 description: "melihat kecepatan respon bot",
 utilisation: global.userbot.prefix+ "speed",
@@ -27,14 +27,15 @@ stats = `
 *› Runtime :* ${count(uptime)}
 
 *_Phone Stats_*
-*› Batterai:* ${conn.battery != undefined ? `${conn.battery.value}% ${conn.battery.live ? '🔌 Ｃｈａｒｇｉｎｇ' : '⚡ Discharging' }` : '_Mengambil data_'}
-*› Penggunaan Ram : ${ram2}
-*› Platform : ${os.platform()}
-*› Hostname : ${os.hostname()}
-*› Uptime : ${count(os.uptime())}
-*› Wa Version: ${conn.user.phone.wa_version}
-*› Os Version: ${conn.user.phone.os_version}
-*› Device Model: ${conn.user.phone.device_model}`
+*› Batterai:* ${conn.battery != undefined ? `${conn.battery.value}% ${conn.battery.live ? '🔌 Ｃｈａｒｇｉｎｇ' : '⚡ Discharging' }` : '_♻️Mengambil data_'}
+*› Penggunaan Ram :* ${ram2}
+*› Platform :* ${os.platform()}
+*› Hostname :* ${os.hostname()}
+*› Uptime :* ${count(os.uptime())}
+*› Wa Version:* ${conn.user.phone.wa_version}
+*› Os Version:* ${conn.user.phone.os_version}
+*› Device Model:* ${conn.user.phone.device_model}
+`
 conn.sendButtonLoc(m.chat, await ( await fetch('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWisuGQ2p4DQFvXa1eWhUhfu9lcyRxHXa1OQ&usqp=CAU')).buffer(),  stats, userbot.packname, 'Menu', 'menu', m)
 
 
