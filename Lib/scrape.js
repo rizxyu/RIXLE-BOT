@@ -1963,6 +1963,29 @@ function wiki(q){
     }).catch(reject)
   })
 }
+function brainly(pertanyaan,jumlah,callback){
+  return new Promise((resolve,reject)=>{
+    require("brainly-scraper")(pertanyaan.toString(),Number(jumlah)).then((res) => {
+      let brainlyResult = []
+      res.data.forEach((ask) => {
+        let opt = {
+          pertanyaan: ask.pertanyaan,
+          fotoPertanyaan: ask.questionMedia
+        }
+        ask.jawaban.forEach(answer => {
+          opt.jawaban = {
+            judulJawaban: answer.text,
+            fotoJawaban: answer.media
+          }
+        })
+        brainlyResult.push(opt)
+      })
+      resolve(brainlyResult)
+    }).then(a => {
+        callback(a)
+    }).catch(reject)
+  })
+}
 
 module.exports.Searchnabi = Searchnabi
 module.exports.tiktok = tiktok
@@ -2010,3 +2033,4 @@ module.exports.cnn = cnn
 module.exports.ramalanJodoh = ramalanJodoh
 module.exports.ramalanJadian = ramalanJadian
 module.exports.wiki = wiki
+module.exports.brainly = brainly
