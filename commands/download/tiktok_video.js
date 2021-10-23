@@ -6,7 +6,13 @@ description: "download video from tiktok with url",
 utilisation: userbot.prefix + "tiktok <link>",
 
 async execute(m) {
-let url = m.text
+let url;
+if (m.quoted.text) {
+url = m.quoted.text
+}
+if (m.text) {
+url = m.text
+}
 if (!url) return m.reply("please input url")
 let ttdata = await tiktokmusic(url)
 let teks = `*Nickname :* ${ttdata.meta.author.nickname}\n*Desc :* ${ttdata.meta.desc}\n*Duration* : ${ttdata.meta.video.duration}\n\n_Pilih Type Dibawah Ini_ ${m.mention}`
