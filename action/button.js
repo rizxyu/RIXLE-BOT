@@ -44,7 +44,6 @@ switch (button.split(" ")[0].toLowerCase()) {
      
     list = absen.map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')
      caption = `
-Tanggal: ${date}
 ${conn.absen[id][2]}
 ┌〔 daftar absen 〕
 │ 
@@ -77,7 +76,6 @@ ${list}
     absen = conn.absen[id][1]
     list = absen.map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')
     caption = `
-Tanggal: ${date}
 ${conn.absen[id][2]}
     
 ┌〔 daftar absen 〕
