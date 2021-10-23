@@ -5,6 +5,7 @@ const { toUrl } = require("./toUrl")
  * @typedef {Object} StickerMetadata
  * @property {String} [name] name sticker 
  * @property {String} [author] author sticker
+ * @property {Boolean} [crop] type sticker
  */
 /**
  * format sticker  
@@ -20,7 +21,9 @@ async function sticker(buffer, url = false, metadata) {
         body: new URLSearchParams(Object.entries({
             name: metadata.name,
             author: metadata.author,
-            file: url_or_buffer
+            file: url_or_buffer,
+            crop: metadata.crop || false
+
         }))
     }).then(v => v.buffer())
     return data
