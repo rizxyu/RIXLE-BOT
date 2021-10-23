@@ -41,12 +41,7 @@ switch (button.split(" ")[0].toLowerCase()) {
     const wasVote = absen.includes(m.sender)
     if (wasVote) return m.reply('*Kamu sudah absen!*')
     absen.push(m.sender)
-     let diy = new Date
-     date = diy.toLocaleDateString('id', {
-        day: 'numeric',
-        month: 'long',
-        year: 'numeric'
-    })
+     
     list = absen.map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')
      caption = `
 Tanggal: ${date}
@@ -79,12 +74,6 @@ ${list}
         throw false
     }
 
-      let doi = new Date
-       date = doi.toLocaleDateString('id', {
-        day: 'numeric',
-        month: 'long',
-        year: 'numeric'
-    })
     absen = conn.absen[id][1]
     list = absen.map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')
     caption = `
