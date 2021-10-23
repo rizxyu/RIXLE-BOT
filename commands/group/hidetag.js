@@ -2,7 +2,7 @@
 let { MessageType, mentionedJid } = require("@adiwajshing/baileys")
 
 module.exports = {
-name: ["hidetag","everyone],
+name: ["hidetag","everyone"],
 type: ['group'],
 description: "menendang member grup(hanya boleh dilakukan ketika anda menjadi admin)",
 admin: true,
