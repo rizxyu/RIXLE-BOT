@@ -1,13 +1,13 @@
 const { MessageType }= require('@adiwajshing/baileys'),
       { contactsArray } = MessageType,
       fs = Ft.fs,
-      { servers, yta, ytv } = require("../Lib/y2mate.js")
-      fetch = require('node-fetch')
-      tags = {}
-      speed = global.Ft['speed']
-      os = global.Ft['os']
-      tiktok = require("../../Lib/scrape.js").tiktok
-      tiktokmusic = require("../../Lib/scrape").tiktokmusic
+      { servers, yta, ytv } = require("../Lib/y2mate.js"),
+      fetch = require('node-fetch'),
+      tags = {},
+      speed = global.Ft['speed'],
+      os = global.Ft['os'],
+      { tiktok } = require("../../Lib/scrape.js"),
+      { tiktokmusic } = require("../../Lib/scrape")
 
 module.exports = {
 async execute(m, {button, args, text }) {
