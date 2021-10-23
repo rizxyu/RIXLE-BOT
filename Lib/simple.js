@@ -596,6 +596,7 @@ exports.smsg = (conn, m, hasParent) => {
     m.fromMe = m.key.fromMe
     m.isGroup = m.chat.endsWith('@g.us')
     m.sender = m.fromMe ? conn.user.jid : m.participant ? m.participant : m.key.participant ? m.key.participant : m.chat
+    m.mention = "@"+m.sender.split("@")[0]
   }
   if (m.message) {
     m.mtype = Object.keys(m.message)[0]
@@ -620,6 +621,7 @@ exports.smsg = (conn, m, hasParent) => {
       m.quoted.chat = m.msg.contextInfo.remoteJid || m.chat
       m.quoted.isBaileys = m.quoted.id ? m.quoted.id.startsWith('3EB0') && m.quoted.id.length === 12 : false
       m.quoted.sender = m.msg.contextInfo.participant
+      m.quoted.mention = "@"+m.quoted.sender.split("@")[0]
       m.quoted.fromMe = m.quoted.sender === (conn.user && conn.user.jid)
       m.quoted.text = m.quoted.text || m.quoted.caption || ''
       m.quoted.mentionedJid = m.quoted.contextInfo ? m.quoted.contextInfo.mentionedJid : []
