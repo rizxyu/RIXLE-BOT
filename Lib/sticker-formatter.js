@@ -5,6 +5,7 @@ const { toUrl } = require("./toUrl")
  * @typedef {Object} StickerMetadata
  * @property {String} [name] name sticker 
  * @property {String} [author] author sticker
+ * @property {Boolean} [crop] type sticker
  */
 /**
  * format sticker  
@@ -15,12 +16,14 @@ const { toUrl } = require("./toUrl")
  */
 async function sticker(buffer, url = false, metadata) {
      const url_or_buffer = url ? url : await toUrl(buffer)
-     let data = await fetch('http://api-hardi.herokuapp.com/api/sticker-api', {
+     let data = await fetch('https://me.hardianto.xyz/api/sticker-api', {
         method: "POST",
         body: new URLSearchParams(Object.entries({
             name: metadata.name,
             author: metadata.author,
-            file: url_or_buffer
+            file: url_or_buffer,
+            crop: metadata.crop || false
+
         }))
     }).then(v => v.buffer())
     return data
