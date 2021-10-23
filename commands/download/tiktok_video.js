@@ -12,8 +12,7 @@ async execute(m) {
 let { args } = data
 try {
 if (!args[0]) return m.reply("please input url")
-if (!args[0].includes("tiktok.com/")) return m.reply("url unvalid")
-let ttdata = await tiktokmusic(args[0])
+let ttdata = await tiktokmusic(`${[args[0]]}`)
 let teks = `Nickname : ${ttdata.meta.author.nickname}`
 teks += `Desc : ${ttdata.meta.desc}`
 teks += `Duration : ${ttdata.meta.video.duration}\n`
