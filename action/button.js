@@ -79,8 +79,8 @@ ${list}
         throw false
     }
 
-      let do = new Date
-       date = do.toLocaleDateString('id', {
+      let doi = new Date
+       date = doi.toLocaleDateString('id', {
         day: 'numeric',
         month: 'long',
         year: 'numeric'
