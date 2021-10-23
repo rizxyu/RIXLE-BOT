@@ -1,18 +1,35 @@
+
+		
+let fetch = require("node-fetch");
+const { MessageType } = require("@adiwajshing/baileys");
+const { createSticker, StickerTypes } = require("wa-sticker-formatter");
 let fetch = require("node-fetch");
 module.exports = {
 name: ["kiss"],
 type: ["fun"],
-description: "screenshot web link",
-utilisation: userbot.prefix + "ssweb <link>",
+description: "kiss",
+utilisation: userbot.prefix + "kiss <tag>",
 
 async execute(m) {
 let { conn } = data
-if (m.quoted && m.quoted.sender) m.mentionedJid.push(m.quoted.sender);
-if (!m.mentionedJid.length) m.mentionedJid.push(m.sender);
-let res = await fetch(`https://waifu.pics/sfw/kiss`)
-	let json = await res.json();
-conn.sendFile(m.chat, json.link, "wibu.gif", `@${m.sender.split("@")[0]} ${command} ${m.mentionedJid.map((user) => user === m.sender ? "themselves " : `@${user.split("@")[0]}`).join(", ")}`, m, { contextInfo: { mentionedJid: [...m.mentionedJid, m.sender],
-				}})
-	//else return m.reply(json);
+if (m.quoted?.sender) m.mentionedJid.push(m.quoted.sender);
+  if (!m.mentionedJid.length) m.mentionedJid.push(m.sender);
+  let res = await fetch("https://waifu.pics/sfw/kiss");
+  if (!res.ok) throw await res.text();
+  let json = await res.json();
+
+  if (json.url) {
+      const sticker = await createSticker(json.url, {
+        type: StickerTypes.CROPPED,
+        pack: global.packname,
+        author: global.author,
+      });
+      await conn.sendMessage(m.chat, sticker, MessageType.sticker, {
+        quoted: m,
+        mimetype: "image/webp",
+      })
+      m.reply(`@${m.sender.split("@")[0]} ${command} ${m.mentionedJid.map((user) => user === m.sender ? "themselves " : `@${user.split("@")[0]}`).join(", ")}`)
+}
+  else throw json;
 }
 }
