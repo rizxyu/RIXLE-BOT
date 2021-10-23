@@ -56,7 +56,7 @@ if (!args[0]) return m.reply("please input url")
 let ttdata = await tiktokmusic(`${[args[0]]}`)
 let teks = `Nickname : ${ttdata.meta.author.nickname}\nDesc : ${ttdata.meta.desc}\nDuration : ${ttdata.meta.video.duration}\n\nPilih Type Dibawah Ini!!`
 
-conn.sendButImage(m.chat,teks,userbot.packname, await Ft.getBuffer(ttdata.meta.video.cover), {quoted: m, contextInfo:{"mentionedJid": conn.parseMention(teks)}})
+sendButImage(m.chat,teks,userbot.packname, await Ft.getBuffer(ttdata.meta.video.cover), {quoted: m, contextInfo:{"mentionedJid": conn.parseMention(teks)}})
 } catch (e) {
 m.reply(Ft.util.format(e))
 }
