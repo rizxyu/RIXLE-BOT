@@ -6,7 +6,7 @@ name: ["hidetag","everyone"],
 type: ['group'],
 description: "menendang member grup(hanya boleh dilakukan ketika anda menjadi admin)",
 admin: true,
-utilisation: global.userbot.prefix+ "hidetag","everyone",
+utilisation: global.userbot.prefix+ "hidetag",
 
 async execute(m) {
 let { conn, text } = data
