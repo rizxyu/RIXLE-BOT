@@ -21,8 +21,8 @@ if (m.quoted?.sender) m.mentionedJid.push(m.quoted.sender);
   if (json.url) {
       const sticker = await createSticker(json.url, {
         type: StickerTypes.CROPPED,
-        pack: global.packname,
-        author: global.author,
+        pack: userbot.packname,
+        author: userbot.author,
       });
       await conn.sendMessage(m.chat, sticker, MessageType.sticker, {
         quoted: m,
