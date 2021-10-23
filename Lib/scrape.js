@@ -1940,7 +1940,14 @@ function ramalanJodoh(nama1,nama2){
     }).catch(reject)
   })
 }
-
+function ramalanJadian(tanggal, bulan, tahun) {
+  return new Promise((resolve,reject)=>{
+    if(isNaN(tanggal) && isNaN(bulan) && isNaN(tahun)) throw `Tanggal bulan tahun harus berupa angka`
+    axios.get(`https://www.primbon.com/tanggal_jadian_pernikahan.php?tgl=${tanggal}&bln=${bulan}&thn=${tahun}&proses=+Submit%21+`).then(({ data }) => {
+      resolve(cheerio.load(data)('#body').text().trim().replace('MAKNA TANGGAL JADIAN, PERNIKAHAN', '').replace('Karakteristik:', '\nKarakteristik : ').replace('< Hitung Kembali', ''))
+    }).catch(reject)
+  })
+}
   
 
 module.exports.Searchnabi = Searchnabi
@@ -1987,3 +1994,4 @@ module.exports.artinama = artinama
 /*module.exports.fbdl = fbdl*/
 module.exports.cnn = cnn
 module.exports.ramalanJodoh = ramalanJodoh
+module.exports.ramalanJadian = ramalanJadian
