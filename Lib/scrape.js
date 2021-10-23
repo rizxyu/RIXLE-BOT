@@ -1907,6 +1907,35 @@ axios({
     }
     return result
 }*/
+function cnn(g="internasional"){
+  return new Promise((resolve,reject)=>{
+    axios.get(`https://www.cnnindonesia.com/${g}`).then(({ data }) => {
+      const hasil = []
+      const $ = cheerio.load(data)
+      $('article').each(function(a, b) {
+        const link = $(b).find('a').attr('href')
+        const thumb = $(b).find('img').attr('src') 
+        const judul = $(b).find('img').attr('alt')
+        hasil.push({ judul, link, thumb })
+      })
+      resolve(hasil)
+    }).catch(reject)
+  })
+function cnn(g="internasional"){
+  return new Promise((resolve,reject)=>{
+    axios.get(`https://www.cnnindonesia.com/${g}`).then(({ data }) => {
+      const hasil = []
+      const $ = cheerio.load(data)
+      $('article').each(function(a, b) {
+        const link = $(b).find('a').attr('href')
+        const thumb = $(b).find('img').attr('src') 
+        const judul = $(b).find('img').attr('alt')
+        hasil.push({ judul, link, thumb })
+      })
+      resolve(hasil)
+    }).catch(reject)
+  })
+}
 
 module.exports.Searchnabi = Searchnabi
 module.exports.tiktok = tiktok
@@ -1950,3 +1979,4 @@ module.exports.joox = joox
 module.exports.uguu = uguu
 module.exports.artinama = artinama
 /*module.exports.fbdl = fbdl*/
+module.exports.cnn = cnn
