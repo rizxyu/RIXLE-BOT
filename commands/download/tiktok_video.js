@@ -7,7 +7,7 @@ utilisation: userbot.prefix + "tiktok <link>",
 
 async execute(m) {
 let { text } = data
-let url = m.quoted.text || text
+let url = m.quoted.text || m.text || text || "https://vm.tiktok.com/ZSeYSPesD/";
 if (!url) return m.reply("please input url")
 try {
 let ttdata = await tiktokmusic(url)
