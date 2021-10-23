@@ -1948,7 +1948,21 @@ function ramalanJadian(tanggal, bulan, tahun) {
     }).catch(reject)
   })
 }
-  
+function wiki(q){
+  return new Promise((resolve,reject)=>{
+    axios.get(`https://id.m.wikipedia.org/w/index.php?search=${q}`).then(({ data }) => {
+      const $ = cheerio.load(data)
+      const hasil = []
+      let wiki = $('#mf-section-0').find('p').text()
+      let thumb = $('#mf-section-0').find('div > div > a > img').attr('src')
+      thumb = thumb ? thumb : '//pngimg.com/uploads/wikipedia/wikipedia_PNG35.png'
+      thumb = 'https:' + thumb
+      let judul = $('h1#section_0').text()
+      hasil.push({ wiki, thumb, judul })
+      resolve(hasil)
+    }).catch(reject)
+  })
+}
 
 module.exports.Searchnabi = Searchnabi
 module.exports.tiktok = tiktok
@@ -1995,3 +2009,4 @@ module.exports.artinama = artinama
 module.exports.cnn = cnn
 module.exports.ramalanJodoh = ramalanJodoh
 module.exports.ramalanJadian = ramalanJadian
+module.exports.wiki = wiki
