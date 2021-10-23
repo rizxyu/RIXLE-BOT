@@ -6,7 +6,7 @@ description: "download video from tiktok with url",
 utilisation: userbot.prefix + "tiktok <link>",
 
 async execute(m) {
-let { text } = dat
+let { text } = data
 let url = text
 if (!url) return m.reply("please input url")
 try {
