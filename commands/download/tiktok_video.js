@@ -6,8 +6,8 @@ description: "download video from tiktok with url",
 utilisation: userbot.prefix + "tiktok <link>",
 
 async execute(m) {
-let { args } = data
-let url = args[0]
+let url = m.text
+if (!url) return m.reply("please input url")
 let ttdata = await tiktokmusic(url)
 let teks = `*Nickname :* ${ttdata.meta.author.nickname}\n*Desc :* ${ttdata.meta.desc}\n*Duration* : ${ttdata.meta.video.duration}\n\n_Pilih Type Dibawah Ini_ ${m.mention}`
 conn.send2ButtonImg(m.chat, teks, await Ft.getBuffer(ttdata.meta.video.cover), userbot.packname, "MP3","tmusic "+url, "MP4", "ttnowm "+url, {contextInfo:{"mentionedJid": conn.parseMention(teks)}})
