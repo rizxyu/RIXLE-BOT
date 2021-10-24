@@ -40,8 +40,7 @@ userbot = {
   "6282328303332",
   "62823283033323"
   ],
-  MONGO_URI: "mongodb+srv://zanDb:veth0581@cluster0.eyx0e.mongodb.net/<mydb>?retryWrites=true&w=majority",
-   mess: {
+  mess: {
    wait: "tunggu sedang di proses...",
    error: "errorr!!"
    },
@@ -91,7 +90,7 @@ userbot = {
 
 
 # 👥My Team 
-* [`Fauzan (Dev)`](https://github.com/FzNMYBot)
+* [`Fauzan (Dev)`](https://github.com/Fau-Zan)
 * [`Ivan (Dev)`](https://github.com/ivan-MLN)
 * [`Sanz (Dev)`](https://github.com/sanzgantengz)
 * [`Rizky (Dev)`](https://github.com/Rizxyu)
