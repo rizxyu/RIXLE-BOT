@@ -26,7 +26,7 @@ img = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9CGh88WwR8hAX_NKjK
 })
 switch (action) {
 case 'remove': 
-const image = await new Canvas.Goodbye()
+let image = await new Canvas.Goodbye()
   .setUsername(encodeURI(await conn.getName(mem)))
   .setDiscriminator(groupM.participants.length)
   .setMemberCount(groupM.participants.length)
@@ -45,7 +45,7 @@ conn.sendFile(m.chat, image.toBuffer(), null, teks, {contextInfo: {"mentionedJid
 break
 case 'add' : 
 teks = `@${mem.split("@")[0]} Bergabung ke Dalam Group ${groupM.subject}`
-const image = await new Canvas.Welcome()
+let mage = await new Canvas.Welcome()
   .setUsername(encodeURI(await conn.getName(mem)))
   .setDiscriminator(groupM.participants.length)
   .setMemberCount(groupM.participants.length)
@@ -60,7 +60,7 @@ const image = await new Canvas.Welcome()
   .setBackground("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJOP9RorHQ1OkTW0uYmOkNkBOkvIreWirvug&usqp=CAU")
   .toAttachment();
   teks = `@${mem.split("@")[0]} Keluar Dari Group ${groupM.subject}`
-conn.sendFile(m.chat, image.toBuffer(), null, teks, {contextInfo: {"mentionedJid": conn.parseMention(teks)}})
+conn.sendFile(m.chat, mage.toBuffer(), null, teks, {contextInfo: {"mentionedJid": conn.parseMention(teks)}})
 break
 }
 }
