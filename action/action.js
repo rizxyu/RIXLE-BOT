@@ -44,7 +44,6 @@ let image = await new Canvas.Goodbye()
 conn.sendFile(member.jid, mage.toBuffer(), "wel.jpg", teks, {contextInfo: {"mentionedJid": conn.parseMention(teks)}})
 break
 case 'add' : 
-teks = `@${mem.split("@")[0]} Bergabung ke Dalam Group ${groupM.subject}`
 let mage = await new Canvas.Welcome()
   .setUsername(encodeURI(await conn.getName(mem)))
   .setDiscriminator(groupM.participants.length)
