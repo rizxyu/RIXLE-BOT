@@ -57,6 +57,13 @@ userbot = {
     }
 }
 ```
+
+# KHUSUS TERMUX↓
+[`githubdl`](https://github.com/Fau-Zan/Rixle-botV2)
+
+# RDP/VPS/LINUX
+
+
 ## FEATURE LIST 💡
 
 | FEATURE |🌱|
