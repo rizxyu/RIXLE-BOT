@@ -12,6 +12,7 @@ const path = require('path')
 const axios = require('axios')
 const src = path.join(__dirname, './data/src/')
 const _font = path.join(src, 'font')
+const { default: Axios } = require("axios")
 let tmp = path.join(__dirname, './')
 const aesthetic = path.join(src, 'canvas/')
 //Variable
