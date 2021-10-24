@@ -14,25 +14,25 @@ global.antidelete = false
     global.Ft = new Functions();// Menghubungkan dari Function.js
       global.mediaType = require(Baileys).MessageType //Biar keren hehe
         global.conn = new WAConnection(); //Wa Connect dari baileys
-          global.botuser = require('./config')//Menghubungkan Ke Conection string
+          global.botuser = require('./config')//Menghubungkan Ke Connection string
             global.Events = {}
              global.baileys = Baileys //Hehe
                global.db = new JsonDB(new Config("database", true, false, '/'));
-                global.Public = false
-                 global.scrap = require("./Lib/scrape")
+                 global.Public = false
+                   global.scrap = require("./Lib/scrape");
 
 conn.version = [2, 2119, 6]
 conn.logger.level = "warn"
+conn.browserDescription = ['R I X L E', 'EDGE', '94.0.992.50']
 
 if (fs.existsSync('./session.json')) conn.loadAuthInfo('./session.json')
    conn.on('qr', qr => {
    console.log(`PLEASE SCAN QR`)
 })
+
 conn.on('connecting', () => {
    console.log(`Connecting...`)
- 
 })
-
 conn.on("open", () => {
 const authInfo = conn.base64EncodedAuthInfo()
 let stats = {
@@ -40,16 +40,15 @@ status: 200,
 message: "success",
 info: "berhasil masuk ke dalam baileys"
 }
-conn.on("close", async() => {
-await conn.connect()
-})
 conn.on("ws-close", async() => {
-await conn.connect()
+conn.logger.warn('Connected Timeout')
+})
+conn.on("close", async() => {
+conn.logger.warn('Closed Connection')
 })
 console.log(stats)
 fs.writeFileSync('./session.json', JSON.stringify(authInfo, null, '\t'))
 })
-
 
  require('./src/loader')
  async function run() {// Function biar bisa run bot
@@ -61,4 +60,5 @@ fs.writeFileSync('./session.json', JSON.stringify(authInfo, null, '\t'))
  conn.on('group-participants-update', action.groupUpdate);
  }
  Ft.action()
- run();// Menjalankan Botol kecap
+ console.clear();
+ run();// Menjalankan Bot
