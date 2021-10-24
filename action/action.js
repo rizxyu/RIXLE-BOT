@@ -36,7 +36,7 @@ try {
             } finally {
   let lev = await new knights.Welcome()
                 .setUsername(this.getName(m.sender))
-                .setGuildName(this.getName(jid))
+                .setGuildName(this.getName(groupM.jid))
                 .setGuildIcon(ppgc)
                 .setMemberCount(groupM.participants.length)
                 .setAvatar(pp)
