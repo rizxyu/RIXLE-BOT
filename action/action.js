@@ -41,7 +41,7 @@ let image = await new Canvas.Goodbye()
   .setBackground("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJOP9RorHQ1OkTW0uYmOkNkBOkvIreWirvug&usqp=CAU")
   .toAttachment();
   teks = `@${mem.split("@")[0]} Keluar Dari Group ${groupM.subject}`
-conn.sendFile(m.chat, image.toBuffer(), "leave.jpg", teks, {contextInfo: {"mentionedJid": conn.parseMention(teks)}})
+conn.sendButImg(m.chat, image.toBuffer(), teks, userbot.packname, 'SAYONARA', 'bye', m, {contextInfo: {"mentionedJid": conn.parseMention(teks)}})
 break
 case 'add' : 
 teks = `@${mem.split("@")[0]} Bergabung ke Dalam Group ${groupM.subject}`
