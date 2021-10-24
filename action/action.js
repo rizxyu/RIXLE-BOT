@@ -37,15 +37,15 @@ try {
             } finally {
   let lev = await new knights.Goodbye()
                 .setUsername(this.getName(m.sender))
-                .setGuildName(this.getName(namegc))
+                .setGuildName(namegc)
                 .setGuildIcon(ppgc)
-                .setMemberCount(groupM.participants.length)
+                .setMemberCount(0)
                 .setAvatar(pp)
                 .setBackground("https://i.ibb.co/KhtRxwZ/dark.png")
                 .toAttachment()
                 
 teks = `@${mem.split("@")[0]} Keluar Dari Group ${groupM.subject} \njangan lupa bawa gorengan kalo balik lagi`
-conn.sendFile(member.jid, lev.toBuffer(), null, teks, { quoted: m, contextInfo: {"mentionedJid": conn.parseMention(teks)}})
+conn.sendFile(member.jid, lev.toBuffer(), "PP.jpg", teks, false, { contextInfo: {"mentionedJid": conn.parseMention(teks)}})
 }
 break
 case 'add' : 
