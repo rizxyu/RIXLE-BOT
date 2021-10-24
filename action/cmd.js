@@ -1,6 +1,5 @@
 module.exports = {
 async Command(conn, m) {
-
 try {
 let usedPrefix
 if (typeof m.text !== 'string') m.text = ''
@@ -52,7 +51,7 @@ delete global.Events[i]
 if (Public & !m.key.fromMe) return
 const button = (Object.keys(m.message)[0] == 'buttonsResponseMessage') ? m.message.buttonsResponseMessage.selectedButtonId : ''
 if (m.quoted && m.quoted.sender == conn.user.jid && button) {
-console.log("[ by Rizky ] BUTTON RESPON => " + button )
+console.log("buttons cmd" + button )
 await require("./button.js").execute.call(conn, m, {
 this: conn,
 button,
@@ -75,7 +74,7 @@ let custom = cmd.custom
 if (!custom) continue
 if (m.text.startsWith(cmd.name)) {
 if (cmd.admin && !isAdmin) return dfail("admin", m, conn)
-if (cmd.owner && !isOwner) return dfail("owner", m, conn)
+if (cmd.owner && !isOwner) return 
 if (cmd.botAdmin && !isBotAdmin) return dfail("botAdmin", m, conn)//Si paujan ketinggalan jadi gw tambahin
 console.log(cmd.name)
 await cmd.execute.call(conn, m, data)
@@ -100,4 +99,3 @@ console.log(e)
 }
 }
 }
-//Vvvvu
