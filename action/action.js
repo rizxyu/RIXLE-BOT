@@ -1,6 +1,7 @@
 let { MessageType, mentionedJid } = require("@adiwajshing/baileys")
 let fetch = Ft.fetch
 const Canvas = require("discord-canvas")
+
 module.exports = {
 async battery(json) {
 let battery = json[2][0][1].value
@@ -41,7 +42,8 @@ let image = await new Canvas.Goodbye()
   .setBackground("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJOP9RorHQ1OkTW0uYmOkNkBOkvIreWirvug&usqp=CAU")
   .toAttachment();
   teks = `@${mem.split("@")[0]} Keluar Dari Group ${groupM.subject}`
-conn.sendFile(member.jid, mage.toBuffer(), "wel.jpg", teks, {contextInfo: {"mentionedJid": conn.parseMention(teks)}})
+ Ft.fs.writeFileSync("./lev.jpg", image.toBuffer())
+conn.sendFile(member.jid, Ft.fs.readFileSync("./lev.jpg"), "lv.jpg", teks, {contextInfo: {"mentionedJid": conn.parseMention(teks)}})
 break
 case 'add' : 
 let mage = await new Canvas.Welcome()
