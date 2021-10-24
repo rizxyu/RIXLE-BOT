@@ -27,6 +27,7 @@ img = await (await fetch('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9Gc
 }
 switch (action) {
 case 'remove': 
+let namegc = await conn.groupMetadata(m.chat)
   let pp = 'https://ibb.co/syWXQ7J'
   let ppgc = 'https://ibb.co/syWXQ7J'
 try {
@@ -34,9 +35,9 @@ try {
    ppgc = await uploadImage(await (await fetch(await this.getProfilePicture(jid))).buffer())
             } catch (e) {
             } finally {
-  let lev = await new knights.Welcome()
+  let lev = await new knights.Goodbye()
                 .setUsername(this.getName(m.sender))
-                .setGuildName(this.getName(groupM.jid))
+                .setGuildName(this.getName(namegc))
                 .setGuildIcon(ppgc)
                 .setMemberCount(groupM.participants.length)
                 .setAvatar(pp)
