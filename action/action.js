@@ -36,7 +36,7 @@ try {
             } catch (e) {
             } finally {
   let lev = await new knights.Goodbye()
-                .setUsername(this.getName(m.sender))
+                .setUsername(conn.getName(m.sender))
                 .setGuildName(namegc)
                 .setGuildIcon(ppgc)
                 .setMemberCount(0)
