@@ -190,7 +190,7 @@ let after = menu.after
 text = [
 before,
 ...Object.keys(tags).map(v => {
-return type.replace(/#type/g, tags[v]) + ("\n") + [
+return type.replace(/#type/g, tags[v]).toUpperCase() + ("\n") + [
 ...raw.filter(menu => menu.type && menu.type.includes(v) && menu.help).map(menu => {
 return "*°* " + userbot.prefix + menu.help
 })].join("\n")
