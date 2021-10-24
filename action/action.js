@@ -1,5 +1,6 @@
 let { MessageType, mentionedJid } = require("@adiwajshing/baileys")
 let fetch = Ft.fetch
+const Canvas = require("discord-canvas")
 module.exports = {
 async battery(json) {
 let battery = json[2][0][1].value
@@ -25,7 +26,6 @@ img = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9CGh88WwR8hAX_NKjK
 })
 switch (action) {
 case 'remove': 
-const Canvas = require("discord-canvas")
 const image = await new Canvas.Goodbye()
   .setUsername(encodeURI(await conn.getName(mem)))
   .setDiscriminator(groupM.participants.length)
@@ -45,7 +45,6 @@ conn.sendFile(m.chat, image.toBuffer(), null, teks, {contextInfo: {"mentionedJid
 break
 case 'add' : 
 teks = `@${mem.split("@")[0]} Bergabung ke Dalam Group ${groupM.subject}`
-const Canvas = require("discord-canvas")
 const image = await new Canvas.Welcome()
   .setUsername(encodeURI(await conn.getName(mem)))
   .setDiscriminator(groupM.participants.length)
