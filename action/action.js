@@ -34,7 +34,7 @@ try {
    ppgc = await uploadImage(await (await fetch(await this.getProfilePicture(jid))).buffer())
             } catch (e) {
             } finally {
-  let wel = await new knights.Welcome()
+  let lev = await new knights.Welcome()
                 .setUsername(this.getName(m.sender))
                 .setGuildName(this.getName(jid))
                 .setGuildIcon(ppgc)
@@ -44,7 +44,7 @@ try {
                 .toAttachment()
                 
 teks = `@${mem.split("@")[0]} Keluar Dari Group ${groupM.subject}`
-conn.sendFile(member.jid, wel.toBuffer(), teks, { quoted: m, contextInfo: {"mentionedJid": conn.parseMention(teks)}})
+conn.sendFile(member.jid, lev.toBuffer(), teks, { quoted: m, contextInfo: {"mentionedJid": conn.parseMention(teks)}})
 }
 break
 case 'add' : 
