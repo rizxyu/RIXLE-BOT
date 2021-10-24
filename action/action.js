@@ -45,7 +45,7 @@ try {
                 .toAttachment()
                 
 teks = `@${mem.split("@")[0]} Keluar Dari Group ${groupM.subject} \njangan lupa bawa gorengan kalo balik lagi`
-conn.sendFile(member.jid, lev.toBuffer(), teks, { quoted: m, contextInfo: {"mentionedJid": conn.parseMention(teks)}})
+conn.sendFile(member.jid, lev.toBuffer(), null, teks, { quoted: m, contextInfo: {"mentionedJid": conn.parseMention(teks)}})
 }
 break
 case 'add' : 
