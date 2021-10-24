@@ -53,8 +53,7 @@ setInterval(() => {
  conn.setStatus(`Ｓｔａｔｕｓ Ｂｏｔ:
 › Runtime: ${Ft.count(process.uptime())}
 › Uptime: ${Ft.count(Ft.os.uptime())}
-› Hostname:* ${Ft.os.hostname()}`).catch((_) => _);
-      settingstatus = new Date() * 1;
+› Hostname:* ${Ft.os.hostname()}`).catch((_) => _)
 },1000)
  require('./src/loader')
  async function run() {// Function biar bisa run bot
