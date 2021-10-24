@@ -1,5 +1,4 @@
 let { MessageType, mentionedJid } = require("@adiwajshing/baileys")
-let knights = require('knights-canvas')
 let fetch = Ft.fetch
 module.exports = {
 async battery(json) {
@@ -17,44 +16,54 @@ isCharge: battry.live
 module.exports = {
 async groupUpdate(member) {
 console.log(member)
-let groupM = await conn.groupMetadata(member.jid)
+let groupM = await conn.fetchGroupMetadataFromWA(member.jid)
 let mem = member.participants[0]
 let action = member.action
-try {
-let img = Ft.getBuffer(await vanz.getProfilePicture(mem))
-} catch {
-img = await (await fetch('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSa1pVfdb1zUoSve4Unc08jl5BpCHwfys8qxA&usqp=CAU')).buffer()
-}
+let img = conn.getProfilePicture(mem)
+.catch(e => {
+img = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9CGh88WwR8hAX_NKjKC_WrOOzT-cVnGsw34DgCji_TEIPJaIl1Hbkeia5&s=10'
+})
 switch (action) {
 case 'remove': 
-let namegc = await conn.groupMetadata(m.chat)
-  let pp = 'https://ibb.co/syWXQ7J'
-  let ppgc = 'https://ibb.co/syWXQ7J'
-try {
-  pp = await uploadImage(await (await fetch(await this.getProfilePicture(user))).buffer())
-   ppgc = await uploadImage(await (await fetch(await this.getProfilePicture(jid))).buffer())
-            } catch (e) {
-            } finally {
-  let lev = await new knights.Goodbye()
-                .setUsername(conn.getName(m.sender))
-                .setGuildName(namegc)
-                .setGuildIcon(ppgc)
-                .setMemberCount(0)
-                .setAvatar(pp)
-                .setBackground("https://i.ibb.co/KhtRxwZ/dark.png")
-                .toAttachment()
-                
-teks = `@${mem.split("@")[0]} Keluar Dari Group ${groupM.subject} \njangan lupa bawa gorengan kalo balik lagi`
-conn.sendFile(member.jid, lev.toBuffer(), "PP.jpg", teks, false, { contextInfo: {"mentionedJid": conn.parseMention(teks)}})
-}
+const Canvas = require("discord-canvas")
+const image = await new Canvas.Goodbye()
+  .setUsername(encodeURI(await conn.getName(mem)))
+  .setDiscriminator(groupM.participants.length)
+  .setMemberCount(groupM.participants.length)
+  .setGuildName(encodeURI(groupM.subject))
+  .setAvatar(img)
+  .setColor("border", "#8015EA")
+  .setColor("username-box", "#8015EA")
+  .setColor("discriminator-box", "#8015EA")
+  .setColor("message-box", "#8015EA")
+  .setColor("title", "#8015EA")
+  .setColor("avatar", "#8015EA")
+  .setBackground("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJOP9RorHQ1OkTW0uYmOkNkBOkvIreWirvug&usqp=CAU")
+  .toAttachment();
+  teks = `@${mem.split("@")[0]} Keluar Dari Group ${groupM.subject}`
+conn.sendFile(m.chat, image.toBuffer(), null, teks, {contextInfo: {"mentionedJid": conn.parseMention(teks)}})
 break
 case 'add' : 
 teks = `@${mem.split("@")[0]} Bergabung ke Dalam Group ${groupM.subject}`
-conn.sendMessage(member.jid, teks, MessageType.text, {thumbnail: img,
-contextInfo: {"mentionedJid": conn.parseMention(teks)}})
+const Canvas = require("discord-canvas")
+const image = await new Canvas.Welcome()
+  .setUsername(encodeURI(await conn.getName(mem)))
+  .setDiscriminator(groupM.participants.length)
+  .setMemberCount(groupM.participants.length)
+  .setGuildName(encodeURI(groupM.subject))
+  .setAvatar(img)
+  .setColor("border", "#8015EA")
+  .setColor("username-box", "#8015EA")
+  .setColor("discriminator-box", "#8015EA")
+  .setColor("message-box", "#8015EA")
+  .setColor("title", "#8015EA")
+  .setColor("avatar", "#8015EA")
+  .setBackground("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJOP9RorHQ1OkTW0uYmOkNkBOkvIreWirvug&usqp=CAU")
+  .toAttachment();
+  teks = `@${mem.split("@")[0]} Keluar Dari Group ${groupM.subject}`
+conn.sendFile(m.chat, image.toBuffer(), null, teks, {contextInfo: {"mentionedJid": conn.parseMention(teks)}})
 break
 }
 }
 }
-
 
