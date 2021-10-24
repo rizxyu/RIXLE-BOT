@@ -14,6 +14,10 @@
 # NOTE
 * HAPUS SESION.JSON GANTI JADI SESI LU
 
+# Join Group
+[![Group Bot](https://img.shields.io/badge/WhatsApp%20Group-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://chat.whatsapp.com/CkNED9yeZf82XnVMzRMVRU)
+
+
 # Deploy To Heroku
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Rizxyu/Tes-bot1)
 # 📦 BuildPack
@@ -22,7 +26,7 @@
 * [`puppeteer`](https://github.com/jontewks/puppeteer-heroku-buildpack)
 
 ## REST API
-**['Riz Api'](https://rizapi.herokuapp.com/)**
+**[`Riz Api`](https://rizapi.herokuapp.com/)**
 
 ## ✍️ Editing the file
 
@@ -86,11 +90,11 @@ userbot = {
 | ------------- | ------------- |
 
 
-# 👥My Team [`Fear Team`](https://chat.whatsapp.com/HCF35wzLasQ2xdUff29oqt)
+# 👥My Team 
 * [`Fauzan (Dev)`](https://github.com/FzNMYBot)
 * [`Ivan (Dev)`](https://github.com/ivan-MLN)
 * [`Sanz (Dev)`](https://github.com/sanzgantengz)
 * [`Rizky (Dev)`](https://github.com/Rizxyu)
-* [`Arifi Razzaq`](https://github.com/Arifirazzaq2001)
-* [`Oreki (Kanjut)`](https://github.com/Oreki-san)
+* [`Arifi Razzaq (Dev)`](https://github.com/Arifirazzaq2001)
+* [`Oreki (Contributor)`](https://github.com/Oreki-san)
 * [`ＲｉｘｌｅＢoｔ (bot)`](https://wa.me/62823283033323)
