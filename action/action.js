@@ -35,7 +35,7 @@ try {
             } catch (e) {
             } finally {
   let wel = await new knights.Welcome()
-                .setUsername(this.getName(user))
+                .setUsername(this.getName(m.sender))
                 .setGuildName(this.getName(jid))
                 .setGuildIcon(ppgc)
                 .setMemberCount(groupM.participants.length)
