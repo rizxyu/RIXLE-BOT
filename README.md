@@ -11,20 +11,11 @@
 </p>
 </div>
 
-# NOTE
-* HAPUS SESION.JSON GANTI JADI SESI LU
-
 # Join Group
 [![Group Bot](https://img.shields.io/badge/WhatsApp%20Group-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://chat.whatsapp.com/JFqb84LyIhfJJxFsKc3apI)
 
-
-# Deploy To Heroku
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Rizxyu/Tes-bot1)
-# 📦 BuildPack
-* [`ffmpeg`](https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest)
-* [`imagemagick`](https://github.com/rocketmobile/heroku-buildpack-imagemagick)
-* [`puppeteer`](https://github.com/jontewks/puppeteer-heroku-buildpack)
-
+# ONLY RUN RAILWAY
+[`railway.app`](https://railway.app/new/github)
 ## REST API
 **[`Riz Api`](https://rizapi.herokuapp.com/)**
 
