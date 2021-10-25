@@ -29,6 +29,6 @@ if (!m.quoted) return m.reply(`Balas stiker/audio yang ingin diubah menjadi vide
             '-shortest'
         ], 'mp3', 'mp4')
     }
-    await conn.sendFile(m.chat, out, 'out.mp4', 'done bro', m, 0, { thumbnail: out })
+    await conn.sendFile(m.chat, out, 'out.mp4', 'succes convert to video', m, 0, { thumbnail: out })
 }
 }
