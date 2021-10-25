@@ -21,7 +21,7 @@
   "dependencies": {
     "@adiwajshing/baileys": "^3.5.2",
     "awesome-phonenumber": "^2.64.0",
-    "axios": "^0.23.0",
+    "axios": "^0.24.0",
     "brainly-scraper": "^1.0.3",
     "browser-id3-writer": "^4.4.0",
     "buffer-alloc": "^1.2.0",
