@@ -6,7 +6,7 @@
   "directories": {
     "action": "action",
     "commands": "commands",
-    "lib": "Lib",
+    "Lib": "Lib",
     "src": "src"
   },
   "scripts": {
