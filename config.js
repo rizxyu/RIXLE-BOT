@@ -13,6 +13,7 @@ userbot = {
    butmag: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTHDLrd0_DwHnJfuZ_pRMOAbLi3-ot-NxyPA&usqp=CAU', // buat Image Button
    packname: "RIXLE-BOT OFFICIAL",
    author: '@_FearTeam',
+   chalog: "",
     setting: {
     admin: "only admin",
     group: "only group",
