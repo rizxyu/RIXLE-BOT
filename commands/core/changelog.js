@@ -1,3 +1,5 @@
+const package = require('../../package.json')
+
 module.exports = {
 name: ["changelog"],
 type: ["default"],
@@ -7,7 +9,11 @@ utilisation: userbot.prefix + "changelog",
 async execute(m) {
 let { conn, text } = data
 
-m.reply(userbot.chalog)
+m.reply(`${userbot.chalog}
+
+```${package.name} ${package.version}```
+*${package.description}*
+`)
 
 }
 }
