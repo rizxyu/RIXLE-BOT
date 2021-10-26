@@ -15,6 +15,44 @@ let { conn } = data
 
 try {
 switch (button.split(" ")[0].toLowerCase()) {
+
+   case "stats":
+   let groups = conn.chats.array.filter(v => v.jid.endsWith('g.us'))
+let privat = conn.chats.array.filter(v => v.jid.endsWith('s.whatsapp.net'))
+let ram2 = `${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${Math.round(require('os').totalmem / 1024 / 1024)}MB`
+uptime = process.uptime();
+timestamp = speed();
+totalChat = await conn.chats.all()
+latensi = speed() - timestamp
+let total = Math.floor(`${groups.length}*${privat.length}`)
+stats = `
+*_Bot Stats_*
+*› Group Chats :* ${groups.length}
+*› Private Chats :* ${privat.length}
+*› Total Chats :* ${totalChat.length}
+*› Speed :* ${latensi.toFixed(4)} ms
+*› Runtime :* ${count(uptime)}
+*_Phone Stats_*
+*› Batterai:* ${conn.battery != undefined ? `${conn.battery.value}% ${conn.battery.live ? '🔌 Ｃｈａｒｇｉｎｇ' : '⚡ Discharging' }` : '_♻️Mengambil data_'}
+*› Penggunaan Ram :* ${ram2}
+*› Platform :* ${os.platform()}
+*› Hostname :* ${os.hostname()}
+*› Uptime :* ${count(os.uptime())}
+*› Wa Version:* ${conn.user.phone.wa_version}
+*› Os Version:* ${conn.user.phone.os_version}
+*› Device Model:* ${conn.user.phone.device_model}
+`
+conn.sendButtonLoc(m.chat, await ( await fetch('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWisuGQ2p4DQFvXa1eWhUhfu9lcyRxHXa1OQ&usqp=CAU')).buffer(),  stats, userbot.packname, 'Menu', 'menu', m)
+   break;
+
+   case "dashboard":
+   let ndak = `total commands ${Object.keys(Events).length}\n\n`
+for (i in db.data) {
+asu += `-${i}: ${db.data[i]}\n`
+}
+m.reply(ndak.trim())
+   break;
+
    case "absenm":
    conn.absen = conn.absen ? conn.absen : {}
     id = m.chat
@@ -102,6 +140,7 @@ ${list}
    let p = await tiktokmusic(button.split(" ")[1])
    conn.sendFile(m.chat, p.meta.music.playUrl, null, null, m)
    break;
+
    case "thd":
    m.reply('sedang memproses')
    res = await fetch (`https://rizapi.herokuapp.com/api/twitter?url=${button.split(" ")[1]}`)
@@ -120,6 +159,7 @@ ${list}
    json = await res.json()
    conn.sendFile(m.chat, json.result.audio, 'o.mp3', null, m)
    break;
+
    case "menu":
 const me = conn.user.name
 uptime = process.uptime();
