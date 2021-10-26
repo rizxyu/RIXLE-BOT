@@ -4,7 +4,7 @@
   "description": "WhatsApp Bot Ringan",
   "main": "index.js",
   "directories": {
-    "action": "action',
+    "action": "action",
     "commands": "commands",
     "lib": "Lib",
     "src": "src"
