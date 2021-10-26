@@ -18,10 +18,15 @@ let { conn } = data
 try {
 switch (button.split(" ")[0].toLowerCase()) {
    case "changelog":
-
+let kanjut = new Date
+    let tanggal = kanjut.toLocaleDateString('id', {
+        day: 'numeric',
+        month: 'long',
+        year: 'numeric'
+    })
 let nume = conn.getName(conn.user.jid)
-let caption = `Changelog 
-tanggal: ${date}
+let caption = `Changelog ${nume}
+tanggal: ${tanggal}
 versi saat ini *${package.version}*
 ${changelog.changelog == '' ? 'Tidak ada changelog yang di tambahkan' : '' || changelog.changelog }
 `
