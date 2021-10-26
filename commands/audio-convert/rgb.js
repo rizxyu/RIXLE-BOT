@@ -6,7 +6,7 @@ name: ["rgb"],
 type: ["audio"],
 useLimit: true,
 description: "convert audio normal to rgb",
-utilisation: userbot.prefix + "rgb reply + args",
+utilisation: userbot.prefix + "rgb reply",
 
 async execute(m) {
 let { conn, args } = data
