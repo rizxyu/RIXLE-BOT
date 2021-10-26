@@ -8,6 +8,8 @@ const { MessageType }= require('@adiwajshing/baileys'),
       os = global.Ft['os'],
       { tiktok } = require("../../Lib/scrape.js"),
       { tiktokmusic } = require("../../Lib/scrape")
+      package = require('../../package.json')
+      changelog = require('../../changelog.json')
 
 module.exports = {
 async execute(m, {button, args, text }) {
@@ -15,6 +17,18 @@ let { conn } = data
 
 try {
 switch (button.split(" ")[0].toLowerCase()) {
+   case "changelog":
+
+let nume = conn.getName(conn.user.jid)
+let caption = `Changelog 
+tanggal: ${date}
+versi saat ini *${package.version}*
+${changelog.changelog == '' ? 'Tidak ada changelog yang di tambahkan' : '' || changelog.changelog }
+`
+conn.send3ButtonLoc(m.chat, await ( await fetch('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzuEathu2vH-ihguVxa6Qj4U70x6gcw0Nc8g&usqp=CAU')).buffer(),
+caption, userbot.packname, '📑 DASHBOARD', 'dashboard', '♻️StatusBot', 'stats', '💠Menu', 'menu', m)
+
+   break;
 
    case "stats":
    let groups = conn.chats.array.filter(v => v.jid.endsWith('g.us'))
@@ -238,7 +252,7 @@ return "*°* " + userbot.prefix + menu.help
 after
 ].join("\n\n")
 
-conn.send2ButtonLoc(m.chat, await (await fetch('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrF6fyFoGCHmsmOXWjFxIXh-467D1nRhA4mQ&usqp=CAU')).buffer(), text, userbot.packname, `Creator`, `creator`, `Rules`, `rules`, m)
+conn.send3ButtonLoc(m.chat, await (await fetch('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrF6fyFoGCHmsmOXWjFxIXh-467D1nRhA4mQ&usqp=CAU')).buffer(), text, userbot.packname, `📑dashboard`, `dashboard`, `📋ketentuan dan syarat`, `rules`, `Changelog`, `changelog`, m)
 break;
 
    case "rules":
