@@ -4,7 +4,7 @@ const chess = Game.chess
 
 module.exports = {
 name: "chess",
-type: ["fun"]
+type: ["fun"],
 description: "node js chess game",
 uitilisation: userbot.prefix + "chess",
 execute: async(m) => {
