@@ -11,7 +11,7 @@ let { conn, text } = data
 
 m.reply(`${userbot.chalog}
 
-```${package.name} ${package.version}```
+_${package.name} ${package.version}_
 *${package.description}*
 `)
 
