@@ -1,22 +1,3 @@
 {
-  "changelog": "*Versi 1.8.0*
-
-• added Feature Tiktok button
-• added Feature play music
-• Fix Bug on other command
-• Added Feature Twitter
-• Added Feature Changelog
-
-*Versi 1.5.0 stable*
-• added Feature play
-• added Feature Ig
-• delete Facebook.js
-• added Feature absen and more
-• fix bugs
-
-*Versi 1.1.0*
-• added Feature Facebook
-• Added Feature tictactoe
-• added Feature fetch
-• and more"
+  "changelog": "*Versi 1.8.0*\n• added Feature Tiktok button\n• added Feature play music\n• Fix Bug on other command\n• Added Feature Twitter\n• Added Feature Changelog\n\n*Versi 1.5.0 stable*\n\n• added Feature play\n• added Feature Ig\n• delete Facebook.js\n• added Feature absen and more\n• fix bugs\n\n*Versi 1.1.0*\n• added Feature Facebook\n• Added Feature tictactoe\n• added Feature fetch\n• and more"
 }
