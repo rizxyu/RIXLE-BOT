@@ -19,7 +19,7 @@ let d = new Date
 m.reply(`Changelog Bot
 ${date}
 
-${userbot.chalog == '' ? 'Tidak ada' : '' }
+${userbot.chalog == '' ? 'Tidak ada' : '' || userbot.chalog }
 
 _${package.name} ${package.version}_
 *${package.description}*
