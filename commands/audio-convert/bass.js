@@ -6,17 +6,18 @@ name: ["bass"],
 type: ["audio"],
 useLimit: true,
 description: "convert audio normal to bass super",
-utilisation: userbot.prefix + "bass reply",
+utilisation: userbot.prefix + "bass reply + args",
 
 async execute(m) {
 let { conn } = data
 try {
+        if (!args[0]} return m.reply('masukkan angka')
         let q = m.quoted ? { message: { [m.quoted.mtype]: m.quoted } } : m
         let mime = ((m.quoted ? m.quoted : m.msg).mimetype || '')
         if (/audio/.test(mime)) {
             let media = await conn.downloadAndSaveMediaMessage(q)
             let ran = getRandom('.mp3')
-            exec(`ffmpeg -i ${media} -af equalizer=f=25:width_type=o:width=1:g=10 ${ran}`, (err, stderr, stdout) => {
+            exec(`ffmpeg -i ${media} -af equalizer=f=${args[0]}:width_type=o:width=1:g=10 ${ran}`, (err, stderr, stdout) => {
                 fs.unlinkSync(media)
                 if (err) m.reply(`_*Error!*_`)
                 let buff = fs.readFileSync(ran)
