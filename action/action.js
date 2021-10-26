@@ -43,7 +43,7 @@ let image = await new Canvas.Goodbye()
   .toAttachment();
   teks = `@${mem.split("@")[0]} Keluar Dari Group ${groupM.subject}`
  Ft.fs.writeFileSync("./lev.jpg", image.toBuffer())
-conn.sendFile(m.chat, Ft.fs.readFileSync("./lev.jpg"), teks, {contextInfo: {"mentionedJid": conn.parseMention(teks)}})
+ conn.sendFile(m.chat, Ft.fs.readFileSync("./lev.jpg"), teks, {contextInfo: {"mentionedJid": conn.parseMention(teks)}})
 break
 case 'add' : 
 let mage = await new Canvas.Welcome()
@@ -61,7 +61,7 @@ let mage = await new Canvas.Welcome()
   .setBackground("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJOP9RorHQ1OkTW0uYmOkNkBOkvIreWirvug&usqp=CAU")
   .toAttachment();
   teks = `@${mem.split("@")[0]} Keluar Dari Group ${groupM.subject}`
-conn.sendFile(m.chat, mage.toBuffer(), teks, {contextInfo: {"mentionedJid": conn.parseMention(teks)}})
+   conn.sendFile(m.chat, mage.toBuffer(),'po.jpg', teks, {contextInfo: {"mentionedJid": conn.parseMention(teks)}})
 break
 }
 }
