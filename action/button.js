@@ -48,7 +48,7 @@ conn.sendButtonLoc(m.chat, await ( await fetch('https://encrypted-tbn0.gstatic.c
    case "dashboard":
    let ndak = `total commands ${Object.keys(Events).length}\n\n`
 for (i in db.data) {
-asu += `-${i}: ${db.data[i]}\n`
+ndak += `-${i}: ${db.data[i]}\n`
 }
 m.reply(ndak.trim())
    break;
