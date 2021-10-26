@@ -12,7 +12,7 @@ let { conn, text } = data
 
 if (!text) return m.reply('apa yg baru')
 
-changelog.changelog += text + "\n"
+changelog.changelog += "\n\n" + text + "\n"
 
 m.reply('Sukses Menambahkan changelog')
 }
