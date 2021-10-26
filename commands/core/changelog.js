@@ -1,5 +1,6 @@
 const package = require('../../package.json')
       fetch = require('node-fetch')
+      changelog = require('../../changelog.json')
 
 module.exports = {
 name: ["changelog"],
@@ -18,12 +19,11 @@ let d = new Date
     })
 let name = conn.getName(conn.user.jid)
 let caption = `Changelog 
-${date}
+tanggal: ${date}
+versi saat ini *${package.version}*
 
-${userbot.chalog == '' ? 'Tidak ada changelog yang di tambahkan' : '' || userbot.chalog }
+${changelog.changelog == '' ? 'Tidak ada changelog yang di tambahkan' : '' || changelog.changelog }
 
-_${package.name} ${package.version}_
-*${package.description}*
 `
 
 conn.send3ButtonLoc(m.chat, await ( await fetch('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzuEathu2vH-ihguVxa6Qj4U70x6gcw0Nc8g&usqp=CAU')).buffer(),
