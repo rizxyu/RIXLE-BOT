@@ -13,7 +13,26 @@ userbot = {
    butmag: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTHDLrd0_DwHnJfuZ_pRMOAbLi3-ot-NxyPA&usqp=CAU', // buat Image Button
    packname: "RIXLE-BOT OFFICIAL",
    author: '@_FearTeam',
-   chalog: "",
+   chalog: "*Versi 1.8.0 Stable*
+
+• added Feature Tiktok button
+• added Feature play music
+• Fix Bug on other command
+• Added Feature Twitter
+• Added Feature Changelog
+
+*Versi 1.5.0 Stable*
+• added Feature play
+• added Feature Ig
+• delete Facebook.js
+• added Feature absen and more
+• fix bugs
+
+*Versi 1.1.0 Beta*
+• added Feature Facebook
+• Added Feature tictactoe
+• added Feature fetch
+• and more",
     setting: {
     admin: "only admin",
     group: "only group",
