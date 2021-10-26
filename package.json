@@ -3,16 +3,6 @@
   "version": "1.8.0",
   "description": "WhatsApp Bot Ringan",
   "main": "index.js",
-  "directories": {
-    "action": "action",
-    "commands": "commands",
-    "Lib": "Lib",
-    "src": "src"
-  },
-  "scripts": {
-    "start": "node index.js",
-    "test": "node test.js"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Rizxyu/RIXLE-BOT.git"
