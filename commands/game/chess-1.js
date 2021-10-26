@@ -47,7 +47,7 @@ move = args[1]
 if (!move) return m.reply("hmmfh")
 await chess.move[move]
 buff = await Game.generateBuffer()
-Game.in_checkmate ? conn.sendMessage(m.chat, buff, "imageMessage", { quoted: m, caption: "check mate!!"}) : Game.in_check ? conn.sendMessage(m.chat, buff, "imageMessage", { quoted: m, caption: "check!!"}) : conn.sendMessage(m.chat, buff, "imageMessage", { quoted: m}) :
+Game.in_checkmate ? conn.sendMessage(m.chat, buff, "imageMessage", { quoted: m, caption: "check mate!!"}) : Game.in_check ? conn.sendMessage(m.chat, buff, "imageMessage", { quoted: m, caption: "check!!"}) : conn.sendMessage(m.chat, buff, "imageMessage", { quoted: m})
 } catch (err) {
 m.reply("invalid move!!")
 }
