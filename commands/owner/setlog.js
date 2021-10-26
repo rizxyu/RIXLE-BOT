@@ -1,3 +1,5 @@
+const changelog = require('../../changelog.json')
+
 module.exports = {
 name: ["setlog"],
 type: ["owner"],
@@ -10,7 +12,7 @@ let { conn, text } = data
 
 if (!text) return m.reply('apa yg baru')
 
-userbot.chalog = text
+changelog.changelog += text + "\n"
 
 m.reply('Sukses Menambahkan changelog')
 }
