@@ -15,6 +15,7 @@ const colors = [
 module.exports = {
 name: ["upsw"],
 type: ["owner"],
+owner: true,
 description: "upload status",
 utilisation: userbot.prefix + "upsw",
 
