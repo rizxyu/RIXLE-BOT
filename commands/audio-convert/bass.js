@@ -11,7 +11,7 @@ utilisation: userbot.prefix + "bass reply + args",
 async execute(m) {
 let { conn } = data
 try {
-        if (!args[0]} return m.reply('masukkan angka')
+        if (!args[0]) return m.reply('masukkan angka')
         let q = m.quoted ? { message: { [m.quoted.mtype]: m.quoted } } : m
         let mime = ((m.quoted ? m.quoted : m.msg).mimetype || '')
         if (/audio/.test(mime)) {
