@@ -26,6 +26,7 @@ Edit the required value in [`config.js`](https://github.com/Rizxyu/RIXLE-BOT/blo
 ```js
 userbot = {
  owner: [
+  "6281261324817",
   "62822980698995", 
   "436504463151666",
   "6282328303332",
