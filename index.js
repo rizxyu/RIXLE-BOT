@@ -1,6 +1,6 @@
 "use strict";
 const fs = require("fs")
-//const qrcode = require("qrcode")
+const qrcode = require("qrcode")
 const Baileys = "@adiwajshing/baileys";
 const { WAConnection: _WAConnection } = require("@adiwajshing/baileys");
 const WAConnection = require('./Lib/simple').WAConnection(_WAConnection);
