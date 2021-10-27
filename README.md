@@ -38,8 +38,9 @@ userbot = {
    },
    prefix: ["/"],
    gexp: 50,
-   packname: 'RixleBot',
-   author: '@_RizkyAdiNur',
+   packname: "RIXLE-BOT OFFICIAL",
+   author: '@_FearTeam',
+
     setting: {
     admin: "only admin",
     group: "only group",
