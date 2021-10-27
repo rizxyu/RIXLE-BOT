@@ -29,10 +29,9 @@ if (fs.existsSync('./session.json')) conn.loadAuthInfo('./session.json')
 conn.on('qr', qr => {
 qrcode.generate(qr, { small: true })
 console.log(
-      conn.logger.warn("[!] Scan Kode QR Diatas Untuk JadiBot\nQR Expired dalam 30 detik")
+      conn.logger.warn("[!] Scan Kode QR Diatas, Expired dalam 30 detik")
     )
 })
-
 conn.on('credentials-updated', () => {
         conn.logger.warn('credentials updated!')
         })
@@ -41,6 +40,7 @@ conn.on('connecting', () => {
         })
 conn.on("open", () => {
 const authInfo = conn.base64EncodedAuthInfo()
+        conn.logger.warn('open docs is complete!')
         let stats = {
    status: 200,
    message: "success",
@@ -52,7 +52,6 @@ conn.on("ws-close", async() => {
 conn.on("close", async() => {
         conn.logger.warn('Closed Connection')
         })
-
 
 console.log(stats)
 fs.writeFileSync('./session.json', JSON.stringify(authInfo, null, '\t'))
