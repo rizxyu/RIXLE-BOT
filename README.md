@@ -63,6 +63,7 @@ userbot = {
 | ------------- | ------------- |
 | Anti Toxic|✅|
 | Anti Troli|✅|
+| Anti Virtex|✅|
 | Anti Link Group|✅|
 | Anonymous Chat|✅|
 
