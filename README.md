@@ -61,10 +61,10 @@ userbot = {
 
 | FEATURE |🌱|
 | ------------- | ------------- |
-| JADIBOT|✅|
-| Wikipedia|✅|
-| Google search|✅|
-| Sticker|✅|
+| Anti Toxic|✅|
+| Anti Troli|✅|
+| Anti Link Group|✅|
+| Anonymous Chat|✅|
 
 | GRUP |👥|
 | ------------- | ------------- |
@@ -87,7 +87,10 @@ userbot = {
 
 | OTHER |🤗|
 | ------------- | ------------- |
-
+| Jadibot|✅|
+| Wikipedia|✅|
+| Google search|✅|
+| Sticker|✅|
 
 # 👥My Team 
 * [`Fauzan (Dev)`](https://github.com/Fau-Zan)
