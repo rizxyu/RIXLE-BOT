@@ -23,32 +23,47 @@ global.antidelete = false
 
 conn.version = [2, 2119, 6]
 conn.logger.level = "warn"
-conn.browserDescription = ['R I X L E', 'EDGE', '94.0.992.50']
+conn.browserDescription = ['R I X L E   B O T', 'EDGE', '94.0.992.50']
 
 if (fs.existsSync('./session.json')) conn.loadAuthInfo('./session.json')
-   conn.on('qr', qr => {
-   console.log(`PLEASE SCAN QR`)
+conn.on('qr', qr => {
+qrcode.generate(qr, { small: true })
+console.log(
+      color("[", "white"),
+      color("!", "blue"),
+      color("]", "white"),
+      color("Scan Kode QR Diatas Untuk JadiBot\nQR Expired dalam 30 detik")
+    )
 })
 
+conn.on('credentials-updated', () => {
+        conn.logger.warn('credentials updated!')
+        })
+
 conn.on('connecting', () => {
-   console.log(`Connecting...`)
-})
+        console.log(`Connecting...`)
+        })
+
 conn.on("open", () => {
 const authInfo = conn.base64EncodedAuthInfo()
-let stats = {
-status: 200,
-message: "success",
-info: "berhasil masuk ke dalam baileys"
+        let stats = {
+   status: 200,
+   message: "success",
+   info: "berhasil masuk ke dalam baileys"
 }
+
 conn.on("ws-close", async() => {
-conn.logger.warn('Connected Timeout')
-})
+        conn.logger.warn('Connected Timeout')
+        })
+
 conn.on("close", async() => {
-conn.logger.warn('Closed Connection')
-})
+        conn.logger.warn('Closed Connection')
+        })
+
 console.log(stats)
 fs.writeFileSync('./session.json', JSON.stringify(authInfo, null, '\t'))
 })
+
 setInterval(() => {
  conn.setStatus(`Ｓｔａｔｕｓ Ｂｏｔ:
 › Runtime: ${Ft.count(process.uptime())}
@@ -65,5 +80,5 @@ setInterval(() => {
  conn.on('group-participants-update', action.groupUpdate);
  }
  Ft.action()
- console.clear();
+ console.clear()
  run();// Menjalankan Bot
