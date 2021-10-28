@@ -20,6 +20,7 @@
 **[`Riz Api`](https://rizapi.herokuapp.com/)**
 
 ## ✍️ Editing the file
+## 🧾 [`create a new account at`](https://www.mongodb.com/cloud/atlas/register)
 
 Edit the required value in [`config.js`](https://github.com/Rizxyu/RIXLE-BOT/blob/main/config.js)
 
