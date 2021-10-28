@@ -49,7 +49,7 @@
     "lowdb": "^3.0.0",
     "moment-timezone": "^0.5.33",
     "mongodb": "^3.5.7",
-    "mongoose": "^6.0.11",
+    "mongoose": "^6.0.12",
     "mysql": "^2.18.1",
     "node-json-db": "1.4.1",
     "node-fetch": "^2.6.1",
