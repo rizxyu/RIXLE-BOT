@@ -22,7 +22,8 @@
 ## ✍️ Editing the file
 
 Edit the required value in [`config.js`](https://github.com/Rizxyu/RIXLE-BOT/blob/main/config.js)
-create a new account at [`monggodb`](https://www.mongodb.com/cloud/atlas/register)
+
+Create a new account at [`monggodb`](https://www.mongodb.com/cloud/atlas/register)
 
 ```js
 userbot = {
