@@ -1,4 +1,4 @@
-module.exports = { 
+/*module.exports = { 
 name: "antilinkgroup", //@arifirazzaq2001
 admin: true,
 botAdmin: true,
@@ -11,4 +11,4 @@ m.reply(`Maaf @${m.sender.split("@")[0]} *Anti Link Group Terdeteksi!* \n_Maaf A
 await conn.groupRemove(m.chat, [m.quoted.sender])
 }
 }
-}
+}*/
