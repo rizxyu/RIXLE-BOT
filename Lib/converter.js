@@ -118,6 +118,7 @@ function stickUrl(url){
         let a = './' + name + '.png'
         let b = './' + name + '.webp'
         exec(`ffmpeg -i ${a} -vcodec libwebp -filter:v fps=fps=20 -lossless 1 -loop 0 -preset default -an -vsync 0 -s 512:512 ${b}`, async(err) => {
+          if (err) reject(err)
           resolve({
             path: b
           })
