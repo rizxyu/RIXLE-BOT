@@ -102,5 +102,5 @@ userbot = {
 * [`Sanz (Dev)`](https://github.com/sanzgantengz)
 * [`Rizky (Dev)`](https://github.com/Rizxyu)
 * [`Arifi Razzaq (Dev)`](https://github.com/Arifirazzaq2001)
-* [`Oreki (Contributor)`](https://github.com/Oreki-san)
+* [`O r e k i (Contributor)`](https://github.com/Oreki-san)
 * [`ＲｉｘｌｅＢoｔ (bot)`](https://wa.me/62823283033323)
