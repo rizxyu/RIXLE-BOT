@@ -8,8 +8,8 @@ admin: true,
 botAdmin:true,
 utilisation: global.userbot.prefix+ "add",
 
-async execute(m) {
-let { conn, text, participants } = data
+async execute(m, participants) {
+let { conn, text} = data
 
 if (!text) throw `uhm.. nomornya mana?\ncontoh:\n\n${usedPrefix + command + ' ' + global.owner[0]}`
   let _participants = participants.map(user => user.jid)
