@@ -12,7 +12,7 @@
 </div>
 
 # Join Group
-[![Group Bot](https://img.shields.io/badge/WhatsApp%20Group-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://chat.whatsapp.com/JFqb84LyIhfJJxFsKc3apI)
+[![Group Bot](https://img.shields.io/badge/WhatsApp%20Group-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://chat.whatsapp.com/D75oLHFNUXQCenRThcKUD1)
 
 # ONLY RUN RAILWAY
 [`railway.app`](https://railway.app/new/github)
@@ -25,34 +25,6 @@ Edit the required value in [`config.js`](https://github.com/Rizxyu/RIXLE-BOT/blo
 
 Create a new account at [`monggodb`](https://www.mongodb.com/cloud/atlas/register)
 
-```js
-userbot = {
- owner: [
-  "6281261324817",
-  "62822980698995", 
-  "436504463151666",
-  "6282328303332",
-  "62823283033323"
-  ],
-  MONGO_URI: "mongodb+srv://<username>:<password>@cluster0.eyx0e.mongodb.net/<dbname>?retryWrites=true&w=majority",
-  mess: {
-   wait: "tunggu sedang di proses...",
-   error: "errorr!!"
-   },
-   prefix: ["/"],
-   gexp: 50,
-   packname: "RIXLE-BOT OFFICIAL",
-   author: '@_FearTeam',
-
-    setting: {
-    admin: "only admin",
-    group: "only group",
-    owner: "owner only pack",
-    jadibot: "jadibot only",
-    botadmin: "bot harus menjadi admin"
-    }
-}
-```
 
 # KHUSUS TERMUX↓
 [`githubdl`](https://github.com/Fau-Zan/Rixle-botV2)
@@ -77,17 +49,23 @@ userbot = {
 | open gc|✅|
 | Close gc|✅|
 | absen|✅|
+| Tagall|✅|
+| Hidetag|✅|
 
 | download |🎵|
 | ------------- | ------------- |
 | play|✅|
 | yta|✅|
 | ytv|✅|
-| tiktok |✅|
+| tiktok|✅|
+| Instagram|✅|
+| Twitter|✅|
 
 | islami |🕌|
 | ------------- | ------------- |
-| Surah <ayat> | ✅|
+| Surah <ayat>| ✅|
+| Kisah Nabi|✅|
+| Jadwal Sholat|✅|
 
 | OTHER |🤗|
 | ------------- | ------------- |
