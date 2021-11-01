@@ -10,7 +10,9 @@
 <p align="center">
 </p>
 </div>
-
+```
+Script ini dirancang untuk pengguna rdp/Nodejs/Linux/Railway/heroku
+```bash
 # Join Group
 [![Group Bot](https://img.shields.io/badge/WhatsApp%20Group-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://chat.whatsapp.com/D75oLHFNUXQCenRThcKUD1)
 
