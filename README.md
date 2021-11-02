@@ -43,7 +43,13 @@ Create a new account at [`monggodb`](https://www.mongodb.com/cloud/atlas/registe
 | Anti Toxic|✅|
 | Anti Troli|✅|
 | Anti Virtex|✅|
+| Anti Spam|✅|
 | Anti Link Group|✅|
+| Anti Link Telegram|✅|
+| Anti Link Youtube Channel|✅|
+| Anti Link Youtube Video|✅|
+| Anti Link Instagram|✅|
+| Auto Sticker|✅| 
 | Anonymous Chat|✅|
 
 | GRUP |👥|
@@ -77,6 +83,12 @@ Create a new account at [`monggodb`](https://www.mongodb.com/cloud/atlas/registe
 | Wikipedia|✅|
 | Google search|✅|
 | Sticker|✅|
+
+| SPECIAL |🔰|
+| ------------- | ------------- |
+| Bantuan Command |True|
+| Auto Setbio |True|
+| Menyapa Anggota Grup |True|
 
 # [`👥My Team`](https://chat.whatsapp.com/D75oLHFNUXQCenRThcKUD1)
 * [`Fauzan (Dev)`](https://github.com/Fau-Zan)
