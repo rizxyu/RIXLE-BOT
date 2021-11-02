@@ -12,11 +12,12 @@ RUN apt-get update && \
   rm -rf /var/lib/apt/lists/*
 
 COPY package.json .
-RUN npm install -g npm@7.20.5
+RUN npm install -g npm@latest
 RUN npm install
+RUN npm install -g pm2@latest
 
 COPY . .
 
 EXPOSE 5000
 
-CMD ["node", "index"]`
+CMD ["pm2", "start", "index.js"]`
