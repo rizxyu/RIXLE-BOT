@@ -2,7 +2,7 @@ module.exports = {
 name: "antilinkgroup", //@arifirazzaq2001 Fixed by Ivanzz`
 async functions(m) { 
 const gMdata = m.isGroup ? await conn.groupMetadata(from) : ''
-const grupAdmin = isGroup ? getGroupAdmin(gMdata.participants) : ''
+const grupAdmin = m.isGroup ? getGroupAdmin(gMdata.participants) : ''
 const isAdmin = grupAdmin.includes(m.sender)
  if (m.message || m.text.includes("https://chat.whatsapp.com/")) {
  if (m.sender === conn.user.jid) return
