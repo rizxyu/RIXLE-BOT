@@ -1,4 +1,4 @@
-module.exports = { 
+/*module.exports = { 
 name: "antilinkinstagram", //By @arifirazzaq2001
 async functions(m) { 
 const gMdata = m.isGroup ? await conn.groupMetadata(from) : ''
@@ -21,4 +21,4 @@ function getGroupAdmin(participants) {
 		i.isAdmin ? admins.push(i.jid) : ''
 	}
 	return admins
-}
+}*/
