@@ -21,7 +21,7 @@ global.antidelete = false
                  global.Public = false
                    global.scrap = require("./Lib/scrape");
 
-conn.version = [2, 2119, 6]
+conn.version = [ 2, 2140, 12 ]
 conn.logger.level = "warn"
 conn.browserDescription = ['R I X L E   B O T', 'EDGE', '94.0.992.50']
 
