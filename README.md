@@ -90,10 +90,9 @@ Create a new account at [`monggodb`](https://www.mongodb.com/cloud/atlas/registe
 | Menyapa Anggota Grup |𝗧𝗲𝗿𝘀𝗲𝗱𝗶𝗮|
 
 # [`👥My Team`](https://chat.whatsapp.com/D75oLHFNUXQCenRThcKUD1)
-* [`Fauzan (Dev)`](https://github.com/Fau-Zan)
 * [`Ivan (Dev)`](https://github.com/ivan-MLN)
 * [`Sanz (Dev)`](https://github.com/sanzgantengz)
-* [`Rizky (Dev)`](https://github.com/Rizxyu)
+* [`Rizky (Creator Rixle Bot)`](https://github.com/Rizxyu)
 * [`Arifi Razzaq (Dev)`](https://github.com/Arifirazzaq2001)
 * [`O r e k i (Contributor)`](https://github.com/Oreki-san)
 * [`ＲｉｘｌｅＢoｔ (Robot)`](https://wa.me/62823283033323)
