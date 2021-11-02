@@ -1,4 +1,4 @@
-module.exports = { //By @arifirazzaq2001
+/* module.exports = { //By @arifirazzaq2001
 name: ["autosticker"],
 type: ['setting'],
 description: "Setiap Ada Yang Kirim Foto/Video Berdurasi 1-9 detik bakal berubah jadi Sticker Secara Otomatis",
@@ -65,7 +65,7 @@ fs.unlinkSync(ran)
 }
 
 switch (autosticker) {
-}//Switch nya Belum Siap, Gantian Buat!
+}//Switch nya Belum Siap, Gantian Buat! */
 
 
 
