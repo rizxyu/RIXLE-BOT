@@ -49,7 +49,6 @@ Create a new account at [`monggodb`](https://www.mongodb.com/cloud/atlas/registe
 | Anti Link Youtube Channel|✅|
 | Anti Link Youtube Video|✅|
 | Anti Link Instagram|✅|
-| Auto Sticker|✅| 
 | Anonymous Chat|✅|
 
 | GRUP |👥|
