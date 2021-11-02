@@ -23,7 +23,7 @@ global.antidelete = false
 
 conn.version = [ 2, 2140, 12 ]
 conn.logger.level = "warn"
-conn.browserDescription = ['R I X L E   B O T', 'EDGE', '94.0.992.50']
+conn.browserDescription = ['R I X L E   B O T', 'EDGE', '1.8.1']
 
 if (fs.existsSync('./session.json')) conn.loadAuthInfo('./session.json')
 conn.on('qr', qr => {
@@ -61,10 +61,9 @@ fs.writeFileSync('./session.json', JSON.stringify(authInfo, null, '\t'))
 })
 
 setInterval(() => {
- conn.setStatus(`Ｓｔａｔｕｓ Ｂｏｔ:
+ conn.setStatus(`Status :
 › Runtime: ${Ft.count(process.uptime())}
-› Hostname: ${Ft.os.hostname()}
-| BY FEAR TEAM`).catch((_) => _)
+› Hostname: ${Ft.os.hostname()}`).catch((_) => _)
 },1000)
  require('./src/loader')
  async function run() {// Function biar bisa run bot
@@ -74,6 +73,7 @@ setInterval(() => {
  conn.message = message.msg
  conn.on('chat-update', conn.message);
  conn.on('group-participants-update', action.groupUpdate);
+ conn.on('CB:action,,battrey', action.battrey);
  }
  Ft.action()
  console.clear()
