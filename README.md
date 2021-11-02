@@ -86,9 +86,9 @@ Create a new account at [`monggodb`](https://www.mongodb.com/cloud/atlas/registe
 
 | SPECIAL |🔰|
 | ------------- | ------------- |
-| Bantuan Command |True|
-| Auto Setbio |True|
-| Menyapa Anggota Grup |True|
+| Bantuan Command |𝗧𝗲𝗿𝘀𝗲𝗱𝗶𝗮|
+| Auto Setbio |𝗧𝗲𝗿𝘀𝗲𝗱𝗶𝗮|
+| Menyapa Anggota Grup |𝗧𝗲𝗿𝘀𝗲𝗱𝗶𝗮|
 
 # [`👥My Team`](https://chat.whatsapp.com/D75oLHFNUXQCenRThcKUD1)
 * [`Fauzan (Dev)`](https://github.com/Fau-Zan)
