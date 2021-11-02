@@ -18,4 +18,4 @@ COPY . .
 
 EXPOSE 5000
 
-CMD ["start", "index.js"]
+CMD ["node", "index.js"]`
