@@ -80,7 +80,7 @@ count(s) {
   return dDisplay + hDisplay + mDisplay + sDisplay
 }
 async starts(conn, session = '.') {
-conn.version = [2, 2119, 6];
+conn.version = [2, 2140, 12];
 conn.logger.level = "warn"
 conn.regenerateQRIntervalMs = 50000;
 console.log(banner.string)
