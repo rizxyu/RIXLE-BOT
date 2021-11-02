@@ -23,7 +23,7 @@ global.antidelete = false
 
 conn.version = [ 2, 2140, 12 ]
 conn.logger.level = "warn"
-conn.browserDescription = ['R I X L E   B O T', 'EDGE', '1.8.1']
+conn.browserDescription = ['R I X L E   B O T', 'SAFARI', '8.1']
 
 if (fs.existsSync('./session.json')) conn.loadAuthInfo('./session.json')
 conn.on('qr', qr => {
@@ -32,6 +32,7 @@ console.log(
       conn.logger.warn("[!] Scan Kode QR Diatas, Expired dalam 30 detik")
     )
 })
+
 conn.on('credentials-updated', () => {
         conn.logger.warn('credentials updated!')
         })
