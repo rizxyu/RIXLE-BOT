@@ -2,15 +2,15 @@ module.exports = {
 name: "antitoxic",  
 async functions(m) { 
 let { conn, text } = data
-//let badwordRegex = /anjing/
+let badwordRegex = /anjing,kontol,anj,asu,asw,pantek,memek/
 
-//let name = conn.getName(m.sender)
-//if (m.isBaileys && m.fromMe) return  !0
-//let isBadword = badwordRegex.exec(m.text)
+let name = conn.getName(m.sender)
+if (m.isBaileys && m.fromMe) return  !0
+let isBadword = badwordRegex.exec(m.text)
 
-//if (!isBadword) {
-//m.reply( name + 'Terdeteksi Menggunakan bahasa kotor, Kami hanya memberi mu warn\n@0')
-//}
-//return !0
+if (!isBadword) {
+m.reply(m.mention+'Terdeteksi Menggunakan bahasa Toxic')
+}
+return !0
 }
 }
