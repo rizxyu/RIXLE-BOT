@@ -12,7 +12,7 @@
 </div>
 
 ```js
-Script ini dirancang untuk pengguna rdp/Nodejs/Linux/Railway/heroku
+Script ini dirancang untuk pengguna rdp/Nodejs/Linux/Railway/heroku/replit
 ```
 
 # Join Group
