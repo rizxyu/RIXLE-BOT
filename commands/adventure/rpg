@@ -1,0 +1,9 @@
+//jejak ajah
+//Nunggu si paujan bikin db user
+if (firstrpg == false) return m.reply(`hai ${conn.getName(m.sender)} Kamu New player ya? Silahkan ketik ${userbot.prefix} ${command}start ya untuk unlock Rpg adventure`)
+ 
+if (!args[0].includes("start")) {
+m.reply('Kamu sudah bisa mengakses rpg di bot ini, terimakasih sudah register')
+firstrpg = true
+} else m.reply("prefix command dan ketik start")
+
