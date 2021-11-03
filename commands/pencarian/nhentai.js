@@ -12,11 +12,11 @@ let { conn, text } = data
 if (!text) return m.reply('masukkan kode nhentai')
 
 api.fetchDoujin(text).then(doujin => m.reply(`
-🔖Title: ${doujin.titles.pretty;}
-🔗Page url: ${doujin.pages[0].url;}
+🔖Title: ${doujin.titles.pretty}
+🔗Page url: ${doujin.pages[0].url}
 🖼️Cover url: ${doujin.cover.url}
 #️⃣tag: ${doujin.tags.all.map(tag => tag.name).join(', ')}
 `))
 
-}
+}//Kalo eror dimaklumi
 }
