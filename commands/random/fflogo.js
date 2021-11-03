@@ -8,7 +8,6 @@ module.exports = {
  
 async execute(m) {
  let { text, conn, args } = data
-
 	response = args.join(' ')
 	if (!args) throw 'Masukkan Parameter'
 	m.reply('*[] Wait,Tunggu Bentar Kak Sedang Dalam Proses...*')
