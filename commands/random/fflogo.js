@@ -7,10 +7,9 @@ module.exports = {
  utilsation: userbot.prefix + "fflogo",
  
 async execute(m) {
- let { text, conn, args } = data
-	response = args.join(' ')
+	let response = m.text
 	if (!args) throw 'Masukkan Parameter'
-	m.reply('*[] Wait,Tunggu Bentar Kak Sedang Dalam Proses...*')
-	conn.sendFile(m.chat, `https://api.zeks.xyz/api/epep?text=${response}&apikey=MIMINGANZ`, 'epep.jpg', `Nih Mhank epep burik`, m)
+	m.reply('*[] Sedang Dalam Proses...*')
+	conn.sendFile(m.chat, `https://api.zeks.xyz/api/epep?text=${response}&apikey=MIMINGANZ`, null, userbot.author, m)
 }
 }
