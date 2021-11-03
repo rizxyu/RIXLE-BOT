@@ -28,7 +28,7 @@ switch (action) {
   case "remove":
    let img = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2-EY2K9fA93qJM3wF1lPfYMYI6IXF9fkGyR4F43fpRon796thPr4I2KPb&s=10'
     try {
-    img = await uploadImage(await (await fetch(await conn.getProfilePicture(mem))).buffer())
+    img = await conn.getProfilePicture(mem) //ribet amat harus buf terus di up, padahal udh url
             } catch (e) {
             console.log(e) 
             } finally {
@@ -55,7 +55,7 @@ teks = `@${mem.split("@")[0]} Keluar Dari Group ${groupM.subject}`
    case "add":
    let imeg = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2-EY2K9fA93qJM3wF1lPfYMYI6IXF9fkGyR4F43fpRon796thPr4I2KPb&s=10'
     try {
-    imeg = await uploadImage(await (await fetch(await conn.getProfilePicture(mem))).buffer())
+    imeg =await conn.getProfilePicture(mem) //rizky lol
             } catch (e) {
             console.log(e) 
             } finally {
