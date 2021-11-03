@@ -1,5 +1,5 @@
 module.exports = { 
-name: "antilinkgroup", //By @arifirazzaq2001
+name: "antilinkinstagram", //By @arifirazzaq2001
 admin: true,
 botAdmin: true,
 
