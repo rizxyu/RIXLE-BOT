@@ -308,7 +308,47 @@ END:VCARD
         ...options
       })
     }
+   /**
+   * SEND BUTTON VIDEO BY RIZKY(RIZXYU)
+   * @param {String} jid
+   * @param {String} url
+   * @param {String} content
+   * @param {String} footer
+   * @param {String} button1
+   * @param {String} row1
+   * @param {String} button2
+   * @param {String} row2
+   * @param {Object} options
+   */
+   async sendButVid(jid, buffer, content, footer, button1, row1, quoted, options = {}) {
+      return await this.sendMessage(jid, {
+        contentText: content,
+        footerText: footer,
+        buttons: [
+          { buttonId: row1, buttonText: { displayText: button1 }, type: 1 }
+        ],
+        headerType: 4,
+        videoMessage: (await this.prepareMessageMedia(buffer, MessageType.video, {})).videoMessage
+      }, MessageType.buttonsMessage, {
+        quoted, ...options
+      })
+    }
     
+    async sendButVid2(jid, buffer, content, footer, button1, row1, button2, row2, quoted, options = {}) {
+      return await this.sendMessage(jid, {
+        contentText: content,
+        footerText: footer,
+        buttons: [
+          { buttonId: row1, buttonText: { displayText: button1 }, type: 1 }
+          { buttonId: row2, buttonText: { displayText: button2 }, type: 1 }
+        ],
+        headerType: 4,
+        videoMessage: (await this.prepareMessageMedia(buffer, MessageType.video, {})).videoMessage
+      }, MessageType.buttonsMessage, {
+        quoted, ...options
+      })
+    }
+
     /**
  * Send Button with Image
  * @param {String} jid
