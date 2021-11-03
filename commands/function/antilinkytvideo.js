@@ -19,7 +19,7 @@ const isBotGroupAdmins = groupAdmins.includes(botNumber)
  if (m.sender === isAdmin) return
  if (isGroupAdmins) return // Melewati Transisi Ketika Detected Suatu Grup Yang Bukan Admin
  if (!isBotGroupAdmins) return //Detect Clone Bot Harus Admin
-m.reply(`Maaf @${m.sender.split("@")[0]} *Anti Link Video Youtube Terdeteksi!* \n_Maaf Anda Di Keluarkan._`)
+m.reply(`Maaf @${m.sender.split("@")[0]} *Anti Link Youtube Video Terdeteksi!* \n_Maaf Anda Di Keluarkan._`)
 await conn.groupRemove(m.chat, [m.sender])
 }
 }
