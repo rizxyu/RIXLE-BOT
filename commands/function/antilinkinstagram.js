@@ -13,10 +13,10 @@ const groupMembers = m.isGroup ? gMdata.participants : ''
 const groupAdmins = m.isGroup ? getGroupAdmin(groupMembers) : ''
 const isGroupAdmins = groupAdmins.includes(m.sender) || false 
 const isBotGroupAdmins = groupAdmins.includes(botNumber)
-let babi = "https://instagram.com/";
-let anjeng = "https://www.instagram.com/";
+let Sholawat = "https://instagram.com/";
+let bismillah = "https://www.instagram.com/";
 
- if (m.text.includes(babi) && m.text.includes(anjeng)) {
+ if (m.text.includes(Sholawat) && m.text.includes(bismillah)) {
  if (m.sender === conn.user.jid) return
  if (m.sender === isAdmin) return
  if (isGroupAdmins) return
