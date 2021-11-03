@@ -64,7 +64,7 @@
     "path": "^0.12.7",
     "perf_hooks": "^0.0.1",
     "pet-pet-gif": "^1.0.9",
-    "puppeteer": "^10.4.0",
+    "puppeteer": "^11.0.0",
     "qrcode": "^1.4.4",
     "request-promise": "4.2.6",
     "request-promise-native": "^1.0.9",
