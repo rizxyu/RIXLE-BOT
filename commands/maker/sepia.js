@@ -27,7 +27,7 @@ Promise.all([jInpt]).then(function(images){
       conn.sendFile(m.chat,Ft.fs.readFileSync(output), output,"y")
     }
   })
-}).catch(e=> console.log(e) && conn.reply("Error!"))
+}).catch(e=> console.log(e) && m.reply("Error!"))
 } 
 else m.reply("Balas image yang ingin di ubah dengan caption *"+botuser.prefix+"sepia*")
 }
