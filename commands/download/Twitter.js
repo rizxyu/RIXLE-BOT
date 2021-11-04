@@ -4,7 +4,7 @@ module.exports = {
 name: ["twitter"],
 type: ["download"],
 useLimit: true,
-description: "download audio from twitter url",
+description: "download video or audio from twitter url",
 utilisation: userbot.prefix + "twitter <link>",
 
 async execute(m) {
