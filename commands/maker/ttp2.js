@@ -11,14 +11,14 @@ async execute(m) {
 ran = getRandom(".webp")
 int = getRandom(".jpg")
  let p = await Ft.getBuffer(`https://api.xteam.xyz/ttp?file&text=${text}`)
-Ft.fs.writeFileSync(`${int}`, p)
+fs.writeFileSync(`${int}`, p)
 let ipt = await Ft.fs.readFileSync(`${int}`)
 Ft.exec(`convert ${int} ${ran}`)
-.on("error", () => reply("error"))
+.on("error", () => m.reply("error"))
 await sleep(2)
-conn.sendMessage(m.chat, Ft.fs.readFileSync(`${ran}`), "stickerMessage")
+conn.sendMessage(m.chat, fs.readFileSync(`${ran}`), "stickerMessage")
 await sleep(2)
-Ft.fs.unlinkSync(ran)
+fs.unlinkSync(ran)
 }
 }
 
