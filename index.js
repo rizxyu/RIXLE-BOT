@@ -10,18 +10,19 @@ const { Config } = require('node-json-db/dist/lib/JsonDBConfig')
   
 
 global.antidelete = false
+ global.welcome = true
   global.API = (name, path = '/', query = {}, apikeyqueryname) => (name in global.APIs ? global.APIs[name] : name) + path + (query || apikeyqueryname ? '?' + new URLSearchParams(Object.entries({ ...query, ...(apikeyqueryname ? { [apikeyqueryname]: global.APIKeys[name in global.APIs ? global.APIs[name] : name] } : {}) })) : '')
-    global.Ft = new Functions();// Menghubungkan dari Function.js
-      global.mediaType = require(Baileys).MessageType //Biar keren hehe
-       global.MessageType = mediaType
-        global.Mimetype = require(Baileys).Mimetype
-        global.conn = new WAConnection(); //Wa Connect dari baileys
-          global.botuser = require('./config')//Menghubungkan Ke Connection string
-            global.Events = {}
-             global.baileys = Baileys //Hehe
-               global.db = new JsonDB(new Config("database", true, false, '/'));
-                 global.Public = false
-                   global.scrap = require("./Lib/scrape");
+   global.Ft = new Functions();// Menghubungkan dari Function.js
+    global.mediaType = require(Baileys).MessageType //Biar keren hehe
+     global.MessageType = mediaType
+      global.Mimetype = require(Baileys).Mimetype
+       global.conn = new WAConnection(); //Wa Connect dari baileys
+        global.botuser = require('./config')//Menghubungkan Ke Connection string
+         global.Events = {}
+          global.baileys = Baileys //Hehe
+           global.db = new JsonDB(new Config("database", true, false, '/'));
+            global.Public = false
+             global.scrap = require("./Lib/scrape");
 
 //yang ga hafal base ini
 
