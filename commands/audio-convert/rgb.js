@@ -1,3 +1,4 @@
+/* EROR CUY
 const fs = require('fs')
 const { exec } = require('child_process')
 
@@ -32,3 +33,4 @@ try {
 const getRandom = (ext) => {
     return `${Math.floor(Math.random() * 10000)}${ext}`
 }
+*/
