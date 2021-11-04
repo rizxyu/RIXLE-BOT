@@ -9,7 +9,7 @@ module.exports = {
     var output = getRandom(".png")
     let q = m.quoted ? m.quoted : m
     let mime = (m.quoted ? m.quoted : m.msg).mimetype || ''
-    if (/image/.test(mine)) {
+    if (/image/.test(mime)) {
     Ft.fs.writeFileSync(input,await q.download())
     var jInpt = Ft.Jimp.read(input)
 
