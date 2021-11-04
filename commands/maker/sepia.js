@@ -5,9 +5,12 @@ module.exports = {
   utilisation: userbot.prefix+"sepia",
   
   async execute(m){
-    var input = "a.png"
-    var output = "b.png"
-    Ft.fs.writeFileSync(input,await m.quoted.download())
+    var input = getRandom('.png')
+    var output = getRandom(".png")
+    let q = m.quoted ? m.quoted : m
+    let mime = (m.quoted ? m.quoted : m.msg).mimetype || ''
+    if (/image/.test(mine)) {
+    Ft.fs.writeFileSync(input,await q.download())
     var jInpt = Ft.Jimp.read(input)
 
 Promise.all([jInpt]).then(function(images){
@@ -19,11 +22,16 @@ Promise.all([jInpt]).then(function(images){
   .resize(256, Ft.Jimp.AUTO)
   .write(output, (err)=>{
     if(err){
-     	console.log(err)
+     console.log(err)
     } else {
       conn.sendFile(m.chat,Ft.fs.readFileSync(output), output,"y")
     }
   })
-}).catch((e) => console.log(e) && client.reply("Error!"))
-  }
+}).catch(e=> console.log(e) && conn.reply("Error!"))
+} 
+else m.reply("Balas image yang ingin di ubah dengan caption *"+botuser.prefix+"sepia*")
+}
+}
+function getRandom(ext) {
+    return `${Math.floor(Math.random() * 10000)}${ext}`
 }
