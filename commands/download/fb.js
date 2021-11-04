@@ -2,7 +2,7 @@ module.exports = {
 name: ["fb"],
 type: ["download"],
 useLimit: true,
-description: "download audio from twitter url",
+description: "download video from facebook url",
 utilisation: userbot.prefix + "fb (url)",
 
 async execute(m) {
@@ -14,9 +14,10 @@ if (!args[0].includes("facebook")) return m.reply('url is wrong')
 (async () => {
  var toolfb = require("fb-downloads");
  var videolink = await toolfb.getVideoUrl(args[0]);
- conn.sendFile(m.chat, videolink.sd, 'fb.mp4', `link hd: ${videolink.sd}`, m)
+ conn.sendFile(m.chat, videolink.sd, 'fb.mp4', `link hd: ${videolink.sd}\n\n*Jangan lupa donasi ke owner ya!*`, m)
 })();
 }
 }
-
-//https://www.facebook.com/groups/922693771998697/permalink/929460654655342/?app=fbl
+/*
+*Anda siapa ya
+*/
