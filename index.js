@@ -13,6 +13,8 @@ global.antidelete = false
   global.API = (name, path = '/', query = {}, apikeyqueryname) => (name in global.APIs ? global.APIs[name] : name) + path + (query || apikeyqueryname ? '?' + new URLSearchParams(Object.entries({ ...query, ...(apikeyqueryname ? { [apikeyqueryname]: global.APIKeys[name in global.APIs ? global.APIs[name] : name] } : {}) })) : '')
     global.Ft = new Functions();// Menghubungkan dari Function.js
       global.mediaType = require(Baileys).MessageType //Biar keren hehe
+       global.MessageType = mediaType
+        global.Mimetype = require(Baileys).Mimetype
         global.conn = new WAConnection(); //Wa Connect dari baileys
           global.botuser = require('./config')//Menghubungkan Ke Connection string
             global.Events = {}
@@ -20,6 +22,16 @@ global.antidelete = false
                global.db = new JsonDB(new Config("database", true, false, '/'));
                  global.Public = false
                    global.scrap = require("./Lib/scrape");
+
+//yang ga hafal base ini
+
+//msgTyp
+global.text = mediaType.text
+glonal.image = mediaType.image
+global.video = mediaType.video
+global.audio = mediaType.audio
+global.location = mediaType.location
+global.document = mediaType.document
 
 conn.version = [ 2, 2140, 12 ]
 conn.logger.level = "warn"
