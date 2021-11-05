@@ -5,14 +5,14 @@ userbot = {
  owner: [ "6281261324817", "62857420881846","628812904283","6282328303332", "62822980698995", "436504463151666", "62823283033323" ],
   MONGO_URI: "mongodb+srv://<username>:<password>@cluster0.eyx0e.mongodb.net/<dbname>?retryWrites=true&w=majority",
    mess: {
-   wait: "tunggu sedang di proses...",
-   error: "errorr!!"
+   wait: "[ WAIT ] Sedang di proses⏳ silahkan tunggu sebentar",
+   error: "[❗] Terjadi kesalahan, mungkin error di sebabkan oleh sistem"
    },
-   prefix: ["/"],
+   prefix: ["z"],
    gexp: 50,
-   limit: 100,
-   eror: "Sepertinya Eror",
-   waits: "Sedang di proses",
+   limit: 20,
+   eror: "[❗] Terjadi kesalahan, mungkin error di sebabkan oleh sistem",
+   waits: "[ WAIT ] Sedang di proses⏳ silahkan tunggu sebentar",
    butmag: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTHDLrd0_DwHnJfuZ_pRMOAbLi3-ot-NxyPA&usqp=CAU', // buat Image Button
    packname: "RIXLE-BOT OFFICIAL",
    author: '© 2021 - FearTeam',
