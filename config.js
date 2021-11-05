@@ -2,7 +2,7 @@ let fs = require('fs')
 
 userbot = {
  Prem: JSON.parse(fs.readFileSync('./db/premium.json')),
- owner: [ "083151729751" ]
+ owner: [ "6283151729751" ]
   MONGO_URI: "mongodb+srv://<username>:<password>@cluster0.eyx0e.mongodb.net/<dbname>?retryWrites=true&w=majority",
    mess: {
    wait: "[ WAIT ] Sedang di proses⏳ silahkan tunggu sebentar",
@@ -14,8 +14,8 @@ userbot = {
    eror: "[❗] Terjadi kesalahan, mungkin error di sebabkan oleh sistem",
    waits: "[ WAIT ] Sedang di proses⏳ silahkan tunggu sebentar",
    butmag: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTHDLrd0_DwHnJfuZ_pRMOAbLi3-ot-NxyPA&usqp=CAU', // buat Image Button
-   packname: "RIXLE-BOT OFFICIAL",
-   author: '© 2021 - FearTeam',
+   packname: "Mau Colong Yah Eya ?",
+   author: 'Made With By @Dend <R>',
     setting: {
     admin: "only admin",
     group: "only group",
