@@ -2,20 +2,20 @@ let fs = require('fs')
 
 userbot = {
  Prem: JSON.parse(fs.readFileSync('./db/premium.json')),
- owner: [ "6283151729751", "6285524954326" ],
-  MONGO_URI: "mongodb+srv://zanDb:veth0581@cluster0.eyx0e.mongodb.net/<mydb>?retryWrites=true&w=majority",
+ owner: [ "6281261324817", "62857420881846","628812904283","6282328303332", "62822980698995", "436504463151666", "62823283033323" ],
+  MONGO_URI: "mongodb+srv://<username>:<password>@cluster0.eyx0e.mongodb.net/<dbname>?retryWrites=true&w=majority",
    mess: {
-   wait: "[ WAIT ] Sedang di proses⏳ silahkan tunggu sebentar",
-   error: "[❗] Terjadi kesalahan, mungkin error di sebabkan oleh sistem"
+   wait: "tunggu sedang di proses...",
+   error: "errorr!!"
    },
-   prefix: ["z"],
+   prefix: ["/"],
    gexp: 50,
-   limit: 20,
-   eror: "[❗] Terjadi kesalahan, mungkin error di sebabkan oleh sistem",
-   waits: "[ WAIT ] Sedang di proses⏳ silahkan tunggu sebentar",
+   limit: 100,
+   eror: "Sepertinya Eror",
+   waits: "Sedang di proses",
    butmag: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTHDLrd0_DwHnJfuZ_pRMOAbLi3-ot-NxyPA&usqp=CAU', // buat Image Button
-   packname: "Mau Colong Yah Eya ?",
-   author: 'Made With By @Dend <R>',
+   packname: "RIXLE-BOT OFFICIAL",
+   author: '© 2021 - FearTeam',
     setting: {
     admin: "only admin",
     group: "only group",
@@ -26,5 +26,4 @@ userbot = {
     }
 }
 module.exports = userbot
-
 
