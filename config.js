@@ -3,7 +3,7 @@ let fs = require('fs')
 userbot = {
  Prem: JSON.parse(fs.readFileSync('./db/premium.json')),
  owner: [ "6283151729751" ]
-  MONGO_URI: "mongodb+srv://<username>:<password>@cluster0.eyx0e.mongodb.net/<dbname>?retryWrites=true&w=majority",
+  MONGO_URI: "mongodb+srv://zanDb:veth0581@cluster0.eyx0e.mongodb.net/<mydb>?retryWrites=true&w=majority",
    mess: {
    wait: "[ WAIT ] Sedang di proses⏳ silahkan tunggu sebentar",
    error: "[❗] Terjadi kesalahan, mungkin error di sebabkan oleh sistem"
