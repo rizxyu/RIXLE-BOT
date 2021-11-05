@@ -339,8 +339,8 @@ END:VCARD
         contentText: content,
         footerText: footer,
         buttons: [
-          { buttonId: row1, buttonText: { displayText: button1 }, type: 1 }
-          { buttonId: row2, buttonText: { displayText: button2 }, type: 1 },
+          { buttonId: row1, buttonText: { displayText: button1 }, type: 1 },
+          { buttonId: row2, buttonText: { displayText: button2 }, type: 1 }
         ],
         headerType: 4,
         videoMessage: (await this.prepareMessageMedia(buffer, MessageType.video, {})).videoMessage
