@@ -28,7 +28,7 @@ global.antidelete = false
 
 //msgTyp
 global.text = mediaType.text
-glonal.image = mediaType.image
+global.image = mediaType.image   //fix typo:)
 global.video = mediaType.video
 global.audio = mediaType.audio
 global.location = mediaType.location
