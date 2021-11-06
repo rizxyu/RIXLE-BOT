@@ -10,6 +10,12 @@
 <p align="center">
 </p>
 </div>
+<p align="center">
+<a href="https://github.com/Rizxyu/followers"><img title="Followers" src="https://img.shields.io/github/followers/SanzzGanzs?style=flat-square"></a>
+<a href="https://github.com/Rizxyu/RIXLE-BOT/stargazers"><img title="Stars" src="https://img.shields.io/github/stars/NazwaS/termux-whatsapp-bot?style=flat-square"></a>
+<a href="https://github.com/Rizxyu/RIXLE-BOT/network/members"><img title="Forks" src="https://img.shields.io/github/forks/SanzzGanzs/termux-whatsapp-bot?style=flat-square"></a>
+<a href="https://github.com/Rizxyu/RIXLE-BOT/watchers"><img title="watchers" src="https://img.shields.io/github/watchers/SanzzGanzs/termux-whatsapp-bot?style=flat-square"></a>
+</p>
 
 ```js
 Script ini dirancang untuk pengguna rdp/Nodejs/Linux/Railway/heroku/replit
