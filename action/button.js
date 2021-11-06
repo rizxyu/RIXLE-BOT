@@ -36,6 +36,7 @@ caption, userbot.packname, '📑 DASHBOARD', 'dashboard', '♻️StatusBot', 'st
    break;
 
    case "stats":
+m.quoted.delete();
    let groups = conn.chats.array.filter(v => v.jid.endsWith('g.us'))
 let privat = conn.chats.array.filter(v => v.jid.endsWith('s.whatsapp.net'))
 let ram2 = `${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${Math.round(require('os').totalmem / 1024 / 1024)}MB`
