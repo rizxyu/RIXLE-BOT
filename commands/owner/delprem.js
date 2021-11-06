@@ -3,7 +3,7 @@ let fs = require('fs')
 module.exports = {
 name: ["delprem"],
 type: ["owner"],
-owner: true
+owner: true,
 description: "join grup from link",
 utilisation: userbot.prefix + "delprem",
 
