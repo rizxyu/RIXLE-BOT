@@ -40,10 +40,8 @@ conn.browserDescription = ['R I X L E   B O T', 'SAFARI', '8.1']
 
 if (fs.existsSync('./session.json')) conn.loadAuthInfo('./session.json')
 conn.on('qr', qr => {
-qrcode.generate(qr, { small: true })
-console.log(
-      conn.logger.warn("[!] Scan Kode QR Diatas, Expired dalam 30 detik")
-    )
+console.log(qr)
+conn.logger.info("Scan This QR")
 })
 
 conn.on('credentials-updated', () => {
