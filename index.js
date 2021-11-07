@@ -21,7 +21,7 @@ global.antidelete = false
                  global.Public = false
                    global.scrap = require("./Lib/scrape");
 
-conn.version = [2, 2140, 2]
+conn.version = [2, 2138, 50]
 conn.logger.level = "warn"
 conn.browserDescription = ['D E N <R>', 'EDGE', '94.0.992.50']
 
@@ -49,14 +49,17 @@ conn.logger.warn('Closed Connection')
 console.log(stats)
 fs.writeFileSync('./session.json', JSON.stringify(authInfo, null, '\t'))
 })
-/*
+
 setInterval(() => {
- conn.setStatus(`Ｓｔａｔｕｓ Ｂｏｔ:
+
+ conn.setStatus(`Status :
+
 › Runtime: ${Ft.count(process.uptime())}
-› Hostname: ${Ft.os.hostname()}
-| DILARANG KERAS MENGKLAIM SC BOT/BOT | BY RIZXYU`).catch((_) => _)
+
+› Hostname: ${Ft.os.hostname()}`).catch((_) => _)
+
 },1000)
-*/
+
  require('./src/loader')
  async function run() {// Function biar bisa run bot
  let message = require('./action/chats');
