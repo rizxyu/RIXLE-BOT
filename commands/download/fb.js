@@ -1,7 +1,6 @@
 
 const { fbdl } = require('../../Lib/fbdl')
 
-fbdl(link)
 module.exports = {
 name: ["fb"],
 type: ["download"],
