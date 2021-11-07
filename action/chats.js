@@ -1,3 +1,4 @@
+const yargs = require('yargs/yargs')
 
 module.exports = { 
 async msg(chats) {
