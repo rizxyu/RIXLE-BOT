@@ -1,5 +1,3 @@
-const yargs = require('yargs/yargs')
-
 module.exports = { 
 async msg(chats) {
 if (!chats.hasNewMessage) return
@@ -9,8 +7,7 @@ if (m.key && m.key.remoteJid == 'status@broadcast') return
 m.message = (Object.keys(m.message)[0]=== 'ephemeralMessage') ? m.message.ephemeralMessage.message : m.message
 try {
 const mess = Object.keys(m.message)[0];
-global.opts = new Object(yargs(process.argv.slice(2)).exitProcess(false).parse())
-prefix = new RegExp('^[' + (opts['prefix'] || '‎xzXZ/!#$%+£¢€¥^°=¶∆×÷π√✓©®:;?&,.\\-').replace(/[|\\{}()[\]^$+*?.\-\^]/g, '\\$&') + ']');
+prefix = userbot['prefix'];
 require('../Lib/simple')['smsg'](this, m);
 let body = (mess === 'conversation' && m.text.startsWith(prefix)) ? m.text : (mess == 'imageMessage') && m.message.imageMessage.caption.startsWith(prefix) ? m.message.imageMessage.caption : (mess == 'videoMessage') && m.message.videoMessage.caption.startsWith(prefix) ? m.message.videoMessage.caption : (mess == 'extendedTextMessage') && m.message.extendedTextMessage.text.startsWith(prefix) ? m.message.extendedTextMessage.text : ""
 let message = (mess === 'conversation') ? m.message.conversation : (mess === 'extendedTextMessage') ? m.message.extendedTextMessage.text : ''
@@ -25,5 +22,3 @@ console.log(e);
 }
 }
 }
-
-//Hehe
