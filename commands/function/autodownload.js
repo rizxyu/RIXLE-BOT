@@ -8,7 +8,7 @@ async functions(m) {
 let { conn } = data
 
 if (/^https?:\/\/.*youtu/i.test(m.text)) {
-        let results = await yts(url)
+        let results = await yts(m.text)
         let vid = results.all.find(video => video.seconds < 3600)
         if (!vid) return m.reply('Video/Audio Tidak ditemukan')
         let yt = false
