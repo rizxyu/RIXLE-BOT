@@ -49,12 +49,14 @@ conn.logger.warn('Closed Connection')
 console.log(stats)
 fs.writeFileSync('./session.json', JSON.stringify(authInfo, null, '\t'))
 })
+/*
 setInterval(() => {
  conn.setStatus(`Ｓｔａｔｕｓ Ｂｏｔ:
 › Runtime: ${Ft.count(process.uptime())}
 › Hostname: ${Ft.os.hostname()}
 | DILARANG KERAS MENGKLAIM SC BOT/BOT | BY RIZXYU`).catch((_) => _)
 },1000)
+*/
  require('./src/loader')
  async function run() {// Function biar bisa run bot
  let message = require('./action/chats');
