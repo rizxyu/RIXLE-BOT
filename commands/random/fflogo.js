@@ -1,5 +1,3 @@
-const fetch = require('node-fetch')
-
 module.exports = {
  name: ['fflogo'],
  type: ['random'],
@@ -7,9 +5,9 @@ module.exports = {
  utilsation: userbot.prefix + "fflogo",
  
 async execute(m) {
-	let response = m.text
-	if (!args) throw 'Masukkan Parameter'
+	let text = m.text
+	if (!text) m.reply('Masukkan Teks')
 	m.reply('*[] Sedang Dalam Proses...*')
-	conn.sendFile(m.chat, `https://api.zeks.xyz/api/epep?text=${response}&apikey=MIMINGANZ`, null, userbot.author, m)
+	conn.sendFile(m.chat, `https://api.zeks.xyz/api/epep?text=${text}&apikey=MIMINGANZ`, null, userbot.author, m)
 }
 }
