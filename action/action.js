@@ -48,14 +48,14 @@ let image = await new Canvas.Goodbye()
   .toAttachment();
  buff = await image.toBuffer()
 teks = `@${mem.split("@")[0]} Keluar Dari Group ${groupM.subject}`
- conn.sendButtonLoc(jid, buff, teks, userbot.packname, 'Selamat tinggal', 'say goodbye')
+ conn.sendButImg(jid, buff, teks, userbot.packname, 'Selamat tinggal', 'say goodbye', { quoted: m, contextInfo: {"mentionedJid": conn.parseMention(teks)}})
     }
     
  break
    case "add":
    let imeg = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2-EY2K9fA93qJM3wF1lPfYMYI6IXF9fkGyR4F43fpRon796thPr4I2KPb&s=10'
     try {
-    imeg =await conn.getProfilePicture(mem) //rizky lol
+    imeg = await conn.getProfilePicture(mem) //rizky lol
             } catch (e) {
             console.log(e) 
             } finally {
@@ -75,7 +75,7 @@ let imaged = await new Canvas.Welcome()
   .toAttachment();
  buff = await imaged.toBuffer()
  teks = `@${mem.split("@")[0]} Bergabung dalam Group ${groupM.subject}`
- conn.sendButtonLoc(jid, buff, teks, userbot.packname, 'Selamat Datang', 'say welcome')
+ conn.sendButImg(jid, buff, teks, userbot.packname, 'Selamat datang', 'welcome', { quoted: m, contextInfo: {"mentionedJid": conn.parseMention(teks)}})
     }
     
  break
