@@ -25,6 +25,7 @@ stats = `
 *› Total Chats :* ${totalChat.length}
 *› Speed :* ${latensi.toFixed(4)} ms
 *› Runtime :* ${count(uptime)}
+*› Mode :*${global.Public == true ? 'SELF/SENDIRI' : '' || global.Public == false ? 'PUBLIK' : ''}
 
 *_Phone Stats_*
 *› Batterai:* ${conn.battery != undefined ? `${conn.battery.value}% ${conn.battery.live ? '🔌 Ｃｈａｒｇｉｎｇ' : '⚡ Discharging' }` : '_♻️Mengambil data_'}

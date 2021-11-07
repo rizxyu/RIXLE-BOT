@@ -36,7 +36,7 @@ let _m = Promise.resolve({ key: { id: '' } })
         backgroundArgb: pickRandom(colors)
     }, 'extendedTextMessage')
     if (m.quoted && text) _m = conn.forwardMessage('status@broadcast', await m.quoted.cMod('status@broadcast', text))
-    m.reply((await _m).key.id)
+    m.reply("Succes")
   }
 }
 

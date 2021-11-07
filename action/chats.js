@@ -1,4 +1,3 @@
-
 module.exports = { 
 async msg(chats) {
 if (!chats.hasNewMessage) return
@@ -23,5 +22,3 @@ console.log(e);
 }
 }
 }
-
-//Hehe

@@ -1,6 +1,7 @@
 const { servers, yta, ytv } = require('../../Lib/y2mate')
 const fetch = require('node-fetch')
 let yts = require('yt-search')
+const { tiktok } = require("../../Lib/scrape.js")
 
 module.exports = { 
 name: "autodownlaod", 
@@ -27,14 +28,13 @@ if (/^https?:\/\/.*youtu/i.test(m.text)) {
         if (yt === false) return m.reply(eror)
         if (yt2 === false) return m.reply(eror)
         let { dl_link, thumb, title, filesize, filesizeF } = yt
-        await this.send2ButtonLoc(m.chat, await (await fetch(thumb)).buffer(), `
-*Judul:* ${title}
-*Ukuran File Audio:* ${filesizeF}
-*Ukuran File Video:* ${yt2.filesizeF}
-*Server y2mate:* ${usedServer}
-
-Untuk memotong Audio ${userbot.prefix}cut detik detik
-`.trim(), userbot.botwm , 'video', `video ${vid.url}`)
-    }
+        m.reply('SEDANG DIPROSES')
+        await conn.sendFile(m.chat, dl_link, title + ".mp3", null, m)
+   }
+     if (/^https?:\/\/.*vt/i.test(m.text)) {
+     let ttdata = await tiktok(m.text)
+     conn.sendMessage(m.chat, await (await Ft.fetch(ttdata.result.nowm)).buffer(),"videoMessage",{quoted:m})
+     }
 }
 }
+//Madeby Rizxyu

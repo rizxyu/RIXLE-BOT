@@ -20,11 +20,11 @@ _return = await exec.call(conn, (...args) => {
   return conn.reply(m.chat, util.format(...args), m)
 }, m, require, conn, process, args, [conn, data])
 } catch (e) {
-  let err = await syntaxerror(_q, 'Execution Function', {
+  let err = await syntaxerror(_q, 'evalError:', {
   allowReturnOutsideFunction: true,
   allowAwaitOutsideFunction: true
 })
-if (err) _syntax = '```' + err + '```\n\n'
+if (err) _syntax = err + '\n\n'
 _return = e
 } finally {
 m.reply(_syntax+util.format(_return))
