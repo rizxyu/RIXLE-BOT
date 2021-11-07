@@ -36,7 +36,7 @@ let results = await yts(text)
   if (yt === false) throw 'semua server gagal'
   if (yt2 === false) throw 'semua server gagal'
   let { dl_link, thumb, title, filesize, filesizeF } = yt
-   m.quoted.delete()
+  // m.quoted.delete()
 m.reply('SEDANG DI PROSES')
 await conn.send2ButtonLoc(m.chat, await (await fetch(thumb)).buffer(), `
 *ＰＬＡＹ ＢＵＴＴＯＮ*
