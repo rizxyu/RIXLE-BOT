@@ -30,5 +30,9 @@ if (/^https?:\/\/.*youtu/i.test(m.text)) {
         m.reply('SEDANG DIPROSES')
         await conn.sendFile(m.chat, dl_link, title + ".mp3", null, m)
    }
+if (/^https?:\/\/.*vt/i.test(m.text)) {
+let ttdata = await tiktokmusic(args[0])
+conn.sendMessage(m.chat, await (await Ft.fetch(ttdata.result.nowm)).buffer(),"videoMessage",{quoted:m})
+}
 }
 }
