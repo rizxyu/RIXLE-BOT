@@ -1,6 +1,8 @@
 const fs = Ft.fs
 const Zipdl = require("../../Lib/zipdown").ZippDL
 
+//Riz24
+
 module.exports = {
 name: ["zippydl"],
 type: ["download"],
