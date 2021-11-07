@@ -8,7 +8,7 @@ userbot = {
    wait: "tunggu sedang di proses...",
    error: "errorr!!"
    },
-   prefix: ["/"],
+   prefix: new RegExp('^[' + (opts['prefix'] || '‎xzXZ/!#$%+£¢€¥^°=¶∆×÷π√✓©®:;?&,.\\-').replace(/[|\\{}()[\]^$+*?.\-\^]/g, '\\$&') + ']'),
    gexp: 50,
    limit: 100,
    eror: "Sepertinya Eror",
