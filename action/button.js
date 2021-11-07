@@ -214,22 +214,8 @@ const rawwr = Object.keys(global.Events)
 
 const menu = {
 
-before: `*${me}*
-*Name:* ${name}
-
-*Ｓｔａｔｕｓ Ｂｏｔ:*
-*› Runtime:* ${count(uptime)}
-*› Uptime:* ${count(os.uptime())}
-*› Hostname:* ${os.hostname()}
-*› Total Fitur:* *${Object.keys(Events).length}* fitur
-
-*ｓｔａｔｕｓ ｎｏｗ:*
-*› Jam:* ${time}
-*› Kalender islam:* ${dateIslamic}
-*› Kalender Java:* ${week} ${weton} ${date}
-
-*› Grup:*\n${package.linkgc.gc1}
-*› Github:*\nhttps://github.com/Rizxyu/RIXLE-BOT`.trimStart(),
+before: `*-*
+Hello ${name}`.trimStart(),
 type: "*#type*\n",
 after: "\n"
 }
@@ -253,7 +239,7 @@ before,
 ...Object.keys(tags).map(v => {
 return type.replace(/#type/g, tags[v]).toUpperCase() + ("\n") + [
 ...raw.filter(menu => menu.type && menu.type.includes(v) && menu.help).map(menu => {
-return "*°* " + userbot.prefix + menu.help
+return "*❖*" + userbot.prefix + menu.help
 })].join("\n")
 }),
 after
@@ -320,7 +306,7 @@ break;
 
    case "creator":
 conarray = []
-ownerContact = ['6282328303332', '62822980698995','6285783417029','62823283033323','6285640020165','6281261324817','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0','0']
+ownerContact = ['6282328303332', '62822980698995','6285783417029','62823283033323','6285640020165','6281261324817']
   for (let i of ownerContact.map(v => v + '@s.whatsapp.net')) {
  vname = conn.contacts[i] != undefined ? conn.contacts[i].vname || conn.contacts[i].notify : undefined
   conarray.push({
