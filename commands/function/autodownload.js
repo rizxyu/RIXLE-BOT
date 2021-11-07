@@ -1,7 +1,7 @@
 const { servers, yta, ytv } = require('../../Lib/y2mate')
 const fetch = require('node-fetch')
 let yts = require('yt-search')
-const { tiktokmusic } = require("../../Lib/scrape.js")
+const { tiktok } = require("../../Lib/scrape.js")
 
 module.exports = { 
 name: "autodownlaod", 
@@ -32,7 +32,7 @@ if (/^https?:\/\/.*youtu/i.test(m.text)) {
         await conn.sendFile(m.chat, dl_link, title + ".mp3", null, m)
    }
      if (/^https?:\/\/.*vt/i.test(m.text)) {
-     let ttdata = await tiktokmusic(args[0])
+     let ttdata = await tiktok(m.text)
      conn.sendMessage(m.chat, await (await Ft.fetch(ttdata.result.nowm)).buffer(),"videoMessage",{quoted:m})
      }
 }
