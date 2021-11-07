@@ -39,6 +39,7 @@
     "figlet": "^1.5.2",
     "file-type": "^16.5.3",
     "fluent-ffmpeg": "^2.1.2",
+    "fake-useragent": "^1.0.1",
     "form-data": "^4.0.0",
     "fb-downloads": "^1.0.7",
     "g-i-s": "^2.1.6",
