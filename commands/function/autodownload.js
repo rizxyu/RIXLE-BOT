@@ -1,6 +1,7 @@
 const { servers, yta, ytv } = require('../../Lib/y2mate')
 const fetch = require('node-fetch')
 let yts = require('yt-search')
+const { tiktokmusic } = require("../../Lib/scrape.js")
 
 module.exports = { 
 name: "autodownlaod", 
@@ -30,9 +31,10 @@ if (/^https?:\/\/.*youtu/i.test(m.text)) {
         m.reply('SEDANG DIPROSES')
         await conn.sendFile(m.chat, dl_link, title + ".mp3", null, m)
    }
-if (/^https?:\/\/.*vt/i.test(m.text)) {
-let ttdata = await tiktokmusic(args[0])
-conn.sendMessage(m.chat, await (await Ft.fetch(ttdata.result.nowm)).buffer(),"videoMessage",{quoted:m})
+     if (/^https?:\/\/.*vt/i.test(m.text)) {
+     let ttdata = await tiktokmusic(args[0])
+     conn.sendMessage(m.chat, await (await Ft.fetch(ttdata.result.nowm)).buffer(),"videoMessage",{quoted:m})
+     }
 }
 }
-}
+//Madeby Rizxyu
