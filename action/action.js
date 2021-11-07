@@ -48,7 +48,7 @@ let image = await new Canvas.Goodbye()
   .toAttachment();
  buff = await image.toBuffer()
 teks = `@${mem.split("@")[0]} Keluar Dari Group ${groupM.subject}`
- conn.sendButtonLoc(jid, buff, teks, userbot.packname, 'Selamat tinggal', 'say goodbye')
+ //conn.sendButtonLoc(jid, buff, teks, userbot.packname, 'Selamat tinggal', 'say goodbye')
     }
     
  break
@@ -75,7 +75,7 @@ let imaged = await new Canvas.Welcome()
   .toAttachment();
  buff = await imaged.toBuffer()
  teks = `@${mem.split("@")[0]} Bergabung dalam Group ${groupM.subject}`
- conn.sendButtonLoc(jid, buff, teks, userbot.packname, 'Selamat Datang', 'say welcome')
+ //conn.sendButtonLoc(jid, buff, teks, userbot.packname, 'Selamat Datang', 'say welcome')
     }
     
  break
