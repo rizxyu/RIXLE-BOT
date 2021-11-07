@@ -8,7 +8,7 @@ userbot = {
    wait: "tunggu sedang di proses...",
    error: "errorr!!"
    },
-   prefix: "!",
+   prefix: "_",
    limit: 100,
    eror: "Sepertinya Eror",
    waits: "Sedang di proses",
