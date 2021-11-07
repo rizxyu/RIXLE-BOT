@@ -1,3 +1,4 @@
+/*
 module.exports = { 
 name: "antitoxic",  
 async functions(m) { 
@@ -14,3 +15,4 @@ m.reply(m.mention+'Terdeteksi Menggunakan bahasa Toxic')
 return !0
 }
 }
+*/
