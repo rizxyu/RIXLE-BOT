@@ -43,7 +43,7 @@ let { conn } = data
     if (/^https?:\/\/.twitter/i.test(m.text)) {
     var res = await fetch(`https://rizapi.herokuapp.com/api/twitter?url=${m.text}`)
     let json = await res.json()
-    conn.send3Button(m.chat,`*Twitter Downloader*\n Pilih type dibawah`, userbot.prefix, `HD`, `thd ${args[0]}`, `SD`, `tsd ${args[0]}`, `AUDIO`, `taudio ${args[0]}`, m)
+    conn.send3Button(m.chat,`*Twitter Downloader*\n Pilih type dibawah`, userbot.prefix, `HD`, `thd ${m.text}`, `SD`, `tsd ${m.text}`, `AUDIO`, `taudio ${m.text}`, m)
    }
 }
 }
