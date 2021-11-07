@@ -14,8 +14,8 @@ let { conn, args } = data
 try {
 if (!args[0]) return m.reply('urlnya mana')
 if (!args[0].includes("facebook")) return m.reply('url is wrong')
- const videolink = await fbdl(args[0])
- conn.sendFile(m.chat, videolink.link_high, 'fb.mp4', `\n\n*Berhasil Mendapatkan Video*`, m)
+ const v = await fbdl(args[0])
+ conn.sendFile(m.chat, v.hasil.link_high, 'fb.mp4', `\n*Berhasil Mendapatkan Video*\n\n⬇️Post by ${v.hasil.author}\n📖desk: ${v.hasil.title}`, m)
 } catch (e) {
 console.log('error Banh')
 }
