@@ -14,7 +14,7 @@ try {
 if (!args[0]) return m.reply('urlnya mana')
 if (!args[0].includes("facebook")) return m.reply('url is wrong')
  const videolink = await toolfb.getVideoUrl(args[0])
- conn.sendFile(m.chat, videolink.sd, 'fb.mp4', `link hd: ${videolink.sd}\n\n*Jangan lupa donasi ke owner ya!*`, m)
+ conn.sendFile(m.chat, videolink.sd, 'fb.mp4', `*🔗link hd:* ${videolink.sd}\n\n*Jangan lupa donasi ke owner ya!*`, m)
 } catch (e) {
 console.log('error Banh')
 }
