@@ -36,11 +36,11 @@ let { conn } = data
      let ttdata = await tiktok(m.text)
      conn.sendMessage(m.chat, await (await Ft.fetch(ttdata.result.nowm)).buffer(),"videoMessage",{quoted:m})
    }   
-    if (/^https?:\/\/.facebook/i.test(m.text)) {
+    if (/^https?:\/\/.*facebook/i.test(m.text)) {
      const v = await fbdl(m.text)
      conn.sendFile(m.chat, v.hasil.link_high, 'fb.mp4', `\n*Berhasil Mendapatkan Video*\n\n⬇️Post by ${v.hasil.author}\n📖desk: ${v.hasil.title}`, m)
    }
-    if (/^https?:\/\/.twitter/i.test(m.text)) {
+    if (/^https?:\/\/.*twitter/i.test(m.text)) {
     var res = await fetch(`https://rizapi.herokuapp.com/api/twitter?url=${m.text}`)
     let json = await res.json()
     conn.send3Button(m.chat,`*Twitter Downloader*\n Pilih type dibawah`, userbot.prefix, `HD`, `thd ${m.text}`, `SD`, `tsd ${m.text}`, `AUDIO`, `taudio ${m.text}`, m)
