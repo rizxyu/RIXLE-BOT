@@ -50,7 +50,7 @@ this.request = request
 this.axios = axios
 this.ggs = ggs
 this.fetch = fetch
-this.yts = yts
+//this.yts = yts kalo mau aktifin hapus tanda /
 this.yargs = yargs
 this.path = path
 this.fs = fs
@@ -79,6 +79,7 @@ count(s) {
   var sDisplay = s > 0 ? s + (s == 1 ? "  Detik, ":" Detik ") : ""
   return dDisplay + hDisplay + mDisplay + sDisplay
 }
+
 async starts(conn, session = '.') {
 conn.version = [2, 2140, 12];
 conn.logger.level = "warn"
