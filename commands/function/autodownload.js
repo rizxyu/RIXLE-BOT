@@ -29,7 +29,6 @@ let { conn } = data
         if (yt === false) return m.reply(eror)
         if (yt2 === false) return m.reply(eror)
         let { dl_link, thumb, title, filesize, filesizeF } = yt
-        m.reply('SEDANG DIPROSES')
         await conn.sendFile(m.chat, dl_link, title + ".mp3", null, m)
    }
     if (/^https?:\/\/.*vt/i.test(m.text)) {
@@ -44,6 +43,12 @@ let { conn } = data
     var res = await fetch(`https://rizapi.herokuapp.com/api/twitter?url=${m.text}`)
     let json = await res.json()
     conn.send3Button(m.chat,`*Twitter Downloader*\n Pilih type dibawah`, userbot.prefix, `HD`, `thd ${m.text}`, `SD`, `tsd ${m.text}`, `AUDIO`, `taudio ${m.text}`, m)
+   }
+    if (/^https?:\/\/.*instagram/i.test(m.text)) {
+   let { igvideo, igfoto } = require("../../Lib/scrape")
+   await igvideo(m.text).then(res => {
+   conn.sendFile(m.chat, res.link, null, null, m)
+   })
    }
 }
 }
