@@ -13,7 +13,7 @@ const sender = m.sender
         const addPlayerUser = (userid, sender, serials) => {
             const obj = { id: userid, name: sender, serial: serials }
             _player.push(obj)
-            fs.writeFileSync('./tmp/player.json', JSON.stringify(_player))
+            fs.writeFileSync('./tmp/adventureDB/player.json', JSON.stringify(_player))
         }
         const kodePinPlayer = (size) => {
             return crypto.randomBytes(size).toString('hex').slice(0, size)
