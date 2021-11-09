@@ -11,9 +11,8 @@ type: ["Petualangan"],
 
 async execute(m) {
 let { conn, args } = data
-const sender = m.sender
         const addPlayerUser = (userid, sender, serials) => {
-            const obj = { id: userid, name: sender, serial: serials }
+            const obj = { id: userid, name: m.sender, serial: serials }
             _player.push(obj)
             fs.writeFileSync('./tmp/adventureDB/player.json', JSON.stringify(_player))
         }
