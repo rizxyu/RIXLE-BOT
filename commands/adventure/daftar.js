@@ -5,7 +5,7 @@ const fetch = require('node-fetch')
 
 module.exports = { // By @arifirazzaq2001
 name: ["daftar"],
-type: ["Petualangan"]
+type: ["Petualangan"], 
 
 async execute(m) {
 let { conn, args } = data
