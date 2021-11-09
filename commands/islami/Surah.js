@@ -16,12 +16,12 @@ let res = await fetch(`https://api.zeks.me/api/quran?apikey=apivinz&no=${text}`)
 let json = await res.json()
 
 m.reply(`
-${json.surah}
+➡ ${json.surah}
 
-${json.jumlah_ayat}
-${json.ket}
-${json.type}
-${json.audio}`)
+➡ ${json.jumlah_ayat}
+➡ ${json.ket}
+➡ ${json.type}
+➡ ${json.audio}`)
 
 conn.sendFile(m.chat, json.audio, 'surah.mp3', '', null, m)
   }
