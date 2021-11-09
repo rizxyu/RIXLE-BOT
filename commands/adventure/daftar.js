@@ -37,7 +37,6 @@ let setPin = kodePinPlayer(6)
 if (m.sender === conn.user.jid) return
 if (m.sender === isAdmin) return
 if (iscekplayer) return m.reply('Anda Sudah Terdaftar Sebelumnya.') 
-let img =  ( await fetch('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQc675b80s5tCNwEdtfTpmfebv1uUlk4f2huA&usqp=CAU')).buffer()
 let stickGame = m.sender
 
 _player.push(m.sender)
@@ -61,7 +60,7 @@ let teks = ` _made in @arifirazzaq2001_
 Jadi Jangan Sampai Hilang Saya Sarankan Anda Menyalinnya Kedalam Catatan Anda/Kasih Tanda Bintang 🌟 Pesan Ini, Atau Ketik ${userbot.prefix}cekpin*
 「 RIXLE-BOT 」*
 `
-conn.sendMessage(m.chat, img, MessageType.image, { 
+conn.sendMessage(m.chat, ( await fetch('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQc675b80s5tCNwEdtfTpmfebv1uUlk4f2huA&usqp=CAU')).buffer(), MessageType.image, { 
 caption: teks, 
  quoted: m, 
   contextInfo: { 
