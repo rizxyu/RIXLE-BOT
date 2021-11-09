@@ -5,7 +5,7 @@ RUN apt-get update && \
   neofetch \
   ffmpeg \
   wget \
-  #chromium \ kalau mau make puppeteer :v
+  #chromium \ kalau mau make puppeteer hapus tanda # sama teks
   imagemagick && \
   rm -rf /var/lib/apt/lists/*
 
