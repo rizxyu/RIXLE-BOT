@@ -36,8 +36,6 @@ let setPin = kodePinPlayer(6)
 
 if (m._player.includes(m.sender)) {
 if (iscekplayer) return m.reply('Anda Sudah Terdaftar Sebelumnya.') 
-if (m.sender === conn.user.jid) return
-if (m.sender === isAdmin) return
 
 m._player.push(m.sender)
 fs.writeFileSync('./tmp/adventureDB/player.json', JSON.stringify(m._player))
