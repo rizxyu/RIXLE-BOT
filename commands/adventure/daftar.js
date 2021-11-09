@@ -1,3 +1,4 @@
+/** Eror bang arifi
 const fs = require ('fs') 
 const crypto = require('crypto')
 const request = require('request')
