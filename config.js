@@ -21,6 +21,7 @@ userbot = {
     owner: "owner only pack",
     jadibot: "jadibot only",
     botadmin: "bot harus menjadi admin",
+    userPlayer: "Anda Belum Daftar Dalam DB Gamer RIXLE-BOT", 
     nsfw: "FITUR BELUM DIAKTIFKAN!"
     }
 }
