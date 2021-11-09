@@ -67,7 +67,7 @@ caption: teks,
   contextInfo: { 
       mentionedJid: [m.sender] 
       }
-    }) 
+    }
 console.log(`${m.pushname} Berhasil Membuat Json Player Games`)
 } 
 } 
