@@ -1,4 +1,4 @@
-/*
+
 module.exports = { 
 name: "antitoxic",  
 async functions(m) { 
@@ -6,13 +6,10 @@ let { conn, text } = data
 let badwordRegex = /anjing,kontol,anj,asu,asw,pantek,memek/
 
 let name = conn.getName(m.sender)
-if (m.isBaileys && m.fromMe) return  !0
-let isBadword = badwordRegex.exec(m.text)
 
-if (!isBadword) {
-m.reply(m.mention+'Terdeteksi Menggunakan bahasa Toxic')
-}
-return !0
+if (/^(kntl(bacot(anj?ing?Ng)asu)kanjut)/i.test(m.text)) {
+m.reply('Terdeteksi Menggunakan bahasa Toxic')
 }
 }
-*/
+}
+
