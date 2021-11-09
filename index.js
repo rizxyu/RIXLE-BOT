@@ -64,7 +64,7 @@ setInterval(() => {
  await conn.connect();
  conn.message = message.msg
  conn.on('chat-update', conn.message);
- conn.on('group-participants-update', action.groupUpdate);
+ //conn.on('group-participants-update', action.groupUpdate);
  }
  Ft.action()
  console.clear();
