@@ -5,7 +5,7 @@ async Command(conn, m) {
 try {
 let usedPrefix
 if (typeof m.text !== 'string') m.text = ''
-let upgame = JSON.parse(fs.readFileSync('./tmp/adventureDB/daftar.json')
+let upgame = JSON.parse(fs.readFileSync('./tmp/adventureDB/daftar.json'))
 let groupMetadata = m.isGroup ? await conn.groupMetadata(m.chat) : {} || {}
 let participants = m.isGroup ? groupMetadata.participants : [] || []
 let user = m.isGroup ? participants.find(u => u.jid == m.sender) : {} 
