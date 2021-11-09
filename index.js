@@ -44,8 +44,8 @@ conn.on('qr', qr => {
    conn.on('credentials-updated', () => {})
     conn.on('connecting', () => {})
      conn.on("open", () => {
-      conn.on("ws-close", async() => {})
-       conn.on("close", async() => {}) 
+      conn.on("ws-close", () => {})
+       conn.on("close", () => {}) 
 
 const authInfo = conn.base64EncodedAuthInfo() 
 fs.writeFileSync(global.write.words.qrcode, JSON.stringify(authInfo, null, '\t'))
