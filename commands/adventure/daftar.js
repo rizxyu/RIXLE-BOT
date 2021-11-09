@@ -1,4 +1,4 @@
-/** Eror bang arifi
+/*
 const fs = require ('fs') 
 const crypto = require('crypto')
 const request = require('request')
@@ -80,3 +80,4 @@ function getGroupAdmin(participants) {
 	}
 	return admins
 }
+*/
