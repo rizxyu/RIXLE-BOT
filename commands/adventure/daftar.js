@@ -43,7 +43,7 @@ let stickGame = m.sender
 
 _player.push(m.sender)
 fs.writeFileSync('./tmp/adventureDB/player.json', JSON.stringify(_player))
-fs.writeFileSync('./tmp/adventureDB/pin.json'), JSON.stringify(setPin))
+fs.writeFileSync('./tmp/adventureDB/pin.json', JSON.stringify(setPin))
 addPlayerUser(m.sender, kodePinPlayer)
 let teks = ` _made in @arifirazzaq2001_
 
