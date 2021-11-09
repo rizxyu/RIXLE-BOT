@@ -39,7 +39,7 @@ conn.browserDescription = ['Rixle Type 3', 'SAFARI', '8.1']
 // Mengurangi logger mempercepat Balas Pesan Fixed @arifirazzaq2001
 if (fs.existsSync(global.write.words.qrcode)) conn.loadAuthInfo(global.write.words.qrcode)
 conn.on('qr', qr => {
- conn.logger.warn("[!] Scan Kode QR Diatas, Expired dalam 30 detik")
+ conn.logger.warn(botuser.simple.expiredQr)
   })
    conn.on('credentials-updated', () => {})
     conn.on('connecting', () => {})
@@ -51,7 +51,7 @@ const authInfo = conn.base64EncodedAuthInfo()
 fs.writeFileSync(global.write.words.qrcode, JSON.stringify(authInfo, null, '\t'))
 
 console.clear()
-conn.logger.warn('Berhasil Perbarui Jaringan\n')
+conn.logger.warn(botuser.simple.refresh)
 start('\n',
     conn.logger.warn('\n')
   )
