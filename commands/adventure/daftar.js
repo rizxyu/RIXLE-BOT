@@ -18,13 +18,13 @@ const isAdmin = grupAdmin.includes(m.sender)
 const _player = JSON.parse(fs.readFileSync('./tmp/adventureDB/player.json'))
 const isPlayer = _player.includes(m.sender)
 let setPin = kodePinPlayer(6)
-let ambilPin = fs.writeFileSync('./tmp/adventureDB/pin.json', JSON.stringify(setPin)) 
-let pin = ambilPin
+setPin = fs.writeFileSync('./tmp/adventureDB/pin.json')
+let pin = setPin
 
 if (m.sender === conn.user.jid) return
 if (m.sender === isAdmin) return
 _player.push(m.sender)
-fs.writeFileSync('../tmp/adventureDB/player.json', JSON.stringify(_player))
+fs.writeFileSync('./tmp/adventureDB/player.json', JSON.stringify(_player))
 let teks = ` _made in @arifirazzaq2001_
 
 ╭━━━━━━━━━━━━┈ ❋ཻུ۪۪⸙
