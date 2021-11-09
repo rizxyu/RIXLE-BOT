@@ -1,12 +1,16 @@
+const fs = require("fs")
+
 module.exports = {
 async Command(conn, m) {
 try {
 let usedPrefix
 if (typeof m.text !== 'string') m.text = ''
+let upgame = JSON.parse(fs.readFileSync('./tmp/adventureDB/daftar.json')
 let groupMetadata = m.isGroup ? await conn.groupMetadata(m.chat) : {} || {}
 let participants = m.isGroup ? groupMetadata.participants : [] || []
 let user = m.isGroup ? participants.find(u => u.jid == m.sender) : {} 
 let bot = m.isGroup ? participants.find(u => u.jid == conn.user.jid) : {} 
+let userPlayer = m.isGroup ? upgame.includes(m.sender)
 let isBotAdmin = bot.isAdmin || bot.isSuperAdmin || false
 let isAdmin = user.isAdmin || user.isSuperAdmin || false // Is User Admin?
 let isOwner = userbot['owner'].map(v => v + '@s.whatsapp.net').includes(m.sender) || false
