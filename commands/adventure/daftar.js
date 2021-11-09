@@ -44,6 +44,7 @@ Jadi Jangan Sampai Hilang Saya Sarankan Anda Menyalinnya Kedalam Catatan Anda/Ka
 `
 } 
 } 
+} 
 
 function getGroupAdmin(participants) {
 	admins = []
