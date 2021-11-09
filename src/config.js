@@ -26,7 +26,8 @@ Prem: JSON.parse(fs.readFileSync('./db/premium.json')),
    credentials: "credentials updated!",
    opendocs: "open docs is complete!", 
    readBaileys: "berhasil masuk ke dalam baileys",
-   connecting: "Menghubungkan"
+   connecting: "Menghubungkan",
+   refresh: "Berhasil Perbarui Jaringan\n"
    },
    prefix: ["/"],
    gexp: 50,
