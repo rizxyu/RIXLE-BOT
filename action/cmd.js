@@ -21,7 +21,7 @@ admin: global.userbot['setting'].admin,
 botAdmin: global.userbot['setting'].botadmin,
 user: global.userbot['setting'].jadibot,
 owner: global.userbot['setting'].owner,
-userPlayer: global.userbot['setting'].userPlayer,
+userPlayer: global.userbot['setting'].userPlayer
 }[type]
 if (msgnye) return m.reply(msgnye)
 }
