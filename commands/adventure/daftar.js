@@ -61,6 +61,7 @@ Jadi Jangan Sampai Hilang Saya Sarankan Anda Menyalinnya Kedalam Catatan Anda/Ka
 「 RIXLE-BOT 」*
 `
 conn.sendMessage(m.chat, await(await fetch('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQc675b80s5tCNwEdtfTpmfebv1uUlk4f2huA&usqp=CAU')).buffer), 
+{
 caption: teks, 
  quoted: m, 
   contextInfo: { 
