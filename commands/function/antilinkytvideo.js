@@ -32,3 +32,10 @@ function getGroupAdmin(participants) {
 	}
 	return admins
 } // Full Fix Cok Jangan Di Edit Lagi! By @arifirazzaq2001
+
+
+
+/*aktifkan jika ingin menggunakan anti link yt video
+
+cuma command link yt download yang pake link auto ke kick*/
+
