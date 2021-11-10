@@ -6,7 +6,7 @@ admin: true,
 botAdmin:true,
 utilisation: global.userbot.prefix+ "link",
 
-async execute(m) {
+async execute(m, participants) {
 let { conn } = data
 
   let group = m.chat
