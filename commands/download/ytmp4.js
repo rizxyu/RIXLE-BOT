@@ -13,6 +13,7 @@ async execute(m) {
 let { conn, args } = data
 if (!args[0]) return m.reply("url nya om?")
 if (!args[0].includes("youtu")) return m.reply("url nya salah om")
+if (!args[0].includes("shorts")) return m.reply("g support yutub shorts om")
 
 let server = (args[1] || servers[0]).toLowerCase()
 
@@ -25,7 +26,7 @@ conn.sendButtonLoc(m.chat, await (await fetch(thumb)).buffer(), `
 *ＹＴＭＰ4 Ｄｏｗｎｌｏａｄ*
 *title:* ${title}
 *Size:* ${filesizeF}
-`, userbot.packname, 'Menu', 'menu', m)
+`, userbot.packname, 'Audio', `audio ${args[0]}`, m)
 
 if (!isLimit) conn.sendFile(m.chat, dl_link, title + ".mp4", null, m)
 
