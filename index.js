@@ -57,11 +57,12 @@ start('\n',
   )
 })
 
+/* Eror coeg
 setInterval(() => {
  conn.setStatus(`${Ft.count(process.uptime())} | ${Ft.os.hostname()} Fear Team | Your Bio ☣`).catch((_) => _)
 },1000)
  require('./src/loader');
-
+*/
  async function run() {// Function biar bisa run bot
  let message = require('./action/chats');
  let action = require('./action/action');
