@@ -22,7 +22,6 @@ async groupUpdate({jid, participants, action}) {
 console.log("member yang bergabung " + participants[0].split("@")[0])
 const groupM = await conn.groupMetadata(jid)
 const mem = participants[0]
-//const img = await conn.getProfilePicture(mem)
 
 switch (action) {
   case "remove":
@@ -55,7 +54,7 @@ teks = `@${mem.split("@")[0]} Keluar Dari Group ${groupM.subject}`
    case "add":
    let imeg = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2-EY2K9fA93qJM3wF1lPfYMYI6IXF9fkGyR4F43fpRon796thPr4I2KPb&s=10'
     try {
-    imeg = await conn.getProfilePicture(mem) //rizky lol
+    imeg = await conn.getProfilePicture(mem)
             } catch (e) {
             console.log(e) 
             } finally {
