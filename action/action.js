@@ -44,7 +44,7 @@ let image = await new Canvas.Goodbye()
   .setColor("message-box", "#8015EA")
   .setColor("title", "#8015EA")
   .setColor("avatar", "#8015EA")
-  .setBackground("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9o6Xig_RmaDhX_5hDWnsm0UPMJIZPnpaTMNEN0gL2cyZDuq7rIDz6gINj&s=10")
+  .setBackground("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSaBCkFVUY0nJxj1DPqtvAwrf7qfvj6e-Rv-A&usqp=CAU")
   .toAttachment();
  buff = await image.toBuffer()
 teks = `@${mem.split("@")[0]} Keluar Dari Group ${groupM.subject}`
@@ -71,7 +71,7 @@ let imaged = await new Canvas.Welcome()
   .setColor("message-box", "#8015EA")
   .setColor("title", "#8015EA")
   .setColor("avatar", "#8015EA")
-  .setBackground("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9o6Xig_RmaDhX_5hDWnsm0UPMJIZPnpaTMNEN0gL2cyZDuq7rIDz6gINj&s=10")
+  .setBackground("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSF7c3n7snGnpzS676fXaU2yxSjGsFNrCURXw&usqp=CAU")
   .toAttachment();
  buff = await imaged.toBuffer()
  teks = `@${mem.split("@")[0]} Bergabung dalam Group ${groupM.subject}`
