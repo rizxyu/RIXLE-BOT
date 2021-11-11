@@ -12,12 +12,12 @@ type: ["maker"],
 async execute(m) {
 let { conn, args } = data
 
-if (!args[0].includes("https")) return m.reply("url salah")
+if (!args[0]) return m.reply("url salah")
 if (!args[1]) return m.reply("kordinat")
 if (!args[2]) return m.reply("kordinatnya mana anjg")
 if (!args[3]) return m.reply("au luh")
 if (!args[4]) return m.reply("tolol")
-
+//G usah hapus wm kontol
 async function crop() {
   // reads the image
   const image = await Jimp.read(args[0]);
