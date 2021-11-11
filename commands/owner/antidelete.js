@@ -6,13 +6,20 @@ description: "hmmm",
 utilisation: userbot.prefix + "antidelete",
 
 async execute(m) {
-let { conn, text } = data
+let { conn, args } = data
 
-try {
+switch (args[0]) {
+case "on": 
 global.antidelete = true
 m.reply(`${global.antidelete}`)
-} catch (e) {
-console.log("eror Banh")
+console.log("[?] true")
+break
+
+case "off": 
+global.antidelete = false
+m.reply(`${global.antidelete}`)
+console.log("[?] false")
+break
   }
 }
 }
