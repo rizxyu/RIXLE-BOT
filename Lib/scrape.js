@@ -88,21 +88,18 @@ Math.random() * 3,
 }
 
 
- async function tiktokmusic(URL) {
+async function tiktokmusic(URL) {
 return new Promise(async (resolve, reject) => {
-GDF = await axios.get('https://www.tiktok.com/')
-Cookie = "ttwid=1%7C5UyITGuqEDXVZHtmtbU-7V35lTk8--iB6IjJuxRKPTs%7C1625390616%7C62c0b171e938115d5940a9af40c377000bc616cc7b25dfd76557913951585606; Domain=.tiktok.com; Path=/; Expires=Mon, 04 Jul 2022 09:23:36 GMT; HttpOnlytt_webid_v2=6980999485653632513; path=/; expires=Mon, 04 Jul 2022 09:23:37 GMT; domain=.tiktok.com; samesite=none; secure; httponlytt_webid=6980999485653632513; path=/; expires=Mon, 04 Jul 2022 09:23:37 GMT; domain=.tiktok.com; samesite=none; secure; httponlytt_csrf_token=9u_ml89_dULuOD6oMp_zTH06; path=/; domain=.tiktok.com; samesite=lax; secure; httponly"
 axios.get(URL, {
 headers: {
 'user-agent': "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36",
-'Cookie': Cookie
+'Cookie': "ttwid=1%7C5UyITGuqEDXVZHtmtbU-7V35lTk8--iB6IjJuxRKPTs%7C1625390616%7C62c0b171e938115d5940a9af40c377000bc616cc7b25dfd76557913951585606; Domain=.tiktok.com; Path=/; Expires=Mon, 04 Jul 2022 09:23:36 GMT; HttpOnlytt_webid_v2=6980999485653632513; path=/; expires=Mon, 04 Jul 2022 09:23:37 GMT; domain=.tiktok.com; samesite=none; secure; httponlytt_webid=6980999485653632513; path=/; expires=Mon, 04 Jul 2022 09:23:37 GMT; domain=.tiktok.com; samesite=none; secure; httponlytt_csrf_token=9u_ml89_dULuOD6oMp_zTH06; path=/; domain=.tiktok.com; samesite=lax; secure; httponly"
 }
 })
 .then(({ data }) => {
 var $ =cheerio.load(data)
 ttdata = JSON.parse($('script#__NEXT_DATA__').get()[0].children[0].data)
 meta = ttdata.props.pageProps.itemInfo.itemStruct
-console.log(meta)
 resolve({meta})
 })
 })
@@ -112,9 +109,8 @@ resolve({meta})
 function ghstalk(username) {
 url= `https://api.github.com/users/${username}`; 
 return axios.get(url)
-.then(data => {
-return data.data
-console.log(data.data)
+.then(({ data }) => {
+return data
 })
 }
 
@@ -130,11 +126,10 @@ body: form
 })
 let img = await res.json()
 if (img.error) throw img.error
-hasil = 'https://telegra.ph' + img[0].src
-resolve({hasil})
-console.log(hasil)
+resolve('https://telegra.ph' + img[0].src)
 }).catch(reject)
 }
+
 //Youtube Audio
 function yta(url) {
 return new Promise((resolve, reject) => {
@@ -266,7 +261,6 @@ docomo: docomo.replace('120', '240'),
 KDDI: KDDI.replace('120', '240')
 }
 return result
-console.log(result)
 }
 
 //cuaca
@@ -305,7 +299,6 @@ hasil.push(result)
 })
 })
 resolve(hasil)
-console.log(hasil)
 })
 .catch(reject)
 })
@@ -325,7 +318,6 @@ let mime = nama.split('.')
 mime = mime[1]
 hasil.push({ author, nama, mime, size, link })
 return hasil
-console.log(hasil)
 }
 
 //Function Tahta
@@ -400,7 +392,6 @@ fs.unlinkSync(o)
 reject(e)
 }
 })
-//.stderr.on('data', a => console.log(a+''))
 })
 }
 
@@ -1253,7 +1244,6 @@ developer: dv[i]
 	}
 resolve(result)
 })
-console.log(result)
 	.catch(reject)
 	})
 }
@@ -1320,7 +1310,6 @@ results.push(result);
 }
 });
 return resolve(results);
-console.log(results)
 });
 });
 };
@@ -1578,8 +1567,8 @@ headers: {
 "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"
 }
 })
-.then(tod => {
-const $ = cheerio.load(tod.data)
+.then(({ data }) => {
+const $ = cheerio.load(data)
 resolve({
 link: $('#downloadBox > a').attr('href')
 })
@@ -1589,8 +1578,8 @@ link: $('#downloadBox > a').attr('href')
 //Jalan Tikus
 function jalantikus(query) {
 return new Promise((resolve, reject) => {
-axios.get(`https://jalantikus.com/search/articles/${query}/`).then( tod => {
-const $ = cheerio.load(tod.data)
+axios.get(`https://jalantikus.com/search/articles/${query}/`).then(({ data }) => {
+const $ = cheerio.load(data)
 hasil = []
 $("div.post-block-with-category").each(function(c, d) {
 title = $(d).find("a.post-block-with-category__link").text()
@@ -1613,8 +1602,8 @@ resolve(hasil)
 //Tribun News
 function tribunnews() {
 return new Promise((resolve, reject) => {
-axios.get(`https://www.tribunnews.com/news`).then( tod => {
-const $ = cheerio.load(tod.data)
+axios.get(`https://www.tribunnews.com/news`).then(({ data }) => {
+const $ = cheerio.load(data)
 hasil = []
 $("li.p1520.art-list.pos_rel").each(function(c, d) {
 title = $(d).find("div.mr140 > h3 > a.f20.ln24.fbo.txt-oev-2").text().trim()
@@ -1639,8 +1628,8 @@ resolve(hasil)
 //Kompas News
 function kompasnews() {
 return new Promise((resolve, reject) => {
-axios.get(`https://news.kompas.com/`).then( tod => {
-const $ = cheerio.load(tod.data)
+axios.get(`https://news.kompas.com/`).then(({ data }) => {
+const $ = cheerio.load(data)
 hasil = []
 $("div.col-bs9-3").each(function(c, d) {
 title = $(d).find("h3.article__title > a.article__link").text()
