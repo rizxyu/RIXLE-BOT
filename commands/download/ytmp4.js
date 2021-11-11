@@ -13,7 +13,7 @@ async execute(m) {
 let { conn, args } = data
 if (!args[0]) return m.reply("url nya om?")
 if (!args[0].includes("youtu")) return m.reply("url nya salah om")
-if (!args[0].includes("shorts")) return m.reply("g support yutub shorts om")
+//if (!args[0].includes("shorts")) return m.reply("g support yutub shorts om")
 
 let server = (args[1] || servers[0]).toLowerCase()
 
