@@ -16,7 +16,7 @@ const isBotGroupAdmins = groupAdmins.includes(botNumber) || false // Tidak Spam 
 
 await conn.reply(m.key.remoteJid, `terdeteksi hapus pesan`, m)
 
-copyNForward(m.key.remoteJid, m.message).catch(e => console.log(e, m))
+conn.copyNForward(m.key.remoteJid, m.message).catch(e => console.log(e, m))
 }
 }
 
