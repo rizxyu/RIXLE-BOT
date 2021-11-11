@@ -3,6 +3,39 @@ const fetch = require('node-fetch')
 const { tiktok } = require("../../Lib/scrape.js")
 const { fbdl } = require('../../Lib/fbdl')
 const yts = require('yt-search')
+const _math = require('mathjs')
+const { Mimetype } = require(baileys)
+const _$ = require('cheerio')
+const _url = require('url')
+const _axios = require('axios')
+const GetLink = async (u) => {
+        console.log('⏳  ' + `Get Page From : ${u}`)
+						const zippy = await _axios({ method: 'GET', url: u }).then(res => res.data).catch(err => false)
+						console.log('✅  ' + 'Done')
+						const $ = _$.load(zippy)
+						if (!$('#dlbutton').length) {
+							return { error: true, message: $('#lrbox>div').first().text().trim() }
+						}
+						console.log('⏳  ' + 'Fetch Link Download...')
+						const filename0 = $('title').text()
+						const filename = filename0.replace('Zippyshare.com - ', '')
+						const url = _url.parse($('.flagen').attr('href'), true)
+						const urlori = _url.parse(u)
+						const key = url.query['key']
+						let time;
+						let dlurl;
+						try {
+							time = /var b = ([0-9]+);$/gm.exec($('#dlbutton').next().html())[1]
+							dlurl = urlori.protocol + '//' + urlori.hostname + '/d/' + key + '/' + (2 + 2 * 2 + parseInt(time)) + '3/DOWNLOAD'
+						} catch (error) {
+							time = _math.evaluate(/ \+ \((.*)\) \+ /gm.exec($('#dlbutton').next().html())[1])
+							dlurl = urlori.protocol + '//' + urlori.hostname + '/d/' + key + '/' + (time) + '/DOWNLOAD'
+						}
+						console.log('✅  ' + 'Done')
+						return { error: false, url: dlurl, name: filename }
+					}
+
+
 
 module.exports = { 
 name: "autodownlaod", 
@@ -50,6 +83,18 @@ let { conn } = data
    await igvideo(m.text).then(res => {
    conn.sendFile(m.chat, res.link, null, null, m)
    })
+   }
+    if (/^https?:\/\/.*www96.zippyshare/i.test(m.text)) {
+    const getLink_zippy = await GetLink(m.text)
+    if(getLink_zippy.error) return m.reply(`ERROR!\n\nErr : ${getLink_zippy.message}`)
+    try {
+    name = getLink_zippy.name.split(".")
+    nama = name[name.length -1]
+    conn.sendFile(m.chat, getLink_zippy.url, "", "", m, false, { filename: getLink_zippy.name, mimetype: nama == "mp4" ? Mimetype.mp4 : nama == "pdf" ? Mimetype.pdf : nama})
+    } catch (err) {
+    conn.sendMessage(m.chat, `Gagal mengirim file\nMungkin size file melebihi limit Whatsapp`)
+    console.log(err)
+    }
    }
 }
 }
