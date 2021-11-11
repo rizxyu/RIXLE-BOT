@@ -11,6 +11,7 @@ utilisation: userbot.prefix + "ytmp3 <link>",
 
 async execute(m) {
 let { conn, args } = data
+try {
 if (!args[0]) return m.reply("url nya om?")
 if (!args[0].includes("youtu")) return m.reply("url nya salah om")
 let server = (args[1] || servers[0]).toLowerCase()
@@ -22,5 +23,8 @@ let server = (args[1] || servers[0]).toLowerCase()
   *Title:* ${title}
   *Size:* ${filesizeF}`, userbot.packname, 'Menu', 'menu', m)
   if (!isLimit) conn.sendFile(m.chat, dl_link, title + ".mp3", null, m)
+} catch (e) {
+console.log("[❗] Eror Om")
+}
 }
 }
