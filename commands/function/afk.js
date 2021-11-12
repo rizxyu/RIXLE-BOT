@@ -15,7 +15,7 @@ for (let jid of jids) {
 if (json.includes(who.split`@`[0])) continue 
 m.reply(`jangan tag dia!! `)
 }
-return true
+return false
 }
 }
 
