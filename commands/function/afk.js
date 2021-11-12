@@ -7,7 +7,10 @@ async functions(m) {
 let { conn } = data
 let json = JSON.parse(fs.readFileSync('./db/afk.json'))
 let jids = [...new Set([...(m.mentionedJid || []), ...(m.quoted ? [m.quoted.sender] : [])])]
-
+let who
+if (m.isGroup) who = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '') + '@s.whatsapp.net'
+else who = text ? text.replace(/[^0-9]/g, '') + '@s.whatsapp.net' : m.chat
+  
 for (let jid of jids) {
 if (json.includes(who.split`@`[0])) continue 
 m.reply(`jangan tag dia!! `)
