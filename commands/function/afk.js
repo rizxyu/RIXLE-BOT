@@ -12,7 +12,7 @@ if (m.isGroup) who = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted
 else who = text ? text.replace(/[^0-9]/g, '') + '@s.whatsapp.net' : m.chat
   
 for (let jid of jids) {
-if (json.includes(who.split`@`[0])) continue 
+if (json.includes(who.split`@`[0])) return 
 m.reply(`jangan tag dia!! `)
 }
 }
