@@ -13,7 +13,7 @@ const json = JSON.parse(fs.readFileSync('./db/afk.json'))
 
 json.push(m.sender, text,+ new Date)
 fs.writeFileSync('./db/afk.json', JSON.stringify(json))
-m.reply(`${conn.getName(m.sender)} sekarang afk dengan alasan ${text ? 'tidak ada alasan' : '' || text}`)
+m.reply(`${conn.getName(m.sender)} sekarang afk dengan alasan ${text}`)
 }
 }
 //:V
