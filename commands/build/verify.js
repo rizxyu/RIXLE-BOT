@@ -17,12 +17,12 @@ let { conn, text } = data
     let exp = 0
     let level = 1
     let role = 'Bronze V'
+    let waktu = moment.tz('Asia/Jakarta').format('HH:mm')
     if (json.includes(m.sender)) return m.reply(`${conn.getName(m.sender)} sudah terdaftar!`)
     json.push(m.sender, sn, exp, level, role, waktu)
     fs.writeFileSync('./db/daftar.json', JSON.stringify(json))
     let player = fs.readFileSync('./db/daftar.json')
-    let waktu = moment.tz('Asia/Jakarta').format('HH:mm')
-      
+     
     let teks = ` 
 ╭━━━━━━━━━━━━┈ ❋ཻུ۪۪⸙
 │ *「 PENDAFTARAN PLAYER 」*
