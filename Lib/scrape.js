@@ -221,9 +221,8 @@ console.log(hasil)
 
 //Emoji 
 async function emoji(emoticon) {
-const emojii = encodeURI(`${emoticon}`)
-var link = await axios.get(`https://emojipedia.org/${emojii}/`)
-var $ =cheerio.load(link.data)
+var { data } = await axios.get(`https://emojipedia.org/${encodeURIComponent(emoticon)}/`)
+var $ =cheerio.load(data)
 var apple = $('body > div.container > div.content').find('article > section.vendor-list > ul > li:nth-child(1) > div.vendor-container.vendor-rollout-target > div.vendor-image > img').attr('src');
 var google = $('body > div.container > div.content').find('article > section.vendor-list > ul > li:nth-child(2) > div.vendor-container.vendor-rollout-target > div.vendor-image > img').attr('src');
 var samsung = $('body > div.container > div.content').find('article > section.vendor-list > ul > li:nth-child(3) > div.vendor-container.vendor-rollout-target > div.vendor-image > img').attr('src');
@@ -241,26 +240,25 @@ var mozilla = $('body > div.container > div.content').find('article > section.ve
 var softbank = $('body > div.container > div.content').find('article > section.vendor-list > ul > li:nth-child(15) > div.vendor-container.vendor-rollout-target > div.vendor-image > img').attr('src');
 var docomo = $('body > div.container > div.content').find('article > section.vendor-list > ul > li:nth-child(16) > div.vendor-container.vendor-rollout-target > div.vendor-image > img').attr('src');
 var KDDI = $('body > div.container > div.content').find('article > section.vendor-list > ul > li:nth-child(17) > div.vendor-container.vendor-rollout-target > div.vendor-image > img').attr('src');
-const result = {
-apple: apple.replace('120', '240'),
-google: google.replace('120', '240'),
-samsung: samsung.replace('120', '240'),
-microsoft: microsoft.replace('120', '240'),
-whatsapp: whatsapp.replace('120', '240'),
-twitter: twitter.replace('120', '240'),
-facebook: facebook.replace('120', '240'),
-jooxPixel: jooxpixel.replace('120', '240'),
-openemoji: openmoji.replace('120', '240'),
-emojidex: emojidex.replace('120', '240'),
-messanger: messager.replace('120', '240'),
-LG: LG.replace('120', '240'),
-HTC: HTC.replace('120', '240'),
-mozilla: mozilla.replace('120', '240'),
-softbank: softbank.replace('120', '240'),
-docomo: docomo.replace('120', '240'),
-KDDI: KDDI.replace('120', '240')
-}
-return result
+return {
+  apple: apple.replace('120', '240'),
+  google: google.replace('120', '240'),
+  samsung: samsung.replace('120', '240'),
+  microsoft: microsoft.replace('120', '240'),
+  whatsapp: whatsapp.replace('120', '240'),
+  twitter: twitter.replace('120', '240'),
+  facebook: facebook.replace('120', '240'),
+  jooxPixel: jooxpixel.replace('120', '240'),
+  openemoji: openmoji.replace('120', '240'),
+  emojidex: emojidex.replace('120', '240'),
+  messanger: messager.replace('120', '240'),
+  LG: LG.replace('120', '240'),
+  HTC,
+  mozilla,
+  softbank,
+  docomo,
+  KDDI
+  }
 }
 
 //cuaca
