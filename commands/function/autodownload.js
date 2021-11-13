@@ -41,6 +41,17 @@ module.exports = {
 name: "autodownlaod", 
 async functions(m) {
 let { conn } = data
+let url = m.text.split(/\n| /i)[0]
+
+
+if (/^.*cocofun/i.test(m.text)) {
+        let res = await fetch(API('jojo', '/api/cocofun-no-wm', { url }))
+        if (!res.ok) return m.reply(eror)
+        let json = await res.json()
+      
+        // m.reply(util.format(json))
+        await this.sendFile(m.chat, json.download, '', 'done', m)
+    }
 
    if (/^https?:\/\/.*youtu/i.test(m.text)) {
   let results = await yts(m.text)
