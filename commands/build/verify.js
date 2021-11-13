@@ -40,6 +40,6 @@ let { conn, text } = data
 Jadi Jangan Sampai Hilang Saya Sarankan Anda Menyalinnya Kedalam Catatan Anda/Kasih Tanda Bintang 🌟 Pesan Ini, Atau Ketik ${userbot.prefix}cekpin*
 「 RIXLE-BOT 」*
 `
-m.reply(text)
+m.reply(teks)
 }
 }
