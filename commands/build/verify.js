@@ -23,8 +23,7 @@ let { conn, text } = data
     let player = fs.readFileSync('./db/daftar.json')
     let waktu = moment.tz('Asia/Jakarta').format('HH:mm')
       
-    let teks = ` _made in @arifirazzaq2001_
-
+    let teks = ` 
 ╭━━━━━━━━━━━━┈ ❋ཻུ۪۪⸙
 │ *「 PENDAFTARAN PLAYER 」*
 ┕────────────┈ ⳹
