@@ -1,4 +1,31 @@
 const fs = require("fs")
+
+global.APIs = { // API Prefix
+  // nama: 'https://website'
+  bx: 'https://bx-hunter.herokuapp.com',
+  dhnjing: 'https://dhnjing.xyz',
+  hardianto: 'https://hardianto-chan.herokuapp.com',
+  jonaz: 'https://jonaz-api-v2.herokuapp.com',
+  neoxr: 'https://neoxr-api.herokuapp.com',
+  nrtm: 'https://nurutomo.herokuapp.com',
+  pencarikode: 'https://pencarikode.xyz',
+  xteam: 'https://api.xteam.xyz',
+  zahir: 'https://zahirr-web.herokuapp.com',
+  zekais: 'http://zekais-api.herokuapp.com',
+  zeks: 'https://api.zeks.xyz',
+}
+global.APIKeys = { // APIKey nya disini
+  // 'https://website': 'apikey'
+  'https://bx-hunter.herokuapp.com': 'Ikyy69',
+  'https://hardianto-chan.herokuapp.com': 'hardianto',
+  'https://neoxr-api.herokuapp.com': 'yntkts',
+  'https://pencarikode.xyz': 'pais',
+  'https://api.xteam.xyz': 'apikeymu',
+  'https://zahirr-web.herokuapp.com': 'zahirgans',
+  'https://api.zeks.xyz': 'apivinz',
+}
+
+
 userbot = {
 Prem: JSON.parse(fs.readFileSync('./db/premium.json')),
  owner:  [ "6281261324817", "6281916259786", "62857420881846","628812904283","6282328303332", "62822980698995", "436504463151666", "62823283033323" ],
