@@ -118,16 +118,16 @@ return data
 async function telegra(buffer) {
   return new Promise(async (resolve, reject) => {
 const { ext } = await fromBuffer(buffer)
-let form = new FormData
+let form = new formData
 form.append('file', buffer, 'tmp.' + ext)
 let res = await fetch('https://telegra.ph/upload', {
 method: 'POST',
 body: form
 })
 let img = await res.json()
-if (img.error) throw img.error
+if (img.error) reject(img.error)
 resolve('https://telegra.ph' + img[0].src)
-}).catch(reject)
+})
 }
 
 //Youtube Audio
