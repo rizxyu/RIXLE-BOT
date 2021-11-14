@@ -49,7 +49,7 @@ Chipmunk")
                 conn.sendFile(m.chat, buff, ran, null, m, /vn/.test(args[0]), { quoted: m, mimetype: 'audio/mp4' })
                 fs.unlinkSync(ran)
             })
-        } else throw `Balas vn/audio yang ingin diubah dengan caption *${usedPrefix + command}*`
+        } else throw `Balas vn/audio yang ingin diubah dengan caption *${userbot.prefix + command}*`
     } catch (e) {
         console.log("❌ GAGAL MENGEDIT AUDIO")
     }
