@@ -25,7 +25,7 @@ try {
         if (/reverse/.test(args[0])) set = '-filter_complex "areverse"'
         if (/robot/.test(args[0])) set = '-filter_complex "afftfilt=real=\'hypot(re,im)*sin(0)\':imag=\'hypot(re,im)*cos(0)\':win_size=512:overlap=0.75"'
         if (/smooth/.test(args[0])) set = '-filter:v "minterpolate=\'mi_mode=mci:mc_mode=aobmc:vsbmc=1:fps=120\'"'
-        if (/tupai|squirrel|chipmunk/.test(args[0])) set = '-filter:a "atempo=0.5,asetrate=65100"'
+        if (/tupai/.test(args[0])) set = '-filter:a "atempo=0.5,asetrate=65100"'
         if (/audio/.test(mime)) {
             let media = await conn.downloadAndSaveMediaMessage(q)
             let ran = getRandom('.mp3')
@@ -36,7 +36,7 @@ try {
                 conn.sendFile(m.chat, buff, ran, null, m, /vn/.test(args[0]), { quoted: m, mimetype: 'audio/mp4' })
                 fs.unlinkSync(ran)
             })
-        } else throw `Balas vn/audio yang ingin diubah dengan caption *${userbot.prefix + command}*`
+        } else return m.reply(`Balas vn/audio yang ingin diubah dengan caption *${userbot.prefix + command}*`)
     } catch (e) {
         console.log("❌ GAGAL MENGEDIT AUDIO")
     }
