@@ -70,6 +70,7 @@ Prem: JSON.parse(fs.readFileSync('./db/premium.json')),
     owner: "owner only pack",
     jadibot: "jadibot only",
     botadmin: "bot harus menjadi admin",
+    daftar: "belum terdaftar silahkan ketik prefix + verify ",
     nsfw: "FITUR BELUM DIAKTIFKAN!"
     }
 }
