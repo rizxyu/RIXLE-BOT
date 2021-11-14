@@ -95,7 +95,7 @@ if (/^.*cocofun/i.test(m.text)) {
    conn.sendFile(m.chat, res.link, null, null, m)
    })
    }
-    if (/^https?:\/\/.*www96.zippyshare/i.test(m.text)) {
+    if (/^https?:\/\/.*www86.zippyshare/i.test(m.text)) {
     const getLink_zippy = await GetLink(m.text)
     if(getLink_zippy.error) return m.reply(`ERROR!\n\nErr : ${getLink_zippy.message}`)
     try {
