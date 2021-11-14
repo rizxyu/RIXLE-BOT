@@ -11,11 +11,12 @@ utilisation: userbot.prefix + "profile",
 
 async execute(m) {
 let { conn, text } = data
-let kamu = fs.readFileSync('./db/daftar.json')
+const json = JSON.parse(fs.readFileSync('./db/daftar.json'))
   let teks = `[ YOUR PROFILE ]
 *Name:* ${conn.getName(m.sender)}
-*Waktu terregistrasi:* ${kamu.waktu == '' ? 'Belum Terdaftar' : '' || kamu.waktu}
-*Level:* null
+*Waktu terregistrasi:* ${json.waktu == '' ? 'Belum Terdaftar' : '' || kamu.waktu}
+*Level:* ${json.level == '' ? 'Belum terdaftar' : '' || json.level}
 `
+m.reply(teks)
 }
 }
