@@ -3,7 +3,7 @@ let fs = require('fs')
 module.exports = {
 async Command(conn, m) {
 try {
-Let dftr = fs.readFileSync('./db/daftar.json')
+const dftr = JSON.parse(fs.readFileSync('./db/daftar.json'))
 let usedPrefix
 if (typeof m.text !== 'string') m.text = ''
 let groupMetadata = m.isGroup ? await conn.groupMetadata(m.chat) : {} || {}
