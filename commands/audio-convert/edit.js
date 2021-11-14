@@ -12,18 +12,7 @@ async execute(m) {
 let { conn, args } = data
 
 try {
-        if (!args[0]) return m.reply('List Edit Yg Tersedia\n\nBlown
-Deep
-Earrape
-Fast
-Fat
-Nightcore
-Reverse
-Robot
-Smooth
-Tupai
-Squirrel
-Chipmunk')
+        if (!args[0]) return m.reply('List Edit Yg Tersedia\n\nBlownDeep\nEarrape\nFast\nFat\nNightcore\nReverse\nRobot\nSmooth\nTupai\nSquirrel\nChipmunk')
         let q = m.quoted ? { message: { [m.quoted.mtype]: m.quoted } } : m
         let mime = ((m.quoted ? m.quoted : m.msg).mimetype || '')
         let set
