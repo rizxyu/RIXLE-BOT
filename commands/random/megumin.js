@@ -8,6 +8,6 @@ utilisation: userbot.prefix + "megumin",
 
 async execute(m){
 let { conn } = data
- scrap.pinterest("megumin").then(a => a[Math.floor(Math.random() * a.length)]).then(b => conn.sendFile(m.chat,b,b,"waifu kok anime",m))
+ scrap.pinterest("megumin").then(a => a[Math.floor(Math.random() * a.length)]).then(b => conn.sendFile(m.chat,b, null, null,m, 0, { thumbnail: Buffer.alloc(0) }))
    }
 }
