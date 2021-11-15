@@ -16,17 +16,17 @@ try {
         let q = m.quoted ? { message: { [m.quoted.mtype]: m.quoted } } : m
         let mime = ((m.quoted ? m.quoted : m.msg).mimetype || '')
         let set
-        if (/blown/.test(args[0])) set = '-af acrusher=.1:1:64:0:log'
-        if (/deep/.test(args[0])) set = '-af atempo=4/4,asetrate=44500*2/3'
-        if (/earrape/.test(args[0])) set = '-af volume=12'
-        if (/fast/.test(args[0])) set = '-filter:a "atempo=1.63,asetrate=44100"'
-        if (/fat/.test(args[0])) set = '-filter:a "atempo=1.6,asetrate=22100"'
-        if (/nightcore/.test(args[0])) set = '-filter:a atempo=1.06,asetrate=44100*1.25'
-        if (/reverse/.test(args[0])) set = '-filter_complex "areverse"'
-        if (/robot/.test(args[0])) set = '-filter_complex "afftfilt=real=\'hypot(re,im)*sin(0)\':imag=\'hypot(re,im)*cos(0)\':win_size=512:overlap=0.75"'
-        if (/smooth/.test(args[0])) set = '-filter:v "minterpolate=\'mi_mode=mci:mc_mode=aobmc:vsbmc=1:fps=120\'"'
-        if (/tupai/.test(args[0])) set = '-filter:a "atempo=0.5,asetrate=65100"'
-        if (/audio/.test(mime)) {
+        if (/^blown/i.test(args[0])) set = '-af acrusher=.1:1:64:0:log'
+        if (/^deep/i.test(args[0])) set = '-af atempo=4/4,asetrate=44500*2/3'
+        if (/^earrape/i.test(args[0])) set = '-af volume=12'
+        if (/^fast/i.test(args[0])) set = '-filter:a "atempo=1.63,asetrate=44100"'
+        if (/^fat/i.test(args[0])) set = '-filter:a "atempo=1.6,asetrate=22100"'
+        if (/^nightcore/i.test(args[0])) set = '-filter:a atempo=1.06,asetrate=44100*1.25'
+        if (/^reverse/i.test(args[0])) set = '-filter_complex "areverse"'
+        if (/^robot/i.test(args[0])) set = '-filter_complex "afftfilt=real=\'hypot(re,im)*sin(0)\':imag=\'hypot(re,im)*cos(0)\':win_size=512:overlap=0.75"'
+        if (/^smooth/i.test(args[0])) set = '-filter:v "minterpolate=\'mi_mode=mci:mc_mode=aobmc:vsbmc=1:fps=120\'"'
+        if (/^tupai/i.test(args[0])) set = '-filter:a "atempo=0.5,asetrate=65100"'
+        if (/audio/i.test(mime)) {
             let media = await conn.downloadAndSaveMediaMessage(q)
             let ran = getRandom('.mp3')
             exec(`ffmpeg -i ${media} ${set} ${ran}`, (err, stderr, stdout) => {
