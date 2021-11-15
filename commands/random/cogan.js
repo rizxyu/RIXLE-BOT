@@ -8,6 +8,6 @@ utilisation: userbot.prefix + "cogan",
 
 async execute(m){
 let { conn } = data
- scrap.pinterest("cogan").then(a => a[Math.floor(Math.random() * a.length)]).then(b => conn.sendFile(m.chat,b,b,"nih kak cowonya",m))
+ scrap.pinterest("cogan").then(a => a[Math.floor(Math.random() * a.length)]).then(b => conn.sendFile(m.chat,b, null, null,m, 0, { thumbnail: Buffer.alloc(0) }))
    }
 }
