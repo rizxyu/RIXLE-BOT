@@ -17,7 +17,7 @@ let exp = 100
 let limit = 10
 let obat = 1
 let apel = 1
-json.push(m.sender, exp, obat, role, + new date)
+json.push(m.sender, exp, limit, obat, apel, + new date)
 fs.writeFileSync('./db/rpgdb.json', JSON.stringify(json))
    
 
