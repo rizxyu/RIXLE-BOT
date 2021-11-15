@@ -125,7 +125,7 @@ function stickUrl(url){
         })
       })
 })
-}
+} // Full 
 
 module.exports = {
   toAudio,
