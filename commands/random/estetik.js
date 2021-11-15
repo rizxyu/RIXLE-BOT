@@ -8,6 +8,6 @@ utilisation: userbot.prefix + "aesthetic",
 
 async execute(m){
 let { conn } = data
- scrap.pinterest("aesthetic").then(a => a[Math.floor(Math.random() * a.length)]).then(b => conn.sendFile(m.chat,b,b,"apakah foto ini aesthetic?",m))
+ scrap.pinterest("aesthetic photo").then(a => a[Math.floor(Math.random() * a.length)]).then(b => conn.sendFile(m.chat,b, null, null, m, 0, { thumbnail: Buffer.alloc(0) }))
    }
 }
