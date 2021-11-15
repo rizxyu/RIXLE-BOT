@@ -9,10 +9,10 @@ async execute(m) {
 let { conn, args, text } = data
 
 let json = JSON.parse(JSON.stringify(global.asmaulhusna))
-    let data = json.map((v, i) => `${i + 1}. ${v.latin}\n${v.arabic}\n${v.translation_id}`).join('\n\n')
-    if (isNaN(args[0])) return m.reply(`contoh:\n${usedPrefix + command} 1`)
+    let link = json.map((v, i) => `${i + 1}. ${v.latin}\n${v.arabic}\n${v.translation_id}`).join('\n\n')
+    if (isNaN(args[0])) return m.reply(`contoh:\n${userbot.prefix + command} 1`)
     if (args[0]) {
-        if (args[0] < 1 || args[0] > 99) throw `minimal 1 & maksimal 99!`
+        if (args[0] < 1 || args[0] > 99) return m.reply(`minimal 1 & maksimal 99!`)
         let { index, latin, arabic, translation_id, translation_en } = json.find(v => v.index == args[0].replace(/[^0-9]/g, ''))
         return m.reply(`No. ${index}
 
@@ -27,7 +27,7 @@ ${translation_en}
     anjuran = `\n\nDari Abu hurarirah radhiallahu anhu, Rasulullah Saw bersabda: "إِنَّ لِلَّهِ تَعَالَى تِسْعَةً وَتِسْعِينَ اسْمًا، مِائَةٌ إِلَّا وَاحِدًا، مَنْ أَحْصَاهَا دخل الجنة، وهو وتر يُحِبُّ الْوِتْرَ"
 
     Artinya: "Sesungguhnya Allah mempunyai sembilan puluh sembilan nama, alias seratus kurang satu. Barang siapa yang menghitung-hitungnya, niscaya masuk surga; Dia Witir dan menyukai yang witir".`
-    m.reply(contoh + data + anjuran)
+    m.reply(contoh + link + anjuran)
 
 }
 }
