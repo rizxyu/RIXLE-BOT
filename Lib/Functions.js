@@ -28,11 +28,7 @@ const {
   bgcolor 
 } = require('./color.js')
 const { banner, start, success } = require('./banner.js')
-global['write']['words'] = JSON.parse(fs.readFileSync('./tmp/debug.json'));
 
-var styleText = {
-satu: global.write.words.style.duaxpuluhxempat
-}
 exports.Functions = class Functions {
 constructor() {
 this.color = color
@@ -60,7 +56,6 @@ this.path = path
 this.fs = fs
 this.moment = moment
 this.googleImage = googleImage
-this.styleText = styleText.satu
 }
 
 Res(objectPromise) {
