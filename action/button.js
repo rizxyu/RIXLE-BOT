@@ -17,6 +17,10 @@ let { conn } = data
 
 try {
 switch (button.split(" ")[0].toLowerCase()) {
+   case "cekprefix":
+m.reply("prefix saat ini: " + userbot.prefix )
+   break;
+
    case "changelog":
 let kanjut = new Date
     let tanggal = kanjut.toLocaleDateString('id', {
