@@ -85,7 +85,6 @@
     "wa-sticker-formatter": "^4.1.1",
     "zrapi": "^0.0.6",
     "kotz-api": "^1.0.0",
-    "yt-search": "latest",
     "ytdl-core": "latest",
   },
   "license": "ISC"
