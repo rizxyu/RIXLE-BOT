@@ -1,7 +1,7 @@
 const fetch = require('node-fetch')
 const fs = require('fs')
 let moment = require('moment-timezone')
-
+/*
 module.exports = { 
 name: "firstchat",  
 async functions(m) { 
@@ -40,3 +40,4 @@ function ucapan() {
     }
     return res
 }
+*/
