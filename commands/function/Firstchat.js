@@ -9,7 +9,7 @@ async functions(m) {
     if (m.fromMe) return
     let name = conn.getName(m.sender)
     let pc = JSON.parse(fs.readFileSync('./db/firstchat.json'))
-    pc.push(+ new Date < 86400000)
+    pc.push(+ new Date )
     if ( new Date - pc < 86400000 ) return
    let capt = `
 Hai ${name} ${ucapan()}
