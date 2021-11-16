@@ -104,6 +104,7 @@ Create a new account at [`monggodb`](https://www.mongodb.com/cloud/atlas/registe
 * [`Fauzan (Dev)`](https://github.com/Fau-Zan)
 * [`Ivan (Dev)`](https://github.com/ivan-MLN)
 * [`Sanz (Dev)`](https://github.com/sanzgantengz)
+* [`Kotz (Dev)`](https://github.com/Kotzyy)
 * [`Rizky (Creator Rixle Bot)`](https://github.com/Rizxyu)
 * [`Arifi Razzaq (Dev)`](https://github.com/Arifirazzaq2001)
 * [`O r e k i (Contributor)`](https://github.com/Oreki-san)
