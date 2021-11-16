@@ -9,7 +9,8 @@ async functions(m) {
     if (m.fromMe) return
     let name = conn.getName(m.sender)
     let pc = JSON.parse(fs.readFileSync('./db/firstchat.json'))
-    pc.push(+ new Date )
+    pc.push(m.sender, + new Date )
+    fs.writeFileSync('./db/firstchat.json', JSON.stringify(pc))
     if ( new Date - pc < 86400000 ) return
    let capt = `
 Hai ${name} ${ucapan()}
@@ -19,8 +20,7 @@ Kalau ingin tahu Fitur lainnya klik tombol dibawah ya
 `
    this.sendButtonLoc(m.chat, await ( await fetch('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRABEfk8DT2XA3wiM2fcKwU_fuKlp77oZEl0A&usqp=CAU')).buffer(),
 capt, userbot.packname, 'Menu', 'menu', m)
-    fs.writeFileSync('./db/firstchat.json', JSON.stringify(pc))
-}
+    }
 }
 
 function ucapan() {
