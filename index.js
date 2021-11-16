@@ -23,30 +23,6 @@ global['write'] = {};
            global.db = new JsonDB(new Config("database", true, false, '/'));
             global.Public = false
              global.scrap = require("./Lib/scrape");
-
-// fungsien stiker wa pormat 
-/*
-cara make nya
- > let buf = await toWebp(await m.quoted.download())
-conn.sendMessage(m.chat, buf, mediaType.sticker, {quoted: m})
-*/
-// moga paham oke
-global.toWebp = async(img, pck, auth, crp = false) => {
-let WSF =  require('wa-sticker-formatter')
-wsf = new WSF.Sticker(img, {
-pack: pck,
-author: auth,
-crop: crp,
-})
-await wsf.build()
-await wsf.get()
-}
-
-// alias
-
-global.s = toWebp;
-global.sticker = toWebp;
-
 //msgTyp
 global.text = mediaType.text
 global.image = mediaType.image
