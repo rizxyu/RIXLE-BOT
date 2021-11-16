@@ -15,7 +15,7 @@ utilisation: userbot.prefix + "getmusic <query>",
 async execute(m) {
   
 let { conn, args, caption } = data
-if (!m.quoted) return reply('Tolong Reply Chat Bot')
+if (!m.quoted) return m.reply('Tolong Reply Chat Bot')
 if (!args[0]) return m.reply("id or angka?")
 let hasilSplit = m.quoted.caption.split("(#)")[`${args[0]}`]
 let hasil = ("https://youtu.be/" + hasilSplit)
