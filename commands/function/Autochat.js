@@ -12,13 +12,8 @@ async functions(m) {
     let pc = JSON.parse(fs.readFileSync('./db/firstchat.json'))
     pc.push(m.sender, + new Date )
     if ( new Date - pc < 86400000 ) {
-   let capt = `
-Hai ${name} ${ucapan()}
-
-Saya adalah Bot Auto Downloader
-Kalau ingin tahu Fitur lainnya klik tombol dibawah ya
-`
-   this.sendButtonLoc(m.chat, await ( await fetch('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRABEfk8DT2XA3wiM2fcKwU_fuKlp77oZEl0A&usqp=CAU')).buffer(),
+   let capt = `Hai ${name} ${ucapan()}\n\nSaya adalah Bot Auto Downloader\nKalau ingin tahu Fitur lainnya klik tombol dibawah ya`
+   this.send2ButtonLoc(m.chat, await ( await fetch('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRABEfk8DT2XA3wiM2fcKwU_fuKlp77oZEl0A&usqp=CAU')).buffer(),
 capt, userbot.packname, 'Menu', 'menu', 'Cek Prefix', 'cekprefix', m)
 fs.writeFileSync('./db/firstchat.json', JSON.stringify(pc))
        }
