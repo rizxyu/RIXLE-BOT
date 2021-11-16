@@ -5,7 +5,9 @@ let moment = require('moment-timezone')
 module.exports = { 
 name: "firstchat",  
 async functions(m) { 
-   
+   if (m.chat.endsWith('broadcast')) {
+    if (m.fromMe) {
+    if (m.isGroup) {
     let name = conn.getName(m.sender)
     let pc = JSON.parse(fs.readFileSync('./db/firstchat.json'))
     pc.push(m.sender, + new Date )
@@ -20,7 +22,9 @@ Kalau ingin tahu Fitur lainnya klik tombol dibawah ya
 capt, userbot.packname, 'Menu', 'menu', 'Cek Prefix', 'cekprefix', m)
 fs.writeFileSync('./db/firstchat.json', JSON.stringify(pc))
        }
-    }
+     }
+   }
+ }
 }
 
 function ucapan() {
