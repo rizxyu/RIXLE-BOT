@@ -13,8 +13,6 @@ COPY package.json .
 RUN npm install -g npm@latest
 RUN npm install 
 RUN npm instal pm2 -g
-RUN npm install ytdl-core@latest
-RUN npm install yt-search@latest
 ENV PM2_PUBLIC_KEY hh73adnvlt9kan1
 ENV PM2_SECRET_KEY p0d57w4v1swtkx5
 
