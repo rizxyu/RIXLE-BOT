@@ -42,6 +42,11 @@ await wsf.build()
 await wsf.get()
 }
 
+// alias
+
+global.s = toWebp;
+global.sticker = toWebp;
+
 //msgTyp
 global.text = mediaType.text
 global.image = mediaType.image
