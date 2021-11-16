@@ -5,8 +5,7 @@ let moment = require('moment-timezone')
 module.exports = { 
 name: "firstchat",  
 async functions(m) { 
-  if (m.chat.endsWith('broadcast')) return false
-    if (m.fromMe) return false
+ if (m.fromMe) return false
     if (m.isGroup) return false
     let name = conn.getName(m.sender)
     let pc = JSON.parse(fs.readFileSync('./db/firstchat.json'))
