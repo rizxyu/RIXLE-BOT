@@ -22,7 +22,7 @@ if (!text) return m.reply('Cari apa?')
 ${text}
 ➸ *width*: ${width}
 ➸ *height*: ${height}
-`.trim(), m)
+`.trim(), m, 0, { thumbnail: Buffer.alloc(0) } )
 
 }
 }
