@@ -26,7 +26,8 @@ let server = (hasil || servers[0]).toLowerCase()
   conn.sendButtonLoc(m.chat, await (await fetch (thumb)).buffer(), `
   *ＹＴＭＰ3 ＹＯＵＴＵＢＥ*
   *Title:* ${title}
-  *Size:* ${filesizeF}`, userbot.packname, 'Menu', 'menu', m)
+  *Size:* ${filesizeF}
+   _AUDIO SEDANG DIPROSES_`, userbot.packname, 'VIDEO', `video ${args[0]}`, m)
   if (!isLimit) conn.sendFile(m.chat, dl_link, title + ".mp3", null, m)
 }
 }
