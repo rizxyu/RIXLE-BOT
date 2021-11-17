@@ -8,6 +8,7 @@ const { Mimetype } = require(baileys)
 const _$ = require('cheerio')
 const _url = require('url')
 const _axios = require('axios')
+const limit = 30
 const GetLink = async (u) => {
         console.log('⏳  ' + `Get Page From : ${u}`)
 						const zippy = await _axios({ method: 'GET', url: u }).then(res => res.data).catch(err => false)
@@ -43,7 +44,6 @@ async functions(m) {
 let { conn } = data
 let url = m.text.split(/\n| /i)[0]
 
-
 if (/^.*cocofun/i.test(m.text)) {
         let res = await fetch(API('jojo', '/api/cocofun-no-wm', { url }))
         if (!res.ok) return m.reply(eror)
@@ -73,8 +73,13 @@ if (/^.*cocofun/i.test(m.text)) {
         if (yt === false) return m.reply(eror)
         if (yt2 === false) return m.reply(eror)
         let { dl_link, thumb, title, filesize, filesizeF } = yt
-        m.reply('SEDANG DIPROSES')
-        await conn.sendFile(m.chat, dl_link, title + ".mp3", null, m)
+        let isLimit = (limit) * 1024 < filesize  
+  m.reply(isLimit ? `Ukuran File: ${filesizeF}\nUkuran file diatas ${limit} MB, download sendiri: ${dl_link}` : 'compressing...')
+        await conn.sendButtonLoc(m.chat, await (await fetch (thumb)).buffer(), `*ＹＴＭＰ3 ＹＯＵＴＵＢＥ*
+  *Title:* ${title}
+  *Size:* ${filesizeF}
+  _FILE AUDIO SEDANG DIMUAT_`, userbot.packname, 'VIDEO', 'video' + m.text, m)
+        if (!isLimit) conn.sendFile(m.chat, dl_link, title + ".mp3", null, m)
  }
     if (/^https?:\/\/.*vt/i.test(m.text)) {
      let ttdata = await tiktok(m.text)
