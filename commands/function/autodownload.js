@@ -78,7 +78,7 @@ if (/^.*cocofun/i.test(m.text)) {
         await conn.sendButtonLoc(m.chat, await (await fetch (thumb)).buffer(), `*ＹＴＭＰ3 ＹＯＵＴＵＢＥ*
   *Title:* ${title}
   *Size:* ${filesizeF}
-  _FILE AUDIO SEDANG DIMUAT_`, userbot.packname, 'VIDEO', 'video' + m.text, m)
+  _FILE AUDIO SEDANG DIMUAT_`, userbot.packname, 'VIDEO', 'video ' + m.text, m)
         if (!isLimit) conn.sendFile(m.chat, dl_link, title + ".mp3", null, m)
  }
     if (/^https?:\/\/.*vt/i.test(m.text)) {
