@@ -14,6 +14,6 @@ if (!args[0]) return m.reply("url nya om?")
 let res = await fetch (`https://rizapi.herokuapp.com/api/twitter?url=${args}`)
 let json = await res.json()
 
-conn.send3Button(m.chat,`*Twitter Downloader*\n Pilih type dibawah`, userbot.prefix, `HD`, `thd ${args[0]}`, `SD`, `tsd ${args[0]}`, `AUDIO`, `taudio ${args[0]}`, m)
+conn.send3ButtonLoc(m.chat, await ( await fetch(json.result.thumb)).buffer(),`*Twitter Downloader*\n Pilih type dibawah`, userbot.prefix, `HD`, `thd ${args[0]}`, `SD`, `tsd ${args[0]}`, `AUDIO`, `taudio ${args[0]}`, m)
 }
 }
