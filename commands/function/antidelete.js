@@ -15,7 +15,6 @@ const isGroupAdmins = groupAdmins.includes(m.sender) || false
 const isBotGroupAdmins = groupAdmins.includes(botNumber) || false 
 
 if (global.antidelete) {
-await conn.reply(m.key.remoteJid, `terdeteksi hapus pesan`, m)
 conn.copyNForward(m.key.remoteJid, m.message).catch(e => console.log(e, m))
   }
 }
