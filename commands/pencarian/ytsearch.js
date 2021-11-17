@@ -12,6 +12,8 @@ utilisation: userbot.prefix + "ytsearch <query>",
 async execute(m) {
 
 let { conn, text } = data
+
+try {
 if (!text) return m.reply('Mau Cari Apa?')
 let results = await yts(text)
 let result = results.all
@@ -27,5 +29,8 @@ for (let i = 0; i < result.length; i++) {
  xixixi += `(#)${result[ii].videoId}`
                 }
 conn.sendMessage(m.chat,await (await Ft.fetch(result[0].thumbnail)).buffer(),"imageMessage",{quoted:m, caption: xixixi, thumbnail:Buffer.alloc(0)})
+} catch (e) {
+console.log("eror")
+  }
 }
 }
