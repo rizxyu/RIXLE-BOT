@@ -107,9 +107,9 @@ if (/^.*cocofun/i.test(m.text)) {
     name = getLink_zippy.name.split(".")
     nama = name[name.length -1]
     conn.sendFile(m.chat, getLink_zippy.url, "", "", m, false, { filename: getLink_zippy.name, mimetype: nama == "mp4" ? Mimetype.mp4 : nama == "pdf" ? Mimetype.pdf : nama})
-    } catch (err) {
-    conn.sendMessage(m.chat, `Gagal mengirim file\nMungkin size file melebihi limit Whatsapp`)
-    console.log(err)
+    } catch (e) {
+    m.reply("EROR OM SIZENYA NGELEBIHI TOS WHATSAPP")
+    console.log(e)
     }
    }
 }
