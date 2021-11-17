@@ -18,7 +18,7 @@ try {
 Author: ${json.author} Subreddit: ${json.subreddit}
 ${json.postLink}
 `.trim()
-    conn.sendFile(m.chat, json.url, 'test.jpg', caption, m)
+    conn.sendFile(m.chat, json.url, 'test.jpg', caption, m, 0, { thumbnail: Buffer.alloc(0) })
    } catch (e) {
         console.log(e)
         throw '_*Erro!*_'
