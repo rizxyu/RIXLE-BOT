@@ -8,7 +8,6 @@ module.exports = {
 name: ["menu"],
 type: ["default"],
 useLimit: true,
-daftar: true,
 description: "list menu button",
 utilisation: userbot.prefix + "menu",
 
