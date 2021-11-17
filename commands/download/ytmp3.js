@@ -20,7 +20,7 @@ let server = (args[1] || servers[0]).toLowerCase()
   m.reply(isLimit ? `Ukuran File: ${filesizeF}\nUkuran file diatas ${limit} MB, download sendiri: ${dl_link}` : 'compressing...')
   conn.sendButtonLoc(m.chat, await (await fetch (thumb)).buffer(), `*ＹＴＭＰ3 ＹＯＵＴＵＢＥ*
   *Title:* ${title}
-  *Size:* ${filesizeF}`, userbot.packname, 'Video', 'video' + args[0], m)
+  *Size:* ${filesizeF}`, userbot.packname, 'Video', 'video ' + args[0], m)
   if (!isLimit) conn.sendFile(m.chat, dl_link, title + ".mp3", null, m)
 } catch (e) {
 console.log("[❗] Eror Om")
