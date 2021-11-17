@@ -25,7 +25,7 @@ followers: ${followers}
 following: ${following}
 create: ${created_at}
 update: ${updated_at}
-`,m)
+`,m, 0, { thumbnail: Buffer.alloc(0) })
 
 }
 }
