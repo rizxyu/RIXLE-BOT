@@ -16,7 +16,7 @@ const { toUrl } = require("./toUrl")
  */
 async function sticker(buffer, url = false, metadata) {
      const url_or_buffer = url ? url : await toUrl(buffer)
-     let data = await fetch('https://me.hardianto.xyz/api/sticker-api', {
+     let data = await fetch('https://xosfor.herokuapp.com/api/sticker-api', {
         method: "POST",
         body: new URLSearchParams(Object.entries({
             name: metadata.name,
