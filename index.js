@@ -1,6 +1,7 @@
 "use strict";
 const fs = require("fs")
 const qrcode = require("qrcode")
+const cp = require('child_process')
 const Baileys = "@adiwajshing/baileys";
 const { WAConnection: _WAConnection } = require("@adiwajshing/baileys");
 const WAConnection = require('./Lib/simple').WAConnection(_WAConnection);
@@ -31,6 +32,48 @@ global.audio = mediaType.audio
 global.location = mediaType.location
 global.document = mediaType.document
 
+
+async function _quickTest() {
+  let test = await Promise.all([
+    cp.spawn('ffmpeg'),
+    cp.spawn('ffprobe'),
+    cp.spawn('ffmpeg', ['-hide_banner', '-loglevel', 'error', '-filter_complex', 'color', '-frames:v', '1', '-f', 'webp', '-']),
+    cp.spawn('convert'),
+    cp.spawn('magick'),
+    cp.spawn('gm'),
+  ].map(p => {
+    return Promise.race([
+      new Promise(resolve => {
+        p.on('close', code => {
+          resolve(code !== 127)
+        })
+      }),
+      new Promise(resolve => {
+        p.on('error', _ => resolve(false))
+      })
+    ])
+  }))
+let [ffmpeg, ffprobe, ffmpegWebp, convert, magick, gm] = test
+  let s = global.support = {
+    ffmpeg,
+    ffprobe,
+    ffmpegWebp,
+    convert,
+    magick,
+    gm
+  }
+  require('../../Lib/sticker').support = s
+  Object.freeze(global.support)
+
+  if (!s.ffmpeg) conn.logger.warn('Silakan instal ffmpeg untuk mengirim video (pkg install ffmpeg)')
+  if (s.ffmpeg && !s.ffmpegWebp) conn.logger.warn('Stiker tidak bisa dianimasikan tanpa libwebp di ffmpeg (--enable-ibwebp while compiling ffmpeg)')
+  if (!s.convert && !s.magick && !s.gm) conn.logger.warn('Stiker mungkin tidak berfungsi tanpa imagemagick jika libwebp di ffmpeg tidak diinstal (pkg install imagemagick)')
+}
+
+_quickTest()
+  .then(() => conn.logger.info('Quick Test Done'))
+  .catch(console.error)
+
 conn.version = [ 2, 2140, 12 ]
 conn.logger.level = "warn"
 conn.browserDescription = ['Rixle Type 3', 'SAFARI', '8.1']
@@ -55,10 +98,9 @@ start('\n',
   )
 })
 
-/* Eror coeg
 setInterval(() => {
- conn.setStatus(`${Ft.count(process.uptime())} | ${Ft.os.hostname()} Fear Team | Your Bio ☣`).catch((_) => _)
-},1000)*/
+ conn.setStatus(`PREFIX: ${userbot.prefix} | BOT AKTIF: ${Ft.count(process.uptime())} | Listening Youtube🎧`).catch((_) => _)
+},1000)
  require('./src/loader');
 
  async function run() {// Function biar bisa run bot
