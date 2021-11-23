@@ -15,8 +15,8 @@ RUN npm install
 RUN npm instal pm2 -g
 RUN npm install ytdl-core@latest
 RUN npm install yt-search@latest
-ENV PM2_PUBLIC_KEY (isi disini)
-ENV PM2_SECRET_KEY (isi disini)
+ENV PM2_PUBLIC_KEY (isi disini) #get token here https://id.keymetrics.io/api/oauth/register
+ENV PM2_SECRET_KEY (isi disini) #haous tanda () dan isi tokenmu
 
 COPY . .
 EXPOSE 5000
