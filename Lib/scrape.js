@@ -1975,6 +1975,26 @@ function brainly(pertanyaan,jumlah,callback){
   })
 }
 
+function mynimeku() {
+  return new Promise((resolve, reject) => {
+    axios.get("https://www.mynimeku.com/").then(({ data }) => {
+      var $ = cheerio.load(data)
+      hasil = []
+      $("div[class=flexbox-item]").each(function(up,a) {
+        hasil.push({
+          title: $(a).text(),
+          episode: $(a).find("span[class=eps]").text(),
+          thumb: $(a).find("img").attr("data-src"),
+          link: $(a).find("a").attr("href"),
+          gif: $(a).find("img").attr("src")
+        })
+      })
+      resolve(hasil)
+    })
+    .catch(reject)
+  })
+}
+
 module.exports.Searchnabi = Searchnabi
 module.exports.tiktok = tiktok
 module.exports.tiktokmusic = tiktokmusic
@@ -2022,3 +2042,4 @@ module.exports.ramalanJodoh = ramalanJodoh
 module.exports.ramalanJadian = ramalanJadian
 module.exports.wiki = wiki
 module.exports.brainly = brainly
+module.exports.mynimeku = mynimeku
