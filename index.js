@@ -97,6 +97,18 @@ start('\n',
     conn.logger.warn('\n')
   )
 })
+// Called when WA sends chats, this can take up to a few minutes if you have thousands of chats!
+    conn.on('chats-received', async ({ hasNewChats }) => {
+        console.log(`‣ You have ${conn.chats.length} chats, new chats available: ${hasNewChats}`);
+
+        const unread = await conn.loadAllUnreadMessages ();
+        console.log ("‣ You have " + unread.length + " unread messages");
+    });
+
+    // Called when WA sends chats, this can take up to a few minutes if you have thousands of contacts!
+        conn.on('contacts-received', () => {
+        console.log('‣ You have ' + Object.keys(conn.contacts).length + ' contacts');
+    });
 
 setInterval(() => {
  conn.setStatus(`PREFIX: ${userbot.prefix} | BOT AKTIF: ${Ft.count(process.uptime())} | Listening Youtube🎧`).catch((_) => _)
