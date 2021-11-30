@@ -68,7 +68,7 @@
     "path": "^0.12.7",
     "perf_hooks": "^0.0.1",
     "pet-pet-gif": "^1.0.9",
-    "qrcode": "^1.4.4",
+    "qrcode": "^1.5.0",
     "request-promise": "4.2.6",
     "request-promise-native": "^1.0.9",
     "serve-index": "^1.9.1",
