@@ -109,6 +109,7 @@ start('\n',
         conn.on('contacts-received', () => {
         console.log('‣ You have ' + Object.keys(conn.contacts).length + ' contacts');
     });
+      console.log(Ft.color("💬 Menyambung WhatsApp Web", 'cyan'))
 
 setInterval(() => {
  conn.setStatus(`PREFIX: ${userbot.prefix} | BOT AKTIF: ${Ft.count(process.uptime())} | Listening Youtube🎧`).catch((_) => _)
