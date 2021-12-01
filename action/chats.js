@@ -7,7 +7,13 @@ if (m.key && m.key.remoteJid == 'status@broadcast') return
 m.message = (Object.keys(m.message)[0]=== 'ephemeralMessage') ? m.message.ephemeralMessage.message : m.message
 try {
 const mess = Object.keys(m.message)[0];
-prefix = userbot['prefix'];
+budy = (mess === 'conversation') ? m.message.conversation : (mess === "extendedTextMessage") ? m.message[mess].text : ""
+            prefix = "#"
+            var multi = /^[°•π÷×¶∆£¢€¥®™✓=|~zZ+×_!#%^&./\\©^]/
+           if (m.message && multi.test(budy)){
+           var upprefix = budy.split(" ")[0].match(multi)
+           prefix = upprefix
+}
 require('../Lib/simple')['smsg'](this, m);
 let body = (mess === 'conversation' && m.text.startsWith(prefix)) ? m.text : (mess == 'imageMessage') && m.message.imageMessage.caption.startsWith(prefix) ? m.message.imageMessage.caption : (mess == 'videoMessage') && m.message.videoMessage.caption.startsWith(prefix) ? m.message.videoMessage.caption : (mess == 'extendedTextMessage') && m.message.extendedTextMessage.text.startsWith(prefix) ? m.message.extendedTextMessage.text : ""
 let message = (mess === 'conversation') ? m.message.conversation : (mess === 'extendedTextMessage') ? m.message.extendedTextMessage.text : ''
