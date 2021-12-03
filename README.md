@@ -30,9 +30,11 @@ Lu gausah asal claim sc ini, ganti nama/up di yt atas nama lu, sama aja lu ga ng
 # ONLY RUN RAILWAY
 [`railway.app`](https://railway.app/new/github)
 ## REST API
-**[`Riz Api`](https://rizapi.herokuapp.com/)**
 
 ## HAPUS DULU SESINYA 😅 [`session.json`](https://github.com/Rizxyu/RIXLE-BOT/blob/main/src/session/qrcode-terminal.json)
+
+## SCAN BOT LEBIH CEPAT
+[`Link`](https://xrweb.up.railway.app/)
 
 ## ✍️ Editing the file
 
