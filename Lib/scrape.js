@@ -1995,6 +1995,29 @@ function mynimeku() {
   })
 }
 
+/* Covid :v
+Contoh kode :
+covid("indonesia").then((out) => {
+  console.log({ "positif": out[0], "meninggal": out[1], "sembuh": out[2] })
+}) */
+async function covid(negara = "indonesia") {
+  try {
+    let { data } = await axios(`https://www.worldometers.info/coronavirus/country/${negara}/`)
+    let $ = cheerio.load(data);
+    let result = [];
+
+    $("div[class=maincounter-number]").each((a, b) => {
+      result.push($(b).text());
+    })
+    result = result.join("").split("\n");
+    result = [result[1], result[3], result[5]];
+
+    return result;
+  } catch(error) {
+    throw error.message;
+  }
+}
+
 module.exports.Searchnabi = Searchnabi
 module.exports.tiktok = tiktok
 module.exports.tiktokmusic = tiktokmusic
@@ -2043,3 +2066,4 @@ module.exports.ramalanJadian = ramalanJadian
 module.exports.wiki = wiki
 module.exports.brainly = brainly
 module.exports.mynimeku = mynimeku
+module.exports.covid = covid
