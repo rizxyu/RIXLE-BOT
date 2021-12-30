@@ -74,7 +74,7 @@ _quickTest()
   .then(() => conn.logger.info('Quick Test Done'))
   .catch(console.error)
 
-conn.version = [ 2, 2140, 12 ]
+conn.version = [ 2, 2147, 16 ]
 conn.logger.level = "warn"
 conn.browserDescription = ['Rixle Type 3', 'SAFARI', '8.1']
 
