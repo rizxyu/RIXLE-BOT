@@ -92,7 +92,7 @@ async function tiktokmusic(URL) {
 return new Promise(async (resolve, reject) => {
 axios.get(URL, {
 headers: {
-'user-agent': "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36",
+'user-agent': UserAgent(),
 'Cookie': "ttwid=1%7C5UyITGuqEDXVZHtmtbU-7V35lTk8--iB6IjJuxRKPTs%7C1625390616%7C62c0b171e938115d5940a9af40c377000bc616cc7b25dfd76557913951585606; Domain=.tiktok.com; Path=/; Expires=Mon, 04 Jul 2022 09:23:36 GMT; HttpOnlytt_webid_v2=6980999485653632513; path=/; expires=Mon, 04 Jul 2022 09:23:37 GMT; domain=.tiktok.com; samesite=none; secure; httponlytt_webid=6980999485653632513; path=/; expires=Mon, 04 Jul 2022 09:23:37 GMT; domain=.tiktok.com; samesite=none; secure; httponlytt_csrf_token=9u_ml89_dULuOD6oMp_zTH06; path=/; domain=.tiktok.com; samesite=lax; secure; httponly"
 }
 })
@@ -106,9 +106,8 @@ resolve({meta})
 }
 
 //Github Stalk
-function ghstalk(username) {
-url= `https://api.github.com/users/${username}`; 
-return axios.get(url)
+async function ghstalk(username) {
+await axios.get(`https://api.github.com/users/${username}`)
 .then(({ data }) => {
 return data
 })
@@ -116,7 +115,7 @@ return data
 
 //Telegraph
 async function telegra(buffer) {
-  return new Promise(async (resolve, reject) => {
+return new Promise(async (resolve, reject) => {
 const { ext } = await fromBuffer(buffer)
 let form = new formData
 form.append('file', buffer, 'tmp.' + ext)
@@ -172,7 +171,7 @@ resolve(hasil)
 console.log(hasil)
 }).catch(reject)
 }).catch(reject)
-} else reject('URL UNVAILD !!')
+} else reject('URL INVALID!!')
 })
 }
 
@@ -215,7 +214,7 @@ resolve(hasil)
 console.log(hasil)
 }).catch(reject)
 }).catch(reject)
-} else reject('URL INVALID')
+} else reject('URL INVALID!!')
 })
 } 
 
@@ -261,7 +260,6 @@ return {
   }
 }
 
-//cuaca
 //Covid
 function covid() {
 return new Promise(async(resolve, reject) => {
@@ -310,11 +308,10 @@ let hasil = []
 let link = cher('a#downloadButton').attr('href')
 let size = cher('a#downloadButton').text().replace('Download', '').replace('(', '').replace(')', '').replace('\n', '').replace('\n', '').replace(' ', '')
 let seplit = link.split('/')
-let author = 'Rizky.A'
 let nama = seplit[5]
 let mime = nama.split('.')
 mime = mime[1]
-hasil.push({ author, nama, mime, size, link })
+hasil.push({ nama, mime, size, link })
 return hasil
 }
 
@@ -1175,8 +1172,7 @@ profilePicHD: user.profile_pic_url_hd,
 username: user.username,
 postsCount: user.edge_owner_to_timeline_media.count
 	}
-resolve(result)
-console.log(result)
+resolve(result);
 })
 	.catch(reject)
 	})
@@ -1199,7 +1195,6 @@ result.push({
 	jawaban: jwb
 })
 	resolve(result)
-	console.log(result)
 })
 	})
 .catch(reject)
@@ -1247,12 +1242,9 @@ resolve(result)
 }
 
 //Twitter
-function twitter(link){
+function twitter(URL){
 	return new Promise((resolve, reject) => {
-let config = {
-	'URL': link
-}
-axios.post('https://twdown.net/download.php',qs.stringify(config),{
+axios.post('https://twdown.net/download.php',qs.stringify({ URL })),{
 	headers: {
 "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
 "sec-ch-ua": '" Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"',
@@ -1311,6 +1303,7 @@ return resolve(results);
 });
 });
 };
+
 //Gempa
 function gempa() {
 return new Promise((resolve, reject) => {
@@ -1338,7 +1331,6 @@ Wilayah: $(Wilayah).text().replace(/\t/g, '').replace(/I/g, '').replace('-','').
 Map: ''
 }
 resolve(hasil);
-console.log(hasil)
 }
 }
 })
@@ -1419,7 +1411,7 @@ resolve(hasil)
 })
 }
 
-//McPe Dl
+//McPe Dl (captcha)
 function mcpedl(query) {
 return new Promise((resolve, reject) => {
 axios.get(`https://mcpedl.com/?s=${query}`).then(async tod => {
@@ -1440,7 +1432,6 @@ desc: desc,
 link: link2
 }
 hasil.push(Data)
-
 })
  resolve(hasil)
 }).catch(reject)
@@ -1463,7 +1454,6 @@ name: name,
 link: lin
 }
 hasil.push(Data)
-
 })
 resolve(hasil)
 });
@@ -1515,8 +1505,8 @@ headers: {
 "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"
 }
 })
-.then(tod => {
-const $ = cheerio.load(tod.data)
+.then(({ data }) => {
+const $ = cheerio.load(data)
 resolve({
 link: $('#downloadBox > a').attr('href')
 })
@@ -1540,8 +1530,8 @@ headers: {
 "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"
 }
 })
-.then(tod => {
-const $ = cheerio.load(tod.data)
+.then(({ data }) => {
+const $ = cheerio.load(data)
 resolve({
 link: $('#downloadBox > a').attr('href')
 })
@@ -1573,6 +1563,7 @@ link: $('#downloadBox > a').attr('href')
 })
 })
 }
+
 //Jalan Tikus
 function jalantikus(query) {
 return new Promise((resolve, reject) => {
@@ -1874,27 +1865,6 @@ axios({
 })
 }
 
-/*const fbdl = async (url) => {
-    browser = await require("puppeteer").launch({ args: ['--no-sandbox', "--disable-gpu"] });
-    await page.goto('https://www.getfvid.com/');
-    await page.setUserAgent('Mozilla/5.0 (Linux; Android 6.0.1; SAMSUNG SM-J500G) AppleWebKit/537.36 (KHTML, like Gecko) SamsungBrowser/13.0 Chrome/83.0.4103.106 Mobile Safari/537.36');
-    await page.type('#form_download > div > input', url);
-    await page.click('#btn_submit');
-    await page.waitForTimeout(3000);
-    const link_hd = await (await (await page.$('body > div.page-content > div > div > div.col-lg-10.col-md-10.col-centered > div > div:nth-child(3) > div > div.col-md-4.btns-download > p:nth-child(1) > a')).getProperty('href')).jsonValue();
-    const link = await (await (await page.$('body > div.page-content > div > div > div.col-lg-10.col-md-10.col-centered > div > div:nth-child(3) > div > div.col-md-4.btns-download > p:nth-child(2) > a')).getProperty('href')).jsonValue();
-    const link_aud = await (await (await page.$('body > div.page-content > div > div > div.col-lg-10.col-md-10.col-centered > div > div:nth-child(3) > div > div.col-md-4.btns-download > p:nth-child(3) > a')).getProperty('href')).jsonValue();
-
-    const result = {
-        status: 200,
-        result: {
-            link: link,
-            link_hd: link_hd,
-            audio: link_aud
-        }
-    }
-    return result
-}*/
 function cnn(g="internasional"){
   return new Promise((resolve,reject)=>{
     axios.get(`https://www.cnnindonesia.com/${g}`).then(({ data }) => {
@@ -1910,6 +1880,7 @@ function cnn(g="internasional"){
     }).catch(reject)
   })
 }
+
 function ramalanJodoh(nama1,nama2){
   return new Promise((resolve,reject)=>{
     Axios.get('https://www.primbon.com/kecocokan_nama_pasangan.php?nama1='+nama1+'&nama2='+nama2+'&proses=+Submit%21+').then(({ data }) => {
@@ -1928,6 +1899,7 @@ function ramalanJodoh(nama1,nama2){
     }).catch(reject)
   })
 }
+
 function ramalanJadian(tanggal, bulan, tahun) {
   return new Promise((resolve,reject)=>{
     if(isNaN(tanggal) && isNaN(bulan) && isNaN(tahun)) throw `Tanggal bulan tahun harus berupa angka`
@@ -1936,6 +1908,7 @@ function ramalanJadian(tanggal, bulan, tahun) {
     }).catch(reject)
   })
 }
+
 function wiki(q){
   return new Promise((resolve,reject)=>{
     axios.get(`https://id.m.wikipedia.org/w/index.php?search=${q}`).then(({ data }) => {
@@ -1951,6 +1924,7 @@ function wiki(q){
     }).catch(reject)
   })
 }
+
 function brainly(pertanyaan,jumlah,callback){
   return new Promise((resolve,reject)=>{
     require("brainly-scraper")(pertanyaan.toString(),Number(jumlah)).then((res) => {
@@ -2059,7 +2033,6 @@ module.exports.palingmurah = palingmurah
 module.exports.joox = joox
 module.exports.uguu = uguu
 module.exports.artinama = artinama
-/*module.exports.fbdl = fbdl*/
 module.exports.cnn = cnn
 module.exports.ramalanJodoh = ramalanJodoh
 module.exports.ramalanJadian = ramalanJadian
