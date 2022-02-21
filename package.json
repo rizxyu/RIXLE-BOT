@@ -57,7 +57,7 @@
     "lowdb": "^3.0.0",
     "moment-timezone": "^0.5.33",
     "mongodb": "^4.2.0",
-    "mongoose": "^6.0.14",
+    "mongoose": "^6.2.3",
     "mysql": "^2.18.1",
     "mathjs": "^9.5.1",
     "node-json-db": "1.4.1",
