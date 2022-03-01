@@ -300,6 +300,22 @@ resolve(hasil)
 })
 }
 
+//ytshort
+async function ytshort(url, type = "mp4") {
+  let axios = require("axios")
+  let cheerio = require("cheerio")
+
+  let { data: html } = await axios.post("https://ytdownloadid.herokuapp.com/download", {
+    "choices-single-default": format == "mp4" ? "Mp4 / Video" : "Mp3 / Audio",
+    "url": url
+  })
+  let $ = cheerio.load(html)
+  let url = ($("div.s003 > div.first-wrap > button").attr("onclick")).split(" = ")[1].replace(/[\"]/g, "")
+
+  return url
+}
+
+
 //mediafire
 async function mediafire(url) {
 let query = await axios.get(url) 
@@ -2040,3 +2056,4 @@ module.exports.wiki = wiki
 module.exports.brainly = brainly
 module.exports.mynimeku = mynimeku
 module.exports.covid = covid
+module.exports.ytshort = ytshort
