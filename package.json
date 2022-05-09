@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "@adiwajshing/baileys": "github:adiwajshing/baileys",
-    "awesome-phonenumber": "^2.64.0",
+    "awesome-phonenumber": "^3.0.1",
     "axios": "^0.24.0",
     "brainly-scraper": "^1.0.3",
     "browser-id3-writer": "^4.4.0",
