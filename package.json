@@ -81,7 +81,7 @@
     "ssl-express-www": "^3.0.8",
     "syntax-error": "^1.4.0",
     "translate-google-api": "^1.0.4",
-    "ts-node": "^10.2.1",
+    "ts-node": "^10.8.1",
     "wa-sticker-formatter": "^4.1.1",
     "zrapi": "^0.0.6",
     "kotz-api": "^1.0.0"
