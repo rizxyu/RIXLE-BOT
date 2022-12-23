@@ -1,20 +1,11 @@
 ---
-name: Feature request
-about: Suggest an idea for this project
-title: ''
-labels: ''
-assignees: ''
+name: REQ FITUR
+about: Request Feature on this sc
+title: 'Req'
+labels: 'Request'
+assignees: 'Req'
 
 ---
 
-**Is your feature request related to a problem? Please describe.**
-A clear and concise description of what the problem is. Ex. I'm always frustrated when [...]
-
-**Describe the solution you'd like**
-A clear and concise description of what you want to happen.
-
-**Describe alternatives you've considered**
-A clear and concise description of any alternative solutions or features you've considered.
-
-**Additional context**
-Add any other context or screenshots about the feature request here.
+**Anda ingin Request fitur?**
+Silahkan Ketik dan jelaskan fitur apa yg ingin ditambah oleh Contributor
