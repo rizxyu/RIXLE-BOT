@@ -28,7 +28,7 @@
     "canvas-to-buffer": "^1.1.1",
     "canvas-constructor": "^5.0.1",
     "canvas": "^2.8.0",
-    "cfonts": "^2.10.0",
+    "cfonts": "^3.1.1",
     "chess-base": "^1.2.0",
     "chess-image-generator": "^1.0.9",
     "dijkstrajs": "^1.0.2",
