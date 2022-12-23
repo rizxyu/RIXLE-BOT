@@ -52,7 +52,7 @@
     "jpeg-js": "^0.4.3",
     "jimp": "^0.16.1",
     "jsdom": "^18.0.1",
-    "knex": "^0.95.14",
+    "knex": "^2.3.0",
     "knights-canvas": "^1.3.7",
     "lowdb": "^3.0.0",
     "moment-timezone": "^0.5.33",
